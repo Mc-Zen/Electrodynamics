@@ -76,7 +76,7 @@ function formatAndUpdateDate(dateString) {
 }
 
 function updateFileDate() {
-    var url = document.getElementById('file').href;
+    let url = "pdf/Theo_III_1_1_2_1.pdf";
 
     if (url !== undefined) {
         fetchHeader(url);
