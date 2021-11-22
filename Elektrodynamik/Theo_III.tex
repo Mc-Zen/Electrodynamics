@@ -66,7 +66,7 @@
 \setlength{\skip\footins}{.5cm} % space between body and footnote section
 \setlength{\footnotesep}{0.5cm}  % space between footnotes
 
-\renewcommand{\arraystretch}{2}
+%\renewcommand{\arraystretch}{1}
 
 \raggedbottom
 
@@ -128,6 +128,8 @@
 \renewcommand{\vec}[1]{\mathbf{#1}} 
 %\renewcommand{\svec}[1]{\vec{#1}} 
 
+\newcommand\equivalence{\;\Leftrightarrow\;}
+
 % Alternative: bold non-cursive symbols for vectors instead of arrows
 %\renewcommand{\vec}[1]{\mathbf{#1}}
 
@@ -137,6 +139,32 @@
   \renewcommand{\tablename}{Tab.}
 }
 \graphicspath{{images/}} 
+\usepackage[strict]{changepage}
+
+% for formal definitions
+\usepackage{framed}
+
+% environment derived from framed.sty: see leftbar environment definition
+\definecolor{formalbar}{rgb}{0.1,0.1,.2}
+\definecolor{formalshade}{rgb}{0.95,0.95,1}
+
+% Quote box for important statements
+\newenvironment{formal}{%
+  \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{formalbar}\vrule width 2pt}%
+    {\color{formalshade}\vrule width 4pt}%
+    \colorbox{formalshade}%
+  }%
+  \MakeFramed{\advance\hsize-\width\FrameRestore}%
+  \noindent\hspace{-4.55pt}% disable indenting first paragraph
+  \begin{adjustwidth}{}{7pt}%
+  \vspace{-10pt}\vspace{2pt}%
+}
+{%
+  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
 
 \usepackage{hyperref} % include hyperref as last package!
 
@@ -163,10 +191,10 @@
 % -----------------------------------
 
 \mainmatter
-
-\input{Kapitel_1}
-\input{Kapitel_2}
-\input{Kapitel_3}
+\input{1_Einleitung}
+\input{2_Vektoranalysis}
+\input{3_Elektrostatik}
+\input{4_Felder_Materie}
 
 
 \end{document}

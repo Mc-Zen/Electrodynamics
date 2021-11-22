@@ -1,0 +1,113 @@
+% !TEX root = Theo_III.tex
+
+\chapter{Einleitung\label{einleitung}}
+
+\section{Geschichte}
+
+\begin{itemize}
+    \item \textbf{1785} \textendash{} Charles Augustin de Coulomb: Entdeckung des Coulombsches Gesetzes.
+    
+    \item \textbf{1800} \textendash{} Alessandro Volta: Erfindung der erstern Batterie, die Voltasche Säule. 
+    
+    \item \textbf{1820} \textendash{}  Hans Christian \O{}rsted: Das \O{}rstedsche Gesetz beschreibt, dass elektrische Ströme ein Magnetfeld erzeugen. 
+    
+    \item \textbf{1820-25} \textendash{}   André-Marie Ampère: Entdeckung der Grundlagen der Magnetostatik durch Messungen.
+    
+    \item \textbf{1831} \textendash{}  Michael Faraday: Beschreibung der magnetischen Induktion.
+    
+    \item \textbf{1852} \textendash{}  Michael Faraday: Formulierung des Nahwirkungsstandpunktes (Beschreibung elektrischer Phänomene über Felder statt Kräfte). 
+    
+    \item \textbf{1864} \textendash{} James Clerk Maxwell: Formulierung der Maxwell-Gleichungen als fundamentale Feldgleichungen des elektromagnetischen Feldes und Nutzung von elektrischen und magnetischen Hilfsfeldern für die physikalische Beschreibung in Materie sowie Äußerung der Vermutung, dass Licht eine elektromagnetische Welle ist. 
+    
+    \item \textbf{1886} \textendash{} Heinrich Hertz: Nachweis elektromagnetischer Wellen und Postulierung eines Äthers als hypothetisches Ausbreitungsmedium. 
+    
+    \item \textbf{1881} \textendash{} Michelson-Morley-Experiment: Konstanz der Lichtgeschwindigkeit unabhängig von Beobachter und Quelle ${\Rightarrow}$ ein absolutes Bezugssystem Äther existiert nicht.
+    
+    \item \textbf{1905} \textendash{} Albert Einstein: spezielle Relativitätstheorie.
+
+\end{itemize}
+
+
+
+
+
+\section{Inhalt}
+
+Der Inhalt dieser Vorlesung gliedert sich in folgende Abschnitte:
+
+\begin{itemize}
+	\item Einleitung
+
+	\item Elemente der Vektoranalysis
+
+	\item Elektrostatik
+
+	\item Elektrische Felder in Materie
+
+	\item Magnetostatik
+
+	\item Grundgleichungen der Elektrodynamik: Die Maxwellschen Gleichungen
+
+	\item Spezielle Relativitätstheorie
+
+	\item Ebene elektromagnetische Wellen
+
+	\item Elektromagnetische Felder bei vorgegebenen Ladungen und Strömen
+\end{itemize}
+
+
+
+\section{Grundlegende Konstanten der Elektrodynamik}
+
+Für Konstanten deren Wert per Definition festgelegt wurde, wird ein $\equiv $-Zeichen verwendet.
+
+
+\begin{table}[H]
+    \centering
+	\begin{tabular}{|l|l|} \hline
+		\textbf{Konstante}         & \textbf{Wert} \\\hline
+		Vakuumlichtgeschwindigkeit & \centering\arraybackslash{}$c_{0}\equiv \SI{299792458}{\m\per\s}$  \\
+		Elektrische Feldkonstante  & $\varepsilon _{0}=\SI{8,8541878128e-12}{\A\s\per\V\per\m}$ \\
+		Magnetische Feldkonstante  & $\mu _{0}=\SI{1,25663706212e-6}{\N\per\square\A}$  \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+
+\section{Grundlegende Formeln der Elektrodynamik}
+
+Maxwellsche Feldgleichungen
+\begin{equation*}
+	\nabla \cdot \vec {D}=\rho _{f},\quad\nabla \cdot \vec {B}=0,\quad\nabla \times \vec {E}=-\frac{\partial \vec {B}}{\partial t},\quad\nabla \times \vec {H}=\vec {j}_{f}+\frac{\partial \vec {D}}{\partial t}
+\end{equation*}
+Materialgleichungen
+\begin{equation*}
+	\vec {D}=\varepsilon _{0}\vec {E}+\vec {P},\quad \vec {B}=\mu _{0}\left(\vec {H}+\vec {M}\right)
+\end{equation*}
+In linearen und isotropen Medien gilt
+\begin{equation*}
+	\vec {D}=\varepsilon _{0}\varepsilon _{r}\vec {E},\quad \vec {B}=\mu _{0}\mu _{r}\vec {H}
+\end{equation*}
+Im Vakuum gilt
+\begin{equation*}
+	\vec {D}=\varepsilon _{0}\vec {E}, \quad\vec {B}=\mu _{0}\vec {H}
+\end{equation*}
+Relationen von Lichtgeschwindigkeit, Feldkonstanten und Brechungsindex:
+\begin{align*}
+	c_{0} & =\frac{1}{\sqrt{\varepsilon _{0}\mu _{0}}} \\
+	n     & =\frac{c_{0}}{c}
+\end{align*}
+In linearen, isotropen Medien gilt
+\begin{equation*}
+	n=\sqrt{\varepsilon _{0}\mu _{0}}
+\end{equation*}
+Gradient
+\begin{equation*}
+	\nabla \frac{1}{r}=-\frac{\vec {r}}{r^{3}}
+\end{equation*}
+Elektrisches Potential und elektrisches Feld:
+\begin{equation*}
+	\vec {E}=-\nabla \phi ,\quad \phi \left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\int \frac{\rho \left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
+\end{equation*}
