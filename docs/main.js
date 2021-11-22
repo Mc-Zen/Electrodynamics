@@ -12,7 +12,7 @@ function toggle_viewer() {
     }
 }
 
-
+// get file modification date: https://gist.github.com/xdevmaycry/b0ef73f66d9847a980edbfab4c135a77
 
 function ready(callback) {
     // in case the document is already rendered
