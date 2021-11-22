@@ -27,19 +27,22 @@
             </p>
             <p>
                 Wenn du einen Fehler findest, eine Anmerkung oder einen Vorschlag hast, dann poste bitte ein
-                <a href="https://github.com/Mc-Zen/Electrodynamics/issues">Issue auf GitHub</a>. Ich gebe mir zwar Mühe, mache
+                <a class="alnk" href="https://github.com/Mc-Zen/Electrodynamics/issues">Issue auf GitHub</a>. Ich gebe mir zwar Mühe, mache
                 aber Fehler (und manchmal auch der Prof) und würde diese gerne beheben. Gerne auch auf Grammatik/Rechtschreibung
                 aufmerksam machen :)
             </p>
             <div class="button-wrapper">
-                <button onclick="toggle_viewer()">View PDF</button>
+                <button class="bbutton" onclick="toggle_viewer()">View PDF</button>
             </div>
 
             <br />
             <span onclick="updateFileDate()">Zuletzt aktualisiert</span>: <span class="last-updated-date"></span>
         </div>
         <div id="viewer-wrapper">
-            <button onclick="toggle_viewer()">Close PDF</button>
+            <div class="button-wrapper">
+                <button class="bbutton" onclick="toggle_viewer()">Close PDF</button>
+                <a class="bbutton" href="pdf/Theo_III_1_1_2_1.pdf">Download</a>
+            </div>
             <embed class="pdfviewer" src="pdf/Theo_III_1_1_2_1.pdf" type="application/pdf" />
         </div>
     </main>

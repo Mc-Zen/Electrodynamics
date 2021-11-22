@@ -23,18 +23,18 @@ h1 {
     text-align: center;
 }
 
-a {
+.alnk {
     padding: 3px;
     border-radius: 4px;
     color: green;
     transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
 
-    a:hover {
+    .alnk:hover {
         background: #d6e3d5;
     }
 
-    a:active {
+    .alnk:active {
         background: #b3c5b2;
         color: #075207;
     }
@@ -44,7 +44,7 @@ a {
     justify-content: center;
 }
 
-button {
+.bbutton {
     font-family: Comfortaa, sans-serif;
     background-color: #dfecff;
     padding: 10px;
@@ -52,12 +52,17 @@ button {
     border: 1px solid gray;
     transition: background-color .3s ease-in-out, color .3s ease-in-out;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+
 }
 
-    button:hover {
+    .bbutton:hover {
         background-color: #c2cedf;
     }
-    button:active {
+
+    .bbutton:active {
         background-color: #a6b3c7;
     }
 
