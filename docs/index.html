@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="description" content="LaTeX-Skript der Vorlesung Elektrodynamik" />
+    <meta name="author" content="Mc-Zen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="main.css" />
+    <title>Theoretische Physik III - Elektrodynamik</title>
+
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>
+            Theoretische Physik III - Elektrodynamik
+        </h1>
+        <div id="content-wrapper">
+            <p>
+                Hier ist stets die aktuelle Version des LaTeX-Skripts von der Vorlesung Elektrodynamik (Theoretische Physik III)
+                im Wintersemester 2021/22 zu finden. Es wird regelmäßig aktualisiert.
+            </p>
+            <p>
+                Wenn du einen Fehler findest, eine Anmerkung oder einen Vorschlag hast, dann poste bitte ein
+                <a href="https://github.com/Mc-Zen/Electrodynamics/issues">Issue auf GitHub</a>. Ich gebe mir zwar Mühe, mache
+                aber Fehler (und manchmal auch der Prof) und würde diese gerne beheben. Gerne auch auf Grammatik/Rechtschreibung
+                aufmerksam machen :)
+            </p>
+            <div class="button-wrapper">
+                <button onclick="toggle_viewer()">View PDF</button>
+            </div>
+
+            <a id="file" href="https://mc-zen.github.io/Electrodynamics/pdf/Theo_III_1_1_2_1.pdf"></a>
+            <br />
+            Zuletzt aktualisiert: <span class="last-updated-date"></span>
+        </div>
+        <div id="viewer-wrapper">
+            <button onclick="toggle_viewer()">Close PDF</button>
+            <embed class="pdfviewer" src="../pdf/Theo_III_1_1_2_1.pdf" type="application/pdf" />
+        </div>
+    </main>
+</body>
+
+</html>
