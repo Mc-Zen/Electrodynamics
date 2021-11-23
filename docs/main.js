@@ -89,26 +89,23 @@ function updateFileDate() {
 
 function setDownloadLinkFilename() {
     let downloadlinks = document.getElementsByClassName("pdf-download-button");
-    let version = getVersion();
-    for (var i = 0; i < downloadlinks.length; i++) {
-        downloadlinks[i].download = "Theo_III" + version + ".pdf";
-    }
-}
 
-
-function getVersion() {
     // read text from URL location
     const url = reposUrl + "version.txt";
 
-    var request = new XMLHttpRequest();
+    let request = new XMLHttpRequest();
     request.open('GET', url, true);
     request.send(null);
     request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
-            var type = request.getResponseHeader('Content-Type');
+            let type = request.getResponseHeader('Content-Type');
             if (type.indexOf("text") !== 1) {
-                return request.responseText;
+                let version = request.responseText;
+                for (let i = 0; i < downloadlinks.length; i++) {
+                    downloadlinks[i].download = "Theo_III_v" + version + ".pdf";
+                }
             }
         }
     }
 }
+
