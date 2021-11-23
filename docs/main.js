@@ -80,7 +80,7 @@ function initPage() {
 }
 
 function updateFileDate() {
-    const url = reposUrl + "pdf/Theo_III_1_1_2_1.pdf";
+    const url = reposUrl + "pdf/Theo_III.pdf";
 
     if (url !== undefined) {
         fetchHeader(url);
