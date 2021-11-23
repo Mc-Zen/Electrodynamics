@@ -67,7 +67,7 @@ function formatAndUpdateDate(dateString) {
 
     var formattedDate = date + '.' + month + '.' + year + ' um ' + hour + ':' + min;
 
-    var el = document.getElementsByClassName("last-updated-date")[0];
+    var el = document.getElementById("last-updated-date");
 
     if (el !== undefined) {
         el.textContent = formattedDate;
@@ -75,7 +75,7 @@ function formatAndUpdateDate(dateString) {
 }
 
 function initPage() {
-    setDownloadLinkFilename();
+    updateVersion();
     updateFileDate();
 }
 
@@ -87,8 +87,7 @@ function updateFileDate() {
     }
 }
 
-function setDownloadLinkFilename() {
-    let downloadlinks = document.getElementsByClassName("pdf-download-button");
+function updateVersion() {
 
     // read text from URL location
     const url = reposUrl + "version.txt";
@@ -101,11 +100,22 @@ function setDownloadLinkFilename() {
             let type = request.getResponseHeader('Content-Type');
             if (type.indexOf("text") !== 1) {
                 let version = request.responseText;
-                for (let i = 0; i < downloadlinks.length; i++) {
-                    downloadlinks[i].download = "Theo_III_v" + version + ".pdf";
-                }
+                setDownloadLinkVersion(version);
+                setVersionLabel(version);
             }
         }
     }
 }
 
+
+function setDownloadLinkVersion(version) {
+    let downloadlinks = document.getElementsByClassName("pdf-download-button");
+    for (let i = 0; i < downloadlinks.length; i++) {
+        downloadlinks[i].download = "Theo_III_v" + version + ".pdf";
+    }
+}
+
+function setVersionLabel(version) {
+    let el = document.getElementById("current-version");
+    el.textContent = version;
+}
