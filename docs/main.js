@@ -1,10 +1,10 @@
-
+const reposUrl = "https://mc-zen.github.io/Electrodynamics/"
 
 function toggle_viewer() {
     let vw = document.getElementById("viewer-wrapper");
     let cw = document.getElementById("content-wrapper");
-    if (vw.style.display != "block") {
-        vw.style.display = "block";
+    if (vw.style.display != "flex") {
+        vw.style.display = "flex";
         cw.style.display = "none";
     } else {
         vw.style.display = "none";
@@ -12,9 +12,12 @@ function toggle_viewer() {
     }
 }
 
+
+
 // get file modification date: https://gist.github.com/xdevmaycry/b0ef73f66d9847a980edbfab4c135a77
 
 function ready(callback) {
+
     // in case the document is already rendered
     if (document.readyState != 'loading') callback();
     // modern browsers
@@ -26,7 +29,7 @@ function ready(callback) {
 }
 
 ready(function () {
-    updateFileDate();
+    initPage();
 });
 
 function fetchHeader(url) {
@@ -62,11 +65,7 @@ function formatAndUpdateDate(dateString) {
     var min = a.getMinutes() < 10 ? '0' + a.getMinutes() : a.getMinutes();
     var sec = a.getSeconds() < 10 ? '0' + a.getSeconds() : a.getSeconds();
 
-    var ampm = hour >= 12 ? 'pm' : 'am';
-    hour = hour % 12;
-    hour = hour ? hour : 12; // the hour '0' should be '12'
-
-    var formattedDate = month + '/' + date + '/' + year + ' at ' + hour + ':' + min + ampm;
+    var formattedDate = date + '.' + month + '.' + year + ' um ' + hour + ':' + min;
 
     var el = document.getElementsByClassName("last-updated-date")[0];
 
@@ -75,10 +74,41 @@ function formatAndUpdateDate(dateString) {
     }
 }
 
+function initPage() {
+    setDownloadLinkFilename();
+    updateFileDate();
+}
+
 function updateFileDate() {
-    let url = "pdf/Theo_III_1_1_2_1.pdf";
+    const url = reposUrl + "pdf/Theo_III_1_1_2_1.pdf";
 
     if (url !== undefined) {
         fetchHeader(url);
+    }
+}
+
+function setDownloadLinkFilename() {
+    let downloadlinks = document.getElementsByClassName("pdf-download-button");
+    let version = getVersion();
+    for (var i = 0; i < downloadlinks.length; i++) {
+        downloadlinks[i].download = "Theo_III" + version + ".pdf";
+    }
+}
+
+
+function getVersion() {
+    // read text from URL location
+    const url = reposUrl + "version.txt";
+
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.send(null);
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var type = request.getResponseHeader('Content-Type');
+            if (type.indexOf("text") !== 1) {
+                return request.responseText;
+            }
+        }
     }
 }

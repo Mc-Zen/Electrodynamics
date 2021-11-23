@@ -31,8 +31,13 @@
                 aber Fehler (und manchmal auch der Prof) und würde diese gerne beheben. Gerne auch auf Grammatik/Rechtschreibung
                 aufmerksam machen :)
             </p>
+            <p>
+                Wer sich mit git auskennt, kann auch das <a class="alnk" href="https://github.com/Mc-Zen/Electrodynamics">Repository</a> 
+                klonen und Pull Requests erstellen.
+            </p>
             <div class="button-wrapper">
                 <button class="bbutton" onclick="toggle_viewer()">View PDF</button>
+                <a class="bbutton pdf-download-button" href="https://mc-zen.github.io/Electrodynamics/pdf/Theo_III.pdf" download>Download</a>
             </div>
 
             <br />
@@ -41,9 +46,11 @@
         <div id="viewer-wrapper">
             <div class="button-wrapper">
                 <button class="bbutton" onclick="toggle_viewer()">Close PDF</button>
-                <a class="bbutton" href="pdf/Theo_III_1_1_2_1.pdf">Download</a>
+                <a class="bbutton pdf-download-button" href="https://mc-zen.github.io/Electrodynamics/pdf/Theo_III.pdf" download>Download</a>
             </div>
-            <embed class="pdfviewer" src="pdf/Theo_III_1_1_2_1.pdf" type="application/pdf" />
+            <iframe src="http://docs.google.com/gview?url=https://mc-zen.github.io/Electrodynamics/pdf/Theo_III.pdf&embedded=true" class="pdfviewer" frameborder="0"></iframe>
+
+            <!--<embed class="pdfviewer" src="pdf/Theo_III_1_1_2_1.pdf" type="application/pdf" />-->
         </div>
     </main>
 </body>

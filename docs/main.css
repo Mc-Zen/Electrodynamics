@@ -9,18 +9,24 @@ html {
 body {
     margin: 0;
     height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 main {
     width: 90%;
     margin: 0 auto;
-    margin-top: 20px;
-    height: 90%;
     line-height: 1.6;
+    padding-top: 20px;
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     text-align: center;
+    margin-top: 0;
 }
 
 .alnk {
@@ -42,6 +48,10 @@ h1 {
 .button-wrapper {
     display: flex;
     justify-content: center;
+}
+
+.bbutton:not(:last-child) {
+    margin-right: 20px;
 }
 
 .bbutton {
@@ -68,8 +78,10 @@ h1 {
 
 .pdfviewer {
     width: 100%;
-    min-height: 500px;
-    height: 100%;
+    min-height: 300px;
+    height: 80%;
+    margin-top: 20px;
+    flex-grow: 1;
 }
 
 #content-wrapper {
@@ -81,8 +93,11 @@ h1 {
 }
 
 #viewer-wrapper {
+    flex-grow: 1;
+    min-height: 500px;
+    /*display: flex;*/
+    flex-direction: column;
     display: none;
-    height: 100%;
 }
 
 @media screen and (max-width: 450px) {
