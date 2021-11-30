@@ -158,16 +158,182 @@ In der integralen Formulierung,
 bedeutet das, dass die magnetischen Feldlinien geschlossen sind. Es gibt folglich keine magnetischen Ladungen, wo die Feldlinien beginnen oder enden.
 
 Für die Rotation der elektrischen Flussdichte gilt
-\begin{align*}
+\begin{align}
+\begin{split}
+    \label{eq:durchflutungsgesetz_magnetostatik}
 	\rot \vec {B}&=\nabla \times \left(\nabla \times \vec {A}\right)=\nabla \left(\nabla \cdot \vec {A}\right)-\nabla ^{2}\vec {A}\\
 	&=\frac{\mu _{0}}{4\pi }\nabla \int \vec {j}\left(\vec {r}'\right)\cdot \nabla \frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'-\frac{\mu _{0}}{4\pi }\int \vec {j}\left(\vec {r}'\right)\nabla ^{2}\frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'\\
 	&=0+\mu _{0}\int \vec {j}\left(\vec {r}'\right)\delta \left(\vec {r}-\vec {r}'\right)\diff ^{3}\vec {r}'\\&=\mu _{0}\vec {j}\left(\vec {r}\right).
-\end{align*}
+\end{split}
+\end{align}
 
 \begin{formal}
 	Elektrische Ströme rufen Wirbel in der magnetischen Flussdichte hervor, $\rot \vec {B}=\mu _{0}\vec {j}\left(\vec {r}\right)$.
 \end{formal}
 Alternativ kann man sagen, dass die Zirkulation entlang der Oberfläche eines Volumens einem Strom durch das Volumen entspricht,
 \begin{equation*}
-	\int _{\partial F}\vec {B}\cdot \diff \vec {r}=\mu _{0}I.
+	\boxed{\int _{\partial F}\vec {B}\cdot \diff \vec {r}=\mu _{0}I.}
 \end{equation*}
+Diese Gleichung ist als Ampèresches Gesetz bekannt. Mit seiner Nutzung kann man leicht das Magnetfeld von einem homogen stromdurchflossenen, zylindrischen Draht mit Radius $R$ bestimmen, wie in Abbildung \Abbref{fig:cylinder_conductor_with_diagrams} gezeigt. Wähle dazu eine kreisförmige Kurve $C$ mit Radius $r$ um die $z$-Achse herum. Aufgrund der Zylindersymmetrie ist das Magnetfeld nur vom Abstand $r$ der $z$-Achse abhängig und es gilt mit dem Ampèreschen Gesetz
+\begin{align*}
+		B\left(r\right)\oint _{C}1\diff s&=2\pi rB\left(r\right)=\mu _{0}I\left(r\right) \\
+		\Leftrightarrow B\left(r\right)&=\frac{\mu _{0}I\left(r\right)}{2\pi r}.
+\end{align*}
+
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics{cylinder_conductor_with_diagrams.pdf}
+	\caption{Ein stromdurchflossener, zylindrischer Leiter mit Radius $R$ und Stromdichte $r$ erzeugt ein magnetisches Wirbelfeld. Links: schematische Darstellung, Mitte links: Querschnitt mit gedachter kreisförmiger Kurve $C$ mit Radius $r$ um den Leiter herum, Mitte rechts: Die Stromdichte ist konstant im Leiter und fällt außerhalb auf $0$ ab, rechts: im Leiter steigt der Betrag des Magnetfelds linear mit dem Abstand an und fällt außerhalb ab mit $r^{-1}$.  }
+	\label{fig:cylinder_conductor_with_diagrams}
+\end{figure}
+
+Der Strom $I\left(r\right)$ enthält nur den Strom, der innerhalb der Kurve $C$ fließt. Innerhalb des zylindrischen Leiters ($r\leq R$) ist die eingeschlossene Fläche gerade $\pi r^{2}$ und damit
+\begin{equation*}
+	I\left(r\right)=j_{0}\pi r^{2}.
+\end{equation*}
+
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics{long_coil_scheme.pdf}
+	\caption{Magnetfeld einer lange, stromdurchflossenen Spule. }
+	\label{fig:long_coil_scheme}
+\end{figure}
+
+Außerhalb des Leiters ist $I$ konstant $j_{0}\pi R^{2}$, weil sich der Leiter und damit der Stromfluss nur bis $r=R$ erstreckt. Das Magnetfeld ist also
+\begin{align*}
+	B\left(r\right)=\frac{\mu _{0}}{2}j_{0}\begin{cases} r,               & r\leq R \\
+              \frac{R^{2}}{r}, & r>R
+	                                       \end{cases}
+\end{align*}
+und es ist kreisförmig um die $z$-Achse gerichtet, $\vec {B}\left(r,\varphi \right)=B\left(r\right)\vec {e}_{\varphi }$.
+
+Genauso lässt sich das Feld einer unendlich langen Spule berechnen (\Abbref{fig:long_coil_scheme}):
+\begin{align*}
+		\oint \vec {B}\cdot \diff \vec {r}&=LB_{0}\overset{!}{=}\mu _{0}NI \\
+		\Rightarrow B_{0}&=\mu _{0}\frac{N}{L}I, \vec {B}=B_{0}\vec {e}_{z}
+\end{align*}
+Zwischen den Windungen hebt sich das magnetische Feld weg.
+
+Wie aus der Gleichung \eqref{eq:durchflutungsgesetz_magnetostatik} hervorgeht, lässt sich für das Vektorpotential $\vec {A}$ wie in der Elektrostatik eine Poissongleichung formulieren,
+\begin{equation*}
+	\nabla ^{2}\vec {A}=-\mu _{0}\vec {j}
+\end{equation*}
+und im Potential $\vec {A}\left(\vec {r}\right)$ findet sich wieder eine Greenschen Funktion
+\begin{equation*}
+	\vec {A}\left(\vec {r}\right)=\int \diff ^{3}\vec {r}'G\left(\vec {r}-\vec {r}'\right)\vec {j}\left(\vec {r}'\right),\quad G\left(\vec {r}-\vec {r}'\right)=\frac{\mu _{0}}{4\pi }\frac{1}{\left| \vec {r}-\vec {r}'\right| }.
+\end{equation*}
+\section{Kleine Stromverteilungen: Der magnetische Dipol\label{mark-5.4}}
+
+\subsection{Felder kleiner Stromverteilungen\label{mark-5.4.1}}
+
+Wir führen zunächst wieder eine Entwicklung des magnetischen Potentials nach Momenten der Stromverteilung durch:
+\begin{equation}
+    \label{eq:entwicklung_magn_potential}
+	\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \diff ^{3}\vec {r}'\frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\approx \frac{\mu _{0}}{4\pi }\left(\frac{1}{r}\int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)+\frac{\vec {r}}{r^{3}}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'+\ldots \right)
+\end{equation}
+Die Auswertung ist allerdings viel komplizierter als für das elektrische Potential und daher beschränken wir uns hier auf die Dipole und vernachlässigen höhere Multipolmomente. Außerdem verwenden wir als Hilfsatz folgende Gleichung, die für beliebige skalare Felder $g$ und $f$ sowie für ein quellenfreies Vektorfeld $\vec {j}$ gilt\footnote{Beweis: Betrachte $\int _{V}\nabla \left(gf\vec {j}\right)\diff ^{3}\vec {r}$. Einerseits ist dieser Ausdruck mit dem Satz von Gauß gleich $\int _{\partial V}gf\vec {j}\cdot \diff \vec {f}$, was gleich $0$ ist, wenn man das Volumen groß genug wählt, dass auf dem Rand $\vec {j}\left(\vec {r}\right)=\vec {0}$ ist. Außerdem findet man mithilfe der Produktregel, dass $\int _{V}\nabla \left(gf\vec {j}\right)\diff ^{3}\vec {r}=\int _{V}\vec {j}\cdot \nabla \left(gf\right)\diff ^{3}\vec {r}+\int _{V}gf\nabla \cdot \vec {j}\diff ^{3}\vec {r}$, wobei der letzte Term aufgrund der Bedingung $\divg \vec {j}=\vec {0}$ verschwindet, q.e.d.}:
+\begin{equation}
+    \label{eq:hilfssatz}
+	\int \vec {j}\cdot \nabla \left(gf\right)\diff ^{3}\vec {r}=0.
+\end{equation}
+Ferner können wir zeigen\footnote{Beweis: Mit der vorigen Formel $\int \vec {j}\cdot \nabla \left(gf\right)\diff ^{3}\vec {r}=0$ ist mit $g=1$ und $f=x_{i}$ offensichtlicherweise $\int j_{k}\cdot \nabla _{k}x_{i}\diff ^{3}\vec {r}=\int j_{i}\diff ^{3}\vec {r}=0$, q.e.d. }, dass
+\begin{equation*}
+	\int \vec {j}\left(\vec {r}\right)\diff ^{3}\vec {r}=0,
+\end{equation*}
+es also keine Strommonopole in $\vec {A}\left(\vec {r}\right)$ gibt. Als letzte Vorbereitung werten wir den zweiten Term in Gleichung \eqref{eq:entwicklung_magn_potential} aus
+\begin{equation*}
+	\vec {r}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diff ^{3}\vec {r}'x_{i}^{'}j_{k}\left(\vec {r}'\right).
+\end{equation*}
+Das Produkt $T=x_{i}^{'}j_{k}$ ist ein Tensor zweiter Stufe und lässt sich zerlegen in einen symmetrischen und einen antisymmetrischen Teil, $T_{ik}=\frac{1}{2}\left(T_{ik}+T_{ki}\right)+\frac{1}{2}\left(T_{ik}-T_{ki}\right)$, also
+\begin{equation*}
+	\vec {r}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diff ^{3}\vec {r}'\left(\frac{1}{2}\left(x_{i}^{'}j_{k}+x_{k}^{'}j_{i}\right)+\frac{1}{2}\left(x_{i}^{'}j_{k}-x_{k}^{'}j_{i}\right)\right).
+\end{equation*}
+Der erste Summand im Integranden (symmetrischer Teil des Tensors) verschwindet nach dem Hilfssatz \eqref{eq:hilfssatz} mit $g=x_{i}^{'},f=x_{k}^{'}$ und der zweite wird zu
+\begin{equation*}
+	\frac{1}{2}\int \diff ^{3}\vec {r}'\left(\left(\vec {r}\cdot \vec {r}'\right)\vec {j}-\left(\vec {r}\cdot \vec {j}\right)\vec {r}'\right)=\frac{1}{2}\int \diff ^{3}\vec {r}'\left(\vec {r}'\times \vec {j}\right)\times \vec {r}
+\end{equation*}
+evaluiert.
+
+Nun können wir das magnetische Dipolmoment
+\begin{equation*}
+	\vec {m}=\frac{1}{2}\int \vec {r}'\times \vec {j}\left(\vec {r}\right)\diff ^{3}\vec {r}'
+\end{equation*}
+und das Vektorpotential des magnetischen Dipols
+\begin{equation*}
+	\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\frac{\vec {m}\times \vec {r}}{r^{3}}
+\end{equation*}
+einführen. Daraus ergibt sich (mit weiteren Umformungen) schließlich das Magnetfeld eines Dipols
+\begin{equation*}
+	\vec {B}\left(\vec {r}\right)=\rot \vec {A}=-\frac{\mu _{0}}{4\pi }\nabla \frac{\vec {m}\cdot \vec {r}}{r^{3}}=\frac{\mu _{0}}{4\pi }\frac{3\left(\vec {m}\cdot \hat{\vec {r}}\right)\hat{\vec {r}}-\vec {m}}{r^{3}},
+\end{equation*}
+was wieder völlig analog zum elektrischen Dipol ist.
+
+Wir wollen im Folgenden einmal das Dipolmoment zweier einfacher Geometrien berechnen. Das Dipolmoment einer Stromschleife (\Abbref{fig:magnetic_dipole_field_circle_conductor_ellipsoid}, links) ist einfach (verwende $\vec {j}\diff ^{3}\vec {r}=I\diff \vec {r}$)
+\begin{equation*}
+	\vec {m}=\frac{I}{2}\oint \vec {r}\times \diff \vec {r}.
+\end{equation*}
+Für eine ebene Schleife mit Fläche $F$ und Normalenvektor $\vec {n}$ (\Abbref{fig:magnetic_dipole_field_circle_conductor_ellipsoid}, Mitte) vereinfacht sich dieser Ausdruck zu
+\begin{equation*}
+	\vec {m}=IF\vec {n}.
+\end{equation*}
+
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics{magnetic_dipole_field_circle_conductor_ellipsoid.pdf}
+	\caption{Links: Magnetfeld eines magnetischen Dipols, Mitte: Ein Kreisstrom erzeugt ein magnetisches Dipolmoment, rechts: starrer Körper, der mit $\vec\omega$ rotiert und einer Ladungsverteilung $\rho(\vec r)$ besitzt. }
+	\label{fig:magnetic_dipole_field_circle_conductor_ellipsoid}
+\end{figure}
+
+Zuletzt betrachten wir einen starren geladenen Körper, der um eine Rotationsachse $\vec {\omega }$ rotiert (\Abbref{fig:magnetic_dipole_field_circle_conductor_ellipsoid}, rechts). Die lokale Geschwindigkeit für eine Ladung in diesem Körper ist $\vec {v}\left(\vec {r}\right)=\vec {\omega }\times \vec {r}$. Die rotierenden Ladungen resultieren in einer Stromdichte $\vec {j}=\rho \vec {v}$, sodass ein Dipolmoment induziert wird:
+\begin{equation*}
+	\vec {m}=\frac{1}{2}\int d^{3}\vec {r}\,\rho \left(\vec {r}\right)\vec {r}\times \vec {v}.
+\end{equation*}
+Gleichzeitig besitzt der Körper einen Drehimpuls
+\begin{equation*}
+	\vec {L}=\int \diff ^{3}\vec {r}\rho _{m}\left(\vec {r}\right)\vec {r}\times \vec {v}.
+\end{equation*}
+Trifft man jetzt die Annahme, dass die Verteilungen von Ladung und Masse im Körper gleich sind,
+\begin{equation*}
+	\frac{\rho \left(\vec {r}\right)}{\rho _{m}\left(\vec {r}\right)}=\frac{q_{\mathrm{ges}}}{m_{\mathrm{ges}}}\equiv \frac{q}{M},
+\end{equation*}
+dann findet man eine Proportionalität von $\vec {m}$ und $\vec {L}$:
+\begin{equation*}
+	\vec {m}=\frac{q}{2M}\vec {L}
+\end{equation*}
+Der Proportionalitätsfaktor $\left| \vec {m}\right| /\left| \vec {L}\right| $ wird als gyromagnetisches Verhältnis bezeichnet. Für den Spin gibt es allerdings eine Abweichung, die aus der Relativitätstheorie hervorgeht und es gilt eigentlich
+\begin{equation*}
+	\vec {m}=g\frac{q}{2M}\vec {L}
+\end{equation*}
+mit einem zusätzlichen Landé-Faktor (oder g-Faktor), dessen Wert von der Teilchensorte abhängt. Für Elektronen ist $g\approx 2$, für Protonen $g\approx 2\cdot 2,79$ und für Neutronen $g\approx 2\cdot \left(-1,91\right)$.
+
+Auch die Erde ist ein magnetischer Dipol, der durch Ströme im flüssigen äußeren Erdkern angetrieben wird. Bemerkenswerterweise ist die Dipolachse leicht gegen die Erdachse geneigt und die Polarität dreht sich rund alle 200.000 Jahre um. Der Mechanismus ist allerdings bis heute nicht genau verstanden.
+
+\subsection{Kraft, Drehmoment und Energie\label{mark-5.4.2}}
+
+Die bereits bekannte Kraft auf ein Volumen $V$ mit Stromverteilung $\vec {j}\left(\vec {r}\right)$
+\begin{equation*}
+	\vec {F}=\int \vec {j}\left(\vec {r}\right)\times \vec {B}\left(\vec {r}\right)\diff ^{3}\vec {r}
+\end{equation*}
+lässt sich nach $\vec {B}$ um $\vec {r}=\vec {0}$ Taylor-entwickeln:
+\begin{equation*}
+	\vec {F}\approx \int \vec {j}\left(\vec {r}\right)\times \left(\vec {B}\left(0\right)+\vec {r}\cdot \nabla \vec {B}\left(0\right)+\ldots \right)\diff ^{3}\vec {r}=\left(\vec {m}\times \nabla \right)\times \vec {B}\left(0\right)=\nabla \left(\vec {m}\cdot \vec {B}\right)
+\end{equation*}
+Die potentielle Energie eines Dipols $\vec {m}$ im magnetischen Feld $\vec {B}$ ergibt sich daraus durch Integration
+\begin{equation*}
+	F=-\nabla U\Rightarrow U=-\vec {m}\cdot \vec {B}.
+\end{equation*}
+Das Minimum wird für $\vec {m}\upuparrows \vec {B}$ erreicht\footnote{vgl. Funktionsweise von einem Kompass. }. $U$ enthält aber nicht die Energie um den Dipol $\vec {m}$ aufrechtzuerhalten!
+
+Das Drehmoment hat die gleiche Form wie für elektrische Dipole,
+\begin{equation*}
+	\vec {M}=\vec {m}\times \vec {B}
+\end{equation*}
+und auch die Wechselwirkungsenergie für einen Dipol im Feld eines zweiten Dipols ist analog
+\begin{equation*}
+	U=-\frac{\mu _{0}}{4\pi }\frac{3\left(\vec {m}_{1}\cdot \hat{\vec {r}}\right)\left(\vec {m}_{2}\cdot \hat{\vec {r}}\right)-\vec {m}_{1}\cdot \vec {m}_{2}}{r^{3}}.
+\end{equation*}
+
+
