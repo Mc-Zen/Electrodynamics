@@ -125,9 +125,9 @@ Zwischen beliebigen Leiterschleifen $C_{1},C_{2}$ wirkt eine Kraft von
 
 Um die Grundgleichungen der Magnetostatik herzuleiten, gehen wir zuerst von dem Stromelement $I\diff \vec {r}$ über in die Stromdichte $\vec {j}\left(\vec {r}\right)$ mit $I\diff \vec {r}=\vec {j}\left(\vec {r}\right)\diff^3 \vec {r}$.
 
-Die Kraft auf ein Stromgebiet ist
+Die Kraft auf ein Stromgebiet ist das Integral der Kraftdichte
 \begin{equation*}
-	\vec {F}\left(\vec {r}\right)=\int f\left(\vec {r}\right)\diff ^{3}\vec {r}=\int \vec {j}\left(\vec {r}\right)\times \vec {B}\left(\vec {r}\right)\diff ^{3}\vec {r}.
+	\vec {F}=\int f\left(\vec {r}\right)\diff ^{3}\vec {r}=\int \vec {j}\left(\vec {r}\right)\times \vec {B}\left(\vec {r}\right)\diff ^{3}\vec {r}.
 \end{equation*}
 Für eine Punktladung $q$, die sich mit Geschwindigkeit $\vec {v}$ bewegt ($\vec {j}=q\vec {v}\delta \left(\vec {r}-\vec {r}\left(t\right)\right)$) gilt speziell
 \begin{equation*}
@@ -145,9 +145,9 @@ Integration des Biot-Savartschen Gesetzes für Leiter führt auf\footnote{vergle
 \end{equation*}
 Wie für das elektrische Feld können wir ein Potential einführen \textendash{} allerdings ist $\vec {B}$ kein Potentialfeld und daher ist das magnetische Potential ein Vektorpotential:
 \begin{equation*}
-	\vec {B}\left(\vec {r}\right)=\nabla \times \vec {A}\left(\vec {r}\right), \quad\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \frac{\vec {j}\left(\vec {r}\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
+	\vec {B}\left(\vec {r}\right)=\nabla \times \vec {A}\left(\vec {r}\right), \quad\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
 \end{equation*}
-Die Divergenz von $\vec {B}$ verschwindet.
+Die Divergenz von $\vec {B}$ verschwindet, weil stets gilt, dass $\nabla\cdot(\nabla\times \vec A) = 0$.
 \begin{formal}
 		Das Magnetfeld hat keine Quellen, $\divg \vec {B}=0$.
 \end{formal}
@@ -159,7 +159,9 @@ bedeutet das, dass die magnetischen Feldlinien geschlossen sind. Es gibt folglic
 
 Für die Rotation der elektrischen Flussdichte gilt
 \begin{align*}
-	\rot \vec {B}&=\nabla \times \left(\nabla \times \vec {A}\right)=\nabla \left(\nabla \cdot \vec {A}\right)-\nabla ^{2}\vec {A}\\&=\frac{\mu _{0}}{4\pi }\nabla \int \vec {j}\left(\vec {r}\right)\cdot \nabla \frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}-\frac{\mu _{0}}{4\pi }\int \vec {j}\left(\vec {r}\right)\nabla ^{2}\frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}\\&=0+\mu _{0}\int \vec {j}\left(\vec {r}\right)\delta \left(\vec {r}-\vec {r}'\right)\diff ^{3}\vec {r}\\&=\mu _{0}\vec {j}\left(\vec {r}\right).
+	\rot \vec {B}&=\nabla \times \left(\nabla \times \vec {A}\right)=\nabla \left(\nabla \cdot \vec {A}\right)-\nabla ^{2}\vec {A}\\
+	&=\frac{\mu _{0}}{4\pi }\nabla \int \vec {j}\left(\vec {r}'\right)\cdot \nabla \frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'-\frac{\mu _{0}}{4\pi }\int \vec {j}\left(\vec {r}'\right)\nabla ^{2}\frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'\\
+	&=0+\mu _{0}\int \vec {j}\left(\vec {r}'\right)\delta \left(\vec {r}-\vec {r}'\right)\diff ^{3}\vec {r}'\\&=\mu _{0}\vec {j}\left(\vec {r}\right).
 \end{align*}
 
 \begin{formal}
