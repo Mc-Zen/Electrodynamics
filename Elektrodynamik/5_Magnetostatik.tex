@@ -177,7 +177,7 @@ Alternativ kann man sagen, dass die Zirkulation entlang der Oberfläche eines Vo
 Diese Gleichung ist als Ampèresches Gesetz bekannt. Mit seiner Nutzung kann man leicht das Magnetfeld von einem homogen stromdurchflossenen, zylindrischen Draht mit Radius $R$ bestimmen, wie in Abbildung \Abbref{fig:cylinder_conductor_with_diagrams} gezeigt. Wähle dazu eine kreisförmige Kurve $C$ mit Radius $r$ um die $z$-Achse herum. Aufgrund der Zylindersymmetrie ist das Magnetfeld nur vom Abstand $r$ der $z$-Achse abhängig und es gilt mit dem Ampèreschen Gesetz
 \begin{align*}
 		B\left(r\right)\oint _{C}1\diff s&=2\pi rB\left(r\right)=\mu _{0}I\left(r\right) \\
-		\Leftrightarrow B\left(r\right)&=\frac{\mu _{0}I\left(r\right)}{2\pi r}.
+		\equivalence B\left(r\right)&=\frac{\mu _{0}I\left(r\right)}{2\pi r}.
 \end{align*}
 
 
@@ -212,7 +212,7 @@ und es ist kreisförmig um die $z$-Achse gerichtet, $\vec {B}\left(r,\varphi \ri
 Genauso lässt sich das Feld einer unendlich langen Spule berechnen (\Abbref{fig:long_coil_scheme}):
 \begin{align*}
 		\oint \vec {B}\cdot \diff \vec {r}&=LB_{0}\overset{!}{=}\mu _{0}NI \\
-		\Rightarrow B_{0}&=\mu _{0}\frac{N}{L}I, \vec {B}=B_{0}\vec {e}_{z}
+		\implication B_{0}&=\mu _{0}\frac{N}{L}I, \vec {B}=B_{0}\vec {e}_{z}
 \end{align*}
 Zwischen den Windungen hebt sich das magnetische Feld weg.
 
@@ -323,7 +323,7 @@ lässt sich nach $\vec {B}$ um $\vec {r}=\vec {0}$ Taylor-entwickeln:
 \end{equation*}
 Die potentielle Energie eines Dipols $\vec {m}$ im magnetischen Feld $\vec {B}$ ergibt sich daraus durch Integration
 \begin{equation*}
-	F=-\nabla U\Rightarrow U=-\vec {m}\cdot \vec {B}.
+	F=-\nabla U\implication U=-\vec {m}\cdot \vec {B}.
 \end{equation*}
 Das Minimum wird für $\vec {m}\upuparrows \vec {B}$ erreicht\footnote{vgl. Funktionsweise von einem Kompass. }. $U$ enthält aber nicht die Energie um den Dipol $\vec {m}$ aufrechtzuerhalten!
 
@@ -335,5 +335,123 @@ und auch die Wechselwirkungsenergie für einen Dipol im Feld eines zweiten Dipol
 \begin{equation*}
 	U=-\frac{\mu _{0}}{4\pi }\frac{3\left(\vec {m}_{1}\cdot \hat{\vec {r}}\right)\left(\vec {m}_{2}\cdot \hat{\vec {r}}\right)-\vec {m}_{1}\cdot \vec {m}_{2}}{r^{3}}.
 \end{equation*}
+
+
+
+\section{Magnetische Felder in Materie}
+
+Nun behandeln wir magnetische Felder in Materie. Die Vorgehensweise erfolgt analog zu den Kapiteln \ref{sec:mikroskopische_gleichungen_der_elektrostatik} und \ref{sec:Makroskopische_Gleichungen_der_Elektrostatik}. Die freien Ladungen bilden freie Ströme $j_{\mathrm{f}}\left(\vec {r},t\right)$ und gebundene Ladungen fügen jetzt noch gebundene Ströme hinzu $\vec {j}_{\mathrm{b}}\left(\vec {r},t\right)$. Außerdem werden auch magnetische Dipole durch den intrinsischen Spin der Teilchen hinzuaddiert. Die letzten beiden Quellen werden dann gemittelt über eine neue Größe beschrieben: die Magnetisierung.
+
+\subsection{Einführung der Vakuumsverschiebungsstromdichte}
+
+In der Magnetostatik haben wir bisher nur
+\begin{equation*}
+	\nabla \times \vec {B}=\mu _{0}\vec {j},\quad\nabla \cdot \vec {j}=0
+\end{equation*}
+gehabt. Aber mit der vollständigen Kontinuitätsgleichung
+\begin{equation*}
+	\frac{\partial }{\partial t}\rho +\nabla \cdot \vec {j}=0
+\end{equation*}
+brauchen wir eine Verallgemeinerung, wenn $\nabla \cdot \vec {j}\neq 0$:
+\begin{equation*}
+	\nabla \times \vec {B}=\mu _{0}\vec {j}+\frac{1}{c^{2}}\frac{\partial \vec {E}}{\partial t}=\mu _{0}\left(\vec {j}+\varepsilon _{0}\frac{\partial \vec {E}}{\partial t}\right)
+\end{equation*}
+Das ist das Ampèresche Gesetz mit der Maxwellschen Verallgemeinerung.
+
+\subsection{Einführung der Magnetisierung}
+
+Wie für die Elektrostatik in Kapitel \ref{sec:mikroskopische_gleichungen_der_elektrostatik} und \ref{sec:Makroskopische_Gleichungen_der_Elektrostatik} beginnen wir, indem wir die mikroskopischen Gleichungen
+\begin{equation*}
+	\nabla\times \vec {b}=\mu _{0}\left(\vec {j}+\varepsilon _{0}\frac{\partial \vec {e}}{\partial t}\right), \quad\nabla\cdot \vec {b}=0
+\end{equation*}
+mitteln,
+\begin{equation*}
+	\vec {B}\left(\vec {r},t\right)=\left\langle \vec {b}\left(\vec {r},t\right)\right\rangle ,\quad \vec {E}\left(\vec {r},t\right)=\left\langle \vec {e}\left(\vec {r},t\right)\right\rangle .
+\end{equation*}
+Die Stromdichte
+\begin{equation*}
+	\vec {j}\left(\vec {r},t\right)=\vec {j}_{\mathrm{f}}\left(\vec {r},t\right)+\vec {j}_{\mathrm{b}}\left(\vec {r},t\right)
+\end{equation*}
+mit "`freien`` Strömen durch einzelne Ladungsträger mit Ladung $q_{i}$ und Geschwindigkeit $v_{i }$
+\begin{equation*}
+	\vec {j}_{\mathrm{f}}\left(\vec {r},t\right)=\sum _{i\left(f\right)}q_{i}\vec {v}_{i}\delta \left(\vec {r}-\vec {r}_{i}\left(t\right)\right)\implication \vec {j}_{\mathrm{F}}=\left\langle \vec {j}_{\mathrm{f}}\right\rangle .
+\end{equation*}
+Die gebundenen Ströme werden über alle Moleküle summiert, $\vec {j}_{\mathrm{b}}\left(\vec {r},t\right)=\sum _{n}\vec {j}_{n}\left(\vec {r},t\right)$ mit
+\begin{equation*}
+	\vec {j}_{n}\left(\vec {r},t\right)=\sum _{i\left(n\right)}q_{i}\vec {v}_{i}\delta \left(\vec {r}-\vec {r}_{i}\right)=\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}+\vec {v}_{ni}\right)\delta \left(\vec {r}-\left(\vec {r}_{n}+\vec {r}_{ni}\right)\right)
+\end{equation*}
+und die Mittelung für das $n$-te Molekül ist (verwende wieder eine Glättungsfunktion $f$)
+\begin{equation*}
+	\left\langle \vec {j}_{n}\left(\vec {r},t\right)\right\rangle =\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}+\vec {v}_{ni}\right)f\left(\vec {r}-\left(\vec {r}_{n}+\vec {r}_{ni}\right)\right).
+\end{equation*}
+Eine Taylor-Entwicklung um $\vec {r}_{n}$ liefert
+\begin{equation*}
+	\left\langle \vec {j}_{n}\left(\vec {r},t\right)\right\rangle =\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}+\vec {v}_{ni}\right)\left[f\left(\vec {r}-\vec {r}_{n}\right)-\vec {r}_{ni}\cdot \nabla f\left(\vec {r}-\vec {r}_{n}\right)+\ldots \right].
+\end{equation*}
+Betrachte zunächst die Terme mit $\sum _{i\left(n\right)}q_{i}\vec {v}_{ni}$, die die molekularen Dipolmomente liefern. Der erste Term kann durch ein elektrisches Dipolmoment beschrieben werden:
+\begin{equation*}
+	\sum _{i\left(n\right)}q_{i}\vec {v}_{ni}=\sum _{i\left(n\right)}q_{i}\frac{\diff \vec {r}_{ni}}{\diff t}=\frac{\diff }{\diff t}\vec {p}_{n}
+\end{equation*}
+Der zweite Term enthält ein magnetisches Moment (verwende wieder die Tensorzerlegung in einen symmetrischen und einen asymmetrischen Anteil):
+\begin{equation*}
+	\sum _{i\left(n\right)}q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }=\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }-q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right]+\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }+q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right],
+\end{equation*}
+wobei die Summanden der zweiten Summe verschwinden, weil diese Ströme jeweils auf ein Molekül beschränkt sind ($\nabla\cdot \vec {j}_{\mathrm{b}}=0$). Die erste Summe ist asymmetrisch und lässt sich als Kreuzprodukt schreiben,
+\begin{equation*}
+	\sum _{i\left(n\right)}q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }=\frac{1}{2}\varepsilon _{\alpha \beta \gamma }\left(\sum _{i\left(n\right)}q_{i}\left(\vec {r}_{ni}\times \vec {v}_{ni}\right)\right)_{\gamma },
+\end{equation*}
+sodass sich ein sinnvolles molekulares magnetisches Dipolmoment ergibt,
+\begin{equation*}
+	\vec {m}_{n}=\frac{1}{2}\sum _{i\left(n\right)}q_{i}\left(\vec {r}_{ni}\times \vec {v}_{ni}\right).
+\end{equation*}
+Sammle nun alle bisher ausgewerteten Ausdrücke:
+\begin{align*}
+	\left\langle \left(\vec {j}_{n}\left(\vec {r},t\right)\right)_{\alpha }\right\rangle &=\left(\left(\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}\right)_{\alpha }\right)+\frac{\diff }{\diff t}\left(\vec {p}_{n}\right)_{\alpha }\right)f\left(\vec {r}-\vec {r}_{n}\right)\\
+	&\qquad-\left(\left(\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}\right)_{\alpha }\left(\vec {r}_{ni}\right)_{\beta }\right)-\varepsilon _{\alpha \beta \gamma }\left(\vec {m}_{n}\right)_{\gamma }\right)\nabla _{\beta }f\left(\vec {r}-\vec {r}_{n}\right) \\
+	&=\left\langle q_{n}\left(\vec {v}_{n}\right)_{\alpha }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\frac{\partial }{\partial t}\left\langle \left(\vec {p}_{n}\right)_{\alpha }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\varepsilon _{\alpha \beta \gamma }\nabla _{\beta }\left\langle \left(\vec {m}_{n}\right)_{\gamma }\delta \left(\vec {r}-\vec {r}\right)\right\rangle\\
+	&\qquad -\nabla _{\beta }\left\langle \left(\vec {v}_{n}\right)_{\alpha }\left(\vec {p}_{n}\right)_{\beta }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle
+\end{align*}
+Den letzten Term vernachlässigen wir im Folgenden als Term höherer Ordnung (Details sind im Buch von Jackson, Kap. 6.6, zu finden).
+
+Mit diesen Ergebnissen erhalten wir jetzt schlussendlich die gemittelte Stromdichte der gebundenen Ladungen,
+\begin{equation*}
+	\left\langle \vec {j}_{\mathrm{b}}\left(\vec {r},t\right)\right\rangle =\sum _{n}\left\langle \vec {j}_{n}\left(\vec {r},t\right)\right\rangle =j_{\mathrm{M}}\left(\vec {r},t\right)+\frac{\partial }{\partial t}\vec {P}\left(\vec {r},t\right)+\nabla \times \vec {M}\left(\vec {r},t\right)
+\end{equation*}
+mit der Stromdichte der gebundenen Ladungen
+\begin{equation*}
+	\vec {j}_{\mathrm{M}}\left(\vec {r},t\right)=\left\langle \sum _{n}q_{n}\vec {v}_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle ,
+\end{equation*}
+der makroskopischen Polarisation
+\begin{equation*}
+	\vec {P}\left(r,t\right)=\left\langle \sum _{n}\vec {p}_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle
+\end{equation*}
+und der neu eingeführten Magnetisierung (Dichte der magnetischen Dipole)
+\begin{equation*}
+	\vec {M}\left(\vec {r},t\right)=\left\langle \sum _{n}\vec {m}_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle .
+\end{equation*}
+Daraus ergibt sich die die gemittelte Stromdichte als Summe der makroskopischen und mikroskopischen Stromdichte,
+\begin{equation*}
+	\left\langle \vec {j}\left(\vec {r},t\right)\right\rangle =\left\langle \vec {j}_{\mathrm{f}}\left(\vec {r},t\right)\right\rangle +\left\langle \vec {j}_{\mathrm{b}}\left(\vec {r},t\right)\right\rangle =\underset{\vec {j}_{\mathrm{Ma}}}{\underbrace{\vec {j}_{\mathrm{F}}\left(\vec {r},t\right)+\vec {j}_{\mathrm{M}}\left(\vec {r},t\right)}}+\underset{\vec {j}_{\mathrm{Mi}}\left(\vec {r},t\right)}{\underbrace{\frac{\partial }{\partial t}\vec {P}\left(\vec {r},t\right)+\nabla \times \vec {M}\left(\vec {r},t\right)}}
+\end{equation*}
+und wir können die makroskopischen Feldgleichungen formulieren:
+\begin{align*}
+	\divg \vec {B}&=0 \\
+	\rot \vec {B}&=\mu _{0}\left(\vec {j}_{\mathrm{Ma}}\left(\vec {r},t\right)+\vec {j}_{\mathrm{Mi}}\left(\vec {r},t\right)+\varepsilon _{0}\frac{\partial }{\partial t}\vec {E}\left(\vec {r},t\right)\right)\\
+	&=\mu _{0}\left(\vec {j}_{\mathrm{Ma}}\left(\vec {r},t\right)+\frac{\partial }{\partial t}\vec {D}\left(\vec {r},t\right)+\nabla \times \vec {M}\left(\vec {r},t\right)\right)
+\end{align*}
+Nun führen wir noch das magnetische Feld $\vec {H}$ ein,
+\begin{equation*} 
+	\vec {H}\left(\vec {r},t\right)=\frac{1}{\mu _{0}}\vec {B}\left(\vec {r},t\right)-M\left(\vec {r},t\right)\equivalence \vec {B}\left(\vec {r},t\right)=\mu _{0}\left(H\left(\vec {r},t\right)+M\left(\vec {r},t\right)\right)
+\end{equation*}
+Die Magnetisierung $\vec {M}$ wird also wieder in ein Hilfsfeld integriert, was einen einfacheren Ausdruck für die zweite Feldgleichung erlaubt:
+\begin{equation*}
+	\boxed{\rot \vec {H}=\vec {j}_{\mathrm{Ma}}+\frac{\partial }{\partial t}\vec {D}}
+\end{equation*}
+
+\begin{formal}
+		Die Wirbel des Magnetfelds $\vec {H}$ sind die makroskopische Stromdichte $\vec {j}_{\mathrm{Ma}}$ und der dielektrische Verschiebungsstrom $\partial _{t}\vec {D}$.
+\end{formal}
+
+Das fundamentale magnetische Feld ist die magnetische Flussdichte $\vec {B}$.
 
 

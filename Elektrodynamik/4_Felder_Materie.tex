@@ -5,7 +5,7 @@
 
 In diesem Kapitel werden die makroskopischen Gleichungen der Elektrostatik in Materie beschrieben und erläutert.
 
-\section{Mikroskopische Gleichungen der Elektrostatik und Mittelung}
+\section{Mikroskopische Gleichungen der Elektrostatik und Mittelung\label{sec:mikroskopische_gleichungen_der_elektrostatik}}
 
 Bis jetzt haben wir nur freie Ladungen betrachtet. Die Ladungsdichte $\rho \left(\vec {r}\right)$ erzeugt ein elektrisches Feld $\vec {E}(\vec r)$. In Materie sind zusätzlich auch gebundene Ladungen vorhanden, die mit dem Feld wechselwirken. Das können (nach außen hin elektrisch neutrale) Atome, geladenen Ionen, permanente Dipole (oder Multipole) sein (z.B. $\mathrm{H}_{2}\mathrm{O}$), sowie Dipole sein, die durch ein äußeres elektrisches Feld induziert werden.
 
@@ -126,7 +126,7 @@ Mit der Dipoldichte $n=N/V$ lässt sich die Polarisation schreiben als
 \end{equation*}
 Polarisation kann in einem Medium auftreten als permanente, ausgerichtete Dipole (in ferroelektrischen Materialien), die durch die Kristallstruktur bedingt sind, als induzierte Polarisation durch Ausrichtung von ungeordneten permanenten Dipolen gegen die thermische Bewegung oder durch Verschiebung von Ladungen innerhalb des Mediums (typisch für Dielektrika).
 
-\section{Randbedingungen von Dielektrika und Anwendungen}
+\section{Randbedingungen von Dielektrika und Anwendungen\label{sec:randbedingungen_von_dielektrika}}
 
 \subsection{Randbedingungen und Polarisationsladung}
 
@@ -289,9 +289,7 @@ Die zweite Komponente lässt sich sofort bestimmen, da es genau dem Entelektrisi
 
 Damit kann die Polarisation über die Dipoldichte $n$ ausgerechnet werden:
 \begin{equation*}
-	\begin{array}{rr}
-		\vec {P} & =n\vec {p}=\varepsilon _{0}n\alpha \vec {E}_{\mathrm{loc}}=\varepsilon _{0}n\alpha \left(\vec {E}+\frac{1}{3\varepsilon _{0}}\vec {P}\right)
-	\end{array}
+	\vec {P} =n\vec {p}=\varepsilon _{0}n\alpha \vec {E}_{\mathrm{loc}}=\varepsilon _{0}n\alpha \left(\vec {E}+\frac{1}{3\varepsilon _{0}}\vec {P}\right)
 \end{equation*}
 Diese Gleichung kann umgestellt und mit $\vec {P}=\varepsilon _{0}\chi \vec {E}$ verglichen werden, sodass man
 \begin{equation*}
@@ -309,7 +307,7 @@ die eine nichtlineare Beziehung zwischen $\varepsilon _{r}$ und $\alpha $ beschr
 
 Für Gase ($n\alpha \ll 1$) ist
 \begin{equation*}
-	\chi =n\alpha \Rightarrow \varepsilon _{r}=1+n\alpha ,
+	\chi =n\alpha \implication \varepsilon _{r}=1+n\alpha ,
 \end{equation*}
 die Beziehung wird also linear aufgrund der Vernachlässigung des Lorentzfeldes $\vec {E}_{\sigma }$. In allgemeinen (nicht kubischen) Kristallen spielen die Beiträge von $\vec {E}_{\mathrm{dip}}$ allerdings eine Rolle.
 
@@ -325,13 +323,13 @@ Die Berechnung erfolgt analog zu der im Vakuum. Die Änderung von $U$ durch Hinz
 \begin{equation*}
 	\delta U=\int _{V}\diff ^{3}\vec {r}\phi \left(\vec {r}\right)\delta \rho \left(\vec {r}\right).
 \end{equation*}
-Mit $\nabla \cdot \vec {D}=\rho \Rightarrow \delta \rho =\nabla \cdot \delta \vec {D}$ und partieller Integration folgt
+Mit $\nabla \cdot \vec {D}=\rho \implication \delta \rho =\nabla \cdot \delta \vec {D}$ und partieller Integration folgt
 \begin{equation*}
 	\delta U=\int _{V}\diff ^{3}\vec {r}\phi \left(\vec {r}\right)\nabla \cdot \delta \vec {D}=\int _{\partial V}\phi \left(\vec {r}\right)\delta \vec {D}\cdot \diff \vec {S}-\int _{V}\diff ^{3}\vec {r}\nabla \phi \left(\vec {r}\right)\delta \vec {D}=\int \diff ^{3}\vec {r}\vec {E}\left(\vec {r}\right)\cdot \delta \vec {D}.
 \end{equation*}
 Das Volumen kann so gewählt werden, dass das Dielektrikum gänzlich innerhalb liegt, sodass der Oberflächenterm bei der partiellen Integration verschwindet.
 
-Im linearen Dielektrikum, $\vec {D}=\varepsilon _{0}\varepsilon _{r}\vec {E}\Rightarrow \vec {E}\cdot \delta \vec {D}=\frac{1}{2}\delta \left(\vec {E}\cdot \vec {D}\right)$, erhält man durch Integration (Einbringen der ganzen Ladungsdichte $\rho _{\mathrm{Ma}}$ in das Medium)\footnote{Diese Gleichung hat dieselbe Form wie die im Vakuum, nur dass jetzt die makroskopische Ladungsdichte $\rho _{\mathrm{Ma}}$ als Summe der gemittelten freien Ladungsdichte und Monopoldichte eingesetzt wird. }
+Im linearen Dielektrikum, $\vec {D}=\varepsilon _{0}\varepsilon _{r}\vec {E}\implication \vec {E}\cdot \delta \vec {D}=\frac{1}{2}\delta \left(\vec {E}\cdot \vec {D}\right)$, erhält man durch Integration (Einbringen der ganzen Ladungsdichte $\rho _{\mathrm{Ma}}$ in das Medium)\footnote{Diese Gleichung hat dieselbe Form wie die im Vakuum, nur dass jetzt die makroskopische Ladungsdichte $\rho _{\mathrm{Ma}}$ als Summe der gemittelten freien Ladungsdichte und Monopoldichte eingesetzt wird. }
 \begin{equation*}
 	U_{\text{Selbst}}=\frac{1}{2}\int \diff ^{3}\vec {r}\vec {E}\cdot \vec {D}=\frac{1}{2}\int \diff ^{3}\vec {r}\rho _{\mathrm{Ma}}\left(\vec {r}\right)\phi \left(\vec {r}\right)
 \end{equation*}

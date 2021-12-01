@@ -119,7 +119,7 @@ Mit $\vec {D}=\varepsilon _{0}\vec {E}$ im Vakuum kann man das Gaußsche Gesetz 
 \end{equation}
 Zu beiden Feldgleichungen gibt es integrale Formulierungen:
 \begin{equation*}
-	\int _{V}\diff ^{3}\vec r\divg \vec {E}=\int _{\partial V}\vec {E}\cdot \diff \vec {f}=\frac{1}{\varepsilon _{0}}\int \diff ^{3}\vec r\rho \left(\vec {r}\right)\Rightarrow \boxed{\int _{\partial V}\vec {E}\cdot \diff \vec f=\frac{1}{\varepsilon _{0}}Q}
+	\int _{V}\diff ^{3}\vec r\divg \vec {E}=\int _{\partial V}\vec {E}\cdot \diff \vec {f}=\frac{1}{\varepsilon _{0}}\int \diff ^{3}\vec r\rho \left(\vec {r}\right)\implication \boxed{\int _{\partial V}\vec {E}\cdot \diff \vec f=\frac{1}{\varepsilon _{0}}Q}
 \end{equation*}
 \begin{formal}
     Der Fluss aus einem Volumen $V$ heraus ist proportional zu der Gesamtladung. Die elektrische Ladungsdichte ist die Quelle des elektrischen Feldes. 
@@ -247,14 +247,14 @@ Auf der homogen geladenen Kugel $V_{r}$ ist die Ladungsdichte $\rho \left(\vec {
 
 Feld und Potential können zum Beispiel über das Gaußsche Gesetz berechnet werden:
 \begin{align*}
-		\int _{{V_{r}}}\diff ^{3}r'\frac{\rho \left(r\right)}{\varepsilon _{0}}&=\int _{{V_{r}}}\diff ^{3}r'\divg \vec {E}=\int _{\partial {V_{r}}}\vec {E}\cdot \diff \vec {f}\Rightarrow 4\pi r^{2}E\left(r\right)=\frac{1}{\varepsilon _{0}}\int _{0}^{r}\diff r'r'^{2}\rho \left(r'\right) \\
-		\Rightarrow E\left(r\right)&=\frac{Q}{4\pi \varepsilon _{0}}
-		\begin{cases} \frac{r}{R^{2}}, & r<R     \\
-              \frac{1}{r^{2}}, & r\geq R
-		\end{cases} \quad\xrightarrow{\text{Integration}}\quad \phi \left(r\right)=\frac{Q}{4\pi \varepsilon _{0}}
-		\begin{cases} \frac{1}{R}\left(\frac{3}{2}-\frac{r^{2}}{2R^{2}}\right), & r<R     \\
-              \frac{1}{r},  & r\geq R
-		\end{cases}
+	\int _{{V_{r}}}\diff ^{3}r'\frac{\rho \left(r\right)}{\varepsilon _{0}}&=\int _{{V_{r}}}\diff ^{3}r'\divg \vec {E}=\int _{\partial {V_{r}}}\vec {E}\cdot \diff \vec {f}\implication 4\pi r^{2}E\left(r\right)=\frac{1}{\varepsilon _{0}}\int _{0}^{r}\diff r'r'^{2}\rho \left(r'\right) \\
+	\Rightarrow E\left(r\right)&=\frac{Q}{4\pi \varepsilon _{0}}
+	\begin{cases} \frac{r}{R^{2}}, & r<R     \\
+          \frac{1}{r^{2}}, & r\geq R
+	\end{cases} \quad\xrightarrow{\text{Integration}}\quad \phi \left(r\right)=\frac{Q}{4\pi \varepsilon _{0}}
+	\begin{cases} \frac{1}{R}\left(\frac{3}{2}-\frac{r^{2}}{2R^{2}}\right), & r<R     \\
+          \frac{1}{r},  & r\geq R
+	\end{cases}
 \end{align*}
 Beide Größen sind in \Abbref{fig:homogenously_charged_ball_field_potential} dargestellt. Bemerkenswert ist, dass für $r\geq R$ das elektrische Feld $\vec {E}\left(\vec {r}\right)=E\left(r\right)\cdot \vec {e}_{r}$ gerade dem Feld einer Punktladung $Q$ im Mittelpunkt der Kugel entspricht.
 
@@ -270,7 +270,7 @@ Daraus ergibt sich die elektrostatische Energie ("`Selbstenergie`` einer homogen
 \end{equation*}
 Diese Rechnung lässt über die Ruheenergie eines Elektrons eine Abschätzung für den Elektronenradius zu (sogenannter klassischer Elektronenradius):
 \begin{equation*}
-	U\overset{!}{=} m_{e}c^{2}\approx \SI{0.5}{\mega\eV}\Rightarrow R_{e}= \SI{1,7e-15}{\m}
+	U\overset{!}{=} m_{e}c^{2}\approx \SI{0.5}{\mega\eV}\implication R_{e}= \SI{1,7e-15}{\m}
 \end{equation*}
 Allerdings liegt die Compton-Wellenlänge $\lambda _{e}=\frac{h}{m_{e}c}=\SI{2e-12}{\m}$ schon weit über diesem Radius, sodass Quanteneffekte hier nicht vernachlässigbar sind.
 
@@ -604,10 +604,10 @@ Diese wird minimal für $\vec {p}_{1}\parallel \vec {p}_{2}\parallel \vec {r}$ u
 
 Zuletzt sollen noch Drehmomente auf Multipole diskutiert werden.
 \begin{align*}
-		\vec {M}          & =\int \diff ^{3}\vec {r}\vec {r}\times \underset{\text{Kraftdichte}}{\underbrace{\rho \left(\vec {r}\right)\vec {E}_{e}\left(\vec {r}\right)}}\Rightarrow M_{i}=\int \diff ^{3}\vec {r}\varepsilon _{ijk}x_{j}\rho \left(\vec {r}\right)\underset{\approx E_{e}^{\left(k\right)}\left(0\right)+x_{l}\nabla _{l}E_{e}^{\left(k\right)}\left(0\right)}{\underbrace{E_{e}^{\left(k\right)}\left(\vec {r}\right)}} \\
-		\Rightarrow M_{i} & =\left(\vec {p}\times \vec {E}_{e}\right)_{i}+\frac{1}{3}\varepsilon _{ijk}Q_{jl}\nabla _{l}E_{e}^{\left(k\right)}
+		\vec {M}          & =\int \diff ^{3}\vec {r}\vec {r}\times \underset{\text{Kraftdichte}}{\underbrace{\rho \left(\vec {r}\right)\vec {E}_{e}\left(\vec {r}\right)}}\implication M_{i}=\int \diff ^{3}\vec {r}\varepsilon _{ijk}x_{j}\rho \left(\vec {r}\right)\underset{\approx E_{e}^{\left(k\right)}\left(0\right)+x_{l}\nabla _{l}E_{e}^{\left(k\right)}\left(0\right)}{\underbrace{E_{e}^{\left(k\right)}\left(\vec {r}\right)}} \\
+		\implication M_{i} & =\left(\vec {p}\times \vec {E}_{e}\right)_{i}+\frac{1}{3}\varepsilon _{ijk}Q_{jl}\nabla _{l}E_{e}^{\left(k\right)}
 \end{align*}
 Insbesondere dreht das Drehmoment $\vec {M}$ einen Dipol parallel zu $\vec {E}$, da $\vec {M}=0$ für $\vec {p}\parallel \vec {E}_{e}$ und
 \begin{equation*}
-	U=-\vec {p}\cdot \vec {E}_{e}=-pE_{e}\cos \vartheta \Rightarrow M=-\frac{\partial U}{\partial \vartheta }=-pE_{e}\sin \vartheta =-\left| \vec {p}\times \vec {E}_{e}\right| .
+	U=-\vec {p}\cdot \vec {E}_{e}=-pE_{e}\cos \vartheta \implication M=-\frac{\partial U}{\partial \vartheta }=-pE_{e}\sin \vartheta =-\left| \vec {p}\times \vec {E}_{e}\right| .
 \end{equation*}
