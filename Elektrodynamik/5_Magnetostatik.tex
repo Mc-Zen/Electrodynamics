@@ -87,10 +87,10 @@ Wir untersuchen zunächst die magnetische Flussdichte einiger speziellen geometr
 Dieser Zusammenhang ist als Biot-Savartsches Gesetz für Leiter bekannt und ergibt sich aus den Betrachtungen $\left| \diff \vec {B}\right| \propto I\left| \diff \vec {r}'\right| , \left| \vec {r}-\vec {r}'\right| ^{-2}$ und $\diff \vec {B}\perp \diff \vec {r}',\vec {r}-\vec {r}'$. Hier wird außerdem die magnetische Feldkonstante $\mu _{0}\approx 4\pi \cdot 10^{-7}\,\si{\newton\per\square\ampere}$ eingeführt\footnote{Über die Kraft zwischen zwei stromdurchflossene parallele Leiter wurde früher die Einheit Ampère definiert und dabei festgelegt, dass $\frac{\mu _{0}}{4\pi }=\SI{1e-7}{\newton\per\square\ampere}$, aber die magnetische Feldkonstante wurde 2019 umdefiniert auf Basis der Elementarladung und Sekunde, wobei aber die Abweichung extrem gering ist. Damit ist die magnetische Feldkonstante eine experimentell zu ermittelnde Größe geworden. }. Die Flussdichte ist zwar proportional zu $r^{-2}$ wie beim elektrischen Feld einer Punktladung, aber im Gegensatz können isolierte Stromelemente $I\diff \vec {r}$ nicht existieren.
 
 Für das Feld eines unendlich langen, geraden Leiters gilt
-\begin{equation*}
+\begin{equation}
     \label{eq:biot_savart}
 	B\left(\rho \right)=\frac{\mu _{0}}{4\pi }I\rho \int _{-\infty }^{\infty }\frac{\diff z}{\left(\rho ^{2}+z^{2}\right)^{\frac{3}{2}}}=\frac{\mu _{0}}{4\pi }\frac{I}{\rho },
-\end{equation*}
+\end{equation}
 
 
 \begin{figure}[htb]
@@ -153,11 +153,11 @@ Die Divergenz von $\vec {B}$ verschwindet, weil stets gilt, dass $\nabla\cdot(\n
 \end{formal}
 In der integralen Formulierung,
 \begin{equation*}
-	\int _{V}\divg \vec {B}\,\diff ^{3}\vec {r}=\int _{V}\vec {B}\cdot \diff \vec {f}=0,
+	\int _{V}\divg \vec {B}\,\diff ^{3}\vec {r}=\int _{\partial V}\vec {B}\cdot \diff \vec {f}=0,
 \end{equation*}
 bedeutet das, dass die magnetischen Feldlinien geschlossen sind. Es gibt folglich keine magnetischen Ladungen, wo die Feldlinien beginnen oder enden.
 
-Für die Rotation der elektrischen Flussdichte gilt
+Für die Rotation der magnetischen Flussdichte gilt
 \begin{align}
 \begin{split}
     \label{eq:durchflutungsgesetz_magnetostatik}
@@ -224,9 +224,11 @@ und im Potential $\vec {A}\left(\vec {r}\right)$ findet sich wieder eine Greensc
 \begin{equation*}
 	\vec {A}\left(\vec {r}\right)=\int \diff ^{3}\vec {r}'G\left(\vec {r}-\vec {r}'\right)\vec {j}\left(\vec {r}'\right),\quad G\left(\vec {r}-\vec {r}'\right)=\frac{\mu _{0}}{4\pi }\frac{1}{\left| \vec {r}-\vec {r}'\right| }.
 \end{equation*}
-\section{Kleine Stromverteilungen: Der magnetische Dipol\label{mark-5.4}}
 
-\subsection{Felder kleiner Stromverteilungen\label{mark-5.4.1}}
+
+\section{Kleine Stromverteilungen: Der magnetische Dipol}
+
+\subsection{Felder kleiner Stromverteilungen}
 
 Wir führen zunächst wieder eine Entwicklung des magnetischen Potentials nach Momenten der Stromverteilung durch:
 \begin{equation}
@@ -244,13 +246,13 @@ Ferner können wir zeigen\footnote{Beweis: Mit der vorigen Formel $\int \vec {j}
 \end{equation*}
 es also keine Strommonopole in $\vec {A}\left(\vec {r}\right)$ gibt. Als letzte Vorbereitung werten wir den zweiten Term in Gleichung \eqref{eq:entwicklung_magn_potential} aus
 \begin{equation*}
-	\vec {r}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diff ^{3}\vec {r}'x_{i}^{'}j_{k}\left(\vec {r}'\right).
+	\vec {r}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diff ^{3}\vec {r}'x_{i}'j_{k}\left(\vec {r}'\right).
 \end{equation*}
-Das Produkt $T=x_{i}^{'}j_{k}$ ist ein Tensor zweiter Stufe und lässt sich zerlegen in einen symmetrischen und einen antisymmetrischen Teil, $T_{ik}=\frac{1}{2}\left(T_{ik}+T_{ki}\right)+\frac{1}{2}\left(T_{ik}-T_{ki}\right)$, also
+Das Produkt $T=x_{i}'j_{k}$ ist ein Tensor zweiter Stufe und lässt sich zerlegen in einen symmetrischen und einen antisymmetrischen Teil, $T_{ik}=\frac{1}{2}\left(T_{ik}+T_{ki}\right)+\frac{1}{2}\left(T_{ik}-T_{ki}\right)$, also
 \begin{equation*}
-	\vec {r}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diff ^{3}\vec {r}'\left(\frac{1}{2}\left(x_{i}^{'}j_{k}+x_{k}^{'}j_{i}\right)+\frac{1}{2}\left(x_{i}^{'}j_{k}-x_{k}^{'}j_{i}\right)\right).
+	\vec {r}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diff ^{3}\vec {r}'\left(\frac{1}{2}\left(x_{i}'j_{k}+x_{k}'j_{i}\right)+\frac{1}{2}\left(x_{i}'j_{k}-x_{k}'j_{i}\right)\right).
 \end{equation*}
-Der erste Summand im Integranden (symmetrischer Teil des Tensors) verschwindet nach dem Hilfssatz \eqref{eq:hilfssatz} mit $g=x_{i}^{'},f=x_{k}^{'}$ und der zweite wird zu
+Der erste Summand im Integranden (symmetrischer Teil des Tensors) verschwindet nach dem Hilfssatz \eqref{eq:hilfssatz} mit $g=x_{i}',f=x_{k}'$ und der zweite wird zu
 \begin{equation*}
 	\frac{1}{2}\int \diff ^{3}\vec {r}'\left(\left(\vec {r}\cdot \vec {r}'\right)\vec {j}-\left(\vec {r}\cdot \vec {j}\right)\vec {r}'\right)=\frac{1}{2}\int \diff ^{3}\vec {r}'\left(\vec {r}'\times \vec {j}\right)\times \vec {r}
 \end{equation*}
@@ -311,7 +313,7 @@ mit einem zusätzlichen Landé-Faktor (oder g-Faktor), dessen Wert von der Teilc
 
 Auch die Erde ist ein magnetischer Dipol, der durch Ströme im flüssigen äußeren Erdkern angetrieben wird. Bemerkenswerterweise ist die Dipolachse leicht gegen die Erdachse geneigt und die Polarität dreht sich rund alle 200.000 Jahre um. Der Mechanismus ist allerdings bis heute nicht genau verstanden.
 
-\subsection{Kraft, Drehmoment und Energie\label{mark-5.4.2}}
+\subsection{Kraft, Drehmoment und Energie}
 
 Die bereits bekannte Kraft auf ein Volumen $V$ mit Stromverteilung $\vec {j}\left(\vec {r}\right)$
 \begin{equation*}
@@ -325,7 +327,8 @@ Die potentielle Energie eines Dipols $\vec {m}$ im magnetischen Feld $\vec {B}$ 
 \begin{equation*}
 	F=-\nabla U\implication U=-\vec {m}\cdot \vec {B}.
 \end{equation*}
-Das Minimum wird für $\vec {m}\upuparrows \vec {B}$ erreicht\footnote{vgl. Funktionsweise von einem Kompass. }. $U$ enthält aber nicht die Energie um den Dipol $\vec {m}$ aufrechtzuerhalten!
+
+Das Minimum wird für $\vec {m} \upupharpoons \vec {B}$ erreicht\footnote{vgl. Funktionsweise von einem Kompass. }. $U$ enthält aber nicht die Energie um den Dipol $\vec {m}$ aufrechtzuerhalten!
 
 Das Drehmoment hat die gleiche Form wie für elektrische Dipole,
 \begin{equation*}
@@ -342,7 +345,7 @@ und auch die Wechselwirkungsenergie für einen Dipol im Feld eines zweiten Dipol
 
 Nun behandeln wir magnetische Felder in Materie. Die Vorgehensweise erfolgt analog zu den Kapiteln \ref{sec:mikroskopische_gleichungen_der_elektrostatik} und \ref{sec:Makroskopische_Gleichungen_der_Elektrostatik}. Die freien Ladungen bilden freie Ströme $j_{\mathrm{f}}\left(\vec {r},t\right)$ und gebundene Ladungen fügen jetzt noch gebundene Ströme hinzu $\vec {j}_{\mathrm{b}}\left(\vec {r},t\right)$. Außerdem werden auch magnetische Dipole durch den intrinsischen Spin der Teilchen hinzuaddiert. Die letzten beiden Quellen werden dann gemittelt über eine neue Größe beschrieben: die Magnetisierung.
 
-\subsection{Einführung der Vakuumsverschiebungsstromdichte}
+\subsection{Einführung der Vakuumverschiebungsstromdichte}
 
 In der Magnetostatik haben wir bisher nur
 \begin{equation*}
@@ -455,3 +458,324 @@ Die Magnetisierung $\vec {M}$ wird also wieder in ein Hilfsfeld integriert, was 
 Das fundamentale magnetische Feld ist die magnetische Flussdichte $\vec {B}$.
 
 
+\subsection{Materialgesetze und Randbedingungen}
+
+Wir haben bereits gesehen, dass die Felder $\vec {B}$ und $\vec {H}$ über die Magnetisierung in Beziehung stehen:
+\begin{equation*}
+	\vec {H}=\frac{1}{\mu _{0}}\vec {B}-\vec {M}.
+\end{equation*}
+Für den Fall, dass die Magnetisierung linear vom Magnetfeld abhängt, führen wir den (linearen) Tensor der magnetischen Suszeptibilität ein,
+\begin{equation*}
+	M_{i}=\left(\chi _{m}\right)_{ij}H_{j}.
+\end{equation*}
+Nur wegen der historischen Konvention drücken wir die Magnetisierung als $\vec {M}\left(\vec {H}\right)$ aus und nicht (sinnvollererweise) als $\vec {M}\left(\vec {B}\right)$. Wir schreiben dann also
+\begin{equation*}
+	\vec {B}=\mu \vec {H}, \mu =\mu _{0}\left(1+\chi _{m}\right)
+\end{equation*}
+mit dem Tensor der magnetischen Permeabilität $\mu $. Im Allgemeinen ist $\vec {M}\nparallel \vec {H}$.
+
+Sind die Magnetfelder sogar isotrop, kann man einfach schreiben:
+\begin{equation*}
+	\vec {M}=\chi _{m}\vec {H}, \vec {B}=\mu \vec {H}=\mu _{0}\left(1+\chi _{m}\right)\vec {H}
+\end{equation*}
+und
+\begin{equation*}
+	\mu =\mu _{0}\left(1+\chi _{m}\right)\equiv \mu _{0}\mu _{r}.
+\end{equation*}
+Die dimensionslose Größe $\mu _{r}$ wird als relative Permeabilität bezeichnet.
+
+Bemerkungen:
+\begin{itemize}
+	\item $\left| \mu _{r}-1\right| $ ist in der Regel in Größenordnungen von $10^{-6}$, also sehr klein.
+
+	\item Bei $\mu _{r}>1$ bzw. $\chi >0$ liegt Paramagnetismus vor, $\vec {M}\parallel \vec {H}$, das heißt, die Ausrichtung der atomaren oder molekularen magnetischen Momente ist entlang $\vec {H}$.
+
+	\item Für $\mu _{r}<1$ bzw. $\chi <0$ spricht man von Diamagnetismus, $\vec {M}\updownharpoons \vec {H}$.
+\end{itemize}
+
+
+Bei Ferromagnetismus gibt es eine permanente Magnetisierung, auch wenn kein Magnetfeld anliegt. Der Zusammenhang zwischen der magnetischen Flussdichte $\vec {B}$ und dem Magnetfeld $\vec {H}$ ist hier nicht linear, wie man an der sogenannten Hysteresekurve (siehe \Abbref{fig:hysterese}) sieht.
+
+\begin{figure}
+    \centering
+    \tfighysterese
+    \caption{Magnetische Hysterese: An ein zuerst unmagnetisches Material wird ein Feld $H$ angelegt und erhöht. Der Verlauf der magnetischen Flussdichte folgt der Kurve (1) und erreicht schließlich einen Sättigungswert $B_\mathrm{S}$ bei $H_\mathrm{S}$. Wird das Feld auf 0 verringert (Kurve (2)) bleibt eine Magnetisierung zurück (Remanenz). Ein entgegengesetztes Feld von der Stärke der Koerzitivfeldstärke $H_\mathrm{C}$ ist nötig, um die Restmagnetisierung aufzuheben. Jenseits dieser Feldstärke wird die Magnetisierung umgedreht und die Hysteresekurve umgekert durchlaufen. }
+    \label{fig:hysterese}
+\end{figure}
+Zuerst ist das Material unmagnetisch (Punkt im Ursprung). Legt man nun ein Magnetfeld an und erhöht die Feldstärke, erhöht sich der magnetische Fluss im Material entlang der Kurve (1). Dieser wächst aber nicht unbegrenzt, da es schließlich zur Sättigung kommt. Die zugehörige Feldstärke heißt entsprechend Sättigungsfeldstärke $H_{\mathrm{S}}$ und $B_{\mathrm{S}}$ Sättigungswert. Wird nun das Feld wieder verringert, sinkt auch die Flussdichte entlang Kurve (2). Allerdings fällt $B$ nicht bis auf $0$ ab, sondern erreicht den Wert $B_{\mathrm{R}}$, die Remanenzflussdichte. Die Flussdichte fällt erst auf $0$, wenn eine gegengerichtete Koerzitivfeldstärke $H_{\mathrm{C}}$ angelegt wird.
+
+Wir diskutieren nun die Randbedingungen, die im Wesentlichen die gleichen wie in der Elektrostatik sind.
+
+An der Grenzfläche muss die Normalkomponente von $\vec {B}$ stetig sein, da
+\begin{equation*}
+	\divg \vec {B}=0\xrightarrow[\text{Satz von Gau\ss }]{\text{Dose},\: \Delta  h\rightarrow 0}\hat{\vec {n}}\cdot \left(\vec {B}^{\left(2\right)}-\vec {B}^{\left(1\right)}\right)=0\equivalence B_{\perp }^{\left(1\right)}=B_{\perp }^{\left(2\right)}.
+\end{equation*}
+Insbesondere ist für ein lineares, isotropes Material auch
+\begin{equation*}
+	\mu _{1}H_{\perp }^{\left(1\right)}=\mu _{2}H_{\perp }^{\left(2\right)}.
+\end{equation*}
+Für die Tangentialkomponente von $\vec {H}$ gilt:
+\begin{align*}
+	\rot \vec {H}&=\vec {j}_{\mathrm{Ma}}+\frac{\partial \vec {D}}{\partial t}\xrightarrow{\text{Schleife}} \int \rot \vec {H}\cdot \diff \vec {f}=\int \vec {H}\cdot \diff \vec {s}=\int \left(\vec {j}_{\mathrm{Ma}}+\frac{\partial \vec {D}}{\partial t}\right)\cdot \hat{\vec {m}}\diff \vec f \\
+	&\xrightarrow{\Delta  h\rightarrow 0}\hat{\vec {t}}\cdot \left(\vec {H}^{\left(2\right)}-\vec {H}^{\left(1\right)}\right)=H_{\parallel }^{\left(2\right)}-H_{\parallel }^{\left(1\right)}=\vec {k}\cdot \hat{\vec {m}}
+\end{align*}
+mit einem Flächenstrom $\vec {k}$, der noch in der Grenzfläche fließen kann.
+
+Ist das zweite Material sehr leicht magnetisierbar, also $\mu _{2}$ sehr groß gegenüber $\mu _{1}$ und $H^{\left(1\right)}\approx 0$, also $\vec {H}^{\left(1\right)}$ orthogonal auf der Grenzfläche, dann kann das Feld nicht in das zweite Material eindringen und das letztere verhält sich wie ein elektrischer Leiter, dessen Oberfläche eine Äquipotentialfläche ist.
+
+\subsection{Magnetische Skalarpotentiale und ihre Anwendungen}
+
+In der Magnetostatik ist wie wir gesehen haben $\nabla \cdot \vec {B}=0$ und $\nabla \times \vec {H}=\vec {j}$.
+\begin{itemize}
+	\item Für ein homogenes, lineares Medium ohne Ströme ist $\nabla \times \vec {H}=0$ und wir können $\vec {H}$ als Potentialfeld eines magnetischen Skalarpotentials $\phi _{m}$ schreiben
+	      \begin{equation*}
+		      \vec {H}=-\nabla \phi _{m}
+	      \end{equation*}
+	      und mit $\vec {B}=\mu \vec {H}$ und $\nabla \cdot \vec {B}=0$ erhalten wir eine Laplace-Gleichung
+	      \begin{equation*}
+		      \nabla ^{2}\phi _{m}=0.
+	      \end{equation*}
+	      Für eine Stromschleife gilt zum Beispiel
+	      \begin{equation*}
+		      \phi _{m}\left(P\right)=-\frac{I\Omega  }{4\pi }.
+	      \end{equation*}
+	\item In einem harten Ferromagneten ist $\vec {M}$ vorgegeben und $\vec {j}=0$. Dann ist
+	      \begin{equation*}
+		      \nabla \cdot \vec {B}=\mu _{0}\nabla \cdot \left(\vec {H}+\vec {M}\right)=0,\quad \vec {H}=-\nabla \phi _{m}
+	      \end{equation*}
+	      und folglich
+	      \begin{equation*}
+		      \nabla ^{2}\phi _{m}=-\rho _{m},\quad \rho _{m}=-\nabla \cdot \vec {M}.
+	      \end{equation*}
+	      In einem Ferromagneten gilt also eine Poisson-Gleichung mit einer effektiven magnetischen Ladungsdichte $\rho _{m}$. Ohne Randflächen ist die Lösung einfach
+	      \begin{equation*}
+		      \phi _{m}=-\frac{1}{4\pi }\int \frac{\nabla '\cdot \vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
+	      \end{equation*}
+	      und mit partieller Integration
+	      \begin{equation*}
+		      \phi _{m}=-\frac{1}{4\pi }\nabla \cdot \int \frac{\vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'.
+	      \end{equation*}
+	      Führt man eine Fernfeldentwicklung durch, $1/\left| \vec {r}-\vec {r}'\right| \approx 1/r$ und berücksichtigt nur den ersten Term, so erhält man
+	      \begin{equation*}
+		      \phi _{m}\left(\vec {r}\right)=-\frac{1}{4\pi }\nabla \left(\frac{1}{r}\right)\cdot \int \vec {M}\left(\vec {r}'\right)\diff ^{3}\vec {r}'=\frac{1}{4\pi }\frac{\vec {m}\cdot \vec {r}}{r^{3}},
+	      \end{equation*}
+	      also ein Dipolfeld. Mit Randflächen ist
+	      \begin{equation*}
+		      \phi _{m}\left(\vec {r}\right)=-\frac{1}{4\pi }\int _{V}\frac{\nabla '\cdot \vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'+\frac{1}{4\pi }\oint _{\partial V}\frac{\vec {n}'\cdot \vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff \vec {f}'.
+	      \end{equation*}
+	      Der Ausdruck $\vec {n}\cdot \vec {M}$ lässt sich als effektive magnetische Flächenladungsdichte $\sigma _{m}$ sehen. Ist die Magnetisierung homogen, dann ist das Potential nur von $\sigma _{m}$ abhängig.
+\end{itemize}
+Beispiele
+\begin{itemize}
+	\item Homogen magnetisierte Kugel:
+	      \begin{equation*}
+		      \phi _{m}\left(\vec {r}\right)=-\frac{1}{4\pi }\vec {M}\cdot \nabla \int _{V_{\mathrm{K}}}\frac{\diff ^{3}\vec {r}'}{\left| \vec {r}-\vec {r}'\right| }=-\frac{1}{2}\vec {M}\cdot \nabla \int _{0}^{R}\int _{-1}^{1}\frac{r'^{2}\diff r'\diff \cos \vartheta '}{\sqrt{r^{2}+r'^{2}+2rr'\cos \vartheta '}}\diff \vartheta
+	      \end{equation*}
+	      Im Inneren der Kugel ($r<R$) ist das Ergebnis
+	      \begin{equation*}
+		      \phi _{m}\left(\vec {r}\right)=\frac{1}{3}\vec {M}\cdot \vec {r}, \quad\vec {H}_{\mathrm{i}}=-\nabla \phi _{m}=-\frac{1}{3}\vec {M},\quad \vec {B}_{\mathrm{i}}=\mu _{0}\left(\vec {H}_{\mathrm{i}}+\vec {M}\right)=\frac{2}{3}\mu _{0}\vec {M},
+	      \end{equation*}
+	      also $\vec {H}_{\mathrm{i}}\updownharpoons \vec {M}\upupharpoons \vec {B}_{\mathrm{i}}$.
+
+	      Außerhalb der Kugel ist dagegen
+	      \begin{equation*}
+		      \phi _{m}\left(\vec {r}\right)=\frac{1}{4\pi }\frac{\vec {m}\cdot \vec {r}}{r^{3}},\quad \vec {m}=\frac{4}{3}\pi R^{3}\vec {M}
+	      \end{equation*}
+	      und
+	      \begin{equation*}
+		      H_{\mathrm{a}}=\frac{1}{\mu _{0}}\vec {B}_{\mathrm{a}}=-\nabla \phi _{m}
+	      \end{equation*}
+	      also wieder ein Dipolfeld. Magnetische Flussdichte und Magnetfeld sind in \textbackslash Abbref\{\} dargestellt \textendash{} im Innern der Kugel ist das Magnetfeld entgegen der magnetischen Flussdichte gerichtet. Während $\vec {B}$ ein reines Wirbelfeld ist ($\divg \vec {B}=0$), weist $\vec {H}$ einen Sprung am Kugelrand auf und besitzt damit Quellen $\sigma _{m}=\vec {n}\cdot \vec {M}$.
+
+	\item Magnetisierbare Kugel im äußeren Feld $\vec {B}_{0}$:
+
+	      Mit der Annahme, dass die Magnetisierung $\vec {M}=\left(\mu _{r}-1\right)\vec {H}_{\mathrm{i}}$ linear innerhalb des Kugelvolumens $V_{k}$ ist, erhält man durch Addition der Flussdichte $\vec {B}_{0}$
+	      \begin{equation*}
+		      \vec {B}_{\mathrm{i}}=\vec {B}_{0}+\frac{2}{3}\mu _{0}\vec {M}, \vec {H}_{\mathrm{i}}=\frac{1}{\mu _{0}}\vec {B}_{0}-\frac{1}{3}\vec {M}.
+	      \end{equation*}
+	      Ähnlich zur Elektrostatik beschreibt $-\vec {M}/3$ ein Entmagnetisierungsfeld. Mittels des linearen Materialgesetzes erhält man schließlich
+	      \begin{equation*}
+		      H_{\mathrm{i}}=\frac{1}{\mu _{0}}\frac{3}{\mu _{r}+2}\vec {B}_{0}
+	      \end{equation*}
+	      und
+	      \begin{equation*}
+		      \vec {M}=\frac{3}{\mu _{0}}\frac{\mu _{r}-1}{\mu _{r}+2}\vec {B}_{0}.
+	      \end{equation*}
+\end{itemize}
+
+Beim Magnetismus ist alles analog zur Elektrizität AUSSER überall da, wo es genau anders rum ist
+
+\section{Faradaysches Induktionsgesetz}
+
+Bisher haben wir die Elektrostatik und die Magnetostatik getrennt betrachtet. Außerdem haben wir zwar bisher keine Zeitabhängigkeiten berücksichtigt, aber z.B. bereits gesehen, dass zeitabhängige Phänomene eine Rolle spielen, wie zum Beispiel in
+\begin{equation*}
+	\rot \vec {H}=\vec {j}+\frac{\partial \vec {D}}{\partial t}.
+\end{equation*}
+Solche sind unter anderem wichtig bei elektromagnetischen Wellen, dem Auf- und Abbau von Feldern etc.
+
+\subsection{Integrale und differentielle Formulierung}
+
+Die Entdeckung des Induktionsgesetzes durch Michael Faraday beruht auf der Beobachtung, dass durch eine Leiterschleife, das einem bewegten magnetischen Feld ausgesetzt ist, ein Strom fließt.
+
+Wir betrachten im Folgenden Leiterschleifen als Randkurve $\partial F$ einer Fläche $F$ und führen zwei neue Größen ein: den magnetischen Fluss
+\begin{equation*}
+	\phi _{B}=\int _{F}\vec {B}\cdot \diff \vec {f}
+\end{equation*}
+und die elektrische Ringspannung entlang $\partial F$
+\begin{equation*}
+	Z_{E}=\int _{\partial F}\vec {E}\cdot \diff \vec {r}.
+\end{equation*}
+Die Ringspannung $Z_{E}$ bewirkt einen Stromfluss in der Schleife. Hiermit und aus den experimentellen Beobachtungen folgte ursprünglich die integrale Formulierung des Induktionsgesetzes
+\begin{equation*}
+	Z_{E}=-\frac{\diff }{\diff t}\phi _{B}\Leftrightarrow \int _{\partial F}\vec {E}\cdot \diff \vec {r}=-\frac{\diff }{\diff t}\int \vec {B}\cdot \diff \vec {f}.
+\end{equation*}
+
+\begin{formal}
+    Die zeitliche Änderung des magnetischen Flusses durch eine Leiterschleife ruft eine Ringspannung und damit einen Strom hervor.
+\end{formal}
+Die Bedeutung des negativen Vorzeichens wird mit der Lenzschen Regel erklärt:
+\begin{formal}
+	Das induzierte elektrische Feld bzw. der induzierte elektrische Strom erzeugt ein Magnetfeld, das der Ursache der magnetischen Flussänderung entgegenwirkt.
+\end{formal}
+Mit dem Satz von Stokes kann das Induktionsgesetz auch differentiell ausgedrückt werden:
+\begin{equation*}
+	\rot \vec {E}=-\frac{\partial \vec {B}}{\partial t}
+\end{equation*}
+
+\begin{formal}
+	Die Wirbel des elektrischen Feldes sind durch die Änderung der magnetischen Flussdichte bestimmt.
+\end{formal}
+
+
+\subsection{Bewegte Leiter}
+
+Bisher haben wir den Leiter festgehalten und das Magnetfeld verändert. Als nächstes soll stattdessen der Leiter bewegt werden.
+
+Wir schreiben die treibende Ringspannung wieder als
+\begin{equation}
+    \label{eq:ringspannung_ruhesystem_leiter}
+	Z_{E}=\int _{\partial F}\vec {E}'\cdot \diff \vec {r},
+\end{equation}
+aber jetzt wird das elektrische Feld im Ruhesystem des Leiters $\vec {E}'$ eingesetzt.
+
+Die Physik soll nach Einsteins Relativitätstheorie in allen Inertialsystemen gleich sein. Eine Beschreibung des Versuchs im Ruhesystem des Leiters muss dasselbe Ergebnis liefern wie im Ruhesystem des Magnetfeldes. Dazu muss die Elektrodynamik invariant unter Lorentz-Transformationen sein. Für kleine Geschwindigkeiten gehen diese Transformationen in Galilei-Transformationen (vernachlässige für diesen Zweck Translationen in Raum und Zeit) $\vec {r}'=\vec {r}-vt$ über. Im Moment werden wir uns auf diese beschränken. 
+
+Für den magnetischen Fluss, der jetzt aus dem Integral über eine veränderliche Fläche $F\left(t\right)$ hervorgeht,
+\begin{equation*}
+	\frac{\diff }{\diff t}\phi _{B}=\frac{\diff }{\diff t}\int _{F\left(t\right)}\vec {B}\left(\vec {r},t\right)\cdot \diff \vec {f},
+\end{equation*}
+führen wir daher eine Galilei-Transformation durch
+\begin{equation*}
+	\frac{\diff }{\diff t}\phi _{B}=\frac{\diff }{\diff t}\int _{F}\vec {B}\left(\vec {r}'+\vec {v}t,t\right)\cdot \diff \vec {f}=\int _{F}\frac{\diff }{\diff t}\vec {B}\left(\underset{\vec {r}}{\underbrace{\vec {r}'+\vec {v}t}},t\right)\cdot \diff \vec {f}=\int _{F}\left(\frac{\partial }{\partial t}+\frac{\diff \vec {r}}{\diff t}\cdot \nabla _{\vec {r}}\right)\vec {B}\cdot \diff \vec {f}'.
+\end{equation*}
+Den zweiten Summanden im Integral schreiben wir um zu
+\begin{equation*}
+	\frac{\diff \vec {r}}{\diff t}\cdot \nabla _{\vec {r}}\vec {B}=\vec {v}\cdot \nabla _{\vec {r}}\vec {B}=-\nabla \times \left(\vec {v}\times \vec {B}\right)+\vec {v}\left(\nabla \cdot \vec {B}\right)
+\end{equation*}
+und erhalten
+\begin{equation}
+    \label{eq:dt_magn_potential}
+	\frac{\diff }{\diff t}\phi _{B}=\int _{F}\left(\frac{\partial }{\partial t}-\nabla \times \left(\vec {v}\times \right)\right)\vec {B}\cdot \diff \vec {f}=\int _{F}\frac{\partial }{\partial t}\vec {B}\cdot \diff \vec {f}-\oint _{\partial F}\left(\vec {v}\times \vec {B}\right)\cdot \diff \vec {r}
+\end{equation}
+Diese Berechnungen wurden im Inertialsystem des Leiters durchgeführt. Nun soll zurück in das Laborsystem (Ruhesystem des Magnetfelds) transformiert werden. Wir wissen bereits, dass
+\begin{equation*}
+	Z_{e}=-\frac{\diff }{\diff t}\phi _{B}
+\end{equation*}
+gelten muss. Einsetzen der Gleichungen \eqref{eq:ringspannung_ruhesystem_leiter} und \eqref{eq:dt_magn_potential} führt auf
+\begin{equation*}
+	\int _{\partial F}\left(\vec {E}'-\vec {v}\times \vec {B}\right)\cdot \diff \vec {r}=-\int _{F}\frac{\partial }{\partial t}\vec {B}\cdot \diff \vec {f}
+\end{equation*}
+Daraus kann man das elektrische Feld im Laborsystem ablesen:
+\begin{equation*}
+	\vec {E}=\vec {E}'-\vec {v}\times \vec {B}
+\end{equation*}
+Dieses Ergebnis ist auch sinnvoll, weil $\rot \vec {E}=\partial _{t}\vec {B}$ erfüllt ist und außerdem die Lorentzkraft auf eine Ladung $q$ im Leiter
+\begin{equation*}
+	\vec {F}=q\vec {E}'=q\left(\vec {E}+\vec {v}\times \vec {B}\right)
+\end{equation*}
+ist (im Ruhesystem des Leiters bewegt sich $q$ nicht, im Laborsystem allerdings schon, und zwar mit $\vec {v}$).
+
+\section{Energie des magnetischen Feldes und Induktivität}
+
+\subsection{Energie eines statischen Magnetfeldes}
+
+Die Energie von einem statischen Magnetfeld entspricht genau der Energie, die zum Aufbau des Feldes beim Einschalten des Stroms aufgebracht werden muss. Dabei entstehen aber auch temporäre elektrische Felder, sodass die Induktion berücksichtigt werden muss.
+
+Die Arbeit pro Zeit $\diff _{t}U$, um den Strom $I$ bzw. die Stromdichte $\vec {j}$ aufrecht zu erhalten ist
+\begin{equation*}
+	\frac{\diff U}{\diff t}=-I\int _{C}\vec {E}\cdot \diff \vec {r}
+\end{equation*}
+Mit der integralen Formulierung des Induktionsgesetzes gilt also
+\begin{equation*}
+	\frac{\diff U}{\diff t}=\int _{C}\vec {E}\cdot \diff \vec {r}=I\frac{\diff }{\diff t}\int \vec {B}\cdot \diff \vec {f}
+\end{equation*}
+Damit kann man die Energiezunahme, die durch eine Änderung um $\delta \vec {B}$ bewirkt wird, schreiben als
+\begin{equation*}
+	\delta U=I\int \delta \vec {B}\cdot \diff \vec {f}=I\int \rot \left(\delta \vec {A}\right)\cdot \diff \vec {f}=I\int _{C}\delta \vec {A}\cdot \diff \vec {r}=\int \vec {j}\cdot \delta \vec {A}\diff ^{3}\vec {r}=\int \left(\nabla \times \vec {H}\right)\cdot \delta \vec {A}\diff ^{3}\vec {r}.
+\end{equation*}
+Der Anteil $\partial _{t}\vec {D}$ wird weggelassen, da dieser im Anfangs- und Endzustand gleich $0$ ist. Betrachte zunächst den Integranden
+\begin{equation*}
+	\left(\nabla \times \vec {H}\right)\cdot \delta \vec {A}=\nabla \cdot \left(\vec {H}\times \delta \vec {A}\right)+\vec {H}\cdot \left(\nabla \times \delta \vec {A}\right).
+\end{equation*}
+Der erste Summand verschwindet im Integral als Oberflächenterm. Es bleibt\footnote{Zur Erinnerung: In einem Dielektrikum gilt ganz äquivalent $\delta U_{\mathrm{el}}=\int \vec {E}\cdot \delta \vec {D}\diff ^{3}\vec {r}$. }
+\begin{equation*}
+	\delta U=\int \vec {H}\cdot \delta \vec {B}\diff ^{3}\vec {r},
+\end{equation*}
+bzw. in einem linearen Material
+\begin{equation}
+    \label{eq:magnetische_energie_linear}
+	U=\frac{1}{2}\int \vec {H}\cdot \vec {B}\diff ^{3}\vec {r}=\frac{1}{2}\int \vec {j}\cdot \vec {A}\diff ^{3}\vec {r}.
+\end{equation}
+Alternativ kann man auch die Poisson-Gleichung
+\begin{equation*}
+	\nabla ^{2}\vec {A}=-\mu \vec {j}\implication \vec {A}=\frac{\mu }{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}
+\end{equation*}
+aufstellen und erhält mit Gleichung \eqref{eq:magnetische_energie_linear}
+\begin{equation*}
+	U=\vec {A}=\frac{\mu }{4\pi }\int \diff ^{3}\vec {r}\int \diff ^{3}\vec {r}\frac{\vec {j}\left(\vec {r}\right)\cdot \vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }.
+\end{equation*}
+
+\subsection{Induktivität}
+
+Die Feldenergie zweier Leiterschleifen können wir schreiben als
+\begin{equation*}
+	U=\frac{1}{2}\sum _{i,k}L_{ik}I_{i}I_{k}
+\end{equation*}
+mit Selbstinduktivität $L_{ii}$ und Gegeninduktivität  $L_{ik},i\neq k$
+\begin{align}
+    \label{eq:selbstinduktivität}
+	L_{ii} & =\frac{\mu }{4\pi }\frac{1}{I_{i}^{2}}\int \int \diff ^{3}\vec {r}\diff ^{3}\vec {r}'\frac{\vec {j}_{i}\left(\vec {r}\right)\cdot \vec {j}_{i}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| } \\
+	L_{ik} & =L_{ki}=\frac{\mu }{4\pi }\int _{C_{i}}\int _{C_{k}}\frac{\diff \vec {r}_{\mathrm{i}}\cdot \diff \vec {r}_{k}}{\left| \vec {r}-\vec {r}'\right| }
+\end{align}
+Es lässt sich nun bestimmen, welchen Fluss die Selbstinduktivität erzeugt:
+\begin{equation*}
+	\phi _{B}=\int \vec {B}\cdot \diff \vec {f}=\int \rot \vec {A}\cdot \diff \vec {f}=\oint _{\partial F}\vec {A}\cdot \diff \vec {r}=\frac{\mu }{4\pi }\oint _{\partial F}\int \frac{\vec {j}\left(\vec {r}'\right)\cdot \diff \vec {r}}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'\equiv LI
+\end{equation*}
+mit
+\begin{equation*}
+	L=\frac{\mu }{4\pi }\frac{1}{I}\oint _{\partial F}\int \frac{\vec {j}\left(\vec {r}'\right)\cdot \diff \vec {r}}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'.
+\end{equation*}
+Mit der Ersetzung $I\diff \vec {r}=\vec {j}\diff ^{3}\vec {r}$ erhalten wir gerade die Gleichung \eqref{eq:selbstinduktivität}. Die Ringspannung entlang der Leiterschleife ist
+\begin{equation*}
+	V=\oint \vec {E}\cdot \diff \vec {r}=-\frac{\diff }{\diff t}\phi _{B}=-L\frac{\diff }{\diff t}I.
+\end{equation*}
+Führen wir eine Verallgemeinerung auf ein System von Leiterschleifen durch, erhalten wir die Ringspannung $V_{i}$ der Schleife $i$
+\begin{equation*}
+	V_{i}=\oint _{C_{i}}\vec {E}\cdot \diff \vec {r}=-\sum _{k}L_{ik}\frac{\diff }{\diff t}I_{k}.
+\end{equation*}
+Für einen geraden Draht mit Querschnittsradius $a$ und Länge $h$ ist zum Beispiel
+\begin{equation*}
+	L=\frac{\mu }{2\pi }j\left(\ln \left(\frac{2h}{a}\right)-\frac{3}{4}\right)
+\end{equation*}
+und für eine unendliche lange Spule mit Querschnittsfläche $A$ und $N$ Windungen pro Länge $h$
+\begin{equation*}
+	L=\mu N^{2}\frac{A}{h},
+\end{equation*}
+denn $U=\frac{1}{2}HBV=\frac{1}{2}\mu H^{2}A$ mit $H=\frac{N}{h}I$ liefert
+\begin{equation*}
+    U=\frac{1}{2}\mu N^{2}I^{2}\frac{A}{h}
+\end{equation*}
+und
+\begin{equation*}
+    U=\frac{1}{2}LI^{2}.
+\end{equation*}

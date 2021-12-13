@@ -32,7 +32,7 @@
 \usepackage{graphicx} 
 \usepackage{multirow} 
 \usepackage{tabularx} 
-\usepackage{color} 
+\usepackage{xcolor} 
 \usepackage{amsmath} 
 \usepackage{amssymb} 
 \usepackage{amsfonts} 
@@ -99,6 +99,8 @@
 \DeclareMathOperator{\divg}{div} 
 \DeclareMathOperator{\rot}{rot} 
 
+\newcommand{\upupharpoons}{\upharpoonleft\!\upharpoonright}
+\newcommand{\updownharpoons}{\upharpoonleft\!\downharpoonright}
 % pm sign with minus in paretheses
 \newcommand\varpm{\mathbin{\vcenter{\hbox{
   \oalign{\hfil$\scriptstyle+$\hfil\cr\noalign{\kern-.3ex}$\scriptscriptstyle({-})$\cr}
@@ -166,7 +168,7 @@
   \vspace{2pt}\end{adjustwidth}\endMakeFramed%
 }
 
-
+\input{_figures}
 \usepackage{hyperref} % include hyperref as last package!
 
 
@@ -197,6 +199,7 @@
 \input{3_Elektrostatik}
 \input{4_Felder_Materie}
 \input{5_Magnetostatik}
+\input{6_Grundgleichungen}
 
 
 \end{document}

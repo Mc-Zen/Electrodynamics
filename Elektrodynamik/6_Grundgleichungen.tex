@@ -1,0 +1,122 @@
+% !TEX root = Theo_III.tex
+
+
+\chapter{Grundgleichungen der Elektrodynamik}
+
+\section{Die Maxwellschen Gleichungen: Zusammenstellung}
+
+Die Maxwellgleichungen bilden die Basis der Elektrodynamik und fast alle Gleichungen zur Beschreibung elektromagnetische Phänomene können aus ihnen hergeleitet werden. Das Ziel ist die Beschreibung der Dynamik von elektrischen und magnetischen \textendash{} den elektromagnetischen \textendash{} Feldern.
+
+Alle Maxwell-Gleichungen wurden in den vorangegangenen Kapiteln bereits in einer oder mehreren Formen behandelt.
+
+Das Gaußsche Gesetz
+\begin{equation*}
+	\divg \vec {D}=\rho
+\end{equation*}
+besagt, dass die Quellen des dielektrischen Feldes makroskopische Ladungsdichten sind. Die magnetische Flussdichte hat keine Quellen, es gibt keine magnetischen Monopole und die Feldlinien sind geschlossen,
+\begin{equation*}
+	\divg \vec {B}=0.
+\end{equation*}
+Nach dem Faradayschen Induktionsgesetz
+\begin{equation*}
+	\rot \vec {E}=-\frac{\partial \vec {B}}{\partial t}
+\end{equation*}
+erzeugen veränderliche Magnetfelder rotierende elektrische Felder. Zuletzt beschreibt das Ampèresche Gesetz (mit Maxwellschem Verschiebungsstrom), dass rotierende Magnetfelder aus Stromdichten und veränderlichen dielektrischen Feldern entstehen,
+\begin{equation*}
+	\rot \vec {H}=\vec {j}+\frac{\partial \vec {D}}{\partial t}.
+\end{equation*}
+Diese Gleichungen gelten sowohl im Vakuum als auch in Materie. Dabei ist $\rho \left(\vec {r},t\right)$ die makroskopische Ladungsdichte und $\vec {j}\left(\vec {r},t\right)$ die makroskopische Stromdichte. Diese erfüllen die schon bekannte Kontinuitätsgleichung
+\begin{equation*}
+	\frac{\partial \rho }{\partial t}+\divg \vec {j}=0.
+\end{equation*}
+Im Vakuum nehmen die Maxwell-Gleichungen die folgende Form an:
+\begin{equation*}
+	\divg \vec {E}=\frac{1}{\varepsilon _{0}}\rho ,\quad \rot \vec {E}=-\frac{\partial \vec {B}}{\partial t},\quad \divg \vec {B}=0,\quad \rot \vec {B}=\mu _{0}\vec {j}+\frac{1}{c^{2}}\frac{\partial }{\partial t}\vec {E}
+\end{equation*}
+Auch die mikroskopischen Maxwellgleichungen haben wir kennengelernt. In Materie wird über stark fluktuierende Felder gemittelt, $\vec {E}=\left\langle \vec {e}\right\rangle $ und $\vec {B}=\left\langle \vec {b}\right\rangle $, sodass für die Ladungs- und Flussdichte gilt:
+\begin{align*}
+	\left\langle \tilde{\rho }\right\rangle &=\rho -\nabla \cdot \vec {P}+\partial _{k}\partial _{l}Q_{kl}+\ldots \\
+	\left\langle \tilde{\vec {j}}\right\rangle &=\vec {j}+\frac{\partial }{\partial t}\vec {P}+\nabla \times \vec {M}
+\end{align*}
+Durch Einführung des dielektrischen Verschiebungsfeldes $\vec {D}$ und des Magnetfeldes $\vec {H}$ als Hilfsfelder erhält man dann die Materialgleichungen
+\begin{equation*}
+	\vec {D}=\varepsilon _{0}\vec {E}+\vec {P}-\nabla Q, \vec {B}=\mu _{0}\left(\vec {H}+\vec {M}\right)
+\end{equation*}
+bzw. in linearen Medien einfacher
+\begin{align*}
+	\vec {P}&=\varepsilon _{0}\chi _{e}\vec {E}&\Rightarrow \vec {D}&=\varepsilon \vec {E},\quad \varepsilon =\varepsilon _{0}\left(1+\chi _{e}\right)=\varepsilon _{0}\varepsilon _{r} \\
+	\vec {M}&=\chi _{m}\vec {H}&\Rightarrow \vec {B}&=\mu \vec {H},\quad \mu =\mu _{0}\left(1+\chi _{m}\right)=\mu _{0}\mu _{r}.
+\end{align*}
+Die Kraftdichte auf Ladungsdichten und Stromdichten ist
+\begin{equation*}
+	f\left(\vec {r},t\right)=\rho \vec {E}+\vec {j}\times \vec {B},
+\end{equation*}
+also gerade die "`Lorentzkraft-Dichte`` als Kontinuumsform der Lorentzkraft.
+
+\section{Elektromagnetische Potentiale}
+
+Eine allgemeine Lösungsstrategie der Maxwellschen Gleichungen liefert die Bestimmung der elektromagnetischen Potentiale. Die Maxwellschen Gleichungen lassen sich als Paare von zwei homogenen Differentialgleichungen,
+\begin{equation*}
+	\divg \vec {B}=0, \quad\rot \vec {E}+\frac{\partial \vec {B}}{\partial t}=0
+\end{equation*}
+und zwei inhomogenen Differentialgleichungen,
+\begin{equation*}
+	\divg \vec {D}=\rho ,\quad \rot \vec {H}-\frac{\partial \vec {D}}{\partial t}=\vec {j}
+\end{equation*}
+schreiben.
+
+Zuerst werden die homogenen Maxwellgleichungen gelöst. Die zweite Gleichung lässt sich umschreiben zu
+\begin{equation*}
+	0=\rot \left(\vec {E}+\frac{\partial \vec {A}}{\partial t}\right)\equiv -\rot \left(\nabla \varphi \right).
+\end{equation*}
+Dabei haben wir ein Vektorpotential $\vec {B}\equiv \nabla \times \vec {A}$ und ein skalares Potential $\vec {E}+\partial _{t}\vec {A}=-\nabla \varphi $ eingeführt. Das magnetische Vektorpotential $\vec {A}$ ist in dieser Form bereits bekannt und das skalare Potential $\varphi $ ist die Verallgemeinerung des elektrischen Potentials auf dynamische Felder.
+
+Die so gewonnenen Gleichungen
+\begin{equation}
+    \label{eq:equations_for_B_and_E}
+	\vec {B}=\rot \vec {A},\quad \vec {E}=-\nabla \varphi -\frac{\partial \vec {A}}{\partial t}
+\end{equation}
+können jetzt in die inhomogenen Maxwellgleichungen eingesetzt werden, wobei wir uns im Folgenden auf die Gleichungen im Vakuum beschränken. Einsetzen in das Gaußsche Gesetz liefert
+\begin{equation*}
+	\nabla ^{2}\varphi +\frac{\partial }{\partial t}\nabla \cdot \vec {A}=-\frac{\rho }{\varepsilon _{0}}
+\end{equation*}
+und aus dem Ampèreschen Gesetz folgt
+\begin{equation*}
+	\nabla \times \left(\nabla \times \vec {A}\right)=\mu _{0}\vec {j}-\frac{1}{c^{2}}\left(\nabla \frac{\partial \varphi }{\partial t}+\frac{\partial ^{2}\vec {A}}{\partial t^{2}}\right),
+\end{equation*}
+was man umstellen kann zu
+\begin{equation}
+    \label{eq:em_wellengleichung}
+	\nabla ^{2}\vec {A}=\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}\vec {A}-\nabla \left(\nabla \cdot \vec {A}+\frac{1}{c^{2}}\frac{\partial \varphi }{\partial t}\right)=-\mu _{0}\vec {j}.
+\end{equation}
+Wir erhalten also insgesamt vier gekoppelte partielle Differentialgleichungen für $\vec {A}$ und $\varphi $ statt acht für $\vec {E}$ und $\vec {B}$. In der Wellengleichung \eqref{eq:em_wellengleichung} können wir zur Bequemlichkeit den D’Alembert-Operator oder auch Wellenoperator
+\begin{equation*}
+	\Box\equiv\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}-\nabla ^{2}
+\end{equation*}
+einführen.
+
+In den Gleichungen \eqref{eq:equations_for_B_and_E} sind allerdings die Potentiale $\varphi $ und $\vec {A}$ nicht eindeutig, denn sie können mithilfe einer beliebigen skalaren Eichfunktion $\lambda \left(\vec {r},t\right)$ umgeeicht werden:
+\begin{equation}
+    \label{eq:umeichung}
+	\tilde{\vec {A}}=\vec {A}+\nabla \lambda , \quad\tilde{\varphi }=\varphi -\frac{\partial \lambda }{\partial t}
+\end{equation}
+Alle auf diese Weise gewonnenen Potentiale $\tilde{\varphi }$ und $\tilde{\vec {A}}$ lassen die physikalischen Felder in \eqref{eq:equations_for_B_and_E} unverändert, was als Eichinvarianz bezeichnet wird. Es wird meist eine spezielle Wahl für die Eichung getroffen.
+
+\subsection{Lorenz-Eichung}
+
+Für die Lorenz-Eichung werden $\vec {A}$ und $\varphi $ so gewählt, dass
+\begin{equation}
+    \label{eq:lorenzeichung}
+	\nabla \cdot \vec {A}+\frac{1}{c^{2}}\frac{\partial \varphi }{\partial t}=0,
+\end{equation}
+Diese Gleichung ist invariant unter den Lorentztransformation der speziellen Relativitätstheorie. Es ergeben sich damit die folgenden inhomogenen Wellengleichungen für $\varphi $ und $\vec {A}$:
+\begin{align*}
+	\nabla ^{2}\vec {A}-\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}\vec {A}&=-\mu _{0}\vec {j}\equivalence \Box \vec {A}=\mu _{0}\vec {j} \\
+	\nabla ^{2}\varphi -\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}\varphi &=-\frac{1}{\varepsilon _{0}}\rho \equivalence \Box \varphi =\frac{1}{\varepsilon _{0}}\rho
+\end{align*}
+Bemerkenswerterweise sind jetzt die verschiedenen Potentiale entkoppelt. Die Lorenz-Eichung ist immer durchführbar, denn man $\lambda $ nur nach der Differentialgleichung (setze \eqref{eq:umeichung} in \eqref{eq:lorenzeichung} ein)
+\begin{equation*}
+	\nabla ^{2}\lambda -\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}\lambda =-\left(\nabla \cdot \vec {A}+\frac{1}{c^{2}}\frac{\partial \varphi }{\partial t}\right)
+\end{equation*}
+zu wählen, was stets möglich ist.
+
