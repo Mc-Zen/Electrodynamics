@@ -71,7 +71,7 @@ Im Spezialfall für einen dünnen Leiter $C$ und ein Leiterelement $\diff\vec r$
 \begin{align}
     \label{eq:def_magn_flussdichte}
     \diff \vec F &=I\diff\vec r\times\vec B \\
-	\vec {F}&=\int _{V}\vec {j}\times \vec {B}\,\diff A \,\diff\vec r = \int_{A}j\diff A \cdot \int_C \diff\vec r\times \vec B \nonumber\\& = I\int_C \diff\vec r\times \vec B .\nonumber
+	\vec {F}&=\int _{V}\vec {j}\times \vec {B}\diff A \diff\vec r = \int_{A}j\diff A \cdot \int_C \diff\vec r\times \vec B \nonumber\\& = I\int_C \diff\vec r\times \vec B .\nonumber
 \end{align}
 
 \begin{figure}[htb]
@@ -396,9 +396,10 @@ Betrachte zunächst die Terme mit $\sum _{i\left(n\right)}q_{i}\vec {v}_{ni}$, d
 	\sum _{i\left(n\right)}q_{i}\vec {v}_{ni}=\sum _{i\left(n\right)}q_{i}\frac{\diff \vec {r}_{ni}}{\diff t}=\frac{\diff }{\diff t}\vec {p}_{n}
 \end{equation*}
 Der zweite Term enthält ein magnetisches Moment (verwende wieder die Tensorzerlegung in einen symmetrischen und einen asymmetrischen Anteil):
-\begin{equation*}
-	\sum _{i\left(n\right)}q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }=\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }-q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right]+\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }+q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right],
-\end{equation*}
+\begin{multline*}
+	\sum _{i\left(n\right)}q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }\\
+		=\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }-q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right]+\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }+q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right],
+\end{multline*}
 wobei die Summanden der zweiten Summe verschwinden, weil diese Ströme jeweils auf ein Molekül beschränkt sind ($\nabla\cdot \vec {j}_{\mathrm{b}}=0$). Die erste Summe ist asymmetrisch und lässt sich als Kreuzprodukt schreiben,
 \begin{equation*}
 	\sum _{i\left(n\right)}q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }=\frac{1}{2}\varepsilon _{\alpha \beta \gamma }\left(\sum _{i\left(n\right)}q_{i}\left(\vec {r}_{ni}\times \vec {v}_{ni}\right)\right)_{\gamma },

@@ -29,6 +29,8 @@
 \usepackage[left=2cm, right=2cm, bottom=1.5cm, top=1.5cm, includeheadfoot]{geometry} 
 \usepackage[T1]{fontenc} 
 \usepackage[utf8]{inputenc} 
+\usepackage[english,ngerman]{babel}
+\usepackage[font=footnotesize]{caption}
 \usepackage{graphicx} 
 \usepackage{multirow} 
 \usepackage{tabularx} 
@@ -38,19 +40,13 @@
 \usepackage{amsfonts} 
 \usepackage{amsxtra} 
 \usepackage{mathtools} 
-\usepackage{upgreek} 
 \usepackage{enumerate} 
-\usepackage{tensor} 
 \usepackage{float}
-\usepackage[english,ngerman]{babel}
 \usepackage{siunitx}
 \usepackage{longtable}
 \usepackage{cancel}
-\usepackage{wrapfig}
-
 \usepackage{lmodern}
-\usepackage[f]{esvectmod}
-\usepackage[font=footnotesize]{caption}
+\usepackage{scrhack} 
 \sisetup{locale = DE, separate-uncertainty}  
 \usepackage[immediate]{silence}
 \WarningFilter[temp]{latex}{Command} % filter underline/underbar command warning from sectsty 
@@ -58,6 +54,7 @@
 % --------------------------
 % spacing
 
+\raggedbottom
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
 
@@ -66,35 +63,21 @@
 \setlength{\skip\footins}{.5cm} % space between body and footnote section
 \setlength{\footnotesep}{0.5cm}  % space between footnotes
 
-%\renewcommand{\arraystretch}{1}
+% \renewcommand{\arraystretch}{1}
+% \makeatletter
+% \renewcommand\@pnumwidth{2em} % fix toc overfull hbox
+% \makeatother
 
-\raggedbottom
-
-\makeatletter
-\renewcommand\@pnumwidth{2em} % fix toc overfull hbox
-\makeatother
 
 % --------------------------
 % section styles
 
-%\usepackage{sectsty}
-%\renewcommand{\thesection}{\Alph{section}} 
-%\newcommand{\subsubsectiona}[1]{\subsubsection*{#1}}%\addcontentsline{toc}{subsection}{#1}} 
-%\subsubsectionfont{\normalfont\large\underline}
 \newcommand{\example}[1]{\paragraph{#1:}}
 
-\makeatletter
-\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
-                                     {1.5ex \@plus .2ex}%
-                                     {\normalfont\normalsize}}
-\makeatother
-\newcommand{\subsubsectiona}[1]{\subsubsection*{\underline{#1}}}
-                                   
-%\labelformat{section}{\thechapter#1} % section refs should include chapter letter
 
 % --------------------------
 % math
+
 \DeclareMathOperator{\grad}{grad} 
 \DeclareMathOperator{\divg}{div} 
 \DeclareMathOperator{\rot}{rot} 
@@ -102,39 +85,27 @@
 \newcommand{\upupharpoons}{\upharpoonleft\!\upharpoonright}
 \newcommand{\updownharpoons}{\upharpoonleft\!\downharpoonright}
 % pm sign with minus in paretheses
-\newcommand\varpm{\mathbin{\vcenter{\hbox{
+\newcommand{\varpm}{\mathbin{\vcenter{\hbox{
   \oalign{\hfil$\scriptstyle+$\hfil\cr\noalign{\kern-.3ex}$\scriptscriptstyle({-})$\cr}
 }}}}
 % mp sign with plus in parentheses
-\newcommand\varmp{\mathbin{\vcenter{\hbox{
+\newcommand{\varmp}{\mathbin{\vcenter{\hbox{
   \oalign{$\scriptstyle({+})$\cr\noalign{\kern-.3ex}\hfil$\scriptscriptstyle-$\hfil\cr}
 }}}}
-% vector than can be primed without looking ugly af 
-%\newcommand*\pvec[1]{\vec{#1}\mkern2mu\vphantom{#1}} 
-%\renewcommand{\pvec}[1]{\vec{#1}} 
 % differential operator have a non-italic d in German equation typesetting 
-%\newcommand*\diff{\mathop{}\!\diff } 
-\newcommand{\diff}{\text{d}}	 
+\newcommand*{\diff}{\mathop{}\!\mathrm{d}} 
+%\newcommand{\diff}{\text{d}}	 
 \newcommand{\Angstroem}{\text{\normalfont\AA}}   
 \newcommand{\Abbref}[1]{Abb.~\ref{#1}} 
-% vector arrow that does not clash with exponents 
-\makeatletter 
-\newcommand{\svec}[1]{\vec{#1}\@ifnextchar{^}{\,}{}} 
-\makeatother 
-% NO, better use esvect, much better spacing 
-%\let\oldvec\vec 
-%\renewcommand{\vec}[1]{\oldvec{\mkern2mu#1\mkern2mu}} 
-%\renewcommand{\vec}[1]{\oldvec{#1\mkern-2mu}} 
-%\renewcommand{\vec}[1]{\vv{#1}} % esvect vector 
-% Alternative: bold non-cursive symbols for vectors instead of arrows 
+% Vector: bold non-cursive symbols for vectors instead of arrows 
 \renewcommand{\vec}[1]{\mathbf{#1}} 
-%\renewcommand{\svec}[1]{\vec{#1}} 
 
-\newcommand\equivalence{\;\Leftrightarrow\;}
-\newcommand\implication{\;\Rightarrow\;}
+\newcommand{\equivalence}{\;\Leftrightarrow\;}
+\newcommand{\implication}{\;\Rightarrow\;}
 
-% Alternative: bold non-cursive symbols for vectors instead of arrows
-%\renewcommand{\vec}[1]{\mathbf{#1}}
+
+% --------------------------
+% other configurations
 
 % set figure description
 \addto\captionsngerman{
@@ -152,20 +123,20 @@
 \definecolor{formalshade}{rgb}{0.95,0.95,1}
 
 % Quote box for important statements
-\newenvironment{formal}{%
-  \def\FrameCommand{%
-    \hspace{1pt}%
-    {\color{formalbar}\vrule width 2pt}%
-    {\color{formalshade}\vrule width 4pt}%
-    \colorbox{formalshade}%
-  }%
-  \MakeFramed{\advance\hsize-\width\FrameRestore}%
-  \noindent\hspace{-4.55pt}% disable indenting first paragraph
-  \begin{adjustwidth}{}{7pt}%
-  \vspace{-10pt}\vspace{2pt}%
+\newenvironment{formal}{
+  \def\FrameCommand{
+    \hspace{1pt}
+    {\color{formalbar}\vrule width 2pt}
+    {\color{formalshade}\vrule width 4pt}
+    \colorbox{formalshade}
+  }
+  \MakeFramed{\advance\hsize-\width\FrameRestore}
+  \noindent\hspace{-4.55pt} % disable indenting first paragraph
+  \begin{adjustwidth}{}{7pt}
+  \vspace{-10pt}\vspace{2pt}
 }
-{%
-  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+{
+  \vspace{2pt}\end{adjustwidth}\endMakeFramed
 }
 
 \input{_figures}
@@ -173,9 +144,8 @@
 
 
 
-\title{\includegraphics{images/Titel.pdf}}
+\title{\includegraphics{Titel.pdf}}
 \subtitle{Wintersemester 2021/2022}
-\date{}
 \author{von Kyano Levi\\bei Professor Holger Stark}
 
 % -----------------------------------
@@ -186,8 +156,6 @@
 
 \frontmatter
 \maketitle
-
-
 \tableofcontents
 
 % -----------------------------------
