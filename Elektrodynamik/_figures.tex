@@ -17,47 +17,47 @@ arrow1/.style={\arrow{stealth[round]}}
 
 
 \newcommand{\tfighysterese}{
-\begin{tikzpicture}[scale=2]
-    
-    \coordinate (saturation) at (1,1);
-    \coordinate (inv saturation) at (-1,-1); 
-    
-    % Axis
-    \draw[name path=xaxis,arr] (-1.4,0) -- (1.4,0) node[anchor=north west] {$H$};
-    \draw[name path=yaxis,arr] (0,-1.4) -- (0,1.4) node[anchor=south east] {$B$};
-    
-    % Curve (1) (magnetize)
-    \draw[midarrow,dashed,color=blue!50!black] 
-        (0,0) .. controls (0.3,.2) and (0.1,1) .. (saturation) 
+    \begin{tikzpicture}[scale=2]
+
+        \coordinate (saturation) at (1,1);
+        \coordinate (inv saturation) at (-1,-1);
+
+        % Axis
+        \draw[name path=xaxis,arr] (-1.4,0) -- (1.4,0) node[anchor=north west] {$H$};
+        \draw[name path=yaxis,arr] (0,-1.4) -- (0,1.4) node[anchor=south east] {$B$};
+
+        % Curve (1) (magnetize)
+        \draw[midarrow,dashed,color=blue!50!black]
+        (0,0) .. controls (0.3,.2) and (0.1,1) .. (saturation)
         node[midway,right,xshift=-1.5mm,yshift=-2mm] {(1)};
-    % Curve (2)  (change field to negative)
-    \draw[name path=dcurve, midarrow,color=blue!50!green] 
-        (saturation) .. controls (-0.8,1) and (-0.1,-1) .. (inv saturation) 
+        % Curve (2)  (change field to negative)
+        \draw[name path=dcurve, midarrow,color=blue!50!green]
+        (saturation) .. controls (-0.8,1) and (-0.1,-1) .. (inv saturation)
         node[near end,left] {(2)};
-    % Curve (2)  (change field to positive)
-    \draw[midarrow,color=blue!60!white!70!black] 
-        (inv saturation) .. controls (0.8,-1) and (0.1,1) .. (saturation) 
+        % Curve (2)  (change field to positive)
+        \draw[midarrow,color=blue!60!white!70!black]
+        (inv saturation) .. controls (0.8,-1) and (0.1,1) .. (saturation)
         node[near start,right,xshift=1mm,yshift=1mm] {(3)};
-    % Coordinates of Saturation
-    \draw[dashed] (saturation) -- (1,0) 
+        % Coordinates of Saturation
+        \draw[dashed] (saturation) -- (1,0)
         node[below] {$H_\mathrm{S}$};
-    \draw[dashed] (saturation) -- (0,1) 
+        \draw[dashed] (saturation) -- (0,1)
         node[left] {$B_\mathrm{S}$};
-    
-    % Remanence and coercitive field
-    \path[name intersections={of=yaxis and dcurve, by=remanenz}];
-    \path[name intersections={of=xaxis and dcurve, by=coercitive}];
-    \draw ($(remanenz)+(1pt,0)$) -- ($(remanenz)-(1pt,0)$) 
+
+        % Remanence and coercitive field
+        \path[name intersections={of=yaxis and dcurve, by=remanenz}];
+        \path[name intersections={of=xaxis and dcurve, by=coercitive}];
+        \draw ($(remanenz)+(1pt,0)$) -- ($(remanenz)-(1pt,0)$)
         node[left] {$B_\mathrm{R}$};
-    \draw ($(coercitive)+(0,1pt)$) -- ($(coercitive)-(0,1pt)$) 
+        \draw ($(coercitive)+(0,1pt)$) -- ($(coercitive)-(0,1pt)$)
         node[anchor=north west,xshift=-2mm] {$H_\mathrm{C}$};
-        
-\end{tikzpicture}
+
+    \end{tikzpicture}
 }
 
 \newcommand{\tfigmagneticrefraction}{
-\begin{tikzpicture}[scale=2]
-    \draw (0,1) -- (0,-1);
-    \node ($\mu_1$) at (-.5,1)  ;
-\end{tikzpicture}
+    \begin{tikzpicture}[scale=2]
+        \draw (0,1) -- (0,-1);
+        \node ($\mu_1$) at (-.5,1)  ;
+    \end{tikzpicture}
 }

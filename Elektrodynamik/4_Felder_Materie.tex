@@ -26,9 +26,9 @@ Für eine Punktladung $F\left(\vec {r}\right)=F_{0}\delta \left(\vec {r}-\vec {r
 
 Für die Mittelung gelten die folgenden Eigenschaften:\begin{enumerate}
 	\item Die Mittelung der konstanten Funktion $F=1$ ist genau dann konstant $1$, wenn die Glättungsfunktion über den gesamten Raum auf $1$ normiert ist,
-		\begin{equation*}
-			\left\langle 1\right\rangle =1\equivalence \int \diff ^{3}\vec {r}f=1.
-		\end{equation*}
+	      \begin{equation*}
+		      \left\langle 1\right\rangle =1\equivalence \int \diff ^{3}\vec {r}f=1.
+	      \end{equation*}
 	\item $\partial _{i}\left\langle F\right\rangle =\left\langle \partial _{i}F\right\rangle $.
 \end{enumerate}
 
@@ -48,17 +48,17 @@ Die gebundenen Ladungen werden als Summe der Ladungsdichten einzelner Moleküle 
 \end{equation*}
 mit neuen Bezugspunkten $\vec {r}_{n}$ für die einzelnen Moleküle. Für die Mittelung wird dann eine Taylor-Entwicklung um diese neuen Bezugspunkte $\vec {r}_{n}$ durchgeführt:
 \begin{align*}
-	\left\langle \rho _{n}\left(\vec {r}\right)\right\rangle &=\sum _{i}q_{i}f\left(\vec {r}-\left(\vec {r}_{n}+\vec {r}_{ni}\right)\right)\\&=\sum _{i}q_{i}\left[f\left(\vec {r}-\vec {r}_{n}\right)-\vec {r}_{ni}\cdot \nabla f\left(\vec {r}-\vec {r}_{n}\right)+\frac{1}{2}\left(\vec {r}_{ni}\right)_{k}\left(\vec {r}_{ni}\right)_{l}\nabla _{k}\nabla _{l}f\left(\vec {r}-\vec {r}_{n}\right)+\ldots \right]
+	\left\langle \rho _{n}\left(\vec {r}\right)\right\rangle & =\sum _{i}q_{i}f\left(\vec {r}-\left(\vec {r}_{n}+\vec {r}_{ni}\right)\right) \\&=\sum _{i}q_{i}\left[f\left(\vec {r}-\vec {r}_{n}\right)-\vec {r}_{ni}\cdot \nabla f\left(\vec {r}-\vec {r}_{n}\right)+\frac{1}{2}\left(\vec {r}_{ni}\right)_{k}\left(\vec {r}_{ni}\right)_{l}\nabla _{k}\nabla _{l}f\left(\vec {r}-\vec {r}_{n}\right)+\ldots \right]
 \end{align*}
 Daraus können die molekularen Dipolmomente bestimmt werden:
 \begin{align*}
-		q_{n}                            & =\sum _{i}q_{i} &\text{(Molekulare Ladung)}     \\
-		\vec {p}_{n}                     & =\sum _{i}q_{i}\vec {r}_{ni} &\text{(Molekulares Dipolmoment)}    \\
-		\left(\mathrm{Q}_{n}\right)_{kl} & =3\sum _{i}q_{i}\left(\vec {r}_{ni}\right)_{k}\left(\vec {r}_{ni}\right)_{l} &\text{(Molekulares Quadrupolmoment)}
+	q_{n}                            & =\sum _{i}q_{i}                                                              & \text{(Molekulare Ladung)}           \\
+	\vec {p}_{n}                     & =\sum _{i}q_{i}\vec {r}_{ni}                                                 & \text{(Molekulares Dipolmoment)}     \\
+	\left(\mathrm{Q}_{n}\right)_{kl} & =3\sum _{i}q_{i}\left(\vec {r}_{ni}\right)_{k}\left(\vec {r}_{ni}\right)_{l} & \text{(Molekulares Quadrupolmoment)}
 \end{align*}
 (vgl. Multipolmomente einer kontinuierlichen Ladungsverteilung, aber hier jetzt diskret). Insgesamt ergibt sich eine Verschmierung punktförmiger molekularer Multipole:
 \begin{align*}
-	\left\langle \rho _{n}\left(\vec {r}\right)\right\rangle &=q_{n}f\left(\vec {r}-\vec {r}_{n}\right)-\vec {p}_{n}\cdot \nabla f\left(\vec {r}-\vec {r}_{n}\right)+\frac{1}{6}\left(\mathrm{Q}_{n}\right)_{kl}\nabla _{k}\nabla _{l}f\left(\vec {r}-\vec {r}_{n}\right) \\&=\left\langle q_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle -\nabla \cdot \left\langle p_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\frac{1}{6}\nabla _{k}\nabla _{l}\left\langle \left(\mathrm{Q}_{n}\right)_{kl}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle
+	\left\langle \rho _{n}\left(\vec {r}\right)\right\rangle & =q_{n}f\left(\vec {r}-\vec {r}_{n}\right)-\vec {p}_{n}\cdot \nabla f\left(\vec {r}-\vec {r}_{n}\right)+\frac{1}{6}\left(\mathrm{Q}_{n}\right)_{kl}\nabla _{k}\nabla _{l}f\left(\vec {r}-\vec {r}_{n}\right) \\&=\left\langle q_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle -\nabla \cdot \left\langle p_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\frac{1}{6}\nabla _{k}\nabla _{l}\left\langle \left(\mathrm{Q}_{n}\right)_{kl}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle
 \end{align*}
 und für die gemittelte gebundene Ladungsdichte:
 \begin{equation*}
@@ -81,7 +81,7 @@ Damit ergibt sich jetzt insgesamt die gemittelte mikroskopische Ladungsdichte
 \end{equation*}
 und es folgt für die makroskopischen Feldgleichungen
 \begin{align*}
-	\left\langle \divg \vec {e}\right\rangle & =\frac{1}{\varepsilon _{0}}\left\langle \rho \left(\vec {r}\right)\right\rangle ,\quad \left\langle \rot \vec {e}\right\rangle =\vec {0}    \\
+	\left\langle \divg \vec {e}\right\rangle & =\frac{1}{\varepsilon _{0}}\left\langle \rho \left(\vec {r}\right)\right\rangle ,\quad \left\langle \rot \vec {e}\right\rangle =\vec {0}                                                                                                                                                               \\
 	\divg \vec {E}                           & =\frac{1}{\varepsilon _{0}}\left(\rho _{\mathrm{Ma}}\left(\vec {r}\right)+\rho _{\mathrm{Mi}}\left(\vec {r}\right)\right)=\frac{1}{\varepsilon _{0}}\left(\rho _{\mathrm{Ma}}\left(\vec {r}\right)-\nabla \cdot \vec {P}\left(\vec {r}\right)+\nabla _{k}\nabla _{l}Q_{kl}\left(\vec {r}\right)\right)
 \end{align*}
 und
@@ -212,9 +212,9 @@ Aus Betrachtungen für die Grenzfälle können die Koeffizienten $a_{l}^{\left(i
 	\item Im Mittelpunkt ($r=0$) darf das Potential nicht divergieren, sodass $b_{l}^{\left(i\right)}=0$ für alle $l$.
 
 	\item An der Grenzfläche ($r=R$) muss gelten, dass $E_{\parallel }^{\left(i\right)}=E_{\parallel }^{\left(a\right)}$ und $\varepsilon _{r}E_{\perp }^{\left(i\right)}=E_{\perp }^{\left(a\right)}$. Einsetzen und Lösen des Gleichungssystems führt auf
-		\begin{equation*}
-			a_{1}^{\left(i\right)}=-\frac{3}{\varepsilon _{r}+2}E_{0},\quad b_{1}^{\left(a\right)}=\frac{\varepsilon _{r}-1}{\varepsilon _{r}+2}R^{3}E_{0},\quad a_{l>1}^{\left(i\right)}=0,\quad b_{l>1}^{\left(a\right)}=0.
-		\end{equation*}
+	      \begin{equation*}
+		      a_{1}^{\left(i\right)}=-\frac{3}{\varepsilon _{r}+2}E_{0},\quad b_{1}^{\left(a\right)}=\frac{\varepsilon _{r}-1}{\varepsilon _{r}+2}R^{3}E_{0},\quad a_{l>1}^{\left(i\right)}=0,\quad b_{l>1}^{\left(a\right)}=0.
+	      \end{equation*}
 \end{enumerate}
 
 Mit den Ersetzungen $r\cos \vartheta =z=\vec {r}\cdot \vec {e}_{z}$ und dem Dipolmoment $\vec {p}=\frac{4}{3}\pi R^{3}\vec {P}$ erhält man schließlich

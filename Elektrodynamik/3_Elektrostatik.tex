@@ -49,7 +49,7 @@ Die Kraft, die eine Ladung $q_{2}$ am Ort $\vec {r}_{2}$ auf eine Ladung $q_{1}$
 \end{equation}
 Dieser Zusammenhang ist als Coulombsches Gesetz bekannt und wurde experimentell gefunden. Die Proportionalitätskonstante $k$ ist dabei
 \begin{equation*}
-	k=\frac{1}{4\pi \varepsilon _{0}}. 
+	k=\frac{1}{4\pi \varepsilon _{0}}.
 \end{equation*}
 
 \begin{figure}[htb]
@@ -66,7 +66,7 @@ Mithilfe des Coulombschen Gesetzes können wir nach dem Superpositionsprinzip di
 	\label{3.2}
 	\vec {F}=\frac{q_{0}}{4\pi \varepsilon _{0}}\sum _{i}q_{i}\frac{\vec {r}_{0}-\vec {r}_{i}}{\left| \vec {r}_{0}-\vec {r}_{i}\right| ^{3}}
 \end{equation}
-Dieser Ansatz ist der Fernwirkungsstandpunkt (die Kraft wirkt über die Ferne hinweg). Seit Veröffentlichung der Relativitätstheorie ist aber bekannt, dass sich nichts schneller als mit Vakuumlichtgeschwindigkeit bewegen kann \textendash{} also auch keine Kraftwirkung. 
+Dieser Ansatz ist der Fernwirkungsstandpunkt (die Kraft wirkt über die Ferne hinweg). Seit Veröffentlichung der Relativitätstheorie ist aber bekannt, dass sich nichts schneller als mit Vakuumlichtgeschwindigkeit bewegen kann \textendash{} also auch keine Kraftwirkung.
 
 Daher führt man den sogenannten Nahwirkungsstandpunkt ein, bei dem man man ein elektrisches Feld $\vec {E}$ betrachtet, das durch Ladungen $q_{i}$ erzeugt wird ($\vec {E}$ zeigt weg von positiven Ladungen und hin zu den negativen):
 \begin{equation}
@@ -106,9 +106,9 @@ Die Quellen des elektrischen Feldes werden durch die Divergenz von $\vec E$ besc
 Die soeben gefundenen Zusammenhänge werden als Feldgleichungen der Elektrostatik bezeichnet:
 \begin{align}
 	\label{3.4}
-	\Aboxed{\divg \vec {E}&=\frac{1}{\varepsilon _{0}}\rho \left(\vec {r}\right)} \\
+	\Aboxed{\divg \vec {E} & =\frac{1}{\varepsilon _{0}}\rho \left(\vec {r}\right)} \\
 	\label{3.5}
-	\Aboxed{\rot \vec {E}&=0}
+	\Aboxed{\rot \vec {E}  & =0}
 \end{align}
 Die erste Gleichung wird als Gaußsches Gesetz bezeichnet und beschreibt die elektrische Ladung als Quelle des elektrischen Feldes. Die zweite beschreibt die Wirbelfreiheit des elektrostatischen Feldes.
 
@@ -122,7 +122,7 @@ Zu beiden Feldgleichungen gibt es integrale Formulierungen:
 	\int _{V}\diff ^{3}\vec r\divg \vec {E}=\int _{\partial V}\vec {E}\cdot \diff \vec {f}=\frac{1}{\varepsilon _{0}}\int \diff ^{3}\vec r\rho \left(\vec {r}\right)\implication \boxed{\int _{\partial V}\vec {E}\cdot \diff \vec f=\frac{1}{\varepsilon _{0}}Q}
 \end{equation*}
 \begin{formal}
-    Der Fluss aus einem Volumen $V$ heraus ist proportional zu der Gesamtladung. Die elektrische Ladungsdichte ist die Quelle des elektrischen Feldes. 
+	Der Fluss aus einem Volumen $V$ heraus ist proportional zu der Gesamtladung. Die elektrische Ladungsdichte ist die Quelle des elektrischen Feldes.
 \end{formal}
 Betrachte als Beispiel eine Punktladung, die das Feld $\vec {E}=\frac{1}{4\pi \varepsilon _{0}}q\frac{\vec {r}-\vec {r}_{0}}{\left| \vec {r}-\vec {r}_{0}\right| ^{3}}=\frac{1}{4\pi \varepsilon _{0}}q\frac{\hat{\vec {R}}}{R^{2}}$ erzeugt:
 \begin{equation*}
@@ -177,7 +177,7 @@ Insbesondere gilt für eine Punktladung $\rho \left(\vec {r}\right)=\delta \left
 	\label{fig:dipole_field_potential}
 \end{figure}
 
-Als Äquipotentiallinien bzw. -flächen werden die Linien/Flächen gleichen Potentials, $\phi =\text{const}$ bezeichnet. Die Feldlinien stehen senkrecht auf den Äquipotentialflächen, weil $\vec {E}\left(\vec {r}\right)=-\nabla \phi $. In \Abbref{fig:dipole_field_potential} sind die Äquipotentiallinien und die Feldlinien einer positiven und einer negativen Ladung dargestellt. 
+Als Äquipotentiallinien bzw. -flächen werden die Linien/Flächen gleichen Potentials, $\phi =\text{const}$ bezeichnet. Die Feldlinien stehen senkrecht auf den Äquipotentialflächen, weil $\vec {E}\left(\vec {r}\right)=-\nabla \phi $. In \Abbref{fig:dipole_field_potential} sind die Äquipotentiallinien und die Feldlinien einer positiven und einer negativen Ladung dargestellt.
 
 \subsection{Elektrostatische Energie}
 
@@ -247,13 +247,13 @@ Auf der homogen geladenen Kugel $V_{r}$ ist die Ladungsdichte $\rho \left(\vec {
 
 Feld und Potential können zum Beispiel über das Gaußsche Gesetz berechnet werden:
 \begin{align*}
-	\int _{{V_{r}}}\diff ^{3}r'\frac{\rho \left(r\right)}{\varepsilon _{0}}&=\int _{{V_{r}}}\diff ^{3}r'\divg \vec {E}=\int _{\partial {V_{r}}}\vec {E}\cdot \diff \vec {f}\implication 4\pi r^{2}E\left(r\right)=\frac{1}{\varepsilon _{0}}\int _{0}^{r}\diff r'r'^{2}\rho \left(r'\right) \\
-	\Rightarrow E\left(r\right)&=\frac{Q}{4\pi \varepsilon _{0}}
+	\int _{{V_{r}}}\diff ^{3}r'\frac{\rho \left(r\right)}{\varepsilon _{0}} & =\int _{{V_{r}}}\diff ^{3}r'\divg \vec {E}=\int _{\partial {V_{r}}}\vec {E}\cdot \diff \vec {f}\implication 4\pi r^{2}E\left(r\right)=\frac{1}{\varepsilon _{0}}\int _{0}^{r}\diff r'r'^{2}\rho \left(r'\right) \\
+	\Rightarrow E\left(r\right)                                             & =\frac{Q}{4\pi \varepsilon _{0}}
 	\begin{cases} \frac{r}{R^{2}}, & r<R     \\
-          \frac{1}{r^{2}}, & r\geq R
+              \frac{1}{r^{2}}, & r\geq R
 	\end{cases} \quad\xrightarrow{\text{Integration}}\quad \phi \left(r\right)=\frac{Q}{4\pi \varepsilon _{0}}
 	\begin{cases} \frac{1}{R}\left(\frac{3}{2}-\frac{r^{2}}{2R^{2}}\right), & r<R     \\
-          \frac{1}{r},  & r\geq R
+              \frac{1}{r},                                              & r\geq R
 	\end{cases}
 \end{align*}
 Beide Größen sind in \Abbref{fig:homogenously_charged_ball_field_potential} dargestellt. Bemerkenswert ist, dass für $r\geq R$ das elektrische Feld $\vec {E}\left(\vec {r}\right)=E\left(r\right)\cdot \vec {e}_{r}$ gerade dem Feld einer Punktladung $Q$ im Mittelpunkt der Kugel entspricht.
@@ -262,7 +262,7 @@ Es soll nun die Energiedichte $u\left(\vec {r}\right)$ für die homogen geladene
 \begin{align*}
 	u\left(\vec {r}\right)=\frac{\varepsilon _{0}}{2}\left| \vec {E}\right| ^{2}=\frac{Q^{2}}{32\pi ^{2}\varepsilon _{0}}\begin{cases} \frac{r^{2}}{R^{6}}, & r<R     \\
               \frac{1}{r^{4}},     & r\geq R
-    \end{cases}
+	                                                                                                                     \end{cases}
 \end{align*}
 Daraus ergibt sich die elektrostatische Energie ("`Selbstenergie`` einer homogen geladenen Kugel)
 \begin{equation*}
@@ -293,9 +293,9 @@ Betrachte den Fall von $n$ Leitern mit Volumina $L_{i}$, einer Ladung $Q_{i}$ un
 
 Es soll untersucht werden, wie aus der Ladungsverteilung die Potentiale und das elektrische Feld bestimmt werden können.
 \begin{formal}
-		\textbf{Theorem von Thomson:}
-		
-		Die Ladungsdichten $\rho _{i}\left(\vec {r}\right)$ in Leitern $i$ stellen sich so ein, dass die Gesamtenergie minimal wird.
+	\textbf{Theorem von Thomson:}
+
+	Die Ladungsdichten $\rho _{i}\left(\vec {r}\right)$ in Leitern $i$ stellen sich so ein, dass die Gesamtenergie minimal wird.
 \end{formal}
 Beweis:
 \begin{equation*}
@@ -307,7 +307,7 @@ Minimierung unter der Nebenbedingung $\int _{{L_{i}}}\diff ^{3}\vec {r}\rho _{i}
 \end{equation*}
 wobei in Voraussicht die Lagrange-Parameter als $\phi _{i}$ bezeichnet werden, weil sich mit
 \begin{equation*}
-    \partial _{{\rho _{k}}\left(\vec {r}\right)}\sum _{i}\int \rho _{i}\left(\vec {r}\right)f_{i}\left(\vec {r}\right)\diff ^{3}r=f_{k}\left(\vec {r}\right)
+	\partial _{{\rho _{k}}\left(\vec {r}\right)}\sum _{i}\int \rho _{i}\left(\vec {r}\right)f_{i}\left(\vec {r}\right)\diff ^{3}r=f_{k}\left(\vec {r}\right)
 \end{equation*}
 ergibt, dass
 \begin{equation*}
@@ -346,7 +346,7 @@ und schließlich für einen Kugelkondensator mit Radien $r_{1}<r_{2}$
 \begin{equation*}
 	C=4\pi \varepsilon _{0}\varepsilon _{r}\left(\frac{1}{r_{1}}-\frac{1}{r_{2}}\right)^{-1}=4\pi \varepsilon _{0}\varepsilon _{r}\frac{r_{1}r_{2}}{d}.
 \end{equation*}
-\Abbref{fig:capacitors} bildet diese drei einfachen Kondensatorgeometrien ab. 
+\Abbref{fig:capacitors} bildet diese drei einfachen Kondensatorgeometrien ab.
 
 
 \begin{figure}[htb]
@@ -374,7 +374,7 @@ in einem Volumen $V$ noch die Randbedingungen auf $\partial V$ zu berücksichtig
 
 \subsection{Eindeutigkeit der Lösung}
 
-Allgemein sind drei verschiedene Arten von Randbedingungen möglich. 
+Allgemein sind drei verschiedene Arten von Randbedingungen möglich.
 
 \begin{enumerate}
 	\item Dirichlet-Randbedingung: Das Potential ist auf dem Rand vorgegeben, $\left.\hspace{0pt}\phi \right| _{\partial V}$.
@@ -419,7 +419,7 @@ an. Die Lösung lässt sich in Eigenfunktionen des Laplace-Operators zerlegen. D
 
 Für kugelsymmetrische Problem bietet es sich an in Kugelkoordinaten zu rechnen. In Kugelkoordinaten lässt sich der Laplace-Operator in Radial- und Winkelanteil zerlegen:
 \begin{align*}
-	\nabla ^{2}\phi &=\nabla _{r}^{2}\phi +\frac{1}{r^{2}}\nabla _{\varphi ,\vartheta }^{2}\phi \\&=\frac{1}{r^{2}}\frac{\partial }{\partial r}r^{2}\frac{\partial }{\partial r}\phi +\frac{1}{r^{2}\sin \vartheta }\frac{\partial }{\partial \vartheta }\sin \varphi \frac{\partial }{\partial \vartheta }\phi -\frac{1}{r^{2}\sin ^{2} \vartheta }\frac{\partial ^{2}}{\partial \varphi ^{2}}\phi
+	\nabla ^{2}\phi & =\nabla _{r}^{2}\phi +\frac{1}{r^{2}}\nabla _{\varphi ,\vartheta }^{2}\phi \\&=\frac{1}{r^{2}}\frac{\partial }{\partial r}r^{2}\frac{\partial }{\partial r}\phi +\frac{1}{r^{2}\sin \vartheta }\frac{\partial }{\partial \vartheta }\sin \varphi \frac{\partial }{\partial \vartheta }\phi -\frac{1}{r^{2}\sin ^{2} \vartheta }\frac{\partial ^{2}}{\partial \varphi ^{2}}\phi
 \end{align*}
 Zur Lösung wird ein Produktansatz gemacht,
 \begin{equation*}
@@ -449,9 +449,9 @@ Für die Kugelflächenfunktionen von zwei Vektoren $\vec {r}_{1}=\left(r_{1},\va
 \end{equation*}
 Die Greensche Funktion kann mit diesem Additionstheorem nach den Kugelflächenfunktionen entwickelt werden
 \begin{equation*}
-	\frac{1}{\left| \vec {r}-\vec {r}'\right| }=\frac{1}{\sqrt{r^{2}+r'^{2}-2rr'\cos \vartheta }}=\sum _{l}\frac{r_{<}^{l}}{r_{>}^{l+1}}P_{l}\left(\cos \vartheta \right),\quad 
-		r_{>}=\max \left(r,r'\right) ,\quad
-		r_{<}=\min \left(r,r'\right)
+	\frac{1}{\left| \vec {r}-\vec {r}'\right| }=\frac{1}{\sqrt{r^{2}+r'^{2}-2rr'\cos \vartheta }}=\sum _{l}\frac{r_{<}^{l}}{r_{>}^{l+1}}P_{l}\left(\cos \vartheta \right),\quad
+	r_{>}=\max \left(r,r'\right) ,\quad
+	r_{<}=\min \left(r,r'\right)
 \end{equation*}
 
 
@@ -489,7 +489,7 @@ nach den sogenannten Momenten der Ladungsverteilung entwickelt. Führe dazu zun�
 \end{equation*}
 Damit lässt sich das Potential nähern als
 \begin{align*}
-	\phi \left(\vec {r}\right)&\approx \frac{1}{4\pi \varepsilon _{0}}\left(\int \diff ^{3}\vec {r}'\frac{\rho \left(\vec {r}\right)}{r}-\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i}'\partial _{i}\frac{1}{r}+\frac{1}{2}\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i}'x_{j}'\partial _{i}\partial _{j}\frac{1}{r}+\ldots \right. \\ &\quad\quad\left. +\frac{\left(-1\right)^{n}}{n!}\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i_{1}}'\ldots  x_{i_{n}}'\partial _{{i_{1}}}\ldots \partial _{{i_{n}}}\frac{1}{r}\right)\\&=\frac{1}{4\pi \varepsilon _{0}}\left(\frac{1}{r}\underset{q}{\underbrace{\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)}}-\partial _{i}\frac{1}{r}\underset{p_{i}}{\underbrace{\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i}'}}+\frac{1}{6}\partial _{i}\partial _{j}\frac{1}{r}\underset{Q_{ij}}{\underbrace{\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)\left(3x_{i}'x_{j}'-r^{'2}\delta _{ij}\right)}}+\ldots \right. \\ &\quad\quad\left.  +\,\partial _{{i_{1}}}\ldots \partial _{{i_{n}}}\frac{1}{r}\underset{M_{{i_{1}}\ldots {i_{n}}}}{\underbrace{\frac{\left(-1\right)^{n}}{n!}\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i_{1}}'\ldots x_{i_{n}}'}}\right)\\&=\frac{1}{4\pi \varepsilon _{0}}\left(\frac{q}{r}-p_{i}\partial _{i}\frac{1}{r}+\frac{1}{6}Q_{ij}\partial _{i}\partial _{j}\frac{1}{r}+\ldots +M_{{i_{1}}\ldots {i_{n}}}\partial _{{i_{1}}}\ldots \partial _{{i_{n}}}\frac{1}{r}\right).
+	\phi \left(\vec {r}\right) & \approx \frac{1}{4\pi \varepsilon _{0}}\left(\int \diff ^{3}\vec {r}'\frac{\rho \left(\vec {r}\right)}{r}-\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i}'\partial _{i}\frac{1}{r}+\frac{1}{2}\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i}'x_{j}'\partial _{i}\partial _{j}\frac{1}{r}+\ldots \right. \\ &\quad\quad\left. +\frac{\left(-1\right)^{n}}{n!}\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i_{1}}'\ldots  x_{i_{n}}'\partial _{{i_{1}}}\ldots \partial _{{i_{n}}}\frac{1}{r}\right)\\&=\frac{1}{4\pi \varepsilon _{0}}\left(\frac{1}{r}\underset{q}{\underbrace{\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)}}-\partial _{i}\frac{1}{r}\underset{p_{i}}{\underbrace{\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i}'}}+\frac{1}{6}\partial _{i}\partial _{j}\frac{1}{r}\underset{Q_{ij}}{\underbrace{\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)\left(3x_{i}'x_{j}'-r^{'2}\delta _{ij}\right)}}+\ldots \right. \\ &\quad\quad\left.  +\,\partial _{{i_{1}}}\ldots \partial _{{i_{n}}}\frac{1}{r}\underset{M_{{i_{1}}\ldots {i_{n}}}}{\underbrace{\frac{\left(-1\right)^{n}}{n!}\int \diff ^{3}\vec {r}'\rho \left(\vec {r}\right)x_{i_{1}}'\ldots x_{i_{n}}'}}\right)\\&=\frac{1}{4\pi \varepsilon _{0}}\left(\frac{q}{r}-p_{i}\partial _{i}\frac{1}{r}+\frac{1}{6}Q_{ij}\partial _{i}\partial _{j}\frac{1}{r}+\ldots +M_{{i_{1}}\ldots {i_{n}}}\partial _{{i_{1}}}\ldots \partial _{{i_{n}}}\frac{1}{r}\right).
 \end{align*}
 Dabei identifizieren wir das Dipolmoment als Tensor erster Stufe
 \begin{equation*}
@@ -522,55 +522,55 @@ Mit den Identitäten
 
 \begin{enumerate}
 	\item Monopol (Potential/Feld einer Punktladung $\rho _{m}=q\delta \left(\vec {r}\right)$)
-		\begin{equation*}
-			\phi _{\mathrm{m}}\left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\frac{q}{r}\rightarrow \vec {E}(\vec r)=\frac{q}{4\pi \varepsilon _{0}}\frac{\vec {r}}{r^{3}}
-		\end{equation*}
+	      \begin{equation*}
+		      \phi _{\mathrm{m}}\left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\frac{q}{r}\rightarrow \vec {E}(\vec r)=\frac{q}{4\pi \varepsilon _{0}}\frac{\vec {r}}{r^{3}}
+	      \end{equation*}
 	\item Dipol:
-		\begin{align*}
-				\phi _{\diff }&=-\frac{1}{4\pi \varepsilon _{0}}\vec {p}\cdot \nabla \frac{1}{r}=\frac{1}{4\pi \varepsilon _{0}}\frac{\vec {p}\cdot \vec {r}}{r^{3}}\propto \frac{1}{r^{2}} \\
-				E_{i}&=\frac{1}{4\pi \varepsilon _{0}}p_{j}\nabla _{i}\nabla _{j}\frac{1}{r}=\frac{1}{4\pi \varepsilon _{0}}\frac{p_{j}}{r^{3}}\left(\frac{3x_{i}x_{j}}{r^{2}}-\delta _{ij}\right)\propto \frac{1}{r^{3}}
-		\end{align*}
-		Wir sehen, dass das Feld eines Dipols mit $r^{-3}$ abnimmt, während dasjenige eines Monopols nur mit $r^{-2}$ abfällt. Die Felder der einzelnen Ladungen heben sich im Fernfeld zum Teil auf.
+	      \begin{align*}
+		      \phi _{\diff } & =-\frac{1}{4\pi \varepsilon _{0}}\vec {p}\cdot \nabla \frac{1}{r}=\frac{1}{4\pi \varepsilon _{0}}\frac{\vec {p}\cdot \vec {r}}{r^{3}}\propto \frac{1}{r^{2}}                                        \\
+		      E_{i}          & =\frac{1}{4\pi \varepsilon _{0}}p_{j}\nabla _{i}\nabla _{j}\frac{1}{r}=\frac{1}{4\pi \varepsilon _{0}}\frac{p_{j}}{r^{3}}\left(\frac{3x_{i}x_{j}}{r^{2}}-\delta _{ij}\right)\propto \frac{1}{r^{3}}
+	      \end{align*}
+	      Wir sehen, dass das Feld eines Dipols mit $r^{-3}$ abnimmt, während dasjenige eines Monopols nur mit $r^{-2}$ abfällt. Die Felder der einzelnen Ladungen heben sich im Fernfeld zum Teil auf.
 
-		Die Ladungsdichte eines elementaren Dipols ist
-		\begin{equation*}
-			\rho _{\diff }\left(\vec {r}\right)=q\left(\delta \left(\vec {r}-\frac{\vec {d}}{2}\right)-\delta \left(\vec {r}+\frac{\vec {d}}{2}\right)\right),
-		\end{equation*}
-		woraus sich ein Dipolmoment von
-		\begin{equation*}
-			\vec {p}=q\vec {d}\parallel \vec {d}
-		\end{equation*}
-		ergibt. 
+	      Die Ladungsdichte eines elementaren Dipols ist
+	      \begin{equation*}
+		      \rho _{\diff }\left(\vec {r}\right)=q\left(\delta \left(\vec {r}-\frac{\vec {d}}{2}\right)-\delta \left(\vec {r}+\frac{\vec {d}}{2}\right)\right),
+	      \end{equation*}
+	      woraus sich ein Dipolmoment von
+	      \begin{equation*}
+		      \vec {p}=q\vec {d}\parallel \vec {d}
+	      \end{equation*}
+	      ergibt.
 
-		Man kann auch einen sogenannten Punktdipol betrachten \textendash{} ein idealisiertes Objekt, bei dem der Abstand $\vec {d}$ gegen $0$ geht:
-		\begin{equation*}
-			\vec {p}=\lim _{\substack{
-					d\rightarrow 0 \\
-					qd<\infty}} q\vec {d},\quad \rho _{\diff }\left(\vec {r}\right)=-\vec {p}\cdot \nabla \delta \left(\vec {r}\right), \quad\phi _{\diff }=-\frac{1}{4\pi \varepsilon _{0}}\vec {p}\cdot \nabla \frac{1}{r}
-		\end{equation*}
+	      Man kann auch einen sogenannten Punktdipol betrachten \textendash{} ein idealisiertes Objekt, bei dem der Abstand $\vec {d}$ gegen $0$ geht:
+	      \begin{equation*}
+		      \vec {p}=\lim _{\substack{
+				      d\rightarrow 0 \\
+				      qd<\infty}} q\vec {d},\quad \rho _{\diff }\left(\vec {r}\right)=-\vec {p}\cdot \nabla \delta \left(\vec {r}\right), \quad\phi _{\diff }=-\frac{1}{4\pi \varepsilon _{0}}\vec {p}\cdot \nabla \frac{1}{r}
+	      \end{equation*}
 	\item Quadrupol:
-		\begin{align*}
-				\phi _{\mathrm{Q}}&=\frac{1}{4\pi \varepsilon _{0}}\frac{1}{6}Q_{kl}\nabla _{k}\nabla _{l}\frac{1}{r}=\frac{1}{4\pi \varepsilon _{0}}\frac{1}{2}Q_{kl}\frac{x_{k}x_{l}}{r^{5}}\propto \frac{1}{r^{3}} \\
-				E_{i}&=-\frac{1}{4\pi \varepsilon _{0}}\frac{1}{6}Q_{kl}\nabla _{i}\nabla _{k}\nabla _{l}\frac{1}{r}=\frac{1}{4\pi \varepsilon _{0}}\frac{Q_{kl}}{2}\frac{5x_{i}x_{k}x_{l}-r^{2}\left(\delta _{kl}x_{i}+\delta _{il}x_{k}+\delta _{ik}x_{l}\right)}{r^{7}}
-		\end{align*}
+	      \begin{align*}
+		      \phi _{\mathrm{Q}} & =\frac{1}{4\pi \varepsilon _{0}}\frac{1}{6}Q_{kl}\nabla _{k}\nabla _{l}\frac{1}{r}=\frac{1}{4\pi \varepsilon _{0}}\frac{1}{2}Q_{kl}\frac{x_{k}x_{l}}{r^{5}}\propto \frac{1}{r^{3}}                                                                   \\
+		      E_{i}              & =-\frac{1}{4\pi \varepsilon _{0}}\frac{1}{6}Q_{kl}\nabla _{i}\nabla _{k}\nabla _{l}\frac{1}{r}=\frac{1}{4\pi \varepsilon _{0}}\frac{Q_{kl}}{2}\frac{5x_{i}x_{k}x_{l}-r^{2}\left(\delta _{kl}x_{i}+\delta _{il}x_{k}+\delta _{ik}x_{l}\right)}{r^{7}}
+	      \end{align*}
 
 
-		\begin{figure}[htb]
-			\centering
-			\includegraphics{elemental_quadrupoles.pdf}
-			\caption{Elementare Quadrupole können in zwei verschiedenen Konfigurationen auftreten. }
-			\label{fig:elemental_quadrupoles}
-		\end{figure}
+	      \begin{figure}[htb]
+		      \centering
+		      \includegraphics{elemental_quadrupoles.pdf}
+		      \caption{Elementare Quadrupole können in zwei verschiedenen Konfigurationen auftreten. }
+		      \label{fig:elemental_quadrupoles}
+	      \end{figure}
 
-		Es gibt zwei elementare Quadrupole (mit $\vec {p}=0$), die in \Abbref{fig:elemental_quadrupoles} zu sehen sind. 
+	      Es gibt zwei elementare Quadrupole (mit $\vec {p}=0$), die in \Abbref{fig:elemental_quadrupoles} zu sehen sind.
 
-		Wird der Bezugspunkt/Aufpunkt verschoben, so ändern sich im Allgemeinen die Multipolmomente, aber das erste Moment, das bei der Multipolentwicklung einer Ladungsverteilung ungleich $0$ ist, bleibt unverändert.
+	      Wird der Bezugspunkt/Aufpunkt verschoben, so ändern sich im Allgemeinen die Multipolmomente, aber das erste Moment, das bei der Multipolentwicklung einer Ladungsverteilung ungleich $0$ ist, bleibt unverändert.
 
 
-		\begin{formal}
-			Das niedrigste, nicht-verschwindende Multipolmoment in der Entwicklung ist unabhängig vom Bezugspunkt.
-		\end{formal}
-		Man kann auch sphärische Multipolmomente mithilfe von Kugelflächenfunktionen ausdrücken.
+	      \begin{formal}
+		      Das niedrigste, nicht-verschwindende Multipolmoment in der Entwicklung ist unabhängig vom Bezugspunkt.
+	      \end{formal}
+	      Man kann auch sphärische Multipolmomente mithilfe von Kugelflächenfunktionen ausdrücken.
 \end{enumerate}
 
 
@@ -582,7 +582,7 @@ Die Energie von Multipolen in einem externen Potential $\phi _{e}\left(\vec {r}\
 \end{equation*}
 Wir nehmen an, dass die Änderung von $\phi _{e}$ in $V$ nur klein ist und erhalten durch eine Taylor-Entwicklung
 \begin{align*}
-	U&=\int \diff ^{3}\vec {r}\rho \left(\vec {r}\right)\left[\phi _{e}\left(0\right)+\vec {r}\nabla \phi _{e}\left(0\right)+\frac{1}{2}x_{i}x_{j}\nabla _{i}\nabla _{j}\phi _{e}\left(0\right)+\ldots \right]\\&=q\phi \left(0\right)-\vec {p}\cdot E_{e}\left(0\right)-\frac{1}{6}Q_{ij}\nabla _{j}E_{e}^{\left(i\right)}\left(0\right)+\ldots
+	U & =\int \diff ^{3}\vec {r}\rho \left(\vec {r}\right)\left[\phi _{e}\left(0\right)+\vec {r}\nabla \phi _{e}\left(0\right)+\frac{1}{2}x_{i}x_{j}\nabla _{i}\nabla _{j}\phi _{e}\left(0\right)+\ldots \right] \\&=q\phi \left(0\right)-\vec {p}\cdot E_{e}\left(0\right)-\frac{1}{6}Q_{ij}\nabla _{j}E_{e}^{\left(i\right)}\left(0\right)+\ldots
 \end{align*}
 Die Energie der Multipole ist also durch die $n$-fache Ableitung des Potentials $\nabla ^{n}\phi $ bestimmt. Diese Rechnung erlaubt wegen der Taylor-Entwicklung eine beliebige Wahl des Bezugspunkts.
 
@@ -601,8 +601,8 @@ Diese wird minimal für $\vec {p}_{1}\parallel \vec {p}_{2}\parallel \vec {r}$ u
 
 Zuletzt sollen noch Drehmomente auf Multipole diskutiert werden.
 \begin{align*}
-		\vec {M}          & =\int \diff ^{3}\vec {r}\vec {r}\times \underset{\text{Kraftdichte}}{\underbrace{\rho \left(\vec {r}\right)\vec {E}_{e}\left(\vec {r}\right)}}\implication M_{i}=\int \diff ^{3}\vec {r}\varepsilon _{ijk}x_{j}\rho \left(\vec {r}\right)\underset{\approx E_{e}^{\left(k\right)}\left(0\right)+x_{l}\nabla _{l}E_{e}^{\left(k\right)}\left(0\right)}{\underbrace{E_{e}^{\left(k\right)}\left(\vec {r}\right)}} \\
-		\implication M_{i} & =\left(\vec {p}\times \vec {E}_{e}\right)_{i}+\frac{1}{3}\varepsilon _{ijk}Q_{jl}\nabla _{l}E_{e}^{\left(k\right)}
+	\vec {M}           & =\int \diff ^{3}\vec {r}\vec {r}\times \underset{\text{Kraftdichte}}{\underbrace{\rho \left(\vec {r}\right)\vec {E}_{e}\left(\vec {r}\right)}}\implication M_{i}=\int \diff ^{3}\vec {r}\varepsilon _{ijk}x_{j}\rho \left(\vec {r}\right)\underset{\approx E_{e}^{\left(k\right)}\left(0\right)+x_{l}\nabla _{l}E_{e}^{\left(k\right)}\left(0\right)}{\underbrace{E_{e}^{\left(k\right)}\left(\vec {r}\right)}} \\
+	\implication M_{i} & =\left(\vec {p}\times \vec {E}_{e}\right)_{i}+\frac{1}{3}\varepsilon _{ijk}Q_{jl}\nabla _{l}E_{e}^{\left(k\right)}
 \end{align*}
 Insbesondere dreht das Drehmoment $\vec {M}$ einen Dipol parallel zu $\vec {E}$, da $\vec {M}=0$ für $\vec {p}\parallel \vec {E}_{e}$ und
 \begin{equation*}

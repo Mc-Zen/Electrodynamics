@@ -20,13 +20,13 @@ Außerdem wird die Stromdichte als Strom pro Querschnittsfläche $A$
 \begin{equation*}
 	\vec {j}=\frac{\text{Strom}}{\text{Fläche}}=\frac{I}{A}\frac{\diff \vec {\vec {r}}}{\diff s}\:\xrightarrow{\Delta  f\diff s=\diff ^{3}r}\: \vec {j}\diff ^{3}\vec {r}=I\diff \vec {r}
 \end{equation*}
-definiert. Dabei ist $\diff\vec r$ als Leiterelement und $I\diff\vec r$ als gerichtetes Stromelement zu verstehen. Es gilt also 
+definiert. Dabei ist $\diff\vec r$ als Leiterelement und $I\diff\vec r$ als gerichtetes Stromelement zu verstehen. Es gilt also
 \begin{equation*}
-    I=\int_A \vec j \cdot \diff \vec A,
+	I=\int_A \vec j \cdot \diff \vec A,
 \end{equation*}
 bzw. für eine gleichmäßig auf $A$ verteilte Stromdichte
 \begin{equation*}
-    I=\vec j\cdot \vec A.
+	I=\vec j\cdot \vec A.
 \end{equation*}
 
 Die Stromdichte lässt sich auch ausdrücken durch das Produkt aus Ladungsdichte und Geschwindigkeit,
@@ -37,7 +37,7 @@ was eine mikroskopische Definition analog zu der der Ladungsdichte erlaubt\footn
 \begin{equation*}
 	\vec {j}=\sum _{i}q_{i}\vec {v}_{i}\delta \left(\vec {r}-\vec {r}_{i}\right)
 \end{equation*}
-Die Stromdichte zeigt damit in dieselbe Richtung wie der Geschwindigkeitsvektor einer positiven Ladung. 
+Die Stromdichte zeigt damit in dieselbe Richtung wie der Geschwindigkeitsvektor einer positiven Ladung.
 
 Zur Herleitung der Kontinuitätsgleichung betrachten wir die zeitliche Änderung der Ladung in einem Volumen $V$:
 \begin{equation*}
@@ -69,9 +69,9 @@ Die Gesamtkraft auf einen ausgedehnten Leiter $V$ ergibt sich durch Integration:
 \end{equation*}
 Im Spezialfall für einen dünnen Leiter $C$ und ein Leiterelement $\diff\vec r$ ($\diff V = \diff A\diff\vec r$) gilt
 \begin{align}
-    \label{eq:def_magn_flussdichte}
-    \diff \vec F &=I\diff\vec r\times\vec B \\
-	\vec {F}&=\int _{V}\vec {j}\times \vec {B}\diff A \diff\vec r = \int_{A}j\diff A \cdot \int_C \diff\vec r\times \vec B \nonumber\\& = I\int_C \diff\vec r\times \vec B .\nonumber
+	\label{eq:def_magn_flussdichte}
+	\diff \vec F & =I\diff\vec r\times\vec B                                                                                               \\
+	\vec {F}     & =\int _{V}\vec {j}\times \vec {B}\diff A \diff\vec r = \int_{A}j\diff A \cdot \int_C \diff\vec r\times \vec B \nonumber \\& = I\int_C \diff\vec r\times \vec B .\nonumber
 \end{align}
 
 \begin{figure}[htb]
@@ -88,7 +88,7 @@ Dieser Zusammenhang ist als Biot-Savartsches Gesetz für Leiter bekannt und ergi
 
 Für das Feld eines unendlich langen, geraden Leiters gilt
 \begin{equation}
-    \label{eq:biot_savart}
+	\label{eq:biot_savart}
 	B\left(\rho \right)=\frac{\mu _{0}}{4\pi }I\rho \int _{-\infty }^{\infty }\frac{\diff z}{\left(\rho ^{2}+z^{2}\right)^{\frac{3}{2}}}=\frac{\mu _{0}}{4\pi }\frac{I}{\rho },
 \end{equation}
 
@@ -104,11 +104,11 @@ Diese Gleichung beschreibt das historische Biot-Savartsche Gesetz.
 
 Verwendet man Gleichungen \eqref{eq:def_magn_flussdichte} und \eqref{eq:biot_savart}, so erhält man die Kraft zwischen zwei parallelen Leitern mit Abstand $d$ (siehe \Abbref{fig:force_parallel_conductors})
 \begin{equation*}
-    \frac{\diff\vec F}{\diff z} = \frac{\mu_0}{2\pi} \frac{I_1I_2}d,
+	\frac{\diff\vec F}{\diff z} = \frac{\mu_0}{2\pi} \frac{I_1I_2}d,
 \end{equation*}
 die orthogonal zum Leiter ist.
 
-Bis zum 20.5.2019 war der Ampère definiert als der Strom, der durch zwei parallele Leiter der Länge $\SI{1}{\m}$ mit $\SI{1}{\m}$ Abstand in gleicher Richtung fließt und eine Anziehungskraft von $\SI{1e-7}{\newton}$ bewirkt. 
+Bis zum 20.5.2019 war der Ampère definiert als der Strom, der durch zwei parallele Leiter der Länge $\SI{1}{\m}$ mit $\SI{1}{\m}$ Abstand in gleicher Richtung fließt und eine Anziehungskraft von $\SI{1e-7}{\newton}$ bewirkt.
 
 Heute gilt
 \begin{equation*}
@@ -149,7 +149,7 @@ Wie für das elektrische Feld können wir ein Potential einführen \textendash{}
 \end{equation*}
 Die Divergenz von $\vec {B}$ verschwindet, weil stets gilt, dass $\nabla\cdot(\nabla\times \vec A) = 0$.
 \begin{formal}
-		Das Magnetfeld hat keine Quellen, $\divg \vec {B}=0$.
+	Das Magnetfeld hat keine Quellen, $\divg \vec {B}=0$.
 \end{formal}
 In der integralen Formulierung,
 \begin{equation*}
@@ -159,12 +159,12 @@ bedeutet das, dass die magnetischen Feldlinien geschlossen sind. Es gibt folglic
 
 Für die Rotation der magnetischen Flussdichte gilt
 \begin{align}
-\begin{split}
-    \label{eq:durchflutungsgesetz_magnetostatik}
-	\rot \vec {B}&=\nabla \times \left(\nabla \times \vec {A}\right)=\nabla \left(\nabla \cdot \vec {A}\right)-\nabla ^{2}\vec {A}\\
-	&=\frac{\mu _{0}}{4\pi }\nabla \int \vec {j}\left(\vec {r}'\right)\cdot \nabla \frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'-\frac{\mu _{0}}{4\pi }\int \vec {j}\left(\vec {r}'\right)\nabla ^{2}\frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'\\
-	&=0+\mu _{0}\int \vec {j}\left(\vec {r}'\right)\delta \left(\vec {r}-\vec {r}'\right)\diff ^{3}\vec {r}'\\&=\mu _{0}\vec {j}\left(\vec {r}\right).
-\end{split}
+	\begin{split}
+		\label{eq:durchflutungsgesetz_magnetostatik}
+		\rot \vec {B}&=\nabla \times \left(\nabla \times \vec {A}\right)=\nabla \left(\nabla \cdot \vec {A}\right)-\nabla ^{2}\vec {A}\\
+		&=\frac{\mu _{0}}{4\pi }\nabla \int \vec {j}\left(\vec {r}'\right)\cdot \nabla \frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'-\frac{\mu _{0}}{4\pi }\int \vec {j}\left(\vec {r}'\right)\nabla ^{2}\frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'\\
+		&=0+\mu _{0}\int \vec {j}\left(\vec {r}'\right)\delta \left(\vec {r}-\vec {r}'\right)\diff ^{3}\vec {r}'\\&=\mu _{0}\vec {j}\left(\vec {r}\right).
+	\end{split}
 \end{align}
 
 \begin{formal}
@@ -176,8 +176,8 @@ Alternativ kann man sagen, dass die Zirkulation entlang der Oberfläche eines Vo
 \end{equation*}
 Diese Gleichung ist als Ampèresches Gesetz bekannt. Mit seiner Nutzung kann man leicht das Magnetfeld von einem homogen stromdurchflossenen, zylindrischen Draht mit Radius $R$ bestimmen, wie in Abbildung \Abbref{fig:cylinder_conductor_with_diagrams} gezeigt. Wähle dazu eine kreisförmige Kurve $C$ mit Radius $r$ um die $z$-Achse herum. Aufgrund der Zylindersymmetrie ist das Magnetfeld nur vom Abstand $r$ der $z$-Achse abhängig und es gilt mit dem Ampèreschen Gesetz
 \begin{align*}
-		B\left(r\right)\oint _{C}1\diff s&=2\pi rB\left(r\right)=\mu _{0}I\left(r\right) \\
-		\equivalence B\left(r\right)&=\frac{\mu _{0}I\left(r\right)}{2\pi r}.
+	B\left(r\right)\oint _{C}1\diff s & =2\pi rB\left(r\right)=\mu _{0}I\left(r\right) \\
+	\equivalence B\left(r\right)      & =\frac{\mu _{0}I\left(r\right)}{2\pi r}.
 \end{align*}
 
 
@@ -211,8 +211,8 @@ und es ist kreisförmig um die $z$-Achse gerichtet, $\vec {B}\left(r,\varphi \ri
 
 Genauso lässt sich das Feld einer unendlich langen Spule berechnen (\Abbref{fig:long_coil_scheme}):
 \begin{align*}
-		\oint \vec {B}\cdot \diff \vec {r}&=LB_{0}\overset{!}{=}\mu _{0}NI \\
-		\implication B_{0}&=\mu _{0}\frac{N}{L}I, \vec {B}=B_{0}\vec {e}_{z}
+	\oint \vec {B}\cdot \diff \vec {r} & =LB_{0}\overset{!}{=}\mu _{0}NI                   \\
+	\implication B_{0}                 & =\mu _{0}\frac{N}{L}I, \vec {B}=B_{0}\vec {e}_{z}
 \end{align*}
 Zwischen den Windungen hebt sich das magnetische Feld weg.
 
@@ -232,12 +232,12 @@ und im Potential $\vec {A}\left(\vec {r}\right)$ findet sich wieder eine Greensc
 
 Wir führen zunächst wieder eine Entwicklung des magnetischen Potentials nach Momenten der Stromverteilung durch:
 \begin{equation}
-    \label{eq:entwicklung_magn_potential}
+	\label{eq:entwicklung_magn_potential}
 	\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \diff ^{3}\vec {r}'\frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\approx \frac{\mu _{0}}{4\pi }\left(\frac{1}{r}\int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)+\frac{\vec {r}}{r^{3}}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'+\ldots \right)
 \end{equation}
 Die Auswertung ist allerdings viel komplizierter als für das elektrische Potential und daher beschränken wir uns hier auf die Dipole und vernachlässigen höhere Multipolmomente. Außerdem verwenden wir als Hilfsatz folgende Gleichung, die für beliebige skalare Felder $g$ und $f$ sowie für ein quellenfreies Vektorfeld $\vec {j}$ gilt\footnote{Beweis: Betrachte $\int _{V}\nabla \left(gf\vec {j}\right)\diff ^{3}\vec {r}$. Einerseits ist dieser Ausdruck mit dem Satz von Gauß gleich $\int _{\partial V}gf\vec {j}\cdot \diff \vec {f}$, was gleich $0$ ist, wenn man das Volumen groß genug wählt, dass auf dem Rand $\vec {j}\left(\vec {r}\right)=\vec {0}$ ist. Außerdem findet man mithilfe der Produktregel, dass $\int _{V}\nabla \left(gf\vec {j}\right)\diff ^{3}\vec {r}=\int _{V}\vec {j}\cdot \nabla \left(gf\right)\diff ^{3}\vec {r}+\int _{V}gf\nabla \cdot \vec {j}\diff ^{3}\vec {r}$, wobei der letzte Term aufgrund der Bedingung $\divg \vec {j}=\vec {0}$ verschwindet, q.e.d.}:
 \begin{equation}
-    \label{eq:hilfssatz}
+	\label{eq:hilfssatz}
 	\int \vec {j}\cdot \nabla \left(gf\right)\diff ^{3}\vec {r}=0.
 \end{equation}
 Ferner können wir zeigen\footnote{Beweis: Mit der vorigen Formel $\int \vec {j}\cdot \nabla \left(gf\right)\diff ^{3}\vec {r}=0$ ist mit $g=1$ und $f=x_{i}$ offensichtlicherweise $\int j_{k}\cdot \nabla _{k}x_{i}\diff ^{3}\vec {r}=\int j_{i}\diff ^{3}\vec {r}=0$, q.e.d. }, dass
@@ -398,7 +398,7 @@ Betrachte zunächst die Terme mit $\sum _{i\left(n\right)}q_{i}\vec {v}_{ni}$, d
 Der zweite Term enthält ein magnetisches Moment (verwende wieder die Tensorzerlegung in einen symmetrischen und einen asymmetrischen Anteil):
 \begin{multline*}
 	\sum _{i\left(n\right)}q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }\\
-		=\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }-q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right]+\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }+q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right],
+	=\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }-q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right]+\sum _{i\left(n\right)}\frac{1}{2}\left[q_{i}\left(\vec {r}_{ni}\right)_{\beta }\left(\vec {v}_{ni}\right)_{\alpha }+q_{i}\left(\vec {r}_{ni}\right)_{\alpha }\left(\vec {v}_{ni}\right)_{\beta }\right],
 \end{multline*}
 wobei die Summanden der zweiten Summe verschwinden, weil diese Ströme jeweils auf ein Molekül beschränkt sind ($\nabla\cdot \vec {j}_{\mathrm{b}}=0$). Die erste Summe ist asymmetrisch und lässt sich als Kreuzprodukt schreiben,
 \begin{equation*}
@@ -410,10 +410,10 @@ sodass sich ein sinnvolles molekulares magnetisches Dipolmoment ergibt,
 \end{equation*}
 Sammle nun alle bisher ausgewerteten Ausdrücke:
 \begin{align*}
-	\left\langle \left(\vec {j}_{n}\left(\vec {r},t\right)\right)_{\alpha }\right\rangle &=\left(\left(\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}\right)_{\alpha }\right)+\frac{\diff }{\diff t}\left(\vec {p}_{n}\right)_{\alpha }\right)f\left(\vec {r}-\vec {r}_{n}\right)\\
-	&\qquad-\left(\left(\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}\right)_{\alpha }\left(\vec {r}_{ni}\right)_{\beta }\right)-\varepsilon _{\alpha \beta \gamma }\left(\vec {m}_{n}\right)_{\gamma }\right)\nabla _{\beta }f\left(\vec {r}-\vec {r}_{n}\right) \\
-	&=\left\langle q_{n}\left(\vec {v}_{n}\right)_{\alpha }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\frac{\partial }{\partial t}\left\langle \left(\vec {p}_{n}\right)_{\alpha }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\varepsilon _{\alpha \beta \gamma }\nabla _{\beta }\left\langle \left(\vec {m}_{n}\right)_{\gamma }\delta \left(\vec {r}-\vec {r}\right)\right\rangle\\
-	&\qquad -\nabla _{\beta }\left\langle \left(\vec {v}_{n}\right)_{\alpha }\left(\vec {p}_{n}\right)_{\beta }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle
+	\left\langle \left(\vec {j}_{n}\left(\vec {r},t\right)\right)_{\alpha }\right\rangle & =\left(\left(\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}\right)_{\alpha }\right)+\frac{\diff }{\diff t}\left(\vec {p}_{n}\right)_{\alpha }\right)f\left(\vec {r}-\vec {r}_{n}\right)                                                                                                                                                                                                                 \\
+	                                                                                     & \qquad-\left(\left(\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}\right)_{\alpha }\left(\vec {r}_{ni}\right)_{\beta }\right)-\varepsilon _{\alpha \beta \gamma }\left(\vec {m}_{n}\right)_{\gamma }\right)\nabla _{\beta }f\left(\vec {r}-\vec {r}_{n}\right)                                                                                                                                           \\
+	                                                                                     & =\left\langle q_{n}\left(\vec {v}_{n}\right)_{\alpha }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\frac{\partial }{\partial t}\left\langle \left(\vec {p}_{n}\right)_{\alpha }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\varepsilon _{\alpha \beta \gamma }\nabla _{\beta }\left\langle \left(\vec {m}_{n}\right)_{\gamma }\delta \left(\vec {r}-\vec {r}\right)\right\rangle \\
+	                                                                                     & \qquad -\nabla _{\beta }\left\langle \left(\vec {v}_{n}\right)_{\alpha }\left(\vec {p}_{n}\right)_{\beta }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle
 \end{align*}
 Den letzten Term vernachlässigen wir im Folgenden als Term höherer Ordnung (Details sind im Buch von Jackson, Kap. 6.6, zu finden).
 
@@ -439,12 +439,12 @@ Daraus ergibt sich die die gemittelte Stromdichte als Summe der makroskopischen 
 \end{equation*}
 und wir können die makroskopischen Feldgleichungen formulieren:
 \begin{align*}
-	\divg \vec {B}&=0 \\
-	\rot \vec {B}&=\mu _{0}\left(\vec {j}_{\mathrm{Ma}}\left(\vec {r},t\right)+\vec {j}_{\mathrm{Mi}}\left(\vec {r},t\right)+\varepsilon _{0}\frac{\partial }{\partial t}\vec {E}\left(\vec {r},t\right)\right)\\
-	&=\mu _{0}\left(\vec {j}_{\mathrm{Ma}}\left(\vec {r},t\right)+\frac{\partial }{\partial t}\vec {D}\left(\vec {r},t\right)+\nabla \times \vec {M}\left(\vec {r},t\right)\right)
+	\divg \vec {B} & =0                                                                                                                                                                                            \\
+	\rot \vec {B}  & =\mu _{0}\left(\vec {j}_{\mathrm{Ma}}\left(\vec {r},t\right)+\vec {j}_{\mathrm{Mi}}\left(\vec {r},t\right)+\varepsilon _{0}\frac{\partial }{\partial t}\vec {E}\left(\vec {r},t\right)\right) \\
+	               & =\mu _{0}\left(\vec {j}_{\mathrm{Ma}}\left(\vec {r},t\right)+\frac{\partial }{\partial t}\vec {D}\left(\vec {r},t\right)+\nabla \times \vec {M}\left(\vec {r},t\right)\right)
 \end{align*}
 Nun führen wir noch das magnetische Feld $\vec {H}$ ein,
-\begin{equation*} 
+\begin{equation*}
 	\vec {H}\left(\vec {r},t\right)=\frac{1}{\mu _{0}}\vec {B}\left(\vec {r},t\right)-M\left(\vec {r},t\right)\equivalence \vec {B}\left(\vec {r},t\right)=\mu _{0}\left(H\left(\vec {r},t\right)+M\left(\vec {r},t\right)\right)
 \end{equation*}
 Die Magnetisierung $\vec {M}$ wird also wieder in ein Hilfsfeld integriert, was einen einfacheren Ausdruck für die zweite Feldgleichung erlaubt:
@@ -453,7 +453,7 @@ Die Magnetisierung $\vec {M}$ wird also wieder in ein Hilfsfeld integriert, was 
 \end{equation*}
 
 \begin{formal}
-		Die Wirbel des Magnetfelds $\vec {H}$ sind die makroskopische Stromdichte $\vec {j}_{\mathrm{Ma}}$ und der dielektrische Verschiebungsstrom $\partial _{t}\vec {D}$.
+	Die Wirbel des Magnetfelds $\vec {H}$ sind die makroskopische Stromdichte $\vec {j}_{\mathrm{Ma}}$ und der dielektrische Verschiebungsstrom $\partial _{t}\vec {D}$.
 \end{formal}
 
 Das fundamentale magnetische Feld ist die magnetische Flussdichte $\vec {B}$.
@@ -498,10 +498,10 @@ Bemerkungen:
 Bei Ferromagnetismus gibt es eine permanente Magnetisierung, auch wenn kein Magnetfeld anliegt. Der Zusammenhang zwischen der magnetischen Flussdichte $\vec {B}$ und dem Magnetfeld $\vec {H}$ ist hier nicht linear, wie man an der sogenannten Hysteresekurve (siehe \Abbref{fig:hysterese}) sieht.
 
 \begin{figure}
-    \centering
-    \tfighysterese
-    \caption{Magnetische Hysterese: An ein zuerst unmagnetisches Material wird ein Feld $H$ angelegt und erhöht. Der Verlauf der magnetischen Flussdichte folgt der Kurve (1) und erreicht schließlich einen Sättigungswert $B_\mathrm{S}$ bei $H_\mathrm{S}$. Wird das Feld auf 0 verringert (Kurve (2)) bleibt eine Magnetisierung zurück (Remanenz). Ein entgegengesetztes Feld von der Stärke der Koerzitivfeldstärke $H_\mathrm{C}$ ist nötig, um die Restmagnetisierung aufzuheben. Jenseits dieser Feldstärke wird die Magnetisierung umgedreht und die Hysteresekurve umgekert durchlaufen. }
-    \label{fig:hysterese}
+	\centering
+	\tfighysterese
+	\caption{Magnetische Hysterese: An ein zuerst unmagnetisches Material wird ein Feld $H$ angelegt und erhöht. Der Verlauf der magnetischen Flussdichte folgt der Kurve (1) und erreicht schließlich einen Sättigungswert $B_\mathrm{S}$ bei $H_\mathrm{S}$. Wird das Feld auf 0 verringert (Kurve (2)) bleibt eine Magnetisierung zurück (Remanenz). Ein entgegengesetztes Feld von der Stärke der Koerzitivfeldstärke $H_\mathrm{C}$ ist nötig, um die Restmagnetisierung aufzuheben. Jenseits dieser Feldstärke wird die Magnetisierung umgedreht und die Hysteresekurve umgekert durchlaufen. }
+	\label{fig:hysterese}
 \end{figure}
 Zuerst ist das Material unmagnetisch (Punkt im Ursprung). Legt man nun ein Magnetfeld an und erhöht die Feldstärke, erhöht sich der magnetische Fluss im Material entlang der Kurve (1). Dieser wächst aber nicht unbegrenzt, da es schließlich zur Sättigung kommt. Die zugehörige Feldstärke heißt entsprechend Sättigungsfeldstärke $H_{\mathrm{S}}$ und $B_{\mathrm{S}}$ Sättigungswert. Wird nun das Feld wieder verringert, sinkt auch die Flussdichte entlang Kurve (2). Allerdings fällt $B$ nicht bis auf $0$ ab, sondern erreicht den Wert $B_{\mathrm{R}}$, die Remanenzflussdichte. Die Flussdichte fällt erst auf $0$, wenn eine gegengerichtete Koerzitivfeldstärke $H_{\mathrm{C}}$ angelegt wird.
 
@@ -517,8 +517,8 @@ Insbesondere ist für ein lineares, isotropes Material auch
 \end{equation*}
 Für die Tangentialkomponente von $\vec {H}$ gilt:
 \begin{align*}
-	\rot \vec {H}&=\vec {j}_{\mathrm{Ma}}+\frac{\partial \vec {D}}{\partial t}\xrightarrow{\text{Schleife}} \int \rot \vec {H}\cdot \diff \vec {f}=\int \vec {H}\cdot \diff \vec {s}=\int \left(\vec {j}_{\mathrm{Ma}}+\frac{\partial \vec {D}}{\partial t}\right)\cdot \hat{\vec {m}}\diff \vec f \\
-	&\xrightarrow{\Delta  h\rightarrow 0}\hat{\vec {t}}\cdot \left(\vec {H}^{\left(2\right)}-\vec {H}^{\left(1\right)}\right)=H_{\parallel }^{\left(2\right)}-H_{\parallel }^{\left(1\right)}=\vec {k}\cdot \hat{\vec {m}}
+	\rot \vec {H} & =\vec {j}_{\mathrm{Ma}}+\frac{\partial \vec {D}}{\partial t}\xrightarrow{\text{Schleife}} \int \rot \vec {H}\cdot \diff \vec {f}=\int \vec {H}\cdot \diff \vec {s}=\int \left(\vec {j}_{\mathrm{Ma}}+\frac{\partial \vec {D}}{\partial t}\right)\cdot \hat{\vec {m}}\diff \vec f \\
+	              & \xrightarrow{\Delta  h\rightarrow 0}\hat{\vec {t}}\cdot \left(\vec {H}^{\left(2\right)}-\vec {H}^{\left(1\right)}\right)=H_{\parallel }^{\left(2\right)}-H_{\parallel }^{\left(1\right)}=\vec {k}\cdot \hat{\vec {m}}
 \end{align*}
 mit einem Flächenstrom $\vec {k}$, der noch in der Grenzfläche fließen kann.
 
@@ -632,7 +632,7 @@ Die Ringspannung $Z_{E}$ bewirkt einen Stromfluss in der Schleife. Hiermit und a
 \end{equation*}
 
 \begin{formal}
-    Die zeitliche Änderung des magnetischen Flusses durch eine Leiterschleife ruft eine Ringspannung und damit einen Strom hervor.
+	Die zeitliche Änderung des magnetischen Flusses durch eine Leiterschleife ruft eine Ringspannung und damit einen Strom hervor.
 \end{formal}
 Die Bedeutung des negativen Vorzeichens wird mit der Lenzschen Regel erklärt:
 \begin{formal}
@@ -654,12 +654,12 @@ Bisher haben wir den Leiter festgehalten und das Magnetfeld verändert. Als näc
 
 Wir schreiben die treibende Ringspannung wieder als
 \begin{equation}
-    \label{eq:ringspannung_ruhesystem_leiter}
+	\label{eq:ringspannung_ruhesystem_leiter}
 	Z_{E}=\int _{\partial F}\vec {E}'\cdot \diff \vec {r},
 \end{equation}
 aber jetzt wird das elektrische Feld im Ruhesystem des Leiters $\vec {E}'$ eingesetzt.
 
-Die Physik soll nach Einsteins Relativitätstheorie in allen Inertialsystemen gleich sein. Eine Beschreibung des Versuchs im Ruhesystem des Leiters muss dasselbe Ergebnis liefern wie im Ruhesystem des Magnetfeldes. Dazu muss die Elektrodynamik invariant unter Lorentz-Transformationen sein. Für kleine Geschwindigkeiten gehen diese Transformationen in Galilei-Transformationen (vernachlässige für diesen Zweck Translationen in Raum und Zeit) $\vec {r}'=\vec {r}-vt$ über. Im Moment werden wir uns auf diese beschränken. 
+Die Physik soll nach Einsteins Relativitätstheorie in allen Inertialsystemen gleich sein. Eine Beschreibung des Versuchs im Ruhesystem des Leiters muss dasselbe Ergebnis liefern wie im Ruhesystem des Magnetfeldes. Dazu muss die Elektrodynamik invariant unter Lorentz-Transformationen sein. Für kleine Geschwindigkeiten gehen diese Transformationen in Galilei-Transformationen (vernachlässige für diesen Zweck Translationen in Raum und Zeit) $\vec {r}'=\vec {r}-vt$ über. Im Moment werden wir uns auf diese beschränken.
 
 Für den magnetischen Fluss, der jetzt aus dem Integral über eine veränderliche Fläche $F\left(t\right)$ hervorgeht,
 \begin{equation*}
@@ -675,7 +675,7 @@ Den zweiten Summanden im Integral schreiben wir um zu
 \end{equation*}
 und erhalten
 \begin{equation}
-    \label{eq:dt_magn_potential}
+	\label{eq:dt_magn_potential}
 	\frac{\diff }{\diff t}\phi _{B}=\int _{F}\left(\frac{\partial }{\partial t}-\nabla \times \left(\vec {v}\times \right)\right)\vec {B}\cdot \diff \vec {f}=\int _{F}\frac{\partial }{\partial t}\vec {B}\cdot \diff \vec {f}-\oint _{\partial F}\left(\vec {v}\times \vec {B}\right)\cdot \diff \vec {r}
 \end{equation}
 Diese Berechnungen wurden im Inertialsystem des Leiters durchgeführt. Nun soll zurück in das Laborsystem (Ruhesystem des Magnetfelds) transformiert werden. Wir wissen bereits, dass
@@ -724,7 +724,7 @@ Der erste Summand verschwindet im Integral als Oberflächenterm. Es bleibt\footn
 \end{equation*}
 bzw. in einem linearen Material
 \begin{equation}
-    \label{eq:magnetische_energie_linear}
+	\label{eq:magnetische_energie_linear}
 	U=\frac{1}{2}\int \vec {H}\cdot \vec {B}\diff ^{3}\vec {r}=\frac{1}{2}\int \vec {j}\cdot \vec {A}\diff ^{3}\vec {r}.
 \end{equation}
 Alternativ kann man auch die Poisson-Gleichung
@@ -744,7 +744,7 @@ Die Feldenergie zweier Leiterschleifen können wir schreiben als
 \end{equation*}
 mit Selbstinduktivität $L_{ii}$ und Gegeninduktivität  $L_{ik},i\neq k$
 \begin{align}
-    \label{eq:selbstinduktivität}
+	\label{eq:selbstinduktivität}
 	L_{ii} & =\frac{\mu }{4\pi }\frac{1}{I_{i}^{2}}\int \int \diff ^{3}\vec {r}\diff ^{3}\vec {r}'\frac{\vec {j}_{i}\left(\vec {r}\right)\cdot \vec {j}_{i}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| } \\
 	L_{ik} & =L_{ki}=\frac{\mu }{4\pi }\int _{C_{i}}\int _{C_{k}}\frac{\diff \vec {r}_{\mathrm{i}}\cdot \diff \vec {r}_{k}}{\left| \vec {r}-\vec {r}'\right| }
 \end{align}
@@ -774,9 +774,9 @@ und für eine unendliche lange Spule mit Querschnittsfläche $A$ und $N$ Windung
 \end{equation*}
 denn $U=\frac{1}{2}HBV=\frac{1}{2}\mu H^{2}A$ mit $H=\frac{N}{h}I$ liefert
 \begin{equation*}
-    U=\frac{1}{2}\mu N^{2}I^{2}\frac{A}{h}
+	U=\frac{1}{2}\mu N^{2}I^{2}\frac{A}{h}
 \end{equation*}
 und
 \begin{equation*}
-    U=\frac{1}{2}LI^{2}.
+	U=\frac{1}{2}LI^{2}.
 \end{equation*}
