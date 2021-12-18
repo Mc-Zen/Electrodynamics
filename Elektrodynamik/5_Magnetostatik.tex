@@ -497,7 +497,7 @@ Bemerkungen:
 
 Bei Ferromagnetismus gibt es eine permanente Magnetisierung, auch wenn kein Magnetfeld anliegt. Der Zusammenhang zwischen der magnetischen Flussdichte $\vec {B}$ und dem Magnetfeld $\vec {H}$ ist hier nicht linear, wie man an der sogenannten Hysteresekurve (siehe \Abbref{fig:hysterese}) sieht.
 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 	\tfighysterese
 	\caption{Magnetische Hysterese: An ein zuerst unmagnetisches Material wird ein Feld $H$ angelegt und erhöht. Der Verlauf der magnetischen Flussdichte folgt der Kurve (1) und erreicht schließlich einen Sättigungswert $B_\mathrm{S}$ bei $H_\mathrm{S}$. Wird das Feld auf 0 verringert (Kurve (2)) bleibt eine Magnetisierung zurück (Remanenz). Ein entgegengesetztes Feld von der Stärke der Koerzitivfeldstärke $H_\mathrm{C}$ ist nötig, um die Restmagnetisierung aufzuheben. Jenseits dieser Feldstärke wird die Magnetisierung umgedreht und die Hysteresekurve umgekert durchlaufen. }
@@ -507,9 +507,17 @@ Zuerst ist das Material unmagnetisch (Punkt im Ursprung). Legt man nun ein Magne
 
 Wir diskutieren nun die Randbedingungen, die im Wesentlichen die gleichen wie in der Elektrostatik sind.
 
-An der Grenzfläche muss die Normalkomponente von $\vec {B}$ stetig sein, da
+\begin{figure}[ht]
+	\centering
+	\tfigGrenzflaecheMagnetic
+	\caption{Beim Übergang zwischen Medien mit verschiedener Permeabilität ändern sich Magnetfeld und magnetische Flussdichte. Außerdem kann ein Flächenstrom $\vec k$ in der Grenzfläche fließen.
+		Die Randbedingungen werden aus Anwendung des Satzes von Gauß auf eine kleine "`Dose`` und des Satzes von Stokes auf eine kleine Schleife, die jeweils einen Teil der Grenzfläche enthalten, hergeleitet. }
+	\label{fig:grenzflaeche_magnetic}
+\end{figure}
+
+An einer Grenzfläche, wie in \Abbref{fig:grenzflaeche_magnetic} dargestellt, muss die Normalkomponente von $\vec {B}$ stetig sein, da
 \begin{equation*}
-	\divg \vec {B}=0\xrightarrow[\text{Satz von Gau\ss }]{\text{Dose},\: \Delta  h\rightarrow 0}\hat{\vec {n}}\cdot \left(\vec {B}^{\left(2\right)}-\vec {B}^{\left(1\right)}\right)=0\equivalence B_{\perp }^{\left(1\right)}=B_{\perp }^{\left(2\right)}.
+	\divg \vec {B}=0\quad\xrightarrow[\text{Satz von Gau\ss }]{\text{Dose},\: \Delta  h\rightarrow 0}\quad\hat{\vec {n}}\cdot \left(\vec {B}^{\left(2\right)}-\vec {B}^{\left(1\right)}\right)=0\equivalence B_{\perp }^{\left(1\right)}=B_{\perp }^{\left(2\right)}.
 \end{equation*}
 Insbesondere ist für ein lineares, isotropes Material auch
 \begin{equation*}
@@ -522,9 +530,18 @@ Für die Tangentialkomponente von $\vec {H}$ gilt:
 \end{align*}
 mit einem Flächenstrom $\vec {k}$, der noch in der Grenzfläche fließen kann.
 
-Ist das zweite Material sehr leicht magnetisierbar, also $\mu _{2}$ sehr groß gegenüber $\mu _{1}$ und $H^{\left(1\right)}\approx 0$, also $\vec {H}^{\left(1\right)}$ orthogonal auf der Grenzfläche, dann kann das Feld nicht in das zweite Material eindringen und das letztere verhält sich wie ein elektrischer Leiter, dessen Oberfläche eine Äquipotentialfläche ist.
+Ist das zweite Material sehr leicht magnetisierbar, also $\mu _{2}$ sehr groß gegenüber $\mu _{1}$ und $H^{\left(1\right)}_\parallel\approx 0$, also $\vec {H}^{\left(1\right)}$ orthogonal auf der Grenzfläche (siehe \Abbref{fig:magnetic_refraction}), dann kann das Feld nicht in das zweite Material eindringen ($\vec H^{(2)}\approx 0$) und das letztere verhält sich wie ein elektrischer Leiter, dessen Oberfläche eine Äquipotentialfläche ist.
+
+\begin{figure}[ht]
+	\centering
+	\tfigMagneticRefraction
+	\caption{Treffen die Magnetfeldlinien senkrecht auf eine Grenzfläche zu einem Material mit sehr viel größerer Permeabilität, so dringt das Magnetfeld nicht wesentlich in das zweite Material ein. }
+	\label{fig:magnetic_refraction}
+\end{figure}
 
 \subsection{Magnetische Skalarpotentiale und ihre Anwendungen}
+
+
 
 In der Magnetostatik ist wie wir gesehen haben $\nabla \cdot \vec {B}=0$ und $\nabla \times \vec {H}=\vec {j}$.
 \begin{itemize}
@@ -536,10 +553,18 @@ In der Magnetostatik ist wie wir gesehen haben $\nabla \cdot \vec {B}=0$ und $\n
 	      \begin{equation*}
 		      \nabla ^{2}\phi _{m}=0.
 	      \end{equation*}
-	      Für eine Stromschleife gilt zum Beispiel
+	      Für eine Stromschleife gilt zum Beispiel an einem Punkt $P$
 	      \begin{equation*}
-		      \phi _{m}\left(P\right)=-\frac{I\Omega  }{4\pi }.
+		      \phi _{m}\left(P\right)=-\frac{I\Omega  }{4\pi },
 	      \end{equation*}
+	      wobei $\Omega$ das eingeschlossene Raumwinkelelement ist, siehe \Abbref{fig:ConductorLoopWithRefPoint}.
+
+	      \begin{figure}[htb]
+		      \centering
+		      \tfigConductorLoopWithRefPoint
+		      \caption{Das magnetische Potential einer stromdurchflossenen Leiterschleife mit Fläche $F$ an einem Punkt $P$ ist proportional zu dem Raumwinkelelement, das durch die Projektion der Schleife auf den Punkt $P$ eingeschlossen wird. }
+		      \label{fig:ConductorLoopWithRefPoint}
+	      \end{figure}
 	\item In einem harten Ferromagneten ist $\vec {M}$ vorgegeben und $\vec {j}=0$. Dann ist
 	      \begin{equation*}
 		      \nabla \cdot \vec {B}=\mu _{0}\nabla \cdot \left(\vec {H}+\vec {M}\right)=0,\quad \vec {H}=-\nabla \phi _{m}
@@ -586,7 +611,52 @@ Beispiele
 	      \begin{equation*}
 		      H_{\mathrm{a}}=\frac{1}{\mu _{0}}\vec {B}_{\mathrm{a}}=-\nabla \phi _{m}
 	      \end{equation*}
-	      also wieder ein Dipolfeld. Magnetische Flussdichte und Magnetfeld sind in \textbackslash Abbref\{\} dargestellt \textendash{} im Innern der Kugel ist das Magnetfeld entgegen der magnetischen Flussdichte gerichtet. Während $\vec {B}$ ein reines Wirbelfeld ist ($\divg \vec {B}=0$), weist $\vec {H}$ einen Sprung am Kugelrand auf und besitzt damit Quellen $\sigma _{m}=\vec {n}\cdot \vec {M}$.
+	      also wieder ein Dipolfeld. Magnetische Flussdichte und Magnetfeld sind in \Abbref{fig:magnetic_field_homogenously_magnetized_ball} dargestellt \textendash{} im Innern der Kugel ist das Magnetfeld entgegen der magnetischen Flussdichte gerichtet. Während $\vec {B}$ ein reines Wirbelfeld ist ($\divg \vec {B}=0$), weist $\vec {H}$ einen Sprung am Kugelrand auf und besitzt damit Quellen $\sigma _{m}=\vec {n}\cdot \vec {M}$.
+
+	      \begin{figure}[htb]
+		      \centering
+		      \begin{tikzpicture}[
+				      scale=.7,
+				      mcolor/.style=legreen,
+				      pics/graph/.style={background code={
+								      \coordinate (O) at (0,0);
+								      \coordinate (P) at (1,2);
+								      \draw (O) circle [radius=1];
+								      \foreach \vzx in {1,-1}{
+										      \draw[midarrow] (\vzx*0.5,0.866) ..
+										      controls ($1.2*(\vzx*0.5,0.866)$)
+										      and (\vzx*1.2, 2.4) .. (\vzx*2.5,3);
+										      \draw[midarrow] (\vzx*2.5,-3) ..
+										      controls (\vzx*1.2,-2.4)
+										      and ($1.2*(\vzx*0.5,-0.866)$) .. (\vzx*0.5,-0.866);
+										      \draw[midarrow=.51] (\vzx*0.866,0.5)
+										      .. controls +($.8*(\vzx*0.866,0.5)$)
+										      and (\vzx*3,1)
+										      .. (\vzx*3,0)
+										      .. controls (\vzx*3,-1) and ($1.6*(\vzx*0.866,-0.5)$)
+										      .. (\vzx*0.866,-0.5) ;
+										      \draw[arr] (\vzx*0.866,#1*-0.4) -- (\vzx*0.866,#1*0.4);
+										      \draw[arr] (\vzx*0.5,#1*-0.8) -- (\vzx*0.5,#1*0.8);
+										      \draw[arr, mcolor] (\vzx*0.7,-0.4) -- +(0,0.8);
+										      \draw[arr, mcolor] (\vzx*0.25,-0.4) -- +(0,0.8);
+									      }
+								      \draw[midarrow=.6] (0,1) -- (0,3.2);
+								      \draw[midarrow=.4] (0,-3.2) -- (0,-1);
+								      \draw[arr] (0,#1*-.9) -- (0,#1*0.9);
+							      }}
+			      ]
+
+			      %\pic=1 at (0,0) [transform shape]{graph};
+			      %\pic at (7,0) [transform shape]{graph};
+
+			      \draw (0,0) pic[transform shape] {graph=1} node[outer sep=70,above] {$\vec B$-Feld};
+			      \draw (7,0) pic[transform shape] {graph=-1} node[outer sep=70,above] {$\vec H$-Feld};
+			      \node[mcolor] at (-1.5,0) {$\vec M$};
+			      \node[mcolor] at (-1.5+7,0) {$\vec M$};
+		      \end{tikzpicture}
+		      \caption{Magnetisches Feld und magnetische Flussdichte einer homogen magnetisierten Kugel. Anders als die magnetische Flussdichte $B$ weist das Magnetfeld $H$ einen Sprung (Umpolung) an der Kugeloberfläche auf.  }
+		      \label{fig:magnetic_field_homogenously_magnetized_ball}
+	      \end{figure}
 
 	\item Magnetisierbare Kugel im äußeren Feld $\vec {B}_{0}$:
 
@@ -618,7 +688,16 @@ Solche sind unter anderem wichtig bei elektromagnetischen Wellen, dem Auf- und A
 
 Die Entdeckung des Induktionsgesetzes durch Michael Faraday beruht auf der Beobachtung, dass durch eine Leiterschleife, das einem bewegten magnetischen Feld ausgesetzt ist, ein Strom fließt.
 
-Wir betrachten im Folgenden Leiterschleifen als Randkurve $\partial F$ einer Fläche $F$ und führen zwei neue Größen ein: den magnetischen Fluss
+Wir betrachten im Folgenden ein Grundexperiment von Faraday, in dem ein Magnet in der Nähe einer Leiterschleife mit einer Geschwindigkeit $\vec v$ bewegt wird (siehe \Abbref{fig:inductionA}), sodass sich der magnetische Fluss durch die Schleife mit der Zeit ändert. 
+
+\begin{figure}
+	\centering
+	\tfigInductionA
+	\caption{Ein Magnetfeld wird in der Nähe einer Leiterschleife $C=\partial F$ bewegt. Der sich ändernde magnetische Fluss bewirkt die Induktion einer Spannung in der Schleife und damit einen Induktionsstrom $I$. }
+	\label{fig:inductionA}
+\end{figure}
+
+Wir bezeichnen die Leiterschleife als Randkurve $\partial F$ einer Fläche $F$ und führen zwei neue Größen ein: den magnetischen Fluss
 \begin{equation*}
 	\phi _{B}=\int _{F}\vec {B}\cdot \diff \vec {f}
 \end{equation*}
@@ -628,7 +707,7 @@ und die elektrische Ringspannung entlang $\partial F$
 \end{equation*}
 Die Ringspannung $Z_{E}$ bewirkt einen Stromfluss in der Schleife. Hiermit und aus den experimentellen Beobachtungen folgte ursprünglich die integrale Formulierung des Induktionsgesetzes
 \begin{equation*}
-	Z_{E}=-\frac{\diff }{\diff t}\phi _{B}\Leftrightarrow \int _{\partial F}\vec {E}\cdot \diff \vec {r}=-\frac{\diff }{\diff t}\int \vec {B}\cdot \diff \vec {f}.
+	Z_{E}=-\frac{\diff }{\diff t}\phi _{B}\equivalence \int _{\partial F}\vec {E}\cdot \diff \vec {r}=-\frac{\diff }{\diff t}\int \vec {B}\cdot \diff \vec {f}.
 \end{equation*}
 
 \begin{formal}
@@ -650,7 +729,14 @@ Mit dem Satz von Stokes kann das Induktionsgesetz auch differentiell ausgedrück
 
 \subsection{Bewegte Leiter}
 
-Bisher haben wir den Leiter festgehalten und das Magnetfeld verändert. Als nächstes soll stattdessen der Leiter bewegt werden.
+Bisher haben wir den Leiter festgehalten und das Magnetfeld verändert. Als nächstes soll stattdessen der Leiter bewegt werden, wie in \Abbref{fig:inductionB} dargestellt. 
+
+\begin{figure}[ht]
+	\centering
+	\tfigInductionB
+	\caption{Nun wird statt des Magnetfeldes die Leiterschleife mit der Geschwindigkeit $\vec v$ bewegt. }
+	\label{fig:inductionB}
+\end{figure}
 
 Wir schreiben die treibende Ringspannung wieder als
 \begin{equation}
@@ -738,6 +824,15 @@ aufstellen und erhält mit Gleichung \eqref{eq:magnetische_energie_linear}
 
 \subsection{Induktivität}
 
+Mit den Erkenntnissen aus dem letzten Kapitel stellt sich die Frage, wie mehrere Leiterschleifen (wie z.B in \Abbref{fig:TwoInductors} dargestellt) miteinander wechselwirken. 
+
+\begin{figure}[ht]
+	\centering
+	\tfigTwoInductors
+	\caption{Mehrere stromdurchflossene Leiterschleifen $C_i$ mit verschiedenen Induktivitäten $L_i$ beinflussen gegenseitig die Energie, die in den Magnetfeldern enthalten ist. }
+	\label{fig:TwoInductors}
+\end{figure}
+
 Die Feldenergie zweier Leiterschleifen können wir schreiben als
 \begin{equation*}
 	U=\frac{1}{2}\sum _{i,k}L_{ik}I_{i}I_{k}
@@ -764,11 +859,11 @@ Führen wir eine Verallgemeinerung auf ein System von Leiterschleifen durch, erh
 \begin{equation*}
 	V_{i}=\oint _{C_{i}}\vec {E}\cdot \diff \vec {r}=-\sum _{k}L_{ik}\frac{\diff }{\diff t}I_{k}.
 \end{equation*}
-Für einen geraden Draht mit Querschnittsradius $a$ und Länge $h$ ist zum Beispiel
+Für einen geraden Draht mit Querschnittsradius $a$ und Länge $h$ (siehe \Abbref{fig:cylindricalConductorAndCoil} links) ist zum Beispiel
 \begin{equation*}
 	L=\frac{\mu }{2\pi }j\left(\ln \left(\frac{2h}{a}\right)-\frac{3}{4}\right)
 \end{equation*}
-und für eine unendliche lange Spule mit Querschnittsfläche $A$ und $N$ Windungen pro Länge $h$
+und für eine unendliche lange Spule mit Querschnittsfläche $A$ und $N$ Windungen pro Länge $h$ (siehe \Abbref{fig:cylindricalConductorAndCoil} rechts) 
 \begin{equation*}
 	L=\mu N^{2}\frac{A}{h},
 \end{equation*}
@@ -780,3 +875,10 @@ und
 \begin{equation*}
 	U=\frac{1}{2}LI^{2}.
 \end{equation*}
+
+\begin{figure}[htb]
+	\centering
+	\tfigcylindricalConductorAndCoil
+	\caption{Links: Zylindrisches Drahtstück der Länge $h$ und Radius $a$ in einem Medium mit Permeabilität $\mu$. Rechts: Stück einer (eng gewickelten) Spule der Länge $h$. }
+	\label{fig:cylindricalConductorAndCoil}
+\end{figure}

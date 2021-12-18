@@ -5,13 +5,16 @@
 
 
 \tikzset{
+legreen/.style={green!50!black},
 coordsystem/.style={very thin, color=#1!50},
 invisiblePoint/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
 point/.style={invisiblePoint,fill=black,minimum size=4pt},
 arr/.style={->,>={Stealth},thin},
-midarrow/.style={postaction=decorate,decoration={markings, mark=at position .5 with {\arrow{Stealth}}} },
-arrow/.style={>={Stealth[round]}},
-arrow1/.style={\arrow{stealth[round]}}
+midarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrow{Stealth}}} },
+midarrow/.default=.5,
+rmidarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrowreversed{Stealth}}} },
+rmidarrow/.default=.5,
+distance marker/.style={|<->|,>={Stealth}},
 }
 \tikzstyle{every node}=[font=\footnotesize]
 
@@ -55,9 +58,234 @@ arrow1/.style={\arrow{stealth[round]}}
     \end{tikzpicture}
 }
 
-\newcommand{\tfigmagneticrefraction}{
-    \begin{tikzpicture}[scale=2]
-        \draw (0,1) -- (0,-1);
-        \node ($\mu_1$) at (-.5,1)  ;
+\newcommand{\tfigMagneticRefraction}{
+    \begin{tikzpicture}[
+            scale=2,
+            incolor/.style = {red!50!black},
+            outcolor/.style = {blue!50!black}
+        ]
+        \coordinate (Start) at (-2,-0.5);
+        \coordinate (StartFoot) at ($(Start) + (0,.2)$);
+        \coordinate (Middle) at (0,-0.3);
+        \coordinate (End) at (0.4,0.2);
+        \coordinate (EndFoot) at (0,0.2);
+
+        \draw (0,1) -- (0,-.6);
+        \node[circle] at (-1,.9) {$\mu_1$};
+        \node[circle] at (.5,.9) {$\mu_2\gg\mu_1$};
+
+        \draw[arr, incolor] (Start) -- (Middle)
+        node[midway, below] {$\vec H^{(1)}$};
+        \draw[arr, outcolor] (Middle) -- (End)
+        node[midway, right] {$\vec H^{(2)}$};
+        \draw[dashed, incolor] (Start) -- (StartFoot)
+        node[midway,left] {$H_\parallel^{(1)}$}
+        -- (Middle) node[midway, above] {$H_\perp^{(1)}$};
+        \draw[dashed, outcolor] (EndFoot)
+        -- (End) node[midway, above] {$H_\perp^{(2)}$};
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigConductorLoopWithRefPoint}{
+    \begin{tikzpicture}[scale=1]
+        \coordinate (O) at (0,0);
+        \coordinate (P) at (1,2);
+        \draw[midarrow=.75] (O) ellipse [x radius=1, y radius=.5]
+        node[] {$F$};
+        \node[below] at (0,-.5) {$I$};
+        \foreach \angle in{0, 55, ..., 360}
+        \draw[gray] ($cos(\angle)*(1,0)+sin(\angle)*(0,.5)$) -- (P);
+        \node[point] at (P) [label=P]{};
+    \end{tikzpicture}
+}
+
+% \newcommand{\tfigMagneticFeldHomogenousBall}{
+%     \begin{tikzpicture}[
+%             scale=.7,
+%             mcolor/.style=legreen,
+%             pics/graph/.style={background code={
+%                             \coordinate (O) at (0,0);
+%                             \coordinate (P) at (1,2);
+%                             \draw (O) circle [radius=1];
+%                             \foreach \vzx in {1,-1}{
+%                                     \draw[midarrow] (\vzx*0.5,0.866) ..
+%                                     controls ($1.2*(\vzx*0.5,0.866)$)
+%                                     and (\vzx*1.2, 2.4) .. (\vzx*2.5,3);
+%                                     \draw[midarrow] (\vzx*2.5,-3) ..
+%                                     controls (\vzx*1.2,-2.4)
+%                                     and ($1.2*(\vzx*0.5,-0.866)$) .. (\vzx*0.5,-0.866);
+%                                     \draw[midarrow=.51] (\vzx*0.866,0.5)
+%                                     .. controls +($.8*(\vzx*0.866,0.5)$)
+%                                     and (\vzx*3,1)
+%                                     .. (\vzx*3,0)
+%                                     .. controls (\vzx*3,-1) and ($1.6*(\vzx*0.866,-0.5)$)
+%                                     .. (\vzx*0.866,-0.5) ;
+%                                     \draw[arr] (\vzx*0.866,#1*-0.4) -- (\vzx*0.866,#1*0.4);
+%                                     \draw[arr] (\vzx*0.5,#1*-0.8) -- (\vzx*0.5,#1*0.8);
+%                                     \draw[arr, mcolor] (\vzx*0.7,-0.4) -- +(0,0.8);
+%                                     \draw[arr, mcolor] (\vzx*0.25,-0.4) -- +(0,0.8);
+%                                 }
+%                             \draw[midarrow=.6] (0,1) -- (0,3.2);
+%                             \draw[midarrow=.4] (0,-3.2) -- (0,-1);
+%                             \draw[arr] (0,#1*-.9) -- (0,#1*0.9);
+%                         }}
+%         ]
+
+%         %\pic=1 at (0,0) [transform shape]{graph};
+%         %\pic at (7,0) [transform shape]{graph};
+
+%         \draw (0,0) pic[transform shape] {graph=1} node[outer sep=70,above] {$\vec B$-Feld};
+%         \draw (7,0) pic[transform shape] {graph=-1} node[outer sep=70,above] {$\vec H$-Feld};
+%         \node[mcolor] at (-1.5,0) {$\vec M$};
+%         \node[mcolor] at (-1.5+7,0) {$\vec M$};
+
+%     \end{tikzpicture}
+% }
+
+
+\newcommand{\tfigCoil}{
+    \begin{tikzpicture}[scale=1]
+        \draw[arr] (0,0) -- (0,4.5)
+        node[anchor=south east] {$z$};
+
+        \draw[rmidarrow=.10] (-1,0)
+        \foreach \a in {1,...,6}{
+                .. controls +(0,.6) and +(0,.6)
+                .. +(2,.35)
+                .. controls +(0,-.6) and +(0,-.6)
+                .. ++(0,.7)
+            };
+        \node[anchor=north west] at (.5,0) {$I$};
+        \draw[legreen, rounded corners=6pt, midarrow=.7]
+        (.8,.7) rectangle (1.2,3.5);
+        \draw[legreen, |-|] (1.4,.7) -- +(0,2.8)
+        node[midway, right] {$L$}
+        node[near start, right] {$C=\partial F$};
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigInductionA}{
+    \begin{tikzpicture}[scale=1]
+        \draw[midarrow=.5] (0,0)
+        ellipse[x radius=1, y radius=2];
+
+        \draw (4, -.5) -- ++(-2,0)
+        -- ++(0,1) node[midway, right] {N}
+        -- +(2,0);
+        \draw[arr] (1.7,-.19) -- ++(-1.1,0) node[near start, below] {$\vec v$};
+        \node[below] at (0,-2) {$C=\partial F$};
+        \node[anchor=south east] at (-1,0) {$I$};
+        \draw[legreen,arr] (2,0.25) .. controls +(-1.5,0) and +(1,-1) .. (-2,1.6);
+        \draw[legreen,arr] (2,-0.25) .. controls +(-1.5,0) and +(1,1) .. (-2,-1.6);
+        \draw[legreen,arr] (2,0) -- (-2,0);
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigInductionB}{
+    \begin{tikzpicture}[scale=1]
+        \draw[midarrow=.5] (0,0)
+        ellipse[x radius=1, y radius=2];
+
+        \draw (4, -.5) -- ++(-2,0)
+        -- ++(0,1) node[midway, right] {N}
+        -- +(2,0);
+        \draw[arr] (1.2,-1) -- ++(1.1,0) node[near start, below] {$\vec v$};
+        \node[below] at (0,-2) {$C=\partial F$};
+        \node[anchor=south east] at (-1,0) {$I$};
+        \draw[legreen,arr] (2,0.25) .. controls +(-1.5,0) and +(1,-1) .. (-2,1.6);
+        \draw[legreen,arr] (2,-0.25) .. controls +(-1.5,0) and +(1,1) .. (-2,-1.6);
+        \draw[legreen,arr] (2,0) -- (-2,0);
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigcylindricalConductorAndCoil}{
+    \begin{tikzpicture}[scale=1]
+        \coordinate (bottom) at (0,0);
+        \coordinate (top) at (0,3);
+        \coordinate (offset) at (1,0);
+
+        % cylindrical conductor
+        \draw (top)
+        ellipse[x radius=1, y radius=.5];
+        \draw
+        ($(bottom) + (offset)$)
+        arc[start angle=0, end angle=-180, x radius=1, y radius=.5];
+        \draw
+        ($(bottom) + (offset)$) -- ($(top) + (offset)$)
+        ($(bottom) - (offset)$) -- ($(top) - (offset)$);
+        \draw
+        (top) -- ($(top) + (offset)$)
+        node[midway, below] {$a$};
+        \draw[distance marker]
+        ($(bottom) + (offset) + (.2, 0)$) -- +(top)
+        node[midway, right] {$h$};
+        \node at ($(bottom) + (-2,.75)$) {$\mu$};
+        % coil
+        \draw (4,-.2)
+        \foreach \a in {1,...,5}{
+                .. controls +(0,.6) and +(0,.6)
+                .. +(2,.35)
+                .. controls +(0,-.6) and +(0,-.6)
+                .. ++(0,.7)
+            };
+        \node at (5 ,0.1) {$\mu$};
+        \draw[distance marker]
+        ($(bottom) + (offset) + (5.2, 0)$) -- +(top)
+        node[midway, right] {$h$};
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigTwoInductors}{
+    \begin{tikzpicture}[scale=1]
+        \draw[rotate=20, midarrow=0.75]
+        (0,0) ellipse [x radius=1, y radius=.5]
+        node {$C_1$}
+        node[xshift=13, yshift=-20] {$I_1$};
+        \draw[rotate=-40, midarrow=0.75]
+        (3,0) ellipse [x radius=1, y radius=.5]
+        node {$C_2$}
+        node[xshift=-13, yshift=-20] {$I_2$};
+        \node at (0,-2) {$\mu$};
+        \node at (3,0) {$\ldots$};
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigGrenzflaecheMagnetic}{
+    \begin{tikzpicture}[
+            scale=1,
+            dosenfarbe/.style={blue!50!black!80!white}
+        ]
+        \draw
+        (0,0) .. controls (1.8,.6) and +(-3,0) .. (13,.3)
+        node[pos=.17, above] {$\vec B^{(2)},\vec H^{(2)},\vec D^{(2)}$}
+        node[pos=.22, below] {$\vec B^{(1)},\vec H^{(1)},\vec D^{(1)}$}
+        node[very near end, above] {$\vec k\ldots$ Flächenstrom}
+        node[very near end, below] {Grenzfläche};
+
+        \coordinate (P) at (5.5, .37);
+
+        \node[point] at (P) {};
+        \draw[arr]
+        (P) -- +(0:1)
+        node[midway, below] {$\hat{\vec t}$};
+        \draw[arr]
+        (P) -- +(90:1)
+        node[midway, left] {$\hat{\vec n}$};
+
+        \node at (5.2,.1) {$\otimes$}
+        node at(4.7,-.2) {$\hat{\vec m}=\hat{\vec n}\times\hat{\vec t}$};
+
+        \draw [dosenfarbe]
+        (7,.6) -- +(0,-.4)
+        arc[start angle=-180, end angle=0,x radius=.5, y radius=.15]
+        -- +(0,.4)
+        arc[start angle=0, end angle=180,x radius=.5, y radius=.15]
+        node[midway, above] {Dose}
+        arc[start angle=-180, end angle=0,x radius=.5, y radius=.15];
+        \draw[dosenfarbe]
+        (8.5,.55) rectangle +(1,-0.4) node[midway,above,yshift=10] {Schleife};
     \end{tikzpicture}
 }
