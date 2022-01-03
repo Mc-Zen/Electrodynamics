@@ -77,9 +77,10 @@ Die so gewonnenen Gleichungen
 	\vec {B}=\rot \vec {A},\quad \vec {E}=-\nabla \varphi -\frac{\partial \vec {A}}{\partial t}
 \end{equation}
 können jetzt in die inhomogenen Maxwellgleichungen eingesetzt werden, wobei wir uns im Folgenden auf die Gleichungen im Vakuum beschränken. Einsetzen in das Gaußsche Gesetz liefert
-\begin{equation*}
+\begin{equation}
+	\label{eq:dgl_phi_A_rho}
 	\nabla ^{2}\varphi +\frac{\partial }{\partial t}\nabla \cdot \vec {A}=-\frac{\rho }{\varepsilon _{0}}
-\end{equation*}
+\end{equation}
 und aus dem Ampèreschen Gesetz folgt
 \begin{equation*}
 	\nabla \times \left(\nabla \times \vec {A}\right)=\mu _{0}\vec {j}-\frac{1}{c^{2}}\left(\nabla \frac{\partial \varphi }{\partial t}+\frac{\partial ^{2}\vec {A}}{\partial t^{2}}\right),
@@ -123,16 +124,137 @@ zu wählen, was stets möglich ist.
 
 \subsection{Coulomb-Eichung}
 
-Wähle $\vec A$ so, dass
+Für die Coulomb-Eichung wählt man das magnetische Vektorpotential $\vec {A}$ divergenzfrei, also sodass
 \begin{equation*}
-	\nabla\cdot \vec A=0.
+	\nabla \cdot \vec {A}=0.
 \end{equation*}
-Wir erhalten damit 
+Dann gilt mit Gleichung \eqref{eq:dgl_phi_A_rho}
 \begin{equation*}
-	\nabla^2\varphi=-\frac{1}{\varepsilon}\rho \equivalence \varphi(\vec r,t)=\frac{1}{4\pi\varepsilon_0}\int 
+	\nabla ^{2}\varphi =-\frac{1}{\varepsilon _{0}}\rho
 \end{equation*}
+und $\varphi $ ist gerade das Coulomb-Potential von $\rho $:
+\begin{equation*}
+	\varphi \left(\vec {r},t\right)=\frac{1}{4\pi \varepsilon _{0}}\int \frac{\rho \left(\vec {r}',t'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
+\end{equation*}
+Aus der Gleichung \eqref{eq:dgl_phi_A_rho} erhält man dann
+\begin{equation*}
+	\nabla ^{2}\vec {A}-\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}\vec {A}=-\mu _{0}\vec {j}+\frac{1}{c^{2}}\nabla \frac{\partial \varphi }{\partial t}.
+\end{equation*}
+Auf der rechten Seite erkennen wir den transversalen Anteil der Stromdichte,
+\begin{equation*}
+	\nabla ^{2}\vec {A}-\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}\vec {A}\equiv\mu _{0}\vec {j}_{t},\quad \vec {j}_{t}=\frac{1}{4\pi }\nabla \times \int \frac{\rot \vec {j}\left(\vec {r}',t'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'.
+\end{equation*}
+Man sieht sofort, dass $\divg \vec {j}_{t}=0$, weil $\vec {j}_{t}$ ein reines Wirbelfeld ist.
 
+Wegen $\nabla \cdot \vec {A}=0$ sind die Wellen von $\vec {A}$ transversal, weswegen man auch von der transversalen Eichung oder Strahlungseichung spricht. Das Vektorpotential $\vec {A}$ bestimmt die Wellenausbreitung, während $\varphi $ die statische Lösung beschreibt.
+
+\section{Erhaltungssätze der Elektrodynamik}
+
+\subsection{Erhaltung von Energie: Satz von Poynting}
+
+Wir erinnern uns an die elektromagnetische Kraftdichte, die aus der Lorentzkraft hervorgeht:
+\begin{equation*}
+	\vec {f}\left(\vec {r},t\right)=\rho \vec {E}+\vec {j}\times \vec {B},\quad \vec {j}=\rho \vec {v}
+\end{equation*}
+Multiplikation mit der Geschwindigkeit der Ladungsdichte $\vec {v}$ liefert die pro Volumen- und Zeiteinheit geleistete Arbeit des elektrischen Feldes:
+\begin{equation*}
+	\vec {f}\cdot \vec {v}=\vec {j}\cdot \vec {E}.
+\end{equation*}
+Sie entspricht genau der mechanischen Arbeit bzw. Jouleschen Wärme. Das magnetische Feld verrichtet keine Arbeit, da $\vec {v}\cdot \left(\vec {j}\times \vec {B}\right)$.
+
+Den Satz von Poynting leiten wir nun her, indem wir das Induktionsgesetz skalar mit dem Magnetfeld $\vec {H}$ multiplizieren und das Durchflutungsgesetz mit dem elektrischen Feld $\vec {E}$ und die beiden Gleichungen subtrahieren:
+\begin{equation*}
+	\vec {H}\cdot \left(\nabla \times \vec {E}\right)-\vec {E}\cdot \left(\nabla \times \vec {H}\right)=-\vec {j}\cdot \vec {E}-\vec {E}\cdot \frac{\partial \vec {D}}{\partial t}-\vec {H}\cdot \frac{\partial \vec {B}}{\partial t}.
+\end{equation*}
+Umstellen und Anwenden von $\nabla \cdot \left(\vec {E}\times \vec {H}\right)=\vec {H}\cdot \left(\nabla \times \vec {E}\right)-\vec {E}\cdot \left(\nabla \times \vec {H}\right)$ führt auf die Gleichung
 \begin{equation}
-	\sin ^2{\phi} \cos^3\vec r \diffa[2] r  \diff rr\diffa{\vec{r}} r 
+	\label{eq:satz_von_poynting}
+	\boxed{\vec {E}\cdot \frac{\partial \vec {D}}{\partial t}+\vec {H}\cdot \frac{\partial \vec {B}}{\partial t}+\nabla \cdot \left(\vec {E}\times \vec {H}\right)=-\vec {j}\cdot \vec {E}.}
 \end{equation}
+Die ersten beiden Terme auf der linken Seite geben die Änderung der elektromagnetischen Feldenergie pro Volumen und Zeiteinheit an. Der Teil $\nabla \cdot \left(\vec {E}\times \vec {H}\right)$ beschreibt den Fluss der elektromagnetischen Feldenergie aus einem Volumen heraus und die rechte Seite ist gerade die mechanische Arbeit bzw. Joulesche Wärme (wie wir gerade gesehen haben), die dem System verloren geht.
 
+Die Größe $\vec {E}\times \vec {H}$ wird als Poynting-Vektor definiert,
+\begin{equation*}
+	\vec {S}=\vec {E}\times \vec {H}.
+\end{equation*}
+Er gibt die elektromagnetische Energiestromdichte an und seine Einheit ist dementsprechend Energie pro Fläche und Zeit.
+
+Wir betrachten jetzt zwei Spezialfälle. Im Vakuum und in linearen Materialien ist $\vec {D}=\varepsilon \vec {E}$ und $\vec {B}=\mu \vec {H}$ und wir vernachlässigen Zeitabhängigkeiten von $\varepsilon $ und $\mu $. Mit der elektromagnetischen Feldenergiedichte $u=\left(\vec {E}\cdot \vec {D}+\vec {H}\cdot \vec {B}\right)/2$ lässt sich die Gleichung \eqref{eq:satz_von_poynting} nun umschreiben zu
+\begin{equation*}
+	\frac{\partial u}{\partial t}+\nabla \cdot \vec {S}=-\vec {j}\cdot \vec {E}
+\end{equation*}
+bzw. in der integralen Formulierung
+\begin{equation*}
+	\frac{\diff }{\diff t}\int _{V}u\diff ^{3}\vec {r}+\int _{\partial V}\vec {S}\cdot \diff \vec {f}=-\int \vec {j}\cdot \vec {E}\diff ^{3}\vec {r}.
+\end{equation*}
+Als zweiter Sonderfall sollen linear dispersive Materialien behandelt werden. Die Materialkonstanten $\varepsilon $ und $\mu $ werden als komplexe, frequenzabhängige Konstanten geschrieben,
+\begin{equation*}
+	\varepsilon \left(\omega \right)=\varepsilon '\left(\omega \right)+i\varepsilon ''\left(\omega \right),\quad \mu \left(\omega \right)=\mu '\left(\omega \right)+i\mu ''\left(\omega \right).
+\end{equation*}
+Wir betrachten zeitlich periodische (und harmonische) Felder und beschreiben sie durch komplexe Größen:
+\begin{align*}
+	\vec {E}\left(\vec {r},t\right) & =\vec {E}_{0}\left(\vec {r}\right)e^{-i\omega t},                 & \vec {H}\left(\vec {r},t\right) & =\vec {H}_{0}\left(\vec {r}\right)e^{-i\omega t}         \\
+	\vec {D}\left(\vec {r},t\right) & =\varepsilon \left(\omega \right)\vec {E}\left(\vec {r},t\right), & \vec {B}\left(\vec {r},t\right) & =\mu \left(\omega \right)\vec {H}\left(\vec {r},t\right)
+\end{align*}
+Physikalisch sind natürlich nur die reellen Felder $\vec {E}_{\mathrm{R}}=\mathfrak{R}\left(\vec {E}\right), \vec {H}_{\mathrm{R}}=\mathfrak{R}\left(\vec {H}\right)$ usw. messbar. 
+
+Die Änderung der elektromagnetischen Energiedichte lässt sich als Mittelung über eine Periode schreiben:
+\begin{align*}
+	\dot{u} & =\frac{1}{T}\int _{0}^{T=\frac{2\pi }{\omega }}\left(\vec {E}_{\mathrm{R}}\cdot \frac{\partial \vec {D}_{\mathrm{R}}}{\partial t}+\vec {H}_{\mathrm{R}}\cdot \frac{\partial \vec {B}_{\mathrm{R}}}{\partial t}\right)\diff t                  \\
+	        & =\frac{1}{T}\int _{0}^{T=\frac{2\pi }{\omega }}\left(\omega E_{0}^{2}\cos \left(\omega t\right)\left[-\varepsilon '\left(\omega \right)\sin \left(\omega t\right)+\varepsilon ''\left(\omega \right)\cos \left(\omega t\right)\right] \right. \\
+	        & \qquad\qquad\qquad \left. +\omega H_{0}^{2}\cos \left(\omega t\right)\left[-\mu '\left(\omega \right)\sin \left(\omega t\right)+\mu ''\left(\omega \right)\cos \left(\omega t\right)\right]\right)\diff t
+\end{align*}
+Man könnte zuerst denken, dass dieser Ausdruck verschwindet, da die Feldenergie konstant sein sollte. Das Integral der Terme, die den realen Anteil $\varepsilon '$ und $\mu '$ der elektromagnetischen Materialkonstanten enthalten, verschwindet tatsächlich, weil das Produkt $\cos \left(\omega t\right)\sin \left(\omega t\right)$ über eine Periode integriert $0$ ist. Die Terme mit den imaginären Anteilen $\varepsilon ''$ und $\mu ''$ heben sich dagegen nicht auf, weil
+\begin{align*}
+	\dot{u} & =\frac{\omega }{T}\left(E_{0}^{2}\varepsilon ''\left(\omega \right)+H_{0}^{2}\mu ''\left(\omega \right)\right)\int _{0}^{T=\frac{2\pi }{\omega }}\cos ^{2} \left(\omega t\right)\diff t \\
+	        & =\frac{\omega }{2\pi }\left(E_{0}^{2}\varepsilon ''\left(\omega \right)+H_{0}^{2}\mu ''\left(\omega \right)\right)\int _{0}^{2\pi }\cos ^{2} \left(u\right)\diff u                      \\
+	        & =\frac{\omega }{2}\left(E_{0}^{2}\varepsilon ''\left(\omega \right)+H_{0}^{2}\mu ''\left(\omega \right)\right).
+\end{align*}
+Die imaginären Anteile $\varepsilon ''\left(\omega \right)$ und $\mu ''\left(\omega \right)$ der elektromagnetischen Materialkonstanten sind also verantwortlich für die Dissipation der elektromagnetischen Energie.
+
+Wir betrachten jetzt geladene Teilchen und elektromagnetische Felder im Vakuum und führen die "`mechanische`` Energie $u_{\text{mech}}$ ein, bzw. die Energie, die nicht elektromagnetisch ist. Wir können dann wegen
+\begin{equation*}
+	\frac{\diff u_{\text{mech}}}{\diff t}=\vec {j}\cdot \vec {E}
+\end{equation*}
+sagen, dass
+\begin{equation*}
+	\frac{\partial }{\partial t}\left(u_{\text{mech}}+u_{\text{Feld}}\right)+\divg \vec {S}=0.
+\end{equation*}
+Dies ist die Kontinuitätsgleichung für die Gesamtenergie und beschreibt damit die Energieerhaltung des Systems.
+
+\subsection{Impulserhaltung}
+
+Wenn die "`mechanische`` Energie in elektromagnetische umgewandelt werden kann und umgekehrt, dann ist es auch sinnvoll, analog zum mechanischen Impuls so etwas wie einen Impuls des elektromagnetischen Feldes zu definieren, um eine Kontinuitätsgleichung im Vakuum abzuleiten.
+
+Die zeitliche Änderung des mechanischen Impulses $P_{\text{mech}}$ lässt sich als Integral über die Impulsdichte $p_{\text{mech}}$ beschreiben, dessen zeitliche Änderung gerade der Kraftdichte $f$ entspricht, die durch die Lorentzkraft ausgedrückt werden kann:
+\begin{equation*}
+	\frac{\diff P_{\text{mech}}}{\diff t}=\frac{\diff }{\diff t}\int p_{\text{mech}}\diff ^{3}\vec {r}=\int f\left(\vec {r},t\right)\diff ^{3}\vec {r}=\int \left(\rho \vec {E}+\vec {j}\times \vec {B}\right)\diff ^{3}\vec {r}
+\end{equation*}
+Die elektromagnetische Kraftdichte lässt sich mithilfe der Maxwellschen Gleichungen umformen zu
+\begin{align*}
+	\rho \vec {E}+\vec {j}\times \vec {B} & =\nabla \cdot \vec {D}\vec {E}+\left(\nabla \times \vec {H}-\frac{\partial \vec {D}}{\partial t}\right)\times \vec {B}                                                                                                                                                                                                         \\
+	                                      & =\vec {E}\left(\nabla \cdot \vec {D}\right)+\vec {B}\times \frac{\partial \vec {D}}{\partial t}-\vec {B}\times \left(\nabla \times \vec {H}\right)                                                                                                                                                                             \\
+	                                      & =\underset{\mathrm{A}}{\underbrace{\vec {E}\left(\nabla \cdot \vec {D}\right)+\left(\nabla \times \vec {E}\right)\times \vec {D}}}-\frac{\partial }{\partial t}\underset{\mathrm{B}}{\underbrace{\left(\vec {D}\times \vec {B}\right)}}-\underset{\mathrm{C}}{\underbrace{\vec {B}\times \left(\nabla \times \vec {H}\right)}}.
+\end{align*}
+Der Term B beschreibt die neue Impulsdichte des elektromagnetischen Feldes
+\begin{equation*}
+	p_{\mathrm{em}}=\vec {D}\times \vec {B}=\frac{1}{c^{2}}\vec {E}\times \vec {H}=\frac{1}{c^{2}}\vec {S}.
+\end{equation*}
+Die $i$-te Komponente vom Term A lässt sich als
+\begin{equation*}
+	E_{i}\partial _{j}D_{j}-\partial _{i}^{\left(E\right)}\left(E_{j}D_{j}\right)+D_{j}\partial _{j}E_{i}=\partial _{j}\left(E_{i}D_{j}\right)-\frac{1}{2}\partial _{i}\left(E_{j}D_{j}\right)=\partial _{j}\left(E_{i}D_{j}-\frac{1}{2}\delta _{ij}E_{k}D_{k}\right)
+\end{equation*}
+schreiben (wobei der Differentialoperator $\partial _{i}^{\left(E\right)}$ nur auf Komponente von $E$ wirkt) und die $i$-te Komponente von Teil C als
+\begin{equation*}
+	\partial _{i}^{\left(H\right)}\left(H_{j}B_{j}\right)+B_{j}\partial _{j}H_{i}+\underset{0}{\underbrace{H_{i}\partial _{j}B_{j}}}=\partial _{j}\left(H_{i}B_{j}-\frac{1}{2}\delta _{ij}H_{k}B_{k}\right).
+\end{equation*}
+Zusammen können die Terme B und C als Ableitung $\partial _{j}T_{ij}$ eines Tensors $T_{ij}$ geschrieben werden. $T_{ij}$ ist der Maxwellsche Spannungstensor (dessen elektrostatischer Anteil schon aus Kapitel \ref{sec:maxwellscher_spannungstensor} bekannt ist):
+\begin{equation*}
+	T_{ij}=E_{i}D_{j}+H_{i}B_{j}-\frac{1}{2}\delta _{ij}\left(E_{k}D_{k}+H_{k}B_{k}\right)
+\end{equation*}
+Er erlaubt eine integrale Beschreibung der Impulsbilanz
+\begin{equation*}
+	\frac{\diff }{\diff t}\int \left(p_{\text{mech}}+p_{\mathrm{em}}\right)_{i}\diff ^{3}\vec {r}=\int _{V}\partial _{j}T_{ij}\diff ^{3}\vec {r}=\int _{\partial V}T_{ij}\diff f_{j}.
+\end{equation*}
+
+\end{document}
