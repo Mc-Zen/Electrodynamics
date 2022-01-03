@@ -10,3 +10,5 @@
 *.toc
 *.syntex
 __latexindent_temp.tex
+
+Elektrodynamik/*.pdf
