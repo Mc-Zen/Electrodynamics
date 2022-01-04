@@ -6,6 +6,7 @@
 
 \tikzset{
 legreen/.style={green!50!black},
+charge color/.style={blue!50!white!70!black},
 coordsystem/.style={very thin, color=#1!50},
 invisiblePoint/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
 point/.style={invisiblePoint,fill=black,minimum size=4pt},
@@ -18,6 +19,47 @@ distance marker/.style={|<->|,>={Stealth}},
 }
 \tikzstyle{every node}=[font=\footnotesize]
 
+
+\newcommand{\tfigEfieldAndPotentialHomoChargedSphere}{
+    % field and potential function for sphere
+    \begin{tikzpicture}[scale=3]
+        \coordinate (A) at (0.8, 0.8);
+        
+        % electric field
+        \draw[arr] (0,0) -- +(0, 1.1) 
+            node[at end, anchor=south west] {$E(r)$};
+        \draw[arr] (0,0) -- +(1.8, 0) 
+            node[at end, anchor=north west] {$r$};
+            
+        \draw[charge color,yscale=.2] 
+            let \n1={0.5},\n2={1.7} in
+            plot[domain=0:\n1] (\x,\x/\n1^3) 
+            node[above left] at (\n1/2,\n1/2/\n1^3) {$\propto r$} 
+            plot[domain=\n1:\n2] (\x,1/\x^2) 
+            let \n4={.5*\n2-.5*\n1+\n1} in % x value of middle point of second graph 
+            node[above] at (\n4,1/\n4^2) {$\propto\frac{1}{r^2}$};
+        \draw[dashed, very thin] (0.5,.8) -- +(0,-.8) 
+            node[below] {$R$};
+            
+            
+        % potential
+        \draw[arr] (2.5,0) -- +(0, 1.1) 
+            node[at end, anchor=south west] {$\phi(r)$};
+        \draw[arr] (2.5,0) -- +(1.8, 0) 
+            node[at end, anchor=north west] {$r$};
+        \draw[charge color,xshift=2.5cm,yscale=.3] 
+            let \n1={0.5},\n2={1.7} in 
+            plot[domain=0:\n1] (\x,3/\n1/2 -\x^2/\n1^3/2)
+            node[right, xshift=-25,yshift=25] {$\propto \frac3{2R}-\frac{r^2}{2R^3}$}
+            plot[domain=\n1:\n2] (\x,1/\x)
+            let \n4={.5*\n2-.5*\n1+\n1} in % x value of middle point of second graph 
+            node[above] at (\n4,1/\n4) {$\propto\frac{1}{r}$};
+            
+            
+        \draw[dashed, very thin] (3.0,1/1.7) -- +(0,-1/1.7) 
+            node[below] {$R$};
+    \end{tikzpicture}
+}
 
 \newcommand{\tfighysterese}{
     \begin{tikzpicture}[scale=2]
