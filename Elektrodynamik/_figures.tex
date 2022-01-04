@@ -20,6 +20,40 @@ distance marker/.style={|<->|,>={Stealth}},
 \tikzstyle{every node}=[font=\footnotesize]
 
 
+\newcommand{\tfigEfieldAndPotLinesAndChargeDensitityHomoChargedSphere}{
+    % Field and equipotential lines of a charged sphere
+    \begin{tikzpicture}[
+        scale=2,
+        potential color/.style={violet!60!black}
+    ]
+    \coordinate (O) at (0.0,0.0);
+
+    \foreach \angle in {0,45,...,325}
+        \draw[arr] (O) -- (\angle:1);
+    \foreach \radius in {0,0.2,...,0.8}
+        \draw[dashed,potential color] (O) circle [radius=\radius];
+        
+    \node[potential color] at (-20:1) {$V_r$};
+    \node at (-150:1.2) {$\vec E$};
+
+    \draw[charge color] (O) circle [radius=.7];
+    \draw[arr, charge color] (O) -- (60:0.7) node[near end, left] {$R$};
+
+    \begin{scope}[shift={(2.3,-.6)}]
+        \coordinate (A) at (1.2, 0.8);
+        
+        \draw[arr] (0,0) -- (0, 1.3) 
+            node[at end, anchor=south west] {$\rho(r)$};
+        \draw[arr] (0,0) -- (1.6, 0) 
+            node[at end, anchor=north west] {$r$};
+        \draw[charge color] let \p1 = (A) in
+            (0, \y1) -- (A) 
+            node[at start, left] {$\rho_0$}
+            -- (\x1, 0)
+            node[charge color, below] {$R$};
+    \end{scope}
+    \end{tikzpicture}
+}
 \newcommand{\tfigEfieldAndPotentialHomoChargedSphere}{
     % field and potential function for sphere
     \begin{tikzpicture}[scale=3]
@@ -41,23 +75,23 @@ distance marker/.style={|<->|,>={Stealth}},
         \draw[dashed, very thin] (0.5,.8) -- +(0,-.8) 
             node[below] {$R$};
             
-            
         % potential
-        \draw[arr] (2.5,0) -- +(0, 1.1) 
-            node[at end, anchor=south west] {$\phi(r)$};
-        \draw[arr] (2.5,0) -- +(1.8, 0) 
-            node[at end, anchor=north west] {$r$};
-        \draw[charge color,xshift=2.5cm,yscale=.3] 
-            let \n1={0.5},\n2={1.7} in 
-            plot[domain=0:\n1] (\x,3/\n1/2 -\x^2/\n1^3/2)
-            node[right, xshift=-25,yshift=25] {$\propto \frac3{2R}-\frac{r^2}{2R^3}$}
-            plot[domain=\n1:\n2] (\x,1/\x)
-            let \n4={.5*\n2-.5*\n1+\n1} in % x value of middle point of second graph 
-            node[above] at (\n4,1/\n4) {$\propto\frac{1}{r}$};
-            
-            
-        \draw[dashed, very thin] (3.0,1/1.7) -- +(0,-1/1.7) 
-            node[below] {$R$};
+        \begin{scope}[shift={(2.5,0)}]
+            \draw[arr] (0,0) -- +(0, 1.1) 
+                node[at end, anchor=south west] {$\phi(r)$};
+            \draw[arr] (0,0) -- +(1.8, 0) 
+                node[at end, anchor=north west] {$r$};
+            \draw[charge color,yscale=.3] 
+                let \n1={0.5},\n2={1.7} in 
+                plot[domain=0:\n1] (\x,3/\n1/2 -\x^2/\n1^3/2)
+                node[right, xshift=-25,yshift=25] {$\propto \frac3{2R}-\frac{r^2}{2R^3}$}
+                plot[domain=\n1:\n2] (\x,1/\x)
+                let \n4={.5*\n2-.5*\n1+\n1} in % x value of middle point of second graph 
+                node[above] at (\n4,1/\n4) {$\propto\frac{1}{r}$};
+                
+            \draw[dashed, very thin] (0.5,1/1.7) -- +(0,-1/1.7) 
+                node[below] {$R$};
+        \end{scope}
     \end{tikzpicture}
 }
 
@@ -265,17 +299,19 @@ distance marker/.style={|<->|,>={Stealth}},
         node[midway, right] {$h$};
         \node at ($(bottom) + (-2,.75)$) {$\mu$};
         % coil
-        \draw (4,-.2)
-        \foreach \a in {1,...,5}{
+        \begin{scope}[shift={(4,0)}]
+            \draw (0,-.2)
+            \foreach \a in {1,...,5}{
                 .. controls +(0,.6) and +(0,.6)
                 .. +(2,.35)
                 .. controls +(0,-.6) and +(0,-.6)
                 .. ++(0,.7)
             };
-        \node at (5 ,0.1) {$\mu$};
-        \draw[distance marker]
-        ($(bottom) + (offset) + (5.2, 0)$) -- +(top)
-        node[midway, right] {$h$};
+            \node at (1,0.1) {$\mu$};
+            \draw[distance marker]
+                (2.2, 0) -- +(0,3)
+                node[midway, right] {$h$};
+        \end{scope}
     \end{tikzpicture}
 }
 
