@@ -20,6 +20,71 @@ distance marker/.style={|<->|,>={Stealth}},
 \tikzstyle{every node}=[font=\footnotesize]
 
 
+\newcommand{\tfigWatermolecule}{
+
+    % water molecule
+    \begin{tikzpicture}[scale=3]
+        \node[circle] (H1) at ($(-90+104.45/2:1)$) {$\mathrm{H}^+$};
+        \node[circle] (H2) at ($(-90-104.45/2:1)$) {$\mathrm{H}^+$};
+        \node[circle] (p) at (-90:.8) {};
+        \node[circle] at (0,0) [label={east,xshift=-2mm,yshift=1mm}:-] {O} 
+            edge (H1) 
+            edge (H2) 
+            edge[arr, charge color] 
+            node[midway, left] {$\vec p$} (p);
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigElementalQuadrupoles}{
+    % elemental quadrupoles
+    \begin{tikzpicture}[
+        scale=1.2,
+        charge/.style={point, charge color, outer sep=2mm}
+    ]
+    \node[charge] (Q1) at (-1,-1) [label={left}:$+q$] {};
+    \node[charge] at (-1,1) [label={left}:$-q$] {} edge[arr] (Q1);
+    \node[charge] (Q2) at (1,1) [label={left}:$+q$] {};
+    \node[charge] at (1,-1) [label={left}:$-q$] {} edge[arr] (Q2);
+
+
+    \begin{scope}[shift={(5,0)}]
+        \node[charge] (Q3) at (0,1) [label={left}:$+q$] {};
+        \node[charge] (Q4) at (0,-1) [label={left}:$+q$] {};
+        \node[charge, inner sep=1mm] at (0,0) [label={left}:$-2q$] {} 
+            edge[arr] (Q3) 
+            edge[arr] (Q4);
+    \end{scope}
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigMagnetfeldBeiLeiter}{
+    \begin{tikzpicture}[scale=3]
+        \coordinate (O) at (0. 8,0);   % Koordinatenursprung
+        \coordinate (A) at (1, 0.5);   % Punkt auf Leiter
+        \coordinate (B) at (1.5, 0.2); % Punkt, wo Magnetfeld ausgewertet wird
+        
+        % Leiter (Kurve)
+        \draw[color=blue!50!black] (0,0) .. controls (.3,.7) and (1.7,.3) .. (2,1);
+        % Stromelement Idr
+        \draw[arr] (1-0.1, 0.55-0.015) -- +(0.2, 0.03) 
+            node[midway, above] {$I \diff \vec r'$}; 
+            
+        % Punkt, wo Magnetfeld ausgewertet wird
+        \node[invisiblePoint,text=orange!80] (b point) at (B) 
+            [label={south east}:\textcolor{orange!80}{$\vec B(\vec r)$}] {$\mathbf{\otimes}$};
+        % Punkt auf Leiter
+        \node[invisiblePoint] (conductor point) at (A) {}
+            edge[arr] node[midway,auto,yshift=-1mm] {$\vec r-\vec r'$} 
+            (b point);
+        % Ursprung
+        \node[point] (origin) at (O) [label={south west}:$O$] {} 
+            edge[arr] node[midway,left] {$\vec r$} 
+            (conductor point) 
+            edge[arr] node[midway,below] {$\vec r'$} 
+            (b point);
+            
+    \end{tikzpicture}
+}
 \newcommand{\tfigEfieldAndPotLinesAndChargeDensitityHomoChargedSphere}{
     % Field and equipotential lines of a charged sphere
     \begin{tikzpicture}[
@@ -43,7 +108,7 @@ distance marker/.style={|<->|,>={Stealth}},
         \coordinate (A) at (1.2, 0.8);
         
         \draw[arr] (0,0) -- (0, 1.3) 
-            node[at end, anchor=south west] {$\rho(r)$};
+            node[at end, anchor=south east] {$\rho(r)$};
         \draw[arr] (0,0) -- (1.6, 0) 
             node[at end, anchor=north west] {$r$};
         \draw[charge color] let \p1 = (A) in
@@ -61,7 +126,7 @@ distance marker/.style={|<->|,>={Stealth}},
         
         % electric field
         \draw[arr] (0,0) -- +(0, 1.1) 
-            node[at end, anchor=south west] {$E(r)$};
+            node[at end, anchor=south east] {$E(r)$};
         \draw[arr] (0,0) -- +(1.8, 0) 
             node[at end, anchor=north west] {$r$};
             
@@ -78,7 +143,7 @@ distance marker/.style={|<->|,>={Stealth}},
         % potential
         \begin{scope}[shift={(2.5,0)}]
             \draw[arr] (0,0) -- +(0, 1.1) 
-                node[at end, anchor=south west] {$\phi(r)$};
+                node[at end, anchor=south east] {$\phi(r)$};
             \draw[arr] (0,0) -- +(1.8, 0) 
                 node[at end, anchor=north west] {$r$};
             \draw[charge color,yscale=.3] 
