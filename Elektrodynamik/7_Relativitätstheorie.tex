@@ -1,0 +1,107 @@
+% !TEX root = Theo_III.tex
+
+
+\chapter{Die spezielle Relativitätstheorie}
+
+Die spezielle Relativitätstheorie revidierte die Vorestellung von Raum Zeit, die zeit Galileo Galilei gültig war.
+
+Bei ihrer Entwicklung spielte die Elektrodynamik und die Lichtausbreitung im Äther eine große Rolle.
+Schon vor der Relativitätstheorie entwickelte Hendrik A. Lorentz die sogenannten Lorentz-Transformationen für das elektrische und magnetische Feld und Henri Poincaré untersuchte die mathematischer Struktur dieser Lorentz-Transformation und zeigte die Invarianz der Maxwell-Gleichungen unter diesen Transformationen.
+
+Diese Bemühungen galten aber nur zur Bewahrung der klassischen Sichtweise.
+
+Erst Einstein veröffentlichte 1905 einen neuen Ansatz.
+
+\section{Vor der Relativitätstheorie}
+
+Bevor Albert Einstein die Relativitätstheorie vorstelle, stellte man sich den physikalischen Raum als euklidischen (also flachen) Raum in drei Dimensionen vor mit Abständen $d=\sqrt{x^2+y^2+z^2}$ zum Ursprung, Längen $v=\left|\vec v\right|=\sqrt{\vec v\cdot \vec v}$ von Vektoren und Winkeln $\cos\alpha=\vec v\cdot \vec w/(vw)$ zwischen zwei Vektoren $\vec v$ und $\vec w$, während die Zeit getrennt davon und in allen Bezugssystemen gleich vergeht.
+Man spricht auch von einer absoluten Zeit.
+
+In der Newtonschen Mechanik spielen Inertialsystem eine große Rolle. Dabei handelt es sich um besondere Bezugssysteme, die sich alle gleichförmig zueinander bewegen und nicht beschleunigt sind. In Ihnen gelten die Newtonschen Axiome.
+
+Nach dem Galileischen Relativitätsprinzip sind alle Inertialsystem gleichwertig.
+
+\begin{formal}
+    Die Newtonschen Axiome sind forminvariant (kovariant) unter Galilei-Transformationen zwischen verschiedenen Inertialsystemen.
+\end{formal}
+
+
+
+\subsection{Die Galilei-Transformation}
+
+Die allgemeine Galilei-Transformation von einem Inertialsystem $IS$ nach einem anderen Inertialsystem ${IS}'$ nimmt die Form
+\begin{align*}
+    \vec r & \rightarrow \vec r' = R(\vec r-\vec ut-\vec a) \\
+    t      & \rightarrow t'=t-t_0
+\end{align*}
+an. Die Matrix $R$ beschreibt eine (zeitlich konstante) Rotation, $\vec u$ eine gleichförmige Bewegung zwischen den Systemen und $\vec a$ eine konstante Verschiebung. Zusammen mit der zeitlichen Verschiebung $t_0$ ergeben sich insgesamt zehn Parameter, die eine Galilei-Transformation beschreiben.
+
+\begin{formal}
+    Die Galilei-Transformationen bilden eine Gruppe mit zehn Parametern bezüglich Hintereinanderausführung.
+\end{formal}
+
+
+Die Addition von Geschwindigkeiten erfolgt linear,
+\begin{equation*}
+    \vec v' = \vec v - \vec u,
+\end{equation*}
+denn (hier zur Vereinfachung unter Vernachlässigung einer Drehung)
+\begin{align*}
+    \vec v = \frac{\diff\vec r}{\diff t} \Rightarrow \vec v' = \frac{\diff\vec r'}{\diff t} = \frac{\diff\vec r}{\diff t}-\vec u= \vec v - \vec u.
+\end{align*}
+Das heißt, dass ein Körper, der sich im Inertialsystem $IS$ mit der Geschwindigkeit $\vec v$ bewegt, in dem dazu mit $\vec u$ bewegten System ${IS}'$ die Geschwindigkeit $\vec v'=\vec v-\vec u$ aufweist.
+
+
+\subsection{Lichtausbreitung}
+
+Wir wissen, dass Licht eine elektromagnetische Welle ist. Es gelten daher für die Ausbreitung die in den vorigen Kapiteln hergeleitete Wellengleichung für das elektrische Feld (hier für $\rho=0,\vec j=0$):
+\begin{align}
+    \label{eq:wellengleichung_e}
+    \left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right) \vec E=0, \quad c^2=\frac{1}{\varepsilon_0\mu_0}
+\end{align}
+Diese wird zum Beispiel durch eine ebene Welle $\vec E=\vec E_0 e^{i(\vec k\cdot r-\omega t)}$ mit $\omega=ck$ gelöst. Wegen $\divg \vec E =0$ handelt es sich um eine Transversalwelle, $\vec E\perp \vec k$. Die Ausbreitungsgeschwindigkeit dieser elektromagnetischen Welle ist also $c$ und wird daher auch als Lichtgeschwindigkeit bezeichnet.
+
+Allerdings ergibt sich im Rahmen der klassischen Physik ein Problem, da nicht klar ist, in welchem Inertialsystem $c$ gelten soll.
+
+Die Maxwell-Gleichungen und damit auch die Wellengleichung \eqref{eq:wellengleichung_e} sind nämlich nicht invariant unter der Galilei-Transformation.
+
+Außerdem hat man sich vorgestellt, dass sich Licht wie mechanische Wellen in einem elastischen Medium \textendash{} einem Äther \textendash{} bewegt. Dieser durfte ferner keine Longitudinalwellen erlauben, da bereits bekannt war, dass Licht stets eine Transversalwelle ist.
+Nach dieser Vorstellung gibt es ein ausgezeichnetes Inertialsystem, in dem der Äther ruht und die Lichtgeschwindigkeit gerade $c$ ist, während in dazu bewegten Systemen die Lichtgeschwindigkeit größer oder kleiner ist.
+
+
+\subsection{Michelson-Morley-Experiment}
+
+1881 führte Albert A. Michelson ein Experiment durch, das diesen Äther nachweisen sollte. 1887 wiederholte er das Experiment zusammen mit Edward W. Morley mit höherer Präzision und erhielt schließlich 1907 den Nobelpreis dafür.
+
+Die Grundidee für diesen Versuch basiert auf der Vorstellung, dass der Lichtäther im Inertialsystem der Sonne ruht und sich die Erde bei der Rotation um die Sonne durch ihn hindurchbewegt (siehe \Abbref{fig:bewegung_durch_lichtaetherA}). Da die Umlaufgeschwindigkeit um die Sonne mit $v=\SI{30}{\kilo\m\per\s}$ groß ist, sollte sich entlang der Bewegungsrichtung der Erde um die Sonne eine andere Lichtgeschwindigkeit messen lassen als quer dazu.
+
+\begin{figure}[htp]
+    \centering
+    \tfigBewegungDurchLichtaetherA
+    \caption{Die Erde bewegt sich relativ zum Lichtäther. Die Achsen werden so gewählt, dass die relative Bewegung entlang $\vec e_1$ stattfindet. }
+    \label{fig:bewegung_durch_lichtaetherA}
+\end{figure}
+
+Bewegt sich ein Lichtstrahl im Äther mit der Geschwindigkeit $c\vec n$ und die Erde mit $\vec v$ durch den Äther, so ist nach der Geschwindigkeitsaddition der Galilei-Transformation die Geschwindigkeit des Lichtstrahls auf der Erde $\vec u=c\vec n-\vec v$. Dabei gibt es zwei Spezialfälle für die Messrichtung, wie in \Abbref{fig:bewegung_durch_lichtaetherB} dargestellt:
+
+\begin{figure}[htp]
+    \centering
+    \tfigBewegungDurchLichtaetherB
+    \caption{Sonderfälle für die Messung der Lichtgeschwindigkeit bei der Bewegung durch den Lichtäther. Links: $\vec u\parallel\vec e_1$, es gilt $|\vec u|=c\pm v$, rechts: $\vec u\parallel \vec e_2$, es gilt $|\vec u|=\sqrt{c^2-v^2}$.}
+    \label{fig:bewegung_durch_lichtaetherB}
+\end{figure}
+
+\begin{enumerate}
+    \item $\vec u\parallel \vec e_1$: Geschwindigkeit im Äther: $\pm c \vec e_1$, Geschwindigkeit auf der Erde: $\pm(c\mp v)\vec e_1$, also $|\vec u|=\pm v$.
+    \item $\vec u\parallel \vec e_2$: Geschwindigkeit im Äther: $\pm c \vec e_2$, also $|\vec u|=\sqrt{c^2-v^2}$.
+\end{enumerate}
+
+
+Zwar ist die Lichtgeschwindigkeit sehr hoch, aber die Geschwindigkeitsabweichungen sollten sich mithilfe von Interferenz beobachten lassen. In Abbildung \Abbref{fig:michelson_interferometer} ist schematisch das von Michelson entworfene Interferometer abgebildet, mithilfe dessen das Experiment durchgeführt wurde.
+
+\begin{figure}[htb]
+    \centering
+    \tfigMichelsonInterferometer
+    \caption{Schematische Abbildung eines Michelson-Interferometers. Eine Lichtquelle (idealerweise ein Laser) wird auf einen Strahlteiler gerichtet. Die beiden Teilstrahlen werden an jeweils einem Spiegel (S1 und S2) zurück durch den Strahlteiler reflektiert. Ein Teil beider Strahlen wird in Richtung eines Detektors (D) oder Schirms gelenkt. Die Abstände des Strahlteilers zu den beiden Spiegeln sind idealerweise gleich. }
+    \label{fig:michelson_interferometer}
+\end{figure}
