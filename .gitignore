@@ -12,3 +12,6 @@
 __latexindent_temp.tex
 
 Elektrodynamik/*.pdf
+
+
+*.code-workspace
