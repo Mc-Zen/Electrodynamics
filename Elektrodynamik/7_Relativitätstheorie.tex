@@ -283,16 +283,82 @@ also
 
 Für allgemeine Geschwindigkeiten $\vec v$ mit Komponenten in alle Raumrichtungen gilt
 \begin{align*}
-    \Lambda(\vec v)=
+    \Lambda_{\vec v}=
     \left(\begin{array}{c|ccc}
-              \gamma                   &  & -\frac{\gamma}{c}\vec{v}^T                    & \\
-              \hline
-                                       &  &                                               & \\
-              -\frac{\gamma}{c}\vec{v} &  & 1 + \frac{\gamma-1}{v^2}\vec{v}\otimes\vec{v} & \\
-                                       &  &                                               &
-          \end{array}\right).
+                  \gamma                   &  & -\frac{\gamma}{c}\vec{v}^T                    & \\
+                  \hline
+                                           &  &                                               & \\
+                  -\frac{\gamma}{c}\vec{v} &  & 1 + \frac{\gamma-1}{v^2}\vec{v}\otimes\vec{v} & \\
+                                           &  &                                               &
+              \end{array}\right).
 \end{align*}
 Die Rücktransformation lautet einfach
 \begin{align*}
-    \Lambda^{-1}(\vec v) = \Delta_(-\vec v)
+    \Lambda^{-1}_{\vec v}= \Delta_{-\vec v}
 \end{align*}
+Eine noch allgemeinere Form erhält man durch Anwenden einer (rein räumlichen) Rotation,
+\begin{align*}
+    \Lambda = \Lambda_R\Lambda_v, \quad \Lambda_R=\begin{pmatrix}
+                  1      & \vec 0^T \\
+                  \vec 0 & R
+              \end{pmatrix}, \quad R\in mat_{3\times 3}.
+\end{align*}
+
+
+
+\subsection{Geschwindigkeitsaddition}
+
+Betrachte zwei Inertialsysteme $\Sigma$ und $\Sigma'$, die gleichförmig mit der Relativgeschwindigkeit  $v$ zueinander bewegt sind, wie in \Abbref{fig:Geschwindigkeitsaddition} dargestellt. 
+Eine Punktmasse bewegt sich im System $\Sigma'$ mit der Geschwindigkeit $u$. 
+Um nun die Geschwindigkeit der Masse im System $\Sigma$ zu bestimmen, wird die (spezielle, in $x$-Richtung) Lorentz-Transformation invertiert, indem $v$ durch $-v$ (bzw. $\beta$ durch $-\beta$ in $\beta=v/c$) ersetzt wird:
+\begin{align*}
+    x&=\gamma(x'+\beta ct') \\ 
+    ct&=\gamma(ct'+\beta x')
+\end{align*}
+\begin{figure}[htp]
+    \centering
+    \tfigGeschwindigkeitsaddition
+    \caption{Geschwindigkeitsaddition: Das Inertialsystem $\Sigma'$, in dem sich eine Punktmasse mit der Geschwindigkeit $u$ bewegt, hat eine Relativgeschwindigkeit $v$ zum Inertialsystem $\Sigma$. In diesem wird für die Punktmasse die Geschwindigkeit $w=\frac{x}{t}=\frac{u+v}{1+\frac{uv}{c^2}}$ gemessen. }
+    \label{fig:Geschwindigkeitsaddition}
+\end{figure}
+
+Für die Punktmasse, die sich nach dem Gesetz $x'=ut'$ bewegt gilt also 
+\begin{align*}
+    x&=\gamma t'(u+\beta c) \\ 
+    t&=\gamma t'(ct'+\beta \frac{u}{c}),
+\end{align*}
+sodass die Geschwindigkeit in $\Sigma$ durch 
+\begin{align*}
+    w=\frac{x}{t}=\frac{u+v}{1+\frac{uv}{c^2}}
+\end{align*}
+berechnet wird. 
+
+Besonders bemerkenswert sind der Grenzfall $u,v\ll c$, für den die klassische Näherung $w=u+v$ gilt, sowie der Extremfall $u=c$ mit $w=c$, der zeigt, dass die Lichtgeschwindigkeit tatsächlich die maximale Geschwindigkeit ist. 
+
+
+
+
+\section{Die vierdimensionale Raumzeit der speziellen Relativitätstheorie}
+
+\subsection{Raumzeit-Diagramme}
+
+Raumzeit-Diagramme dienen zur Veranschaulichung von Bewegungen und Ereignissen in der Raumzeit. 
+Zur Vereinfachung wird nur eine Raumdimension berücksichtigt. 
+
+In \Abbref{fig:minkowski_diagram} ist ein einfaches Raumzeit-Diagramm dargestellt. 
+
+ 
+
+\begin{figure}[htp]
+    \centering
+    \tfigMinkowskiDiagramA
+    \caption{Weltlinie im Raumzeit-Diagramm mit Ortskoordinate auf der horizontalen und Zeitkoordinate auf der vertikalen Achse. Der Bereich $ct>0$ liegt in der Zukunft, der Bereich $ct<0$ in der Vergangenheit. Zeitartige Ereignisse und raumartige Ereignisse werden durch den Lichtkegel getrennt. }
+    \label{fig:minkowski_diagram}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \tfigMinkowskiDiagramB
+    \caption{}
+    \label{fig:minkowski_diagramB}
+\end{figure}

@@ -591,3 +591,88 @@ distance marker/.style={|<->|,>={Stealth}},
         node[right] {$-(ct)^2+x^2=0$};
     \end{tikzpicture}
 }
+
+
+
+\newcommand{\tfigGeschwindigkeitsaddition}{
+    \begin{tikzpicture}[scale=2]
+        \begin{scope}
+            \draw[arr] (0,0) -- (0,1)
+                node[midway, left] {$\Sigma$}
+                node[anchor=south east] {$y$};
+            \draw[arr] (0,0) -- (1,0)
+                node[anchor=north west] {$x$};
+        \end{scope}
+        \begin{scope}[shift={(2cm,0)}]
+            \draw[arr] (0,0) -- (0,1)
+                node[midway, left] {$\Sigma'$}
+                node[anchor=south east] {$y'$};
+            \draw[arr] (0,0) -- (1,0)
+                node[anchor=north west] {$x'$};
+
+            \draw[arr] (.2,.2) -- +(.6,0) node[anchor=west] {$v$};
+            \node (U) at (.9,.6) {$u$};
+            \node[point] at (.4,.6) {} edge[arr] (U);
+        \end{scope}
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigMinkowskiDiagramA}{
+    \begin{tikzpicture}[scale=3]
+
+        \coordinate (O) at (0,0);
+        \coordinate (C1) at (.9,.9);
+        \coordinate (C2) at (-.9,.9);
+        \coordinate (C3) at (-.9,-.9);
+        \coordinate (C4) at (.9,-.9);
+
+        \fill[blue!2!white] (C2) -- (C4) -- (C3) -- (C1);
+        \fill[red!2!white] (C2) -- (C4) -- (C1) -- (C3);
+
+        
+        \draw[arr] (-1,0) -- (1,0) node[anchor=north west] {$x$};
+        \draw[arr] (0,-1) -- (0,1) node[anchor=south east] {$ct$};
+        \draw[color=violet] (-1,1) -- (1,-1) (-1,-1) -- (1,1) 
+            node[right] {Lichtkegel $-(ct)^2+x^2=0$};
+
+        \draw[color=green!30!black] (-115:1.1) -- (65:1.1) 
+            node[anchor=south] {Weltlinie};
+        \node[fill=blue!2!white] at (0,.7) {Zukunft};
+        \node[fill=blue!2!white] at (0,-.7) {Vergangenheit};
+        \node[red!40!white!70!black] at (2,-.5) {raumartige Ereignisse} edge[arr, very thin] (.8,-.4);
+        \node[blue!40!white!70!black] at (2,.5) {zeitartige Ereignisse} edge[arr, very thin] (.55,.7);
+
+    \end{tikzpicture}
+}
+\newcommand{\tfigMinkowskiDiagramB}{
+    \begin{tikzpicture}[scale=1.5,clr/.style={legreen}]
+
+        \coordinate (O) at (0,0);
+    
+        \draw[arr] (-3,0) -- (3,0) node[anchor=north west] {$x$};
+        \draw[arr] (0,-3) -- (0,3) node[anchor=south east] {$ct$};
+        \draw[color=violet] let \n1={3} in (-\n1,\n1) -- (\n1,-\n1) (-\n1,-\n1) -- (\n1,\n1);
+    
+        \draw[clr,arr,name path global/.expanded={ctp axis}] (-110:3) -- (70:3) node[anchor=south east] {$ct'$};
+        \draw[clr,arr,name path global/.expanded={xp axis}] (-160:3) -- (20:3) node[anchor=north west] {$x'$};
+        \draw[clr,arr,dashed] (-2.9,.4) -- +(20:6) node[anchor=north west] {$ct'=\mathrm{const}$};
+        \draw[clr,arr,dashed] (-2.9,-2.85) -- +(70:6) node[anchor=south east] {$x'=\mathrm{const}$};
+        
+        \draw[name path global/.expanded={hyp top}] plot[domain=-3:3,samples=30] ({\x},{sqrt(1+\x*\x)});
+        \draw[name path global/.expanded={hyp right}] plot[domain=1:3,samples=50] ({\x},{sqrt(\x*\x-1)});
+        \draw plot[domain=1:3,samples=50] ({\x},{-sqrt(\x*\x-1)});
+        
+        \draw[clr] (0,0) -- (1.5,0) arc [start angle=0, end angle=20, radius=1.5];
+        \draw (10:1.3) node[clr] {$\delta$};
+        \draw[clr] (0,0) -- (0,1.5) arc [start angle=90, end angle=70, radius=1.5];
+        \draw (80:1.3) node[clr] {$\delta$};
+    
+        \node[point] at (1,0) [label={south west}:1] {};
+        \node[point] at (0,1) [label={south west}:1] {};
+        
+        \path [name intersections={of=ctp axis and hyp top,by={P1}}]
+            (P1) node [point,clr,label={south east,clr}:1] {};
+        \path [name intersections={of=xp axis and hyp right,by={P1}}]
+            (P1) node [point,clr,label={north west,clr}:1] {};
+    \end{tikzpicture}
+}
