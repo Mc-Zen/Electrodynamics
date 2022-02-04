@@ -1,12 +1,14 @@
 % !TEX root = Theo_III.tex
 
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,decorations.markings,intersections,calc}
+\usetikzlibrary{arrows.meta,positioning,decorations.markings,intersections,calc,decorations.pathreplacing}
 
 
 \tikzset{
 legreen/.style={green!50!black},
 charge color/.style={blue!50!white!70!black},
+red laser/.style={red!70!black},
+moving system color/.style={blue!60!black!70!white},
 coordsystem/.style={very thin, color=#1!50},
 invisiblePoint/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
 point/.style={invisiblePoint,fill=black,minimum size=4pt},
@@ -461,14 +463,14 @@ distance marker/.style={|<->|,>={Stealth}},
             \draw[arr] (0,0) -- +(1,0)
                 node[midway, below] {$v\vec e_1$};
             \draw[arr] (1,0) -- +(1,0)
-                node[midway, below] {$\vec u$};
+                node[midway, below] {$\vec c'$};
             \draw[arr] (0,.1) -- +(2,0)
                 node[midway, above] {$c \vec n$};
         \end{scope}
 
         \begin{scope}[shift={(3cm,-0.5cm)}]
             \draw[arr] (0,0) -- (0,1)
-                node[midway, left] {$\vec u$};
+                node[midway, left] {$\vec c'$};
             \draw[arr] (0,1) -- +(1,0)
                 node[midway, above] {$v\vec e_1$};
             \draw[arr] (0,0) -- +(1,1)
@@ -479,22 +481,19 @@ distance marker/.style={|<->|,>={Stealth}},
 }
 
 \newcommand{\tfigMichelsonInterferometer}{
-    \begin{tikzpicture}[
-            scale=2,
-            light/.style={red!70!black}
-        ]
+    \begin{tikzpicture}[scale=2]
         \coordinate (ST) at (0,0);
         \coordinate (L) at (-1,0);
         \coordinate (S1) at (0,1);
         \coordinate (S2) at (1,0);
         \coordinate (D) at (0,-1);
 
-        \draw[midarrow, light] (L) -- (ST);
-        \draw[midarrow=.3, rmidarrow=.6, light] (ST) -- (S1);
-        \draw[midarrow=.3, rmidarrow=.6, light] (ST) -- (S2);
-        \draw[midarrow, light] (ST) -- (D);
+        \draw[midarrow, red laser] (L) -- (ST);
+        \draw[midarrow=.3, rmidarrow=.6, red laser] (ST) -- (S1);
+        \draw[midarrow=.3, rmidarrow=.6, red laser] (ST) -- (S2);
+        \draw[midarrow, red laser] (ST) -- (D);
 
-        \draw[dashed, very thick] ($(ST) + (-45:.3)$) -- ($(ST) - (-45:.3)$);
+        \draw[dashed, very thick] ($(ST) + (45:.3)$) -- ($(ST) - (45:.3)$);
         \draw[very thick] ($(S1) + (.3,0)$) -- ($(S1) - (.3,0)$)
             node[midway, above] {S1};
         \draw[very thick] ($(S2) + (0,.3)$) -- ($(S2) - (0,.3)$)
@@ -510,5 +509,85 @@ distance marker/.style={|<->|,>={Stealth}},
         \draw[|-|] let \p1 = (S1), \p2 = (S2) in 
             (0,\y1 +.4cm) -- (\x2,\y1 +.4cm) 
             node[midway, above] {$l_2$};
+
+        \begin{scope}[shift={(-2cm, -1cm)}, scale=.5]
+            \draw[arr] (0,0) -- (0,1) node[anchor=south east] {$\vec e_2$};
+            \draw[arr] (0,0) -- (1,0) node[anchor=north west] {$\vec e_1$};
+        \end{scope}
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigSRTGedankenExperimentLichtkegel}{
+    \begin{tikzpicture}[scale=2.5]
+
+        \coordinate (O) at (0,0);
+        \coordinate (O2) at (2.5,0.3);
+        
+        \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$z$} node[midway, left] {$\Sigma$};
+        \draw[arr] (0,0) -- (1,0) node[anchor=south west] {$x$};
+        \draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y$};
+
+        \foreach \angle in {0,45,...,360}{
+            \draw[arr, red laser] (O) -- (\angle:0.3);
+        }
+        \draw[arr] ($.7*(O2)$) -- ($0.9*(O2)$) node[midway, above] {$\vec v$};
+
+        \begin{scope}[shift={(O2)}, moving system color]
+            \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$z'$} node[midway, left] {$\Sigma'$};
+            \draw[arr] (0,0) -- (1,0) node[anchor=south west] {$x'$};
+            \draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y'$};
+        \end{scope}
+    \end{tikzpicture}
+}
+\renewcommand{\tfigSRTGedankenExperimentLichtkegel}{
+    \begin{tikzpicture}[scale=3]
+        \begin{scope}          
+            \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$y,\textcolor{blue!60!black!70!white}{y'}$} 
+            node[midway, left] {$\Sigma,\textcolor{blue!60!black!70!white}{\Sigma'}$};
+            \draw[arr] (0,0) -- (1,0) node[anchor=north west] {$x,\textcolor{blue!60!black!70!white}{x'}$};
+            \node at (.5,-.2) {$t_0=0$};
+        \end{scope}
+        \begin{scope}[xshift=2cm]
+            \node at (.5,-.2) {$t_0+\diff t$};
+
+            \coordinate (O) at (0,0);
+            \coordinate (O2) at (0.6,0.2);
+            \coordinate (L) at (.9,.8);
+
+            \draw[arr, red laser] (O) -- (L);
+            \draw[arr, red laser] (O2) -- (L);
+
+            \draw[gray,decorate, decoration = {brace}] let \p1 = (L) in 
+                (0,\y1) -- (\x1,\y1) node[midway, above] {$\diff x$};
+            \draw[gray,decorate, decoration = {brace}] let \p1 = (L) in 
+                (\x1,0) -- (\x1,\y1) node[midway, left] {$\diff y$};
+            
+            \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$y$} node[midway, left] {$\Sigma$};
+            \draw[arr] (0,0) -- (1,0) node[anchor=north west] {$x$};
+            %\draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y$};
+
+            \draw[arr] (O) -- (O2) node[midway, above] {$\vec v$};
+
+            \begin{scope}[shift={(O2)}, moving system color]
+                \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$y'$} node[midway, left] {$\Sigma'$};
+                \draw[arr] (0,0) -- (1,0) node[anchor=north west] {$x'$};
+                %\draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y'$};
+                \draw[blue!50!gray,decorate,decoration = {brace}] let \p1 = (L) in 
+                    (0,\y1+1) -- +(\x1,0) node[midway, above] {$\diff x'$};
+                \draw[blue!50!gray,decorate, decoration = {brace,mirror}] let \p1 = (L) in 
+                    (\x1+1,0) -- +(0,\y1) node[midway, right] {$\diff y'$};
+            \end{scope}
+        \end{scope}
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigSRTLichtkegel}{
+    \begin{tikzpicture}[scale=2.5]
+        \draw[arr] (0,-1) -- (0,1) node[anchor=south west] {$ct$};
+        \draw[arr] (-1,0) -- (1,0) node[anchor=north west] {$x$};
+
+        \draw[color=blue!50!green] (-.9,.9) -- (.9,-.9) (-.9,-.9) -- (.9,.9) 
+        node[right] {$-(ct)^2+x^2=0$};
     \end{tikzpicture}
 }

@@ -3,21 +3,21 @@
 
 \chapter{Die spezielle Relativitätstheorie}
 
-Die spezielle Relativitätstheorie revidierte die Vorestellung von Raum Zeit, die zeit Galileo Galilei gültig war.
+Die spezielle Relativitätstheorie revidierte die Vorstellung von Raum und Zeit, die seit Galileo Galilei gültig war.
 
 Bei ihrer Entwicklung spielte die Elektrodynamik und die Lichtausbreitung im Äther eine große Rolle.
 Schon vor der Relativitätstheorie entwickelte Hendrik A. Lorentz die sogenannten Lorentz-Transformationen für das elektrische und magnetische Feld und Henri Poincaré untersuchte die mathematischer Struktur dieser Lorentz-Transformation und zeigte die Invarianz der Maxwell-Gleichungen unter diesen Transformationen.
 
-Diese Bemühungen galten aber nur zur Bewahrung der klassischen Sichtweise.
-
-Erst Einstein veröffentlichte 1905 einen neuen Ansatz.
+Diese Bemühungen galten aber nur zur Bewahrung der klassischen Sichtweise und erst Einstein veröffentlichte 1905 einen völlig neuen Ansatz.
 
 \section{Vor der Relativitätstheorie}
 
-Bevor Albert Einstein die Relativitätstheorie vorstelle, stellte man sich den physikalischen Raum als euklidischen (also flachen) Raum in drei Dimensionen vor mit Abständen $d=\sqrt{x^2+y^2+z^2}$ zum Ursprung, Längen $v=\left|\vec v\right|=\sqrt{\vec v\cdot \vec v}$ von Vektoren und Winkeln $\cos\alpha=\vec v\cdot \vec w/(vw)$ zwischen zwei Vektoren $\vec v$ und $\vec w$, während die Zeit getrennt davon und in allen Bezugssystemen gleich vergeht.
+Bevor Albert Einstein die Relativitätstheorie einführte, stellte man sich den physikalischen Raum als euklidischen (also flachen) Raum in drei Dimensionen vor mit Abständen $d=\sqrt{x^2+y^2+z^2}$ zum Ursprung, Längen $v=\left|\vec v\right|=\sqrt{\vec v\cdot \vec v}$ von Vektoren und Winkeln $\cos\alpha=\vec v\cdot \vec w/(vw)$ zwischen zwei Vektoren $\vec v$ und $\vec w$, während die Zeit getrennt davon und in allen Bezugssystemen gleich vergeht.
 Man spricht auch von einer absoluten Zeit.
 
-In der Newtonschen Mechanik spielen Inertialsystem eine große Rolle. Dabei handelt es sich um besondere Bezugssysteme, die sich alle gleichförmig zueinander bewegen und nicht beschleunigt sind. In Ihnen gelten die Newtonschen Axiome.
+In der Newtonschen Mechanik spielen Inertialsysteme eine große Rolle.
+Dabei handelt es sich um besondere Bezugssysteme, die sich alle gleichförmig zueinander bewegen und nicht beschleunigt sind.
+In ihnen gelten die Newtonschen Axiome.
 
 Nach dem Galileischen Relativitätsprinzip sind alle Inertialsystem gleichwertig.
 
@@ -29,12 +29,12 @@ Nach dem Galileischen Relativitätsprinzip sind alle Inertialsystem gleichwertig
 
 \subsection{Die Galilei-Transformation}
 
-Die allgemeine Galilei-Transformation von einem Inertialsystem $IS$ nach einem anderen Inertialsystem ${IS}'$ nimmt die Form
-\begin{align*}
-    \vec r & \rightarrow \vec r' = R(\vec r-\vec ut-\vec a) \\
-    t      & \rightarrow t'=t-t_0
-\end{align*}
-an. Die Matrix $R$ beschreibt eine (zeitlich konstante) Rotation, $\vec u$ eine gleichförmige Bewegung zwischen den Systemen und $\vec a$ eine konstante Verschiebung. Zusammen mit der zeitlichen Verschiebung $t_0$ ergeben sich insgesamt zehn Parameter, die eine Galilei-Transformation beschreiben.
+Die allgemeine Galilei-Transformation von einem Inertialsystem $\Sigma$ in ein anderes Inertialsystem $\Sigma'$ nimmt die Form
+\begin{alignat*}{3}
+    \vec r & \rightarrow & \:\vec r' & = R(\vec r-\vec vt-\vec a) \\
+    t      & \rightarrow & t'        & =t-t_0
+\end{alignat*}
+an. Die Matrix $R$ beschreibt eine (zeitlich konstante) Rotation, $\vec v$ eine gleichförmige Bewegung zwischen den Systemen und $\vec a$ eine konstante Verschiebung. Zusammen mit der zeitlichen Verschiebung $t_0$ ergeben sich insgesamt zehn Parameter, die eine Galilei-Transformation beschreiben.
 
 \begin{formal}
     Die Galilei-Transformationen bilden eine Gruppe mit zehn Parametern bezüglich Hintereinanderausführung.
@@ -43,18 +43,18 @@ an. Die Matrix $R$ beschreibt eine (zeitlich konstante) Rotation, $\vec u$ eine 
 
 Die Addition von Geschwindigkeiten erfolgt linear,
 \begin{equation*}
-    \vec v' = \vec v - \vec u,
+    \vec u' = \vec u - \vec v,
 \end{equation*}
-denn (hier zur Vereinfachung unter Vernachlässigung einer Drehung)
+denn (hier zur Vereinfachung unter Vernachlässigung der Drehung)
 \begin{align*}
-    \vec v = \frac{\diff\vec r}{\diff t} \Rightarrow \vec v' = \frac{\diff\vec r'}{\diff t} = \frac{\diff\vec r}{\diff t}-\vec u= \vec v - \vec u.
+    \vec u = \frac{\diff\vec r}{\diff t} \implication \vec u' = \frac{\diff\vec r'}{\diff t} = \frac{\diff\vec r}{\diff t}-\vec v= \vec u - \vec v.
 \end{align*}
-Das heißt, dass ein Körper, der sich im Inertialsystem $IS$ mit der Geschwindigkeit $\vec v$ bewegt, in dem dazu mit $\vec u$ bewegten System ${IS}'$ die Geschwindigkeit $\vec v'=\vec v-\vec u$ aufweist.
+Das heißt, dass ein Körper, der sich im Inertialsystem $\Sigma$ mit der Geschwindigkeit $\vec u$ bewegt, in dem dazu mit $\vec v$ bewegten Inertialsystem $\Sigma'$ die Geschwindigkeit $\vec u'=\vec u-\vec v$ aufweist.
 
 
 \subsection{Lichtausbreitung}
 
-Wir wissen, dass Licht eine elektromagnetische Welle ist. Es gelten daher für die Ausbreitung die in den vorigen Kapiteln hergeleitete Wellengleichung für das elektrische Feld (hier für $\rho=0,\vec j=0$):
+Wir wissen, dass Licht eine elektromagnetische Welle ist. Es gilt daher für die Ausbreitung die in den vorigen Kapiteln hergeleitete Wellengleichung für das elektrische Feld (hier für $\rho=0$ und $\vec j=0$):
 \begin{align}
     \label{eq:wellengleichung_e}
     \left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right) \vec E=0, \quad c^2=\frac{1}{\varepsilon_0\mu_0}
@@ -65,8 +65,10 @@ Allerdings ergibt sich im Rahmen der klassischen Physik ein Problem, da nicht kl
 
 Die Maxwell-Gleichungen und damit auch die Wellengleichung \eqref{eq:wellengleichung_e} sind nämlich nicht invariant unter der Galilei-Transformation.
 
-Außerdem hat man sich vorgestellt, dass sich Licht wie mechanische Wellen in einem elastischen Medium \textendash{} einem Äther \textendash{} bewegt. Dieser durfte ferner keine Longitudinalwellen erlauben, da bereits bekannt war, dass Licht stets eine Transversalwelle ist.
+Außerdem hat man sich vorgestellt, dass sich Licht wie mechanische Wellen in einem elastischen Medium \textendash{} einem sogenannten Äther \textendash{} bewegt. Dieser durfte ferner keine Longitudinalwellen erlauben, da bereits bekannt war, dass Licht stets eine Transversalwelle ist.
 Nach dieser Vorstellung gibt es ein ausgezeichnetes Inertialsystem, in dem der Äther ruht und die Lichtgeschwindigkeit gerade $c$ ist, während in dazu bewegten Systemen die Lichtgeschwindigkeit größer oder kleiner ist.
+
+
 
 
 \subsection{Michelson-Morley-Experiment}
@@ -78,22 +80,22 @@ Die Grundidee für diesen Versuch basiert auf der Vorstellung, dass der Lichtät
 \begin{figure}[htp]
     \centering
     \tfigBewegungDurchLichtaetherA
-    \caption{Die Erde bewegt sich relativ zum Lichtäther. Die Achsen werden so gewählt, dass die relative Bewegung entlang $\vec e_1$ stattfindet. }
+    \caption{Die Erde bewegt sich relativ zum Lichtäther. Die Achsen werden so gewählt, dass die relative Bewegung entlang $\vec e_1$ stattfindet. Wegen der Geschwindigkeitsaddition, die durch die Galilei-Transformation vorgegeben ist, wird erwartet, dass entlang $\vec e_1$ eine andere Lichtgeschwindigkeit gemessen wird, also entlang $\vec e_2$. }
     \label{fig:bewegung_durch_lichtaetherA}
 \end{figure}
 
-Bewegt sich ein Lichtstrahl im Äther mit der Geschwindigkeit $c\vec n$ und die Erde mit $\vec v$ durch den Äther, so ist nach der Geschwindigkeitsaddition der Galilei-Transformation die Geschwindigkeit des Lichtstrahls auf der Erde $\vec u=c\vec n-\vec v$. Dabei gibt es zwei Spezialfälle für die Messrichtung, wie in \Abbref{fig:bewegung_durch_lichtaetherB} dargestellt:
+Bewegt sich ein Lichtstrahl im Äther mit der Geschwindigkeit $c\vec n$ und die Erde mit $\vec v = v\vec e_1$ durch den Äther, so ist nach der Geschwindigkeitsaddition der Galilei-Transformation die Geschwindigkeit des Lichtstrahls auf der Erde $\vec c'=c\vec n-\vec v$. Dabei gibt es zwei Spezialfälle für die Messrichtung, wie in \Abbref{fig:bewegung_durch_lichtaetherB} dargestellt:
 
 \begin{figure}[htp]
     \centering
     \tfigBewegungDurchLichtaetherB
-    \caption{Sonderfälle für die Messung der Lichtgeschwindigkeit bei der Bewegung durch den Lichtäther. Links: $\vec u\parallel\vec e_1$, es gilt $|\vec u|=c\pm v$, rechts: $\vec u\parallel \vec e_2$, es gilt $|\vec u|=\sqrt{c^2-v^2}$.}
+    \caption{Sonderfälle für die Messung der Lichtgeschwindigkeit bei der Bewegung durch den Lichtäther. Links: $\vec c'\parallel\vec e_1$, es gilt $|\vec c'|=c\pm v$, rechts: $\vec c'\parallel \vec e_2$, es gilt $|\vec c'|=\sqrt{c^2-v^2}$.}
     \label{fig:bewegung_durch_lichtaetherB}
 \end{figure}
 
 \begin{enumerate}
-    \item $\vec u\parallel \vec e_1$: Geschwindigkeit im Äther: $\pm c \vec e_1$, Geschwindigkeit auf der Erde: $\pm(c\mp v)\vec e_1$, also $|\vec u|=\pm v$.
-    \item $\vec u\parallel \vec e_2$: Geschwindigkeit im Äther: $\pm c \vec e_2$, also $|\vec u|=\sqrt{c^2-v^2}$.
+    \item $\vec c'\parallel \vec e_1$: Geschwindigkeit im Äther: $\pm c \vec e_1$, Geschwindigkeit auf der Erde: $\pm(c\mp v)\vec e_1$, also $|\vec c'|=\pm v$.
+    \item $\vec c'\parallel \vec e_2$: Geschwindigkeit im Äther: $\pm c \vec e_2$, also $|\vec c'|=\sqrt{c^2-v^2}$.
 \end{enumerate}
 
 
@@ -105,3 +107,192 @@ Zwar ist die Lichtgeschwindigkeit sehr hoch, aber die Geschwindigkeitsabweichung
     \caption{Schematische Abbildung eines Michelson-Interferometers. Eine Lichtquelle (idealerweise ein Laser) wird auf einen Strahlteiler gerichtet. Die beiden Teilstrahlen werden an jeweils einem Spiegel (S1 und S2) zurück durch den Strahlteiler reflektiert. Ein Teil beider Strahlen wird in Richtung eines Detektors (D) oder Schirms gelenkt. Die Abstände des Strahlteilers zu den beiden Spiegeln sind idealerweise gleich. }
     \label{fig:michelson_interferometer}
 \end{figure}
+
+Das Interferometer wird so ausgerichtet, dass ein Arm entlang $\vec e_1$ und der andere entlang $\vec e_2$ zeigt, wie dargestellt.
+Obwohl jetzt der Weg, den die beiden Teilstrahlen auf ihrem Weg zu und von den Spiegeln zurücklegen, der gleiche ist (sofern $l_1=l_2$), sollten die Laufzeiten $t_1$ und $t_2$ unterschiedlich sein, weil die Lichtgeschwindigkeit wie oben beschrieben verschiedene Werte für die beiden Achsen annimmt:
+\begin{align*}
+    t_1 & = \frac{l_1}{c+v}+\frac{l_1}{c-v}=\frac{2l_1}{c\left(1-\frac{v^2}{c^2}\right)} \\
+    t_2 & = \frac{2l_2}{\sqrt{c^2-v^2}} = \frac{2l_2}{c\sqrt{1-\frac{v^2}{c^2}}}
+\end{align*}
+In der Praxis lassen sich natürlich $l_1$ und $l_2$ nicht exakt gleich wählen (zumindest eine Präzision in der Größenordnung der Wellenlänge wäre notwendig). Stattdessen wird das Interferometer um \SI{90}{\degree} gedreht und beobachtet, ob sich das Interferenzmuster ändert.
+Überraschenderweise wurde eine solche Änderung aber nicht festgestellt.
+
+Um diesen Widerspruch zu der Äthertheorie aufzulösen, schlugen H. A. Lorentz und G. F. Fitzgerald vor, dass sich materielle Objekte entlang der Bewegungsrichtung durch den Äther um einen Faktor $\sqrt{1-\frac{v^2}{c^2}}$ verkürzen,
+sodass die Länge $l_1$ in \Abbref{fig:michelson_interferometer} zu $l_1\sqrt{1-\frac{v^2}{c^2}}$ wird\footnote{Im Gegensatz zur Längenkontraktion in der speziellen Relativitätstheorie galt diese allerdings nicht allgemein, sondern wirklich nur für materielle Objekte.}.
+
+Dagegen war Albert Einsteins Idee, anzunehmen, dass die Lichtgeschwindigkeit immer gleich ist.
+
+
+
+
+\subsection{Einsteinsches Relativitätsprinzip}
+
+Albert Einstein kannte zwar wahrscheinlich das Michelson-Morley-Experiment nicht, aber er war überzeugt, dass ein absolutes Bezugssystem (in dem der Äther ruht) nicht existieren kann.
+
+\begin{formal}
+    Jedes Inertialsystem ist gleichermaßen berechtigt zur Beschreibung der physikalischen Gesetze. Die physikalischen Gesetze sind kovariant unter Lorentz-Transformationen.
+\end{formal}
+
+Insbesondere gilt\footnote{Bei der 17. Generalkonferenz für Maß und Gewicht am 20.10.1983 wurde der Wert der Lichtgeschwindigkeit auf exakt \SI{299 792 458}{\m\per\s} festgelegt.
+    Mit der Definition für die Sekunde (\SI{1}{\s} ist das 9192631770-fache der Periodendauer der beim Übergang zwischen den beiden Hyperfeinstruktur-Niveaus des Grundzustandes von Atomen des Nuklids $\isotope[133]{Cs}$ ausgesandten Strahlung) ergibt sich auch die Definition des Meters: \SI{1}{\m} ist die Länge, welche das Licht im Vakuum während des Zeitintervalls $(1/299792458)\,\si{\s}$ durchläuft.}:
+
+\begin{formal}
+    Die Lichtgeschwindigkeit $c$ ist unabhängig vom Inertialsystem.
+\end{formal}
+
+Dieses Relativitätsprinzip geht über die Galileische Relativität der Mechanik hinaus.
+Die Maxwell-Gleichungen sind invariant unter Lorentz-Transformationen und damit in allen Inertialsystemen gültig.
+
+Um das Postulat von der Konstanz der Lichtgeschwindigkeit durchzusetzen, ist es allerdings notwendig, Raum und Zeit neu zu beschreiben.
+In der klassischen Mechanik ist der Raum ein euklidischer und vollständig unabhängig von der Zeit. In dem neuen Minkowski-Raum wird er allerdings mit der Zeit zur vierdimensionalen Raumzeit verbunden.
+
+
+\section{Die Lorentz-Transformation}
+
+In der speziellen Relativitätstheorie beschreibt die Lorentz-Transformation die Transformation zwischen zwei Inertialsystemen.
+Wie die Lorentz-Transformation aussieht, lässt sich auf verschiedene Arten herleiten, von welchen hier der direkte Weg von Einstein dargestellt wird. Zuerst wollen wir aber noch einige Vorbemerkungen zur Raumzeit machen.
+
+
+\subsection{Invarianz des Lichtkegels}
+
+Wir wollen zunächst mit einem Gedankenexperiment beginnen, bei dem sich ein Lichtpuls ab dem Zeitpunkt $t_0=0$ vom Ursprung ausbreitet.
+Der Lichtpuls wird von zwei Inertialsystemen aus betrachtet, $\Sigma$ und $\Sigma'$, wie in \Abbref{fig:srt_gedankenexperiment_lichtkegel} dargestellt (vereinfacht, ohne $z$-Achse).
+
+\begin{figure}[htb]
+    \centering
+    \tfigSRTGedankenExperimentLichtkegel
+    \caption{Zwei Inertialsysteme $\Sigma$ und $\Sigma'$ fallen zum Zeitpunkt $t_0=0$ zusammen. Ihre Relativgeschwindigkeit ist $\vec v$, sodass sich die beiden Systeme zum Zeitpunkt $t_0+\diff t>0$ ein Stück weit auseinander bewegt haben.
+    Ein Lichtstrahl (rot) wird zum Zeitpunkt $t_0$ aus dem gemeinsamen Ursprung emittiert.
+    Zum Zeitpunkt $t_0+\diff t$ hat er im Inertialsystem $\Sigma$ den Weg $\sqrt{\diff x^2+\diff y^2}$ zurückgelegt, während er im Inertialsystem $\Sigma'$ den Weg $\sqrt{{\diff x'}^2+{\diff y'}^2}$ zurückgelegt hat. }
+    \label{fig:srt_gedankenexperiment_lichtkegel}
+\end{figure}
+
+Nachdem im System $\Sigma$ eine Zeit $\diff t$ verstrichen ist, hat der Lichtstrahl den Weg $\sqrt{\diff x^2+\diff y^2+\diff z^2}$ zurückgelegt.
+Wegen $c=s/t\equivalence c^2 t^2 = \vec r^2$ ist also
+\begin{align*}
+    -c^2 \diff t^2+\underbrace{\diff x^2+\diff y^2+\diff z^2}_{\diff\vec r^2}=0.
+\end{align*}
+Wir betrachten jetzt das zweite Inertialsystem $\Sigma'$, das sich mit der Relativgeschwindigkeit $\vec v$ zu $\Sigma$ bewegt und zu $t=0$ mit $\Sigma$ zusammenfällt.
+Hier ist der vom Lichtstrahl zurückgelegte Weg $\diff{\vec r'}^2$.
+Da aber die Lichtgeschwindigkeit $c$ diesselbe sein muss, folgt, dass eine andere Zeit verstrichen sein muss, die Zeit also anders als in $\Sigma$ verläuft.
+Wir erhalten damit im System $\Sigma'$
+\begin{align*}
+    -c^2 \diff{t'}^2+\underbrace{\diff{x'}^2+\diff{y'}^2+\diff{z'}^2}_{\diff{\vec r'}^2}=0.
+\end{align*}
+Wir sehen folglich, dass die Größe
+\begin{align*}
+    -c^2\diff t^2+\diff r^2
+\end{align*}
+in jedem beliebigen Inertialsystem $\Sigma$ gleich $0$ ist, wenn die Ausbreitung eines Lichtstrahls betrachtet wird.
+Der Gedanke liegt nahe, dass $-c^2\diff t^2+\diff r^2$ auch für andere Geschwindigkeiten als die Lichtgeschwindigkeit invariant bezüglich Wechseln des Inertialsystems ist.
+Daher wird diese Größe als Norm im Minkowski-Raum bezeichnet.
+
+
+\begin{figure}[htb]
+    \centering
+    \tfigSRTLichtkegel
+    \caption{Relativistischer Lichtkegel}
+    \label{fig:srt_lichtkegel}
+\end{figure}
+
+
+\subsection{Der Minkowski-Raum}
+
+Im euklidischen Raum werden Punkte durch drei Raumkomponenten beschrieben, $\vec r=(x,y,z)$.
+Die Länge eines Vektors wird durch die euklidische Norm ausgedrückt\footnote{Eigentlich ist die euklidische Norm die Wurzel aus $\Delta s^2$.}:
+\begin{align}
+    \label{eq:euklidische_norm}
+    \Delta=x^2+y^2+z^2=\sum_i x_i^2=x_ig_{ij}x_j
+\end{align}
+mit dem metrischen Tensor $g_{ij}=\delta_{ij}$, also
+\begin{align*}
+    g = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+        \end{pmatrix}
+\end{align*}
+
+Die Norm $\Delta s^2$ ist invariant gegenüber beliebigen Rotationen des Koordinatensystems und ist daher ein Skalar im Sinne des Tensorkalküls\footnote{Erinnerung: Ein Skalar ist in der Tensorrechung eine Größe, die sich beim Transformieren in andere Koordinatensysteme nicht ändert. }.
+Ferner gilt die Gleichung \eqref{eq:euklidische_norm} auch für Differenzvektoren $\Delta\vec r=\vec r_2-\vec r_1$.
+
+Im Minkowski-Raum werden Punkte der vierdimensionalen Raumzeit jetzt durch sogenannte kontravariante Vierervektoren (notiert durch hochgestellte, meist griechische Indizes) beschrieben:
+\begin{align*}
+    \begin{pmatrix} ct \\ \vec r \end{pmatrix} = \begin{pmatrix} ct \\ x \\ y \\ z \end{pmatrix}   = \begin{pmatrix} x^0 \\ x^1 \\ x^2 \\ x^3 \end{pmatrix}
+\end{align*}
+mit Minkowski-Norm
+\begin{align*}
+    \Delta s^2=x^\alpha g_{\alpha\beta}x^\beta=-(x^0)^2+(x^1)^2+(x^2)^2+(x^3)^2
+\end{align*}
+und metrischem Tensor $g_{\alpha\beta}$ mit Elementen von
+\begin{align*}
+    g = \begin{pmatrix}
+            -1 & 0 & 0 & 0 \\
+            0  & 1 & 0 & 0 \\
+            0  & 0 & 1 & 0 \\
+            0  & 0 & 0 & 1
+        \end{pmatrix}.
+\end{align*}
+Über den metrischen Tensor lässt sich auch der sogenannte kovariante Vierervektor definieren:
+\begin{align*}
+    x_\alpha=g_{\alpha\beta}x^\beta
+\end{align*}
+Damit lässt sich die Minkowski-Norm schreiben als
+\begin{align*}
+    \Delta s^2=x^\alpha x_\alpha.
+\end{align*}
+
+In diesem neuen Raum suchen wir jetzt eine Transformation, die die Minkowski-Norm erhält,
+\begin{align*}
+    {\Delta s'}^2 = \Delta^2 \equivalence g=\Lambda^T g\Delta
+\end{align*}
+
+
+\subsection{Die Lorentz-Transformation}
+
+Die allgemeinste Form der Lorentz-Transformation ist
+\begin{align*}
+    x^{\alpha'}=\tensor{\Lambda}{^i_j}x^\alpha+a^{\alpha'},
+\end{align*}
+wobei man für $a^{\alpha'}=0$ die homogene Lorentz-Transformation erhält und für $a^{\alpha'}$ die inhomogene bzw. Poincaré-Transformation.
+
+Diese Form hat genau wie die Galilei-Transformation zehn Parameter (drei für die Geschwindigkeit, drei für die Rotation und vier für die Zeit- und Raumtranslationen).
+Außerdem bilden diese Transformationen eine Gruppe (Poincaré-Gruppe) bezüglich Hintereinanderausführung.
+
+Für den Spezialfall eines Geschwindigkeitsboosts in $x$-Richtung ist
+\begin{align*}
+    \begin{pmatrix}ct' \\ x' \end{pmatrix} = \begin{pmatrix}\gamma&-\beta\gamma \\ -\beta\gamma &\gamma \end{pmatrix} \begin{pmatrix}ct \\ x \end{pmatrix},
+\end{align*}
+also
+\begin{align*}
+    \left(\begin{array}{c|ccc}
+              \gamma       & -\beta\gamma & 0 & 0 \\
+              \hline
+              -\beta\gamma & \gamma       & 0 & 0 \\
+              0            & 0            & 1 & 0 \\
+              0            & 0            & 0 & 1
+          \end{array}\right)
+    =\left(\begin{array}{c|ccc}
+               \gamma                      &  & -\frac{\gamma}{c}v\vec{e}_1^T           & \\
+               \hline
+                                           &  &                                         & \\
+               -\frac{\gamma}{c}v\vec{e}_1 &  & 1 + (\gamma-1)\vec{e}_1\otimes\vec{e}_1 & \\
+                                           &  &                                         &
+           \end{array}\right).
+\end{align*}
+
+Für allgemeine Geschwindigkeiten $\vec v$ mit Komponenten in alle Raumrichtungen gilt
+\begin{align*}
+    \Lambda(\vec v)=
+    \left(\begin{array}{c|ccc}
+              \gamma                   &  & -\frac{\gamma}{c}\vec{v}^T                    & \\
+              \hline
+                                       &  &                                               & \\
+              -\frac{\gamma}{c}\vec{v} &  & 1 + \frac{\gamma-1}{v^2}\vec{v}\otimes\vec{v} & \\
+                                       &  &                                               &
+          \end{array}\right).
+\end{align*}
+Die Rücktransformation lautet einfach
+\begin{align*}
+    \Lambda^{-1}(\vec v) = \Delta_(-\vec v)
+\end{align*}
