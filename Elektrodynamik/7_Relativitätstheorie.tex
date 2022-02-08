@@ -125,7 +125,7 @@ Dagegen war Albert Einsteins Idee, anzunehmen, dass die Lichtgeschwindigkeit imm
 
 
 
-\subsection{Einsteinsches Relativitätsprinzip}
+\section{Einsteinsches Relativitätsprinzip}
 
 Albert Einstein kannte zwar wahrscheinlich das Michelson-Morley-Experiment nicht, aber er war überzeugt, dass ein absolutes Bezugssystem (in dem der Äther ruht) nicht existieren kann.
 
@@ -146,11 +146,21 @@ Die Maxwell-Gleichungen sind invariant unter Lorentz-Transformationen und damit 
 Um das Postulat von der Konstanz der Lichtgeschwindigkeit durchzusetzen, ist es allerdings notwendig, Raum und Zeit neu zu beschreiben.
 In der klassischen Mechanik ist der Raum ein euklidischer und vollständig unabhängig von der Zeit. In dem neuen Minkowski-Raum wird er allerdings mit der Zeit zur vierdimensionalen Raumzeit verbunden.
 
+Das Relativitätsprinzip soll an einem kleinen Beispiel veranschaulicht werden. Betrachte einen Zug der mit hoher Geschwindigkeit durch einen Bahnhof fährt.
+Von der Mitte des Zuges aus wird nun ein Lichtsignal nach vorne und hinten ausgesandt. Ein Betrachter, der sich im Zug befindet, wird bemerken, dass der Lichtstrahl exakt gleichzeitig am Anfang und am Ende des Zuges ankommt, da der Weg für beide sich gleichförmig bewegende Strahlen genau der Gleiche ist.
+Ein am Bahnhof still stehender Beobachter sieht aber, dass das Signal zuerst das Ende des Zuges erreicht, weil sich dieses dem Lichtstrahl entgegen bewegt, während der Anfang von dem Signal davonläuft.
+Dieses Paradoxon kommt zustande, weil die Lichtgeschwindigkeit für alle Beobachter die gleiche sein muss und es wird dadurch erklärt, dass die Gleichzeitigkeit von Ereignissen relativ ist.
+Zwei Ereignisse wie das Ankommen der Lichtstrahlen an den Zugenden können in einem Inertialsystem zeitgleich stattfinden und einem anderen zu unterschiedlichen Zeiten.
+
+In den folgenden Kapiteln sollen diese Phänomen quantitativ untersucht werden.
+Dazu wird zunächst die Lorentz-Transformation eingeführt, welche in der relativistischen Physik die Galilei-Transformation ersetzt.
+
 
 \section{Die Lorentz-Transformation}
 
 In der speziellen Relativitätstheorie beschreibt die Lorentz-Transformation die Transformation zwischen zwei Inertialsystemen.
-Wie die Lorentz-Transformation aussieht, lässt sich auf verschiedene Arten herleiten, von welchen hier der direkte Weg von Einstein dargestellt wird. Zuerst wollen wir aber noch einige Vorbemerkungen zur Raumzeit machen.
+Wie die Lorentz-Transformation aussieht, lässt sich auf verschiedene Arten herleiten, von welchen hier der direkte Weg von Einstein dargestellt wird.
+Zuerst wollen wir aber noch einige Vorbemerkungen zur Raumzeit machen.
 
 
 \subsection{Invarianz des Lichtkegels}
@@ -185,7 +195,7 @@ Wir sehen folglich, dass die Größe
 \end{align*}
 in jedem beliebigen Inertialsystem $\Sigma$ gleich $0$ ist, wenn die Ausbreitung eines Lichtstrahls betrachtet wird.
 Der Gedanke liegt nahe, dass $-c^2\diff t^2+\diff r^2$ auch für andere Geschwindigkeiten als die Lichtgeschwindigkeit invariant bezüglich Wechseln des Inertialsystems ist.
-Daher wird diese Größe als Norm im Minkowski-Raum bezeichnet.
+Daher wird diese Größe als Norm im Minkowski-Raum (bzw. als Minkowski-Norm) bezeichnet.
 
 
 \begin{figure}[htb]
@@ -210,9 +220,8 @@ mit dem metrischen Tensor $g_{ij}=\delta_{ij}$, also
             1 & 0 & 0 \\
             0 & 1 & 0 \\
             0 & 0 & 1
-        \end{pmatrix}
+        \end{pmatrix}.
 \end{align*}
-
 Die Norm $\Delta s^2$ ist invariant gegenüber beliebigen Rotationen des Koordinatensystems und ist daher ein Skalar im Sinne des Tensorkalküls\footnote{Erinnerung: Ein Skalar ist in der Tensorrechung eine Größe, die sich beim Transformieren in andere Koordinatensysteme nicht ändert. }.
 Ferner gilt die Gleichung \eqref{eq:euklidische_norm} auch für Differenzvektoren $\Delta\vec r=\vec r_2-\vec r_1$.
 
@@ -220,11 +229,15 @@ Im Minkowski-Raum werden Punkte der vierdimensionalen Raumzeit jetzt durch sogen
 \begin{align*}
     \begin{pmatrix} ct \\ \vec r \end{pmatrix} = \begin{pmatrix} ct \\ x \\ y \\ z \end{pmatrix}   = \begin{pmatrix} x^0 \\ x^1 \\ x^2 \\ x^3 \end{pmatrix}
 \end{align*}
-mit Minkowski-Norm
+mit Komponenten
+\begin{align*}
+    x^\alpha,\quad \alpha=0,1,2,3.
+\end{align*}
+Die Minkowski-Norm ist dann
 \begin{align*}
     \Delta s^2=x^\alpha g_{\alpha\beta}x^\beta=-(x^0)^2+(x^1)^2+(x^2)^2+(x^3)^2
 \end{align*}
-und metrischem Tensor $g_{\alpha\beta}$ mit Elementen von
+mit dem metrischen Tensor $g_{\alpha\beta}$ mit Elementen von
 \begin{align*}
     g = \begin{pmatrix}
             -1 & 0 & 0 & 0 \\
@@ -235,22 +248,22 @@ und metrischem Tensor $g_{\alpha\beta}$ mit Elementen von
 \end{align*}
 Über den metrischen Tensor lässt sich auch der sogenannte kovariante Vierervektor definieren:
 \begin{align*}
-    x_\alpha=g_{\alpha\beta}x^\beta
+    x_\alpha=g_{\alpha\beta}x^\beta, \quad \begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \end{pmatrix}=\begin{pmatrix} -x^0 \\ x^1 \\ x^2 \\ x^3 \end{pmatrix}.
 \end{align*}
 Damit lässt sich die Minkowski-Norm schreiben als
 \begin{align*}
     \Delta s^2=x^\alpha x_\alpha.
 \end{align*}
-
-In diesem neuen Raum suchen wir jetzt eine Transformation, die die Minkowski-Norm erhält,
+In diesem neuen Raum suchen wir jetzt eine Transformation, die die Minkowski-Norm erhält \textendash{} die sogenannte Lorentz-Transformation
 \begin{align*}
-    {\Delta s'}^2 = \Delta^2 \equivalence g=\Lambda^T g\Delta
+    {\Delta s'}^2 = \Delta s^2 \equivalence g=\Lambda^T g\Lambda.
 \end{align*}
+
 
 
 \subsection{Die Lorentz-Transformation}
 
-Die allgemeinste Form der Lorentz-Transformation ist
+Die allgemeinste Form der Lorentz-Transformation ist (eine Herleitung folgt im nächsten Unterkapitel)
 \begin{align*}
     x^{\alpha'}=\tensor{\Lambda}{^i_j}x^\alpha+a^{\alpha'},
 \end{align*}
@@ -259,7 +272,7 @@ wobei man für $a^{\alpha'}=0$ die homogene Lorentz-Transformation erhält und f
 Diese Form hat genau wie die Galilei-Transformation zehn Parameter (drei für die Geschwindigkeit, drei für die Rotation und vier für die Zeit- und Raumtranslationen).
 Außerdem bilden diese Transformationen eine Gruppe (Poincaré-Gruppe) bezüglich Hintereinanderausführung.
 
-Für den Spezialfall eines Geschwindigkeitsboosts in $x$-Richtung ist
+Für den Spezialfall eines Geschwindigkeitsboosts in $x$-Richtung ist (definiere $\beta=v/c$)
 \begin{align*}
     \begin{pmatrix}ct' \\ x' \end{pmatrix} = \begin{pmatrix}\gamma&-\beta\gamma \\ -\beta\gamma &\gamma \end{pmatrix} \begin{pmatrix}ct \\ x \end{pmatrix},
 \end{align*}
@@ -294,26 +307,100 @@ Für allgemeine Geschwindigkeiten $\vec v$ mit Komponenten in alle Raumrichtunge
 \end{align*}
 Die Rücktransformation lautet einfach
 \begin{align*}
-    \Lambda^{-1}_{\vec v}= \Delta_{-\vec v}
+    \Lambda^{-1}_{\vec v}= \Delta_{-\vec v}.
 \end{align*}
 Eine noch allgemeinere Form erhält man durch Anwenden einer (rein räumlichen) Rotation,
 \begin{align*}
     \Lambda = \Lambda_R\Lambda_v, \quad \Lambda_R=\begin{pmatrix}
-                  1      & \vec 0^T \\
-                  \vec 0 & R
-              \end{pmatrix}, \quad R\in mat_{3\times 3}.
+                                                      1      & \vec 0^T \\
+                                                      \vec 0 & R
+                                                  \end{pmatrix},
 \end{align*}
+wobei $R$ eine orthogonale $3\times 3$-Matrix ist.
 
 
+
+\subsection{Herleitung der eindimensionalen Lorentz-Transformation}
+
+Zur Vereinfachung soll nur eine Relativgeschwindigkeit $v$ in $x$-Richtung betrachtet werden.
+Die anderen Raumkoordinaten transformieren also mit
+\begin{align*}
+    y'=y, \quad z'=z.
+\end{align*}
+Wir erwarten eine lineare Transformation, die wir zunächst allgemein beschreiben:
+\begin{align}
+    \label{eq:herleitung_lorentz_lin_trafo}
+    \begin{pmatrix} ct' \\ x' \end{pmatrix} = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{a_22} \end{pmatrix} \begin{pmatrix} ct \\ x \end{pmatrix}
+\end{align}
+bzw.
+\begin{align}
+    \label{eq:herleitung_lorentz_lin_trafo_ct}
+    ct' & = a_{11} ct + a_{12}x \\
+    \label{eq:herleitung_lorentz_lin_trafo_x}
+    x'  & = a_{21} ct + a_{22}x
+\end{align}
+Der Ursprung des bewegten Systems $x'=0$ bewegt sich im ruhenden System gleichförmig,
+\begin{align}
+    0 & = a_{21} ct + a_{22}x \nonumber  \\ 
+    \equivalence x &= -\frac{a_{21}}{a_{22}}ct \overset{!}{=}vt \nonumber  \\ 
+    \label{eq:herleitung_lorentz_v1}
+    \equivalence v &= -\frac{a_{21}}{a_{22}} c.
+\end{align}
+Einseten in \eqref{eq:herleitung_lorentz_lin_trafo_x} liefert
+\begin{align}
+    \label{eq:herleitung_lorentz_xprime}
+    x'=a_{22} (x-vt).
+\end{align}
+Analog lässt sich die Bewegung des Ursprungs $x=0$ des ruhenden Systems im bewegten System beschreiben:
+\begin{align}
+    ct' & = a_{11}ct \nonumber                                                \\
+    x'  & = a_{21}ct = \frac{a_{21}}{a_{11}}ct' \overset{!}{=} -vt' \nonumber \\
+    \label{eq:herleitung_lorentz_v2}
+    \equivalence v=-\frac{a_{21}}{a_{11}}c
+\end{align}
+Durch Vergleich von \eqref{eq:herleitung_lorentz_v1} und \eqref{eq:herleitung_lorentz_v2} erhält man 
+\begin{align*}
+    a_{11}=a_{22}
+\end{align*}
+und damit
+\begin{align}
+    \label{eq:herleitung_lorentz_ctprime}
+    ct'=a_{22}\left(ct+\frac{a_{12}}{a_{22}}x\right). 
+\end{align}
+Setzt man nun die Gleichungen \eqref{eq:herleitung_lorentz_xprime} und \eqref{eq:herleitung_lorentz_ctprime} in die Bedingungn der Invarianz der Minkowski-Norm
+\begin{align*}
+    x^2-(ct)^2 = {x'}^2-(ct')^2
+\end{align*}
+ein, so erhält man
+\begin{align*}
+    x^2-(ct)^2 = \underbrace{\left(a_{22}^2-a_{12}^2\right)}_{=1}x^2 - \underbrace{\left(a_{22}^2-a_{22}^2 \frac{v^2}{c^2}\right)}_{=1}(ct)^2 + \underbrace{\left(-a_{22}a_{12}-a_{22}^2 \frac{v}{c}\right)}_{=0}2xct
+\end{align*}
+Durch Koeffizientenvergleich erhält man 
+\begin{align*}
+    a_{22}^2 \left(1-\frac{v^2}{c^2}\right) = 1 \implication a_{22} = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align*}
+und
+\begin{align*}
+    a_{12} = -a_{22} \frac{v}{c} \implication a_{12} = -\frac{v}{c \sqrt{1-\frac{v^2}{c^2}}}. 
+\end{align*}
+Daraus ergibt sich die Lorentz-Transformation
+\begin{align*}
+    x' &= \gamma(x-\beta ct) \\ 
+    ct' &= \gamma(ct- \beta x) 
+\end{align*}
+mit 
+\begin{align*}
+    \beta=\frac{v}{c}, \quad \gamma=\frac{1}{\sqrt{1-\beta^2}}. 
+\end{align*}
 
 \subsection{Geschwindigkeitsaddition}
 
-Betrachte zwei Inertialsysteme $\Sigma$ und $\Sigma'$, die gleichförmig mit der Relativgeschwindigkeit  $v$ zueinander bewegt sind, wie in \Abbref{fig:Geschwindigkeitsaddition} dargestellt. 
-Eine Punktmasse bewegt sich im System $\Sigma'$ mit der Geschwindigkeit $u$. 
+Betrachte zwei Inertialsysteme $\Sigma$ und $\Sigma'$, die gleichförmig mit der Relativgeschwindigkeit  $v$ zueinander bewegt sind, wie in \Abbref{fig:Geschwindigkeitsaddition} dargestellt.
+Eine Punktmasse bewegt sich im System $\Sigma'$ mit der Geschwindigkeit $u$.
 Um nun die Geschwindigkeit der Masse im System $\Sigma$ zu bestimmen, wird die (spezielle, in $x$-Richtung) Lorentz-Transformation invertiert, indem $v$ durch $-v$ (bzw. $\beta$ durch $-\beta$ in $\beta=v/c$) ersetzt wird:
 \begin{align*}
-    x&=\gamma(x'+\beta ct') \\ 
-    ct&=\gamma(ct'+\beta x')
+    x  & =\gamma(x'+\beta ct') \\
+    ct & =\gamma(ct'+\beta x')
 \end{align*}
 \begin{figure}[htp]
     \centering
@@ -322,18 +409,18 @@ Um nun die Geschwindigkeit der Masse im System $\Sigma$ zu bestimmen, wird die (
     \label{fig:Geschwindigkeitsaddition}
 \end{figure}
 
-Für die Punktmasse, die sich nach dem Gesetz $x'=ut'$ bewegt gilt also 
+Für die Punktmasse, die sich nach dem Gesetz $x'=ut'$ bewegt gilt also
 \begin{align*}
-    x&=\gamma t'(u+\beta c) \\ 
-    t&=\gamma t'(ct'+\beta \frac{u}{c}),
+    x & =\gamma t'(u+\beta c)              \\
+    t & =\gamma t'(ct'+\beta \frac{u}{c}),
 \end{align*}
-sodass die Geschwindigkeit in $\Sigma$ durch 
+sodass die Geschwindigkeit in $\Sigma$ durch
 \begin{align*}
     w=\frac{x}{t}=\frac{u+v}{1+\frac{uv}{c^2}}
 \end{align*}
-berechnet wird. 
+berechnet wird.
 
-Besonders bemerkenswert sind der Grenzfall $u,v\ll c$, für den die klassische Näherung $w=u+v$ gilt, sowie der Extremfall $u=c$ mit $w=c$, der zeigt, dass die Lichtgeschwindigkeit tatsächlich die maximale Geschwindigkeit ist. 
+Besonders bemerkenswert sind der Grenzfall $u,v\ll c$, für den die klassische Näherung $w=u+v$ gilt, sowie der Extremfall $u=c$ mit $w=c$, der zeigt, dass die Lichtgeschwindigkeit tatsächlich die maximale Geschwindigkeit ist.
 
 
 
@@ -342,23 +429,84 @@ Besonders bemerkenswert sind der Grenzfall $u,v\ll c$, für den die klassische N
 
 \subsection{Raumzeit-Diagramme}
 
-Raumzeit-Diagramme dienen zur Veranschaulichung von Bewegungen und Ereignissen in der Raumzeit. 
-Zur Vereinfachung wird nur eine Raumdimension berücksichtigt. 
-
-In \Abbref{fig:minkowski_diagram} ist ein einfaches Raumzeit-Diagramm dargestellt. 
-
- 
+Raumzeit-Diagramme bzw. Minkowski-Diagramme dienen zur Veranschaulichung von Bewegungen und Ereignissen in der Raumzeit.
+Zur Vereinfachung wird nur eine Raumdimension berücksichtigt.
 
 \begin{figure}[htp]
     \centering
     \tfigMinkowskiDiagramA
-    \caption{Weltlinie im Raumzeit-Diagramm mit Ortskoordinate auf der horizontalen und Zeitkoordinate auf der vertikalen Achse. Der Bereich $ct>0$ liegt in der Zukunft, der Bereich $ct<0$ in der Vergangenheit. Zeitartige Ereignisse und raumartige Ereignisse werden durch den Lichtkegel getrennt. }
+    \caption{Weltlinie im Raumzeit-Diagramm mit Ortskoordinate auf der horizontalen und Zeitkoordinate auf der vertikalen Achse.
+        Der Bereich $ct>0$ liegt in der Zukunft, der Bereich $ct<0$ in der Vergangenheit.
+        Zeitartige Ereignisse und raumartige Ereignisse werden durch den Lichtkegel getrennt, wobei die zeitartigen innerhalb und die raumartigen außerhalb liegen.
+        Teilchen bewegen sich auf Weltlinien (grün) innerhalb des Lichtkegels. Gestrichelt ist auch der Lichtkegel für einen Punkt auf der Weltlinie angedeutet. }
     \label{fig:minkowski_diagram}
 \end{figure}
+
+In \Abbref{fig:minkowski_diagram} ist ein einfaches Raumzeit-Diagramm dargestellt mit der Raumkoordinate $x$ auf der horizontalen Achse und der Zeitkoordinate $ct$ auf der vertikalen Achse.
+Punkte in diesem Diagramm sind Ereignisse, die wie folgt klassifiziert werden (in Referenz zum Ursprung, also dem Punkt mit $x=0$ und $t=0$):
+
+\begin{itemize}
+    \item Punkte mit $ct>0$ liegen in der Zukunft vom Raumzeitpunkt im Urspung.
+    \item Punkte mit $ct<0$ liegen in der Vergangenheit vom Raumzeitpunkt im Urspung.
+    \item Diejenigen Ereignisse, die sich mit Lichtgeschwindigkeit ausbreiten, liegen auf dem Lichtkegel (violett) mit
+          \begin{align*}
+              \Delta s^2=x^2-(ct)^2=0
+          \end{align*}
+          und heißen lichtartige Ereignisse. Diese Ereignisse können den Ursprung nur mit Lichtgeschwindigkeit erreichen oder von ihm erreicht werden.
+    \item Zeitartige Ereignisse liegen im Lichtkegel, also
+          \begin{align*}
+              \Delta s^2 = x^2-(ct)^2 < 0 \equivalence x^2 < (ct)^2.
+          \end{align*}
+          Zeitartige Ereignisse sind kausal mit dem Ursprung verbunden und können die Geschehnisse im Ursprung beinflussen (falls $ct<0$, Vergangenheit) oder sind durch den Ursprung
+          beeinflussbar (falls $ct>0$, Zukunft). Die Trajektorien, auf der sich Teilchen durch die Raumzeit bewegen, heißen Weltlinien und liegen immer im Lichtkegel, da sich Teilchen nicht mit
+          Überlichtgeschwindigkeit bewegen können. Eine solche Weltlinie ist auch in \Abbref{fig:minkowski_diagram} abgebildet.
+    \item Raumartige Ereignisse liegen außerhalb des Lichtkegels, also
+          \begin{align*}
+              \Delta s^2 = x^2-(ct)^2 > 0 \equivalence x^2 > (ct)^2.
+          \end{align*}
+          Diese sind nicht kausal mit dem Ursprung verbunden.
+\end{itemize}
+
+Außerdem ist der Lichtkegel eines anderen Punktes in der Raumzeit gestrichelt dargestellt.
+Auf der Weltlinie beschreibt das Innere des dort gültigen Lichtkegels immer alle Raumzeitpunkte, die erreicht werden könnten bzw. kausal verbunden sind.
+
+
+Mit Raumzeit-Diagrammen lässt sich auch die Lorentz-Transformation
+\begin{align*}
+    ct' & =\gamma(ct-\beta x) \\
+    x'  & =\gamma(x-\beta ct)
+\end{align*}
+veranschaulichen, siehe \Abbref{fig:minkowski_diagramB}.
 
 \begin{figure}[htp]
     \centering
     \tfigMinkowskiDiagramB
-    \caption{}
+    \caption{Lorentz-Transformation im Raumzeit-Diagramm: Die schwarzen Koordinatenachsen $(ct,x)$ beschreiben das ruhende System und die grünen Achsen ein bewegtes Inertialsystem $(ct',x')$.
+    Punkte mit gleicher Zeit $ct'=\mathrm{const}$ liegen auf Geraden, die parallel zur $x'$-Achse sind und Punkte mit gleicher Raumkoordinate $x'=\mathrm{const}$ auf Parallelen zur $ct'$-Achse.
+    Die Achsen des bewegten Systems sind gegen die des ruhenden Systems um den Winkel $\tan\delta=\beta$ gedreht, sodass der Lichtkegel als Winkelhalbierende mit dem Lichtkegel des ruhenden Systems zusammenfällt.
+    Die Skalierung der Achsen eines bewegten Systems wird durch die Schnittpunkte mit den Hyperbeln $x^2-(ct)^2={x'}^2-(ct')^2=\pm1$ beschrieben. }
     \label{fig:minkowski_diagramB}
 \end{figure}
+
+Hier sind die Achsen des Ruhesystems $\Sigma$ mit $(ct,x)$ und eines relativ dazu bewegten Inertialsystems $\Sigma$ mit $(ct',x')$ dargestellt.
+Man erhält die $ct'$-Achse aus der Lorentz-Transformation durch Setzen von $x'=0$. Man bekommt die Geradengleichung $ct=x/\beta$.
+Analog erhält man für die $x'$-Achse $ct=\beta x$.
+Die Achsen des bewegten Systems sind also um den Winkel $\delta$ gegen die Achsen von $\Sigma$ gedreht, wobei
+\begin{align*}
+    \tan\delta=\beta=\frac{v}{c}.
+\end{align*}
+Da die Drehwinkel beider Achsen gleich sind, ist auch der Lichtkegel für beide und damit alle Inertialsysteme gleich.
+Ob ein Ereignis licht-, zeit- oder raumartig ist, ist demnach unabhängig vom Inertialsystem.
+
+Zunkunft und Vergangenheit sind zwar relativ (da zum Beispiel der Bereich $ct>0$ ungleich dem Bereich $ct'>0$), aber die Kausalität wird nicht verletzt,
+weil alle Punkte im Lichtkegel für alle Inertialsysteme eindeutig und kohärent der Vergangenheit bzw. der Zukunft zugeordnet werden.
+
+Auch ist leicht zu sehen, dass die Gleichzeitigkeit relativ ist, denn die Linie $ct'=\mathrm{const}$ fällt nicht mit $ct=\mathrm{const}$ zusammen.
+
+Zuletzt soll noch der Einheitsmaßstab erwähnt werden.
+Im euklidischen Raum liegen alle Punkte mit gleichem Abstand $1$ zu einem Mittelpunkt auf einem Einheitskreis, $x^2+y^2+z^2=1$.
+Im Minkowski-Raum dagegen beschreiben Lösungen von
+\begin{align*}
+    x^2-(ct)^2={x'}^2-(ct')^2=\pm1
+\end{align*}
+Hyperbeln (zweischalige Hyperboloide für drei Dimensionen).

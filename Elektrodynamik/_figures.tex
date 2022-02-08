@@ -618,7 +618,7 @@ distance marker/.style={|<->|,>={Stealth}},
 }
 
 \newcommand{\tfigMinkowskiDiagramA}{
-    \begin{tikzpicture}[scale=3]
+    \begin{tikzpicture}[scale=3.5]
 
         \coordinate (O) at (0,0);
         \coordinate (C1) at (.9,.9);
@@ -629,19 +629,23 @@ distance marker/.style={|<->|,>={Stealth}},
         \fill[blue!2!white] (C2) -- (C4) -- (C3) -- (C1);
         \fill[red!2!white] (C2) -- (C4) -- (C1) -- (C3);
 
-        
         \draw[arr] (-1,0) -- (1,0) node[anchor=north west] {$x$};
         \draw[arr] (0,-1) -- (0,1) node[anchor=south east] {$ct$};
         \draw[color=violet] (-1,1) -- (1,-1) (-1,-1) -- (1,1) 
             node[right] {Lichtkegel $-(ct)^2+x^2=0$};
-
-        \draw[color=green!30!black] (-115:1.1) -- (65:1.1) 
-            node[anchor=south] {Weltlinie};
+        
         \node[fill=blue!2!white] at (0,.7) {Zukunft};
         \node[fill=blue!2!white] at (0,-.7) {Vergangenheit};
         \node[red!40!white!70!black] at (2,-.5) {raumartige Ereignisse} edge[arr, very thin] (.8,-.4);
         \node[blue!40!white!70!black] at (2,.5) {zeitartige Ereignisse} edge[arr, very thin] (.55,.7);
-
+        
+        \draw[color=green!30!black, name path={weltlinie}] (-115:1.1) .. controls +(72:.8) and +(-108:.8) ..  (65:1.1)
+            node[anchor=south] {Weltlinie};
+        \draw[transparent, name path={x parallel}] (0,.6) -- +(.5,0);
+        \draw[name intersections={of=weltlinie and x parallel,by={P1}},dashed] 
+            ($(P1)+(.1,.1)$) -- ($(P1)+(-.1,-.1)$) 
+            ($(P1)+(-.1,.1)$) -- ($(P1)+(.1,-.1)$)
+            node[point] at (P1) {};
     \end{tikzpicture}
 }
 \newcommand{\tfigMinkowskiDiagramB}{
