@@ -134,7 +134,7 @@ Dann gilt mit Gleichung \eqref{eq:dgl_phi_A_rho}
 \end{equation*}
 und $\varphi $ ist gerade das Coulomb-Potential von $\rho $:
 \begin{equation*}
-	\varphi \left(\vec {r},t\right)=\frac{1}{4\pi \varepsilon _{0}}\int \frac{\rho \left(\vec {r}',t'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
+	\varphi \left(\vec {r},t\right)=\frac{1}{4\pi \varepsilon _{0}}\int \frac{\rho \left(\vec {r}',t'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}
 \end{equation*}
 Aus der Gleichung \eqref{eq:dgl_phi_A_rho} erhält man dann
 \begin{equation*}
@@ -142,7 +142,7 @@ Aus der Gleichung \eqref{eq:dgl_phi_A_rho} erhält man dann
 \end{equation*}
 Auf der rechten Seite erkennen wir den transversalen Anteil der Stromdichte,
 \begin{equation*}
-	\nabla ^{2}\vec {A}-\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}\vec {A}\equiv\mu _{0}\vec {j}_{t},\quad \vec {j}_{t}=\frac{1}{4\pi }\nabla \times \int \frac{\rot \vec {j}\left(\vec {r}',t'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'.
+	\nabla ^{2}\vec {A}-\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}\vec {A}\equiv\mu _{0}\vec {j}_{t},\quad \vec {j}_{t}=\frac{1}{4\pi }\nabla \times \int \frac{\rot \vec {j}\left(\vec {r}',t'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}.
 \end{equation*}
 Man sieht sofort, dass $\divg \vec {j}_{t}=0$, weil $\vec {j}_{t}$ ein reines Wirbelfeld ist.
 
@@ -185,7 +185,7 @@ Wir betrachten jetzt zwei Spezialfälle. Im Vakuum und in linearen Materialien i
 \end{equation*}
 bzw. in der integralen Formulierung
 \begin{equation*}
-	\frac{\diff }{\diff t}\int _{V}u\diff ^{3}\vec {r}+\int _{\partial V}\vec {S}\cdot \diff \vec {f}=-\int \vec {j}\cdot \vec {E}\diff ^{3}\vec {r}.
+	\frac{\diff }{\diff t}\int _{V}u\diffa[3]{\vec{r}}+\int _{\partial V}\vec {S}\cdot \diff \vec {f}=-\int \vec {j}\cdot \vec {E}\diffa[3]{\vec{r}}.
 \end{equation*}
 Als zweiter Sonderfall sollen linear dispersive Materialien behandelt werden. Die Materialkonstanten $\varepsilon $ und $\mu $ werden als komplexe, frequenzabhängige Konstanten geschrieben,
 \begin{equation*}
@@ -228,7 +228,7 @@ Wenn die "`mechanische`` Energie in elektromagnetische umgewandelt werden kann u
 
 Die zeitliche Änderung des mechanischen Impulses $P_{\text{mech}}$ lässt sich als Integral über die Impulsdichte $p_{\text{mech}}$ beschreiben, dessen zeitliche Änderung gerade der Kraftdichte $f$ entspricht, die durch die Lorentzkraft ausgedrückt werden kann:
 \begin{equation*}
-	\frac{\diff P_{\text{mech}}}{\diff t}=\frac{\diff }{\diff t}\int p_{\text{mech}}\diff ^{3}\vec {r}=\int f\left(\vec {r},t\right)\diff ^{3}\vec {r}=\int \left(\rho \vec {E}+\vec {j}\times \vec {B}\right)\diff ^{3}\vec {r}
+	\frac{\diff P_{\text{mech}}}{\diff t}=\frac{\diff }{\diff t}\int p_{\text{mech}}\diffa[3]{\vec{r}}=\int f\left(\vec {r},t\right)\diffa[3]{\vec{r}}=\int \left(\rho \vec {E}+\vec {j}\times \vec {B}\right)\diffa[3]{\vec{r}}
 \end{equation*}
 Die elektromagnetische Kraftdichte lässt sich mithilfe der Maxwellschen Gleichungen umformen zu
 \begin{align*}
@@ -254,5 +254,5 @@ Zusammen können die Terme B und C als Ableitung $\partial _{j}T_{ij}$ eines Ten
 \end{equation*}
 Er erlaubt eine integrale Beschreibung der Impulsbilanz
 \begin{equation*}
-	\frac{\diff }{\diff t}\int \left(p_{\text{mech}}+p_{\mathrm{em}}\right)_{i}\diff ^{3}\vec {r}=\int _{V}\partial _{j}T_{ij}\diff ^{3}\vec {r}=\int _{\partial V}T_{ij}\diff f_{j}.
+	\frac{\diff }{\diff t}\int \left(p_{\text{mech}}+p_{\mathrm{em}}\right)_{i}\diffa[3]{\vec{r}}=\int _{V}\partial _{j}T_{ij}\diffa[3]{\vec{r}}=\int _{\partial V}T_{ij}\diff f_{j}.
 \end{equation*}

@@ -12,6 +12,9 @@
 __latexindent_temp.tex
 
 Elektrodynamik/*.pdf
+Elektrodynamik/*.auxlock
+
+*.md5
 
 
 *.code-workspace

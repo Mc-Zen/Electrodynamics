@@ -1,19 +1,19 @@
 % !TEX root = Theo_III.tex
 
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,decorations.markings,intersections,calc,decorations.pathreplacing}
-
+\usetikzlibrary{arrows.meta,positioning,decorations.markings,intersections,calc,decorations.pathreplacing,external}
+%\tikzexternalize[prefix=figures/] % activate
 
 \tikzset{
-object color/.style={blue!30!black!90!white},
+object color/.style={blue!30!black!90!white,thick},
 legreen/.style={green!50!black},
 lorange/.style={red!60!yellow!70!black!90!white},
 charge color/.style={blue!50!white!70!black},
 red laser/.style={red!70!black},
 moving system color/.style={blue!60!black!70!white},
 coordsystem/.style={very thin, color=#1!50},
-invisiblePoint/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
-point/.style={invisiblePoint,fill=black,minimum size=4pt},
+invisible point/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
+point/.style={invisible point,fill=black,minimum size=4pt},
 arr/.style={->,>={Stealth},thin},
 midarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrow{Stealth}}} },
 midarrow/.default=.5,
@@ -40,7 +40,7 @@ distance marker/.style={|<->|,>={Stealth}},
         \draw[object color,rmidarrow=.1] (0,0) rectangle (1,1) node[below,right] {$C$};
         \node at (.5,.5) {$F$};
         \node[point, label={$\hat{\vec n}$}] at (-.2,.6) {};
-        \draw[decorate, decoration = {brace, mirror}]  (0,-.1) -- +(1,0) node[midway, below,yshift=-3pt] {$\Delta r_c$};
+        \draw[decorate, decoration = {brace, mirror}]  (0,-.1) -- +(1,0) node[midway, below,yshift=-3pt] {$\Delta r_C$};
         \draw[arr] (1.15, .4) -- +(0,.3) node[midway, right] {$\hat{\vec t}_C$};
     \end{tikzpicture}
 }
@@ -77,71 +77,61 @@ distance marker/.style={|<->|,>={Stealth}},
     \end{tikzpicture}
 }
 
-\newcommand{\tfigWatermolecule}{
-
-    % water molecule
-    \begin{tikzpicture}[scale=3]
-        \node[circle] (H1) at ($(-90+104.45/2:1)$) {$\mathrm{H}^+$};
-        \node[circle] (H2) at ($(-90-104.45/2:1)$) {$\mathrm{H}^+$};
-        \node[circle] (p) at (-90:.8) {};
-        \node[circle] at (0,0) [label={east,xshift=-2mm,yshift=1mm}:-] {O} 
-            edge (H1) 
-            edge (H2) 
-            edge[arr, charge color] 
-            node[midway, left] {$\vec p$} (p);
-    \end{tikzpicture}
-}
-
-\newcommand{\tfigElementalQuadrupoles}{
-    % elemental quadrupoles
-    \begin{tikzpicture}[
-        scale=1.2,
-        charge/.style={point, charge color, outer sep=2mm}
-    ]
-    \node[charge] (Q1) at (-1,-1) [label={left}:$+q$] {};
-    \node[charge] at (-1,1) [label={left}:$-q$] {} edge[arr] (Q1);
-    \node[charge] (Q2) at (1,1) [label={left}:$+q$] {};
-    \node[charge] at (1,-1) [label={left}:$-q$] {} edge[arr] (Q2);
-
-
-    \begin{scope}[shift={(5,0)}]
-        \node[charge] (Q3) at (0,1) [label={left}:$+q$] {};
-        \node[charge] (Q4) at (0,-1) [label={left}:$+q$] {};
-        \node[charge, inner sep=1mm] at (0,0) [label={left}:$-2q$] {} 
-            edge[arr] (Q3) 
-            edge[arr] (Q4);
-    \end{scope}
-    \end{tikzpicture}
-}
-
-\newcommand{\tfigMagnetfeldBeiLeiter}{
-    \begin{tikzpicture}[scale=3]
-        \coordinate (O) at (0. 8,0);   % Koordinatenursprung
-        \coordinate (A) at (1, 0.5);   % Punkt auf Leiter
-        \coordinate (B) at (1.5, 0.2); % Punkt, wo Magnetfeld ausgewertet wird
+\newcommand{\tfigCoulombPointCharges}{
+    % Forces on to charges
+    \begin{tikzpicture}[scale=1]
+        \coordinate (O) at (0.0,0.0);
+        \coordinate (Q1) at (1.0,1.1);
+        \coordinate (Q2) at (2.0,.1);
+        \coordinate (F1) at ($(Q1)+(Q1)-(Q2)$);
+        \coordinate (F2) at ($(Q2)+(Q2)-(Q1)$);
         
-        % Leiter (Kurve)
-        \draw[color=blue!50!black] (0,0) .. controls (.3,.7) and (1.7,.3) .. (2,1);
-        % Stromelement Idr
-        \draw[arr] (1-0.1, 0.55-0.015) -- +(0.2, 0.03) 
-            node[midway, above] {$I \diff \vec r'$}; 
-            
-        % Punkt, wo Magnetfeld ausgewertet wird
-        \node[invisiblePoint,text=orange!80] (b point) at (B) 
-            [label={south east}:\textcolor{orange!80}{$\vec B(\vec r)$}] {$\mathbf{\otimes}$};
-        % Punkt auf Leiter
-        \node[invisiblePoint] (conductor point) at (A) {}
-            edge[arr] node[midway,auto,yshift=-1mm] {$\vec r-\vec r'$} 
-            (b point);
-        % Ursprung
-        \node[point] (origin) at (O) [label={south west}:$O$] {} 
-            edge[arr] node[midway,left] {$\vec r$} 
-            (conductor point) 
-            edge[arr] node[midway,below] {$\vec r'$} 
-            (b point);
-            
+        \node[point, charge color] (Q1 node) at (Q1) 
+            [label={east, yshift=1mm, charge color}:$q_1$] {} 
+            edge[arr] node[at end, above] {$\vec F_1$} (F1);
+        \node[point, charge color] (Q2 node) at (Q2) 
+            [label={east, yshift=1mm, charge color}:$q_2$] {} 
+            edge[arr] node[at end, below] {$\vec F_2$} (F2)
+            edge[arr] node[midway, right, yshift=1mm, xshift=1mm] {$\vec r_1-\vec r_2$} (Q1 node);
+        \node[invisible point] at (O) {} 
+        edge[arr] node[midway, below] {$\vec r_2$} (Q2 node)
+        edge[arr] node[midway, anchor=south east] {$\vec r_1$} (Q1 node);
     \end{tikzpicture}
 }
+
+% äquipotentiallinien und elektrische feld Linien zweier ungleichnamiger ladungen
+\newcommand{\tfigDipoleFieldPotential}{
+    \begin{tikzpicture}[scale=1.3]
+        \coordinate (Q1) at (-1,0);
+        \coordinate (Q2) at (1,0);
+        \coordinate (A1) at (-2,0);
+        \coordinate (A2) at (2,0);
+        \coordinate (T) at (0,1.6);
+        \draw[midarrow] (Q1) .. controls +(45:.7) and +(135:.7) .. (Q2);
+        \draw[midarrow] (Q1) .. controls +(75:1)  and +(105:1)  .. (Q2);
+        \draw[midarrow] (Q1) .. controls +(105:1.7) and +(75:1.7) .. (Q2);
+        \draw[midarrow] (Q1) .. controls +(135:.7) and +(-135:.7) .. ($(Q1)+(T)$);
+        \draw[rmidarrow] (Q2) .. controls +(45:.7) and +(-45:.7) .. ($(Q2)+(T)$);
+        
+        \draw[dashed] 
+            let \p1=(Q1),\p2=(Q2) in
+            (0,0) -- (T)
+            (\x1/3,0) .. controls +(90:1) and +(-50:.3) .. ($(T)+{3/4}*(Q1)$)
+            (\x2/3,0) .. controls +(90:1) and +(-130:.3) .. ($(T)+{3/4}*(Q2)$)
+            (\x1-\x1/3,0) arc(0:180:1/3)
+            (\x2+\x2/3,0) arc(0:180:1/3);
+        
+        \node[point, charge color] (Q2 node) at (Q2) 
+            [label=south:$-q$] {} ;
+        \node at (A2) {} 
+            edge[arr] node {} (Q2 node);
+        \node[point, charge color] (Q1 node) at (Q1) 
+            [label=south:$q$] {} 
+            edge[arr] node {} (A1)
+            edge[arr] (Q2 node);
+    \end{tikzpicture}
+}
+
 \newcommand{\tfigEfieldAndPotLinesAndChargeDensitityHomoChargedSphere}{
     % Field and equipotential lines of a charged sphere
     \begin{tikzpicture}[
@@ -214,6 +204,90 @@ distance marker/.style={|<->|,>={Stealth}},
             \draw[dashed, very thin] (0.5,1/1.7) -- +(0,-1/1.7) 
                 node[below] {$R$};
         \end{scope}
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigThreeConductors}{
+    % Anordnung von elektrischen Leitern Li mit Ladungen Qi und Potentialen φi.
+    \begin{tikzpicture}[clr/.style={legreen},scale=1.2]
+        \draw[rotate=45] 
+            (0,0) ellipse [x radius=1.2, y radius=.5] 
+            node {$L_1$} node[charge color] at +(-.9,0) {$Q_1$}
+            node[clr] at +(.2,.8) {$\phi_1$} ;
+        \draw[rotate=0] 
+            (2,-2) ellipse [x radius=.5, y radius=.55] 
+            node {$L_2$} node[charge color] at +(-.5,-.6) {$Q_2$}
+            node[clr] at +(.2,.8) {$\phi_2$};
+        \draw[rotate=3] 
+            (4,0) ellipse [x radius=.8, y radius=.4] 
+            node {$L_3$} node[charge color] at +(-.5,-.6) {$Q_3$}
+            node[clr] at +(.3,.6) {$\phi_3$};
+        \node at (5,-1.4) {$\ldots$};
+    \end{tikzpicture}
+}
+\newcommand{\tfigWatermolecule}{
+
+    % water molecule
+    \begin{tikzpicture}[scale=3]
+        \node[circle] (H1) at ($(-90+104.45/2:1)$) {$\mathrm{H}^+$};
+        \node[circle] (H2) at ($(-90-104.45/2:1)$) {$\mathrm{H}^+$};
+        \node[circle] (p) at (-90:.8) {};
+        \node[circle] at (0,0) [label={east,xshift=-2mm,yshift=1mm}:-] {O} 
+            edge (H1) 
+            edge (H2) 
+            edge[arr, charge color] 
+            node[midway, left] {$\vec p$} (p);
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigElementalQuadrupoles}{
+    % elemental quadrupoles
+    \begin{tikzpicture}[
+        scale=1.2,
+        charge/.style={point, charge color, outer sep=2mm}
+    ]
+    \node[charge] (Q1) at (-1,-1) [label={left}:$+q$] {};
+    \node[charge] at (-1,1) [label={left}:$-q$] {} edge[arr] (Q1);
+    \node[charge] (Q2) at (1,1) [label={left}:$+q$] {};
+    \node[charge] at (1,-1) [label={left}:$-q$] {} edge[arr] (Q2);
+
+
+    \begin{scope}[shift={(5,0)}]
+        \node[charge] (Q3) at (0,1) [label={left}:$+q$] {};
+        \node[charge] (Q4) at (0,-1) [label={left}:$+q$] {};
+        \node[charge, inner sep=1mm] at (0,0) [label={left}:$-2q$] {} 
+            edge[arr] (Q3) 
+            edge[arr] (Q4);
+    \end{scope}
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigMagnetfeldBeiLeiter}{
+    \begin{tikzpicture}[scale=3]
+        \coordinate (O) at (0. 8,0);   % Koordinatenursprung
+        \coordinate (A) at (1, 0.5);   % Punkt auf Leiter
+        \coordinate (B) at (1.5, 0.2); % Punkt, wo Magnetfeld ausgewertet wird
+        
+        % Leiter (Kurve)
+        \draw[color=blue!50!black] (0,0) .. controls (.3,.7) and (1.7,.3) .. (2,1);
+        % Stromelement Idr
+        \draw[arr] (1-0.1, 0.55-0.015) -- +(0.2, 0.03) 
+            node[midway, above] {$I \diff \vec r'$}; 
+            
+        % Punkt, wo Magnetfeld ausgewertet wird
+        \node[invisible point,text=orange!80] (b point) at (B) 
+            [label={south east}:\textcolor{orange!80}{$\vec B(\vec r)$}] {$\mathbf{\otimes}$};
+        % Punkt auf Leiter
+        \node[invisible point] (conductor point) at (A) {}
+            edge[arr] node[midway,auto,yshift=-1mm] {$\vec r-\vec r'$} 
+            (b point);
+        % Ursprung
+        \node[point] (origin) at (O) [label={south west}:$O$] {} 
+            edge[arr] node[midway,left] {$\vec r$} 
+            (conductor point) 
+            edge[arr] node[midway,below] {$\vec r'$} 
+            (b point);
+            
     \end{tikzpicture}
 }
 

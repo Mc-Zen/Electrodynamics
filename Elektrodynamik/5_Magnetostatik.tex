@@ -18,7 +18,7 @@ Die Einheit ist der Ampère. Aus der Ladungserhaltung folgt, dass der Strom kons
 
 Außerdem wird die Stromdichte als Strom pro Querschnittsfläche $A$
 \begin{equation*}
-	\vec {j}=\frac{\text{Strom}}{\text{Fläche}}=\frac{I}{A}\frac{\diff \vec {\vec {r}}}{\diff s}\:\xrightarrow{\Delta  f\diff s=\diff ^{3}r}\: \vec {j}\diff ^{3}\vec {r}=I\diff \vec {r}
+	\vec {j}=\frac{\text{Strom}}{\text{Fläche}}=\frac{I}{A}\frac{\diff \vec {\vec {r}}}{\diff s}\:\xrightarrow{\Delta  f\diff s=\diff ^{3}r}\: \vec {j}\diffa[3]{\vec{r}}=I\diff \vec {r}
 \end{equation*}
 definiert. Dabei ist $\diff\vec r$ als Leiterelement und $I\diff\vec r$ als gerichtetes Stromelement zu verstehen. Es gilt also
 \begin{equation*}
@@ -41,11 +41,11 @@ Die Stromdichte zeigt damit in dieselbe Richtung wie der Geschwindigkeitsvektor 
 
 Zur Herleitung der Kontinuitätsgleichung betrachten wir die zeitliche Änderung der Ladung in einem Volumen $V$:
 \begin{equation*}
-	\frac{\diff Q}{\diff t}=\frac{\diff }{\diff t}\int _{V}\diff^{3}\vec {r}\rho \left(\vec {r},t\right)=\int _{V}\diff ^{3}\vec {r}\frac{\partial }{\partial t}\rho \left(\vec {r},t\right)
+	\frac{\diff Q}{\diff t}=\frac{\diff }{\diff t}\int _{V}\diff^{3}\vec {r}\rho \left(\vec {r},t\right)=\int _{V}\diffa[3]{\vec{r}}\frac{\partial }{\partial t}\rho \left(\vec {r},t\right)
 \end{equation*}
 Wegen der Ladungserhaltung entspricht dies gerade dem Fluss der Stromdichte aus der Volumenoberfläche $\partial V$ heraus:
 \begin{equation*}
-	\int _{V}\diff ^{3}\vec {r}\frac{\partial }{\partial t}\rho \left(\vec {r},t\right)=-\int _{\partial V}\vec {j}\cdot \diff \vec {f}=-\int _{V}\diff ^{3}\vec {r}\divg \vec {j},
+	\int _{V}\diffa[3]{\vec{r}}\frac{\partial }{\partial t}\rho \left(\vec {r},t\right)=-\int _{\partial V}\vec {j}\cdot \diff \vec {f}=-\int _{V}\diffa[3]{\vec{r}}\divg \vec {j},
 \end{equation*}
 woraus sich die Kontinuitätsgleichung ergibt:
 \begin{equation*}
@@ -127,7 +127,7 @@ Um die Grundgleichungen der Magnetostatik herzuleiten, gehen wir zuerst von dem 
 
 Die Kraft auf ein Stromgebiet ist das Integral der Kraftdichte
 \begin{equation*}
-	\vec {F}=\int f\left(\vec {r}\right)\diff ^{3}\vec {r}=\int \vec {j}\left(\vec {r}\right)\times \vec {B}\left(\vec {r}\right)\diff ^{3}\vec {r}.
+	\vec {F}=\int \vec f\left(\vec {r}\right)\diffa[3]{\vec{r}}=\int \vec {j}\left(\vec {r}\right)\times \vec {B}\left(\vec {r}\right)\diffa[3]{\vec{r}}.
 \end{equation*}
 Für eine Punktladung $q$, die sich mit Geschwindigkeit $\vec {v}$ bewegt ($\vec {j}=q\vec {v}\delta \left(\vec {r}-\vec {r}\left(t\right)\right)$) gilt speziell
 \begin{equation*}
@@ -139,13 +139,13 @@ bzw. allgemein mit einem zusätzlichen elektrischen Feld
 \end{equation*}
 Diese Gesamtkraft ist die sogenannte Lorentzkraft.
 
-Integration des Biot-Savartschen Gesetzes für Leiter führt auf\footnote{vergleichlich mit $\vec {E}(\vec r)=\frac{1}{4\pi \varepsilon _{0}}\int \rho \left(\vec {r}\right)\frac{\vec {r}-\vec {r}'}{\left| \vec {r}-\vec {r}'\right| ^{3}}\diff ^{3}\vec {r}'$.}
+Integration des Biot-Savartschen Gesetzes für Leiter führt auf\footnote{vergleichlich mit $\vec {E}(\vec r)=\frac{1}{4\pi \varepsilon _{0}}\int \rho \left(\vec {r}\right)\frac{\vec {r}-\vec {r}'}{\left| \vec {r}-\vec {r}'\right| ^{3}}\diffa[3]{\vec{r}'}$.}
 \begin{equation*}
-	\vec {B}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \vec {j}\left(\vec {r'}\right)\times \frac{\vec {r}-\vec {r}'}{\left| \vec {r}-\vec {r}'\right| ^{3}}\diff ^{3}\vec {r}'.
+	\vec {B}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \vec {j}\left(\vec {r'}\right)\times \frac{\vec {r}-\vec {r}'}{\left| \vec {r}-\vec {r}'\right| ^{3}}\diffa[3]{\vec{r}'}.
 \end{equation*}
 Wie für das elektrische Feld können wir ein Potential einführen \textendash{} allerdings ist $\vec {B}$ kein Potentialfeld und daher ist das magnetische Potential ein Vektorpotential:
 \begin{equation*}
-	\vec {B}\left(\vec {r}\right)=\nabla \times \vec {A}\left(\vec {r}\right), \quad\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
+	\vec {B}\left(\vec {r}\right)=\nabla \times \vec {A}\left(\vec {r}\right), \quad\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}
 \end{equation*}
 Die Divergenz von $\vec {B}$ verschwindet, weil stets gilt, dass $\nabla\cdot(\nabla\times \vec A) = 0$.
 \begin{formal}
@@ -153,7 +153,7 @@ Die Divergenz von $\vec {B}$ verschwindet, weil stets gilt, dass $\nabla\cdot(\n
 \end{formal}
 In der integralen Formulierung,
 \begin{equation*}
-	\int _{V}\divg \vec {B}\,\diff ^{3}\vec {r}=\int _{\partial V}\vec {B}\cdot \diff \vec {f}=0,
+	\int _{V}\divg \vec {B}\,\diffa[3]{\vec{r}}=\int _{\partial V}\vec {B}\cdot \diff \vec {f}=0,
 \end{equation*}
 bedeutet das, dass die magnetischen Feldlinien geschlossen sind. Es gibt folglich keine magnetischen Ladungen, wo die Feldlinien beginnen oder enden.
 
@@ -162,8 +162,8 @@ Für die Rotation der magnetischen Flussdichte gilt
 	\begin{split}
 		\label{eq:durchflutungsgesetz_magnetostatik}
 		\rot \vec {B}&=\nabla \times \left(\nabla \times \vec {A}\right)=\nabla \left(\nabla \cdot \vec {A}\right)-\nabla ^{2}\vec {A}\\
-		&=\frac{\mu _{0}}{4\pi }\nabla \int \vec {j}\left(\vec {r}'\right)\cdot \nabla \frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'-\frac{\mu _{0}}{4\pi }\int \vec {j}\left(\vec {r}'\right)\nabla ^{2}\frac{1}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'\\
-		&=0+\mu _{0}\int \vec {j}\left(\vec {r}'\right)\delta \left(\vec {r}-\vec {r}'\right)\diff ^{3}\vec {r}'\\&=\mu _{0}\vec {j}\left(\vec {r}\right).
+		&=\frac{\mu _{0}}{4\pi }\nabla \int \vec {j}\left(\vec {r}'\right)\cdot \nabla \frac{1}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}-\frac{\mu _{0}}{4\pi }\int \vec {j}\left(\vec {r}'\right)\nabla ^{2}\frac{1}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}\\
+		&=0+\mu _{0}\int \vec {j}\left(\vec {r}'\right)\delta \left(\vec {r}-\vec {r}'\right)\diffa[3]{\vec{r}'}\\&=\mu _{0}\vec {j}\left(\vec {r}\right).
 	\end{split}
 \end{align}
 
@@ -222,7 +222,7 @@ Wie aus der Gleichung \eqref{eq:durchflutungsgesetz_magnetostatik} hervorgeht, l
 \end{equation*}
 und im Potential $\vec {A}\left(\vec {r}\right)$ findet sich wieder eine Greenschen Funktion
 \begin{equation*}
-	\vec {A}\left(\vec {r}\right)=\int \diff ^{3}\vec {r}'G\left(\vec {r}-\vec {r}'\right)\vec {j}\left(\vec {r}'\right),\quad G\left(\vec {r}-\vec {r}'\right)=\frac{\mu _{0}}{4\pi }\frac{1}{\left| \vec {r}-\vec {r}'\right| }.
+	\vec {A}\left(\vec {r}\right)=\int \diffa[3]{\vec{r}'}G\left(\vec {r}-\vec {r}'\right)\vec {j}\left(\vec {r}'\right),\quad G\left(\vec {r}-\vec {r}'\right)=\frac{\mu _{0}}{4\pi }\frac{1}{\left| \vec {r}-\vec {r}'\right| }.
 \end{equation*}
 
 
@@ -233,34 +233,34 @@ und im Potential $\vec {A}\left(\vec {r}\right)$ findet sich wieder eine Greensc
 Wir führen zunächst wieder eine Entwicklung des magnetischen Potentials nach Momenten der Stromverteilung durch:
 \begin{equation}
 	\label{eq:entwicklung_magn_potential}
-	\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \diff ^{3}\vec {r}'\frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\approx \frac{\mu _{0}}{4\pi }\left(\frac{1}{r}\int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)+\frac{\vec {r}}{r^{3}}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'+\ldots \right)
+	\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \diffa[3]{\vec{r}'}\frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\approx \frac{\mu _{0}}{4\pi }\left(\frac{1}{r}\int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)+\frac{\vec {r}}{r^{3}}\cdot \int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)\vec {r}'+\ldots \right)
 \end{equation}
-Die Auswertung ist allerdings viel komplizierter als für das elektrische Potential und daher beschränken wir uns hier auf die Dipole und vernachlässigen höhere Multipolmomente. Außerdem verwenden wir als Hilfsatz folgende Gleichung, die für beliebige skalare Felder $g$ und $f$ sowie für ein quellenfreies Vektorfeld $\vec {j}$ gilt\footnote{Beweis: Betrachte $\int _{V}\nabla \left(gf\vec {j}\right)\diff ^{3}\vec {r}$. Einerseits ist dieser Ausdruck mit dem Satz von Gauß gleich $\int _{\partial V}gf\vec {j}\cdot \diff \vec {f}$, was gleich $0$ ist, wenn man das Volumen groß genug wählt, dass auf dem Rand $\vec {j}\left(\vec {r}\right)=\vec {0}$ ist. Außerdem findet man mithilfe der Produktregel, dass $\int _{V}\nabla \left(gf\vec {j}\right)\diff ^{3}\vec {r}=\int _{V}\vec {j}\cdot \nabla \left(gf\right)\diff ^{3}\vec {r}+\int _{V}gf\nabla \cdot \vec {j}\diff ^{3}\vec {r}$, wobei der letzte Term aufgrund der Bedingung $\divg \vec {j}=\vec {0}$ verschwindet, q.e.d.}:
+Die Auswertung ist allerdings viel komplizierter als für das elektrische Potential und daher beschränken wir uns hier auf die Dipole und vernachlässigen höhere Multipolmomente. Außerdem verwenden wir als Hilfsatz folgende Gleichung, die für beliebige skalare Felder $g$ und $f$ sowie für ein quellenfreies Vektorfeld $\vec {j}$ gilt\footnote{Beweis: Betrachte $\int _{V}\nabla \left(gf\vec {j}\right)\diffa[3]{\vec{r}}$. Einerseits ist dieser Ausdruck mit dem Satz von Gauß gleich $\int _{\partial V}gf\vec {j}\cdot \diff \vec {f}$, was gleich $0$ ist, wenn man das Volumen groß genug wählt, dass auf dem Rand $\vec {j}\left(\vec {r}\right)=\vec {0}$ ist. Außerdem findet man mithilfe der Produktregel, dass $\int _{V}\nabla \left(gf\vec {j}\right)\diffa[3]{\vec{r}}=\int _{V}\vec {j}\cdot \nabla \left(gf\right)\diffa[3]{\vec{r}}+\int _{V}gf\nabla \cdot \vec {j}\diffa[3]{\vec{r}}$, wobei der letzte Term aufgrund der Bedingung $\divg \vec {j}=\vec {0}$ verschwindet, q.e.d.}:
 \begin{equation}
 	\label{eq:hilfssatz}
-	\int \vec {j}\cdot \nabla \left(gf\right)\diff ^{3}\vec {r}=0.
+	\int \vec {j}\cdot \nabla \left(gf\right)\diffa[3]{\vec{r}}=0.
 \end{equation}
-Ferner können wir zeigen\footnote{Beweis: Mit der vorigen Formel $\int \vec {j}\cdot \nabla \left(gf\right)\diff ^{3}\vec {r}=0$ ist mit $g=1$ und $f=x_{i}$ offensichtlicherweise $\int j_{k}\cdot \nabla _{k}x_{i}\diff ^{3}\vec {r}=\int j_{i}\diff ^{3}\vec {r}=0$, q.e.d. }, dass
+Ferner können wir zeigen\footnote{Beweis: Mit der vorigen Formel $\int \vec {j}\cdot \nabla \left(gf\right)\diffa[3]{\vec{r}}=0$ ist mit $g=1$ und $f=x_{i}$ offensichtlicherweise $\int j_{k}\cdot \nabla _{k}x_{i}\diffa[3]{\vec{r}}=\int j_{i}\diffa[3]{\vec{r}}=0$, q.e.d. }, dass
 \begin{equation*}
-	\int \vec {j}\left(\vec {r}\right)\diff ^{3}\vec {r}=0,
+	\int \vec {j}\left(\vec {r}\right)\diffa[3]{\vec{r}}=0,
 \end{equation*}
 es also keine Strommonopole in $\vec {A}\left(\vec {r}\right)$ gibt. Als letzte Vorbereitung werten wir den zweiten Term in Gleichung \eqref{eq:entwicklung_magn_potential} aus
 \begin{equation*}
-	\vec {r}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diff ^{3}\vec {r}'x_{i}'j_{k}\left(\vec {r}'\right).
+	\vec {r}\cdot \int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diffa[3]{\vec{r}'}x_{i}'j_{k}\left(\vec {r}'\right).
 \end{equation*}
 Das Produkt $T=x_{i}'j_{k}$ ist ein Tensor zweiter Stufe und lässt sich zerlegen in einen symmetrischen und einen antisymmetrischen Teil, $T_{ik}=\frac{1}{2}\left(T_{ik}+T_{ki}\right)+\frac{1}{2}\left(T_{ik}-T_{ki}\right)$, also
 \begin{equation*}
-	\vec {r}\cdot \int \diff ^{3}\vec {r}'\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diff ^{3}\vec {r}'\left(\frac{1}{2}\left(x_{i}'j_{k}+x_{k}'j_{i}\right)+\frac{1}{2}\left(x_{i}'j_{k}-x_{k}'j_{i}\right)\right).
+	\vec {r}\cdot \int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)\vec {r}'=x_{i}\int \diffa[3]{\vec{r}'}\left(\frac{1}{2}\left(x_{i}'j_{k}+x_{k}'j_{i}\right)+\frac{1}{2}\left(x_{i}'j_{k}-x_{k}'j_{i}\right)\right).
 \end{equation*}
 Der erste Summand im Integranden (symmetrischer Teil des Tensors) verschwindet nach dem Hilfssatz \eqref{eq:hilfssatz} mit $g=x_{i}',f=x_{k}'$ und der zweite wird zu
 \begin{equation*}
-	\frac{1}{2}\int \diff ^{3}\vec {r}'\left(\left(\vec {r}\cdot \vec {r}'\right)\vec {j}-\left(\vec {r}\cdot \vec {j}\right)\vec {r}'\right)=\frac{1}{2}\int \diff ^{3}\vec {r}'\left(\vec {r}'\times \vec {j}\right)\times \vec {r}
+	\frac{1}{2}\int \diffa[3]{\vec{r}'}\left(\left(\vec {r}\cdot \vec {r}'\right)\vec {j}-\left(\vec {r}\cdot \vec {j}\right)\vec {r}'\right)=\frac{1}{2}\int \diffa[3]{\vec{r}'}\left(\vec {r}'\times \vec {j}\right)\times \vec {r}
 \end{equation*}
 evaluiert.
 
 Nun können wir das magnetische Dipolmoment
 \begin{equation*}
-	\vec {m}=\frac{1}{2}\int \vec {r}'\times \vec {j}\left(\vec {r}\right)\diff ^{3}\vec {r}'
+	\vec {m}=\frac{1}{2}\int \vec {r}'\times \vec {j}\left(\vec {r}\right)\diffa[3]{\vec{r}'}
 \end{equation*}
 und das Vektorpotential des magnetischen Dipols
 \begin{equation*}
@@ -272,7 +272,7 @@ einführen. Daraus ergibt sich (mit weiteren Umformungen) schließlich das Magne
 \end{equation*}
 was wieder völlig analog zum elektrischen Dipol ist.
 
-Wir wollen im Folgenden einmal das Dipolmoment zweier einfacher Geometrien berechnen. Das Dipolmoment einer Stromschleife (\Abbref{fig:magnetic_dipole_field_circle_conductor_ellipsoid}, links) ist einfach (verwende $\vec {j}\diff ^{3}\vec {r}=I\diff \vec {r}$)
+Wir wollen im Folgenden einmal das Dipolmoment zweier einfacher Geometrien berechnen. Das Dipolmoment einer Stromschleife (\Abbref{fig:magnetic_dipole_field_circle_conductor_ellipsoid}, links) ist einfach (verwende $\vec {j}\diffa[3]{\vec{r}}=I\diff \vec {r}$)
 \begin{equation*}
 	\vec {m}=\frac{I}{2}\oint \vec {r}\times \diff \vec {r}.
 \end{equation*}
@@ -295,7 +295,7 @@ Zuletzt betrachten wir einen starren geladenen Körper, der um eine Rotationsach
 \end{equation*}
 Gleichzeitig besitzt der Körper einen Drehimpuls
 \begin{equation*}
-	\vec {L}=\int \diff ^{3}\vec {r}\rho _{m}\left(\vec {r}\right)\vec {r}\times \vec {v}.
+	\vec {L}=\int \diffa[3]{\vec{r}}\rho _{m}\left(\vec {r}\right)\vec {r}\times \vec {v}.
 \end{equation*}
 Trifft man jetzt die Annahme, dass die Verteilungen von Ladung und Masse im Körper gleich sind,
 \begin{equation*}
@@ -317,11 +317,11 @@ Auch die Erde ist ein magnetischer Dipol, der durch Ströme im flüssigen äuße
 
 Die bereits bekannte Kraft auf ein Volumen $V$ mit Stromverteilung $\vec {j}\left(\vec {r}\right)$
 \begin{equation*}
-	\vec {F}=\int \vec {j}\left(\vec {r}\right)\times \vec {B}\left(\vec {r}\right)\diff ^{3}\vec {r}
+	\vec {F}=\int \vec {j}\left(\vec {r}\right)\times \vec {B}\left(\vec {r}\right)\diffa[3]{\vec{r}}
 \end{equation*}
 lässt sich nach $\vec {B}$ um $\vec {r}=\vec {0}$ Taylor-entwickeln:
 \begin{equation*}
-	\vec {F}\approx \int \vec {j}\left(\vec {r}\right)\times \left(\vec {B}\left(0\right)+\vec {r}\cdot \nabla \vec {B}\left(0\right)+\ldots \right)\diff ^{3}\vec {r}=\left(\vec {m}\times \nabla \right)\times \vec {B}\left(0\right)=\nabla \left(\vec {m}\cdot \vec {B}\right)
+	\vec {F}\approx \int \vec {j}\left(\vec {r}\right)\times \left(\vec {B}\left(0\right)+\vec {r}\cdot \nabla \vec {B}\left(0\right)+\ldots \right)\diffa[3]{\vec{r}}=\left(\vec {m}\times \nabla \right)\times \vec {B}\left(0\right)=\nabla \left(\vec {m}\cdot \vec {B}\right)
 \end{equation*}
 Die potentielle Energie eines Dipols $\vec {m}$ im magnetischen Feld $\vec {B}$ ergibt sich daraus durch Integration
 \begin{equation*}
@@ -575,19 +575,19 @@ In der Magnetostatik ist wie wir gesehen haben $\nabla \cdot \vec {B}=0$ und $\n
 	      \end{equation*}
 	      In einem Ferromagneten gilt also eine Poisson-Gleichung mit einer effektiven magnetischen Ladungsdichte $\rho _{m}$. Ohne Randflächen ist die Lösung einfach
 	      \begin{equation*}
-		      \phi _{m}=-\frac{1}{4\pi }\int \frac{\nabla '\cdot \vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
+		      \phi _{m}=-\frac{1}{4\pi }\int \frac{\nabla '\cdot \vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}
 	      \end{equation*}
 	      und mit partieller Integration
 	      \begin{equation*}
-		      \phi _{m}=-\frac{1}{4\pi }\nabla \cdot \int \frac{\vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'.
+		      \phi _{m}=-\frac{1}{4\pi }\nabla \cdot \int \frac{\vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}.
 	      \end{equation*}
 	      Führt man eine Fernfeldentwicklung durch, $1/\left| \vec {r}-\vec {r}'\right| \approx 1/r$ und berücksichtigt nur den ersten Term, so erhält man
 	      \begin{equation*}
-		      \phi _{m}\left(\vec {r}\right)=-\frac{1}{4\pi }\nabla \left(\frac{1}{r}\right)\cdot \int \vec {M}\left(\vec {r}'\right)\diff ^{3}\vec {r}'=\frac{1}{4\pi }\frac{\vec {m}\cdot \vec {r}}{r^{3}},
+		      \phi _{m}\left(\vec {r}\right)=-\frac{1}{4\pi }\nabla \left(\frac{1}{r}\right)\cdot \int \vec {M}\left(\vec {r}'\right)\diffa[3]{\vec{r}'}=\frac{1}{4\pi }\frac{\vec {m}\cdot \vec {r}}{r^{3}},
 	      \end{equation*}
 	      also ein Dipolfeld. Mit Randflächen ist
 	      \begin{equation*}
-		      \phi _{m}\left(\vec {r}\right)=-\frac{1}{4\pi }\int _{V}\frac{\nabla '\cdot \vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'+\frac{1}{4\pi }\oint _{\partial V}\frac{\vec {n}'\cdot \vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff \vec {f}'.
+		      \phi _{m}\left(\vec {r}\right)=-\frac{1}{4\pi }\int _{V}\frac{\nabla '\cdot \vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}+\frac{1}{4\pi }\oint _{\partial V}\frac{\vec {n}'\cdot \vec {M}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff \vec {f}'.
 	      \end{equation*}
 	      Der Ausdruck $\vec {n}\cdot \vec {M}$ lässt sich als effektive magnetische Flächenladungsdichte $\sigma _{m}$ sehen. Ist die Magnetisierung homogen, dann ist das Potential nur von $\sigma _{m}$ abhängig.
 \end{itemize}
@@ -595,7 +595,7 @@ Beispiele
 \begin{itemize}
 	\item Homogen magnetisierte Kugel:
 	      \begin{equation*}
-		      \phi _{m}\left(\vec {r}\right)=-\frac{1}{4\pi }\vec {M}\cdot \nabla \int _{V_{\mathrm{K}}}\frac{\diff ^{3}\vec {r}'}{\left| \vec {r}-\vec {r}'\right| }=-\frac{1}{2}\vec {M}\cdot \nabla \int _{0}^{R}\int _{-1}^{1}\frac{r'^{2}\diff r'\diff \cos \vartheta '}{\sqrt{r^{2}+r'^{2}+2rr'\cos \vartheta '}}\diff \vartheta
+		      \phi _{m}\left(\vec {r}\right)=-\frac{1}{4\pi }\vec {M}\cdot \nabla \int _{V_{\mathrm{K}}}\frac{\diffa[3]{\vec{r}'}}{\left| \vec {r}-\vec {r}'\right| }=-\frac{1}{2}\vec {M}\cdot \nabla \int _{0}^{R}\int _{-1}^{1}\frac{r'^{2}\diff r'\diff \cos \vartheta '}{\sqrt{r^{2}+r'^{2}+2rr'\cos \vartheta '}}\diff \vartheta
 	      \end{equation*}
 	      Im Inneren der Kugel ($r<R$) ist das Ergebnis
 	      \begin{equation*}
@@ -798,24 +798,24 @@ Mit der integralen Formulierung des Induktionsgesetzes gilt also
 \end{equation*}
 Damit kann man die Energiezunahme, die durch eine Änderung um $\delta \vec {B}$ bewirkt wird, schreiben als
 \begin{equation*}
-	\delta U=I\int \delta \vec {B}\cdot \diff \vec {f}=I\int \rot \left(\delta \vec {A}\right)\cdot \diff \vec {f}=I\int _{C}\delta \vec {A}\cdot \diff \vec {r}=\int \vec {j}\cdot \delta \vec {A}\diff ^{3}\vec {r}=\int \left(\nabla \times \vec {H}\right)\cdot \delta \vec {A}\diff ^{3}\vec {r}.
+	\delta U=I\int \delta \vec {B}\cdot \diff \vec {f}=I\int \rot \left(\delta \vec {A}\right)\cdot \diff \vec {f}=I\int _{C}\delta \vec {A}\cdot \diff \vec {r}=\int \vec {j}\cdot \delta \vec {A}\diffa[3]{\vec{r}}=\int \left(\nabla \times \vec {H}\right)\cdot \delta \vec {A}\diffa[3]{\vec{r}}.
 \end{equation*}
 Der Anteil $\partial _{t}\vec {D}$ wird weggelassen, da dieser im Anfangs- und Endzustand gleich $0$ ist. Betrachte zunächst den Integranden
 \begin{equation*}
 	\left(\nabla \times \vec {H}\right)\cdot \delta \vec {A}=\nabla \cdot \left(\vec {H}\times \delta \vec {A}\right)+\vec {H}\cdot \left(\nabla \times \delta \vec {A}\right).
 \end{equation*}
-Der erste Summand verschwindet im Integral als Oberflächenterm. Es bleibt\footnote{Zur Erinnerung: In einem Dielektrikum gilt ganz äquivalent $\delta U_{\mathrm{el}}=\int \vec {E}\cdot \delta \vec {D}\diff ^{3}\vec {r}$. }
+Der erste Summand verschwindet im Integral als Oberflächenterm. Es bleibt\footnote{Zur Erinnerung: In einem Dielektrikum gilt ganz äquivalent $\delta U_{\mathrm{el}}=\int \vec {E}\cdot \delta \vec {D}\diffa[3]{\vec{r}}$. }
 \begin{equation*}
-	\delta U=\int \vec {H}\cdot \delta \vec {B}\diff ^{3}\vec {r},
+	\delta U=\int \vec {H}\cdot \delta \vec {B}\diffa[3]{\vec{r}},
 \end{equation*}
 bzw. in einem linearen Material
 \begin{equation}
 	\label{eq:magnetische_energie_linear}
-	U=\frac{1}{2}\int \vec {H}\cdot \vec {B}\diff ^{3}\vec {r}=\frac{1}{2}\int \vec {j}\cdot \vec {A}\diff ^{3}\vec {r}.
+	U=\frac{1}{2}\int \vec {H}\cdot \vec {B}\diffa[3]{\vec{r}}=\frac{1}{2}\int \vec {j}\cdot \vec {A}\diffa[3]{\vec{r}}.
 \end{equation}
 Alternativ kann man auch die Poisson-Gleichung
 \begin{equation*}
-	\nabla ^{2}\vec {A}=-\mu \vec {j}\implication \vec {A}=\frac{\mu }{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
+	\nabla ^{2}\vec {A}=-\mu \vec {j}\implication \vec {A}=\frac{\mu }{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}
 \end{equation*}
 aufstellen und erhält mit Gleichung \eqref{eq:magnetische_energie_linear}
 \begin{equation*}
@@ -840,18 +840,18 @@ Die Feldenergie zweier Leiterschleifen können wir schreiben als
 mit Selbstinduktivität $L_{ii}$ und Gegeninduktivität  $L_{ik},i\neq k$
 \begin{align}
 	\label{eq:selbstinduktivität}
-	L_{ii} & =\frac{\mu }{4\pi }\frac{1}{I_{i}^{2}}\int \int \diff ^{3}\vec {r}\diff ^{3}\vec {r}'\frac{\vec {j}_{i}\left(\vec {r}\right)\cdot \vec {j}_{i}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| } \\
+	L_{ii} & =\frac{\mu }{4\pi }\frac{1}{I_{i}^{2}}\int \int \diffa[3]{\vec{r}}\diffa[3]{\vec{r}'}\frac{\vec {j}_{i}\left(\vec {r}\right)\cdot \vec {j}_{i}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| } \\
 	L_{ik} & =L_{ki}=\frac{\mu }{4\pi }\int _{C_{i}}\int _{C_{k}}\frac{\diff \vec {r}_{\mathrm{i}}\cdot \diff \vec {r}_{k}}{\left| \vec {r}-\vec {r}'\right| }
 \end{align}
 Es lässt sich nun bestimmen, welchen Fluss die Selbstinduktivität erzeugt:
 \begin{equation*}
-	\phi _{B}=\int \vec {B}\cdot \diff \vec {f}=\int \rot \vec {A}\cdot \diff \vec {f}=\oint _{\partial F}\vec {A}\cdot \diff \vec {r}=\frac{\mu }{4\pi }\oint _{\partial F}\int \frac{\vec {j}\left(\vec {r}'\right)\cdot \diff \vec {r}}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'\equiv LI
+	\phi _{B}=\int \vec {B}\cdot \diff \vec {f}=\int \rot \vec {A}\cdot \diff \vec {f}=\oint _{\partial F}\vec {A}\cdot \diff \vec {r}=\frac{\mu }{4\pi }\oint _{\partial F}\int \frac{\vec {j}\left(\vec {r}'\right)\cdot \diff \vec {r}}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}\equiv LI
 \end{equation*}
 mit
 \begin{equation*}
-	L=\frac{\mu }{4\pi }\frac{1}{I}\oint _{\partial F}\int \frac{\vec {j}\left(\vec {r}'\right)\cdot \diff \vec {r}}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'.
+	L=\frac{\mu }{4\pi }\frac{1}{I}\oint _{\partial F}\int \frac{\vec {j}\left(\vec {r}'\right)\cdot \diff \vec {r}}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}.
 \end{equation*}
-Mit der Ersetzung $I\diff \vec {r}=\vec {j}\diff ^{3}\vec {r}$ erhalten wir gerade die Gleichung \eqref{eq:selbstinduktivität}. Die Ringspannung entlang der Leiterschleife ist
+Mit der Ersetzung $I\diff \vec {r}=\vec {j}\diffa[3]{\vec{r}}$ erhalten wir gerade die Gleichung \eqref{eq:selbstinduktivität}. Die Ringspannung entlang der Leiterschleife ist
 \begin{equation*}
 	V=\oint \vec {E}\cdot \diff \vec {r}=-\frac{\diff }{\diff t}\phi _{B}=-L\frac{\diff }{\diff t}I.
 \end{equation*}

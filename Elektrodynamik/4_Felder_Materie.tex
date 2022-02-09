@@ -5,6 +5,8 @@
 
 In diesem Kapitel werden die makroskopischen Gleichungen der Elektrostatik in Materie beschrieben und erläutert.
 
+
+
 \section{Mikroskopische Gleichungen der Elektrostatik und Mittelung\label{sec:mikroskopische_gleichungen_der_elektrostatik}}
 
 Bis jetzt haben wir nur freie Ladungen betrachtet. Die Ladungsdichte $\rho \left(\vec {r}\right)$ erzeugt ein elektrisches Feld $\vec {E}(\vec r)$. In Materie sind zusätzlich auch gebundene Ladungen vorhanden, die mit dem Feld wechselwirken. Das können (nach außen hin elektrisch neutrale) Atome, geladenen Ionen, permanente Dipole (oder Multipole) sein (z.B. $\mathrm{H}_{2}\mathrm{O}$), sowie Dipole sein, die durch ein äußeres elektrisches Feld induziert werden.
@@ -16,21 +18,25 @@ Um diese Wechselwirkung zu beschreiben, wird eine Mittelung der mikroskopischen 
 durchgeführt. Wir haben bisher einzelne Ladungen durch $\delta $-Funktionen in der Ladungsdichte beschrieben. Dadurch kommt es zu starken räumlichen Ladungsschwankungen. Für eine makroskopische Betrachtung in Größenordnungen von Nanometern wenden wir eine räumliche Mittelung bzw. Glättungsfunktion auf die Ladungsdichteverteilung an.
 
 
+
+
 \subsection{Glättungsfunktion}
 
 Um eine stark variierende Funktion $F\left(\vec {r},t\right)$ zu mitteln, wird sie mit einer sogenannten Glättungsfunktion $f$ gefaltet. Dabei kann es sich z.B. um eine Gauß-Funktion handeln:
 \begin{equation*}
-	F\left(\vec {r},t\right) \xrightarrow{\text{Mittelung}} \left\langle F\left(\vec {r},t\right)\right\rangle =\int f\left(\left| \vec {r}-\vec {r}'\right| \right)F\left(\vec {r}',t\right)\diff ^{3}\vec {r}'
+	F\left(\vec {r},t\right) \xrightarrow{\text{Mittelung}} \left\langle F\left(\vec {r},t\right)\right\rangle =\int f\left(\left| \vec {r}-\vec {r}'\right| \right)F\left(\vec {r}',t\right)\diffa[3]{\vec{r}'}
 \end{equation*}
 Für eine Punktladung $F\left(\vec {r}\right)=F_{0}\delta \left(\vec {r}-\vec {r}_{0}\right)$ ist dann zum Beispiel $\left\langle F\right\rangle =F_{0}f\left(\vec {r}-\vec {r}_{0}\right)$.
 
 Für die Mittelung gelten die folgenden Eigenschaften:\begin{enumerate}
 	\item Die Mittelung der konstanten Funktion $F=1$ ist genau dann konstant $1$, wenn die Glättungsfunktion über den gesamten Raum auf $1$ normiert ist,
 	      \begin{equation*}
-		      \left\langle 1\right\rangle =1\equivalence \int \diff ^{3}\vec {r}f=1.
+		      \left\langle 1\right\rangle =1\equivalence \int \diffa[3]{\vec{r}}f=1.
 	      \end{equation*}
 	\item $\partial _{i}\left\langle F\right\rangle =\left\langle \partial _{i}F\right\rangle $.
 \end{enumerate}
+
+
 
 \section{Makroskopische Gleichungen der Elektrostatik\label{sec:Makroskopische_Gleichungen_der_Elektrostatik}}
 
@@ -126,7 +132,11 @@ Mit der Dipoldichte $n=N/V$ lässt sich die Polarisation schreiben als
 \end{equation*}
 Polarisation kann in einem Medium auftreten als permanente, ausgerichtete Dipole (in ferroelektrischen Materialien), die durch die Kristallstruktur bedingt sind, als induzierte Polarisation durch Ausrichtung von ungeordneten permanenten Dipolen gegen die thermische Bewegung oder durch Verschiebung von Ladungen innerhalb des Mediums (typisch für Dielektrika).
 
+
+
 \section{Randbedingungen von Dielektrika und Anwendungen\label{sec:randbedingungen_von_dielektrika}}
+
+
 
 \subsection{Randbedingungen und Polarisationsladung}
 
@@ -184,9 +194,9 @@ Diese Randbedingungen ermöglichen auch eine Messung von $\vec {D}$ und $\vec {E
 \end{figure}
 
 
+
+
 \subsection{Entelektrisierungsfelder}
-
-
 
 
 \begin{figure}[htb]
@@ -233,7 +243,7 @@ Das innere Feld lässt sich auch umformulieren zu
 \begin{equation*}
 	\vec {E}^{\left(i\right)}=\vec {E}_{0}-\frac{1}{3\varepsilon _{0}}\vec {P},
 \end{equation*}
-
+also der Summe des ursprünglichen äußeren Feldes und eines abschwächenden Feldes $\vec {E}'\equiv \vec {P}/3\varepsilon _{0}$ \textendash{} dem abschirmenden Entelektrisierungsfeld (\Abbref{fig:dielectric_ball_polarisation_field}).
 
 \begin{figure}[htb]
 	\centering
@@ -242,7 +252,6 @@ Das innere Feld lässt sich auch umformulieren zu
 	\label{fig:dielectric_ball_polarisation_field}
 \end{figure}
 
-also der Summe des ursprünglichen äußeren Feldes und eines abschwächenden Feldes $\vec {E}'\equiv \vec {P}/3\varepsilon _{0}$ \textendash{} dem abschirmenden Entelektrisierungsfeld (\Abbref{fig:dielectric_ball_polarisation_field}).
 
 Für den allgemeinen, nicht kugelsymmetrischen Fall sind Entelektrisierungsfeld $\vec {E}'$ und Polarisation nicht parallel. Dann gilt
 \begin{equation*}
@@ -261,11 +270,13 @@ mit dem Entelektrisierungstensor $\lambda$. Für die Kugel ist natürlich $\lamb
 
 Für komplexere dielektrische Körper in einem homogenen äußeren Magnetfeld ist $\vec {P}$ nicht homogen.
 
+
+
 \subsection{Clausius-Mosotti-Formel}
 
 Im Kapitel \ref{sec:Makroskopische_Gleichungen_der_Elektrostatik} wurde bereits die molekulare Polarisierbarkeit $\alpha $ eingeführt. Diese beschreibt das induzierte Dipolmoment eines Moleküls in Abhängigkeit von dem lokalen elektrischen Feld
 \begin{equation*}
-	\vec {p}=\varepsilon _{0}\alpha \vec {E}_{\mathrm{loc}}
+	\vec {p}=\varepsilon _{0}\alpha \vec {E}_{\mathrm{loc}}.
 \end{equation*}
 Die Clausius-Mosotti-Formel beschreibt, wie die molekulare Polarisierbarkeit mit der (makroskopischen) Dielektrizität $\varepsilon _{r}$ zusammenhängt:
 \begin{equation*}
@@ -315,27 +326,27 @@ die Beziehung wird also linear aufgrund der Vernachlässigung des Lorentzfeldes 
 
 Die (Selbst-) Energie einer makroskopischen Ladungsverteilung $\rho =\rho _{\mathrm{Ma}}$ im Vakuum ist bekanntermaßen
 \begin{equation*}
-	U_{\text{Selbst}}=\frac{1}{2}\int \diff ^{3}\vec {r}\rho \left(\vec {r}\right)\phi \left(\vec {r}\right)
+	U_{\text{Selbst}}=\frac{1}{2}\int \diffa[3]{\vec{r}}\rho \left(\vec {r}\right)\phi \left(\vec {r}\right)
 \end{equation*}
 und entspricht gerade der Arbeit, die aufzubringen ist, um die Ladungsverteilung aus dem Unendlichen zusammenzubringen. Im Dielektrikum verändert sich diese Energie, weil es auch Arbeit kostet, die Polarisation im Dielektrikum zu erzeugen.
 
 Die Berechnung erfolgt analog zu der im Vakuum. Die Änderung von $U$ durch Hinzufügen einer zusätzlichen Ladungsdichte $\delta \rho $ bei $\phi \left(\vec {r}\right)$ berechnet sich durch
 \begin{equation*}
-	\delta U=\int _{V}\diff ^{3}\vec {r}\phi \left(\vec {r}\right)\delta \rho \left(\vec {r}\right).
+	\delta U=\int _{V}\diffa[3]{\vec{r}}\phi \left(\vec {r}\right)\delta \rho \left(\vec {r}\right).
 \end{equation*}
 Mit $\nabla \cdot \vec {D}=\rho \implication \delta \rho =\nabla \cdot \delta \vec {D}$ und partieller Integration folgt
 \begin{equation*}
-	\delta U=\int _{V}\diff ^{3}\vec {r}\phi \left(\vec {r}\right)\nabla \cdot \delta \vec {D}=\int _{\partial V}\phi \left(\vec {r}\right)\delta \vec {D}\cdot \diff \vec {S}-\int _{V}\diff ^{3}\vec {r}\nabla \phi \left(\vec {r}\right)\delta \vec {D}=\int \diff ^{3}\vec {r}\vec {E}\left(\vec {r}\right)\cdot \delta \vec {D}.
+	\delta U=\int _{V}\diffa[3]{\vec{r}}\phi \left(\vec {r}\right)\nabla \cdot \delta \vec {D}=\int _{\partial V}\phi \left(\vec {r}\right)\delta \vec {D}\cdot \diff \vec {S}-\int _{V}\diffa[3]{\vec{r}}\nabla \phi \left(\vec {r}\right)\delta \vec {D}=\int \diffa[3]{\vec{r}}\vec {E}\left(\vec {r}\right)\cdot \delta \vec {D}.
 \end{equation*}
 Das Volumen kann so gewählt werden, dass das Dielektrikum gänzlich innerhalb liegt, sodass der Oberflächenterm bei der partiellen Integration verschwindet.
 
 Im linearen Dielektrikum, $\vec {D}=\varepsilon _{0}\varepsilon _{r}\vec {E}\implication \vec {E}\cdot \delta \vec {D}=\frac{1}{2}\delta \left(\vec {E}\cdot \vec {D}\right)$, erhält man durch Integration (Einbringen der ganzen Ladungsdichte $\rho _{\mathrm{Ma}}$ in das Medium)\footnote{Diese Gleichung hat dieselbe Form wie die im Vakuum, nur dass jetzt die makroskopische Ladungsdichte $\rho _{\mathrm{Ma}}$ als Summe der gemittelten freien Ladungsdichte und Monopoldichte eingesetzt wird. }
 \begin{equation*}
-	U_{\text{Selbst}}=\frac{1}{2}\int \diff ^{3}\vec {r}\vec {E}\cdot \vec {D}=\frac{1}{2}\int \diff ^{3}\vec {r}\rho _{\mathrm{Ma}}\left(\vec {r}\right)\phi \left(\vec {r}\right)
+	U_{\text{Selbst}}=\frac{1}{2}\int \diffa[3]{\vec{r}}\vec {E}\cdot \vec {D}=\frac{1}{2}\int \diffa[3]{\vec{r}}\rho _{\mathrm{Ma}}\left(\vec {r}\right)\phi \left(\vec {r}\right)
 \end{equation*}
 bzw. (wieder mit partieller Integration)
 \begin{equation*}
-	U_{\text{Selbst}}=-\frac{1}{2}\int \diff ^{3}\vec {r}\nabla \phi \left(\vec {r}\right)\cdot D=\frac{1}{2}\int \diff ^{3}\vec {r}\phi \left(\vec {r}\right)\nabla \cdot \vec {D}.
+	U_{\text{Selbst}}=-\frac{1}{2}\int \diffa[3]{\vec{r}}\nabla \phi \left(\vec {r}\right)\cdot D=\frac{1}{2}\int \diffa[3]{\vec{r}}\phi \left(\vec {r}\right)\nabla \cdot \vec {D}.
 \end{equation*}
 Die schon hergeleitete Formel
 \begin{equation*}
@@ -345,9 +356,9 @@ für die Energiedichte gilt für lineare Dielektrika genauso wie für das Vakuum
 
 Nun soll noch der Fall betrachtet werden, in dem ein lineares Dielektrikum in ein bereits bestehendes Feld $\vec {E}_{0}$ eingebracht wird. Hier gilt jetzt
 \begin{equation*}
-	U=-\frac{1}{2}\int \diff ^{3}\vec {r}\vec {P}\cdot \vec {E}_{0}.
+	U=-\frac{1}{2}\int \diffa[3]{\vec{r}}\vec {P}\cdot \vec {E}_{0}.
 \end{equation*}
-Das entspricht also gerade der Dipolenergie von $\vec P\diff ^{3}\vec {r}$ im Feld $\vec {E}_{0}$. Der Faktor $1/2$ kommt zustande, weil die Polarisation $\vec {P}$ durch das äußere Feld erst induziert wird.
+Das entspricht also gerade der Dipolenergie von $\vec P\diffa[3]{\vec{r}}$ im Feld $\vec {E}_{0}$. Der Faktor $1/2$ kommt zustande, weil die Polarisation $\vec {P}$ durch das äußere Feld erst induziert wird.
 
 Außerdem wird das Dielektrikum in Gebiete mit stärkerem Feld oder höherer Polarisation gezogen, weil dann die potentielle Energie abnimmt. Die wirkende Kraft berechnet sich aus dem Potential,
 \begin{equation*}
