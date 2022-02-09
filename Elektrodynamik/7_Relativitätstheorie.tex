@@ -307,7 +307,7 @@ Für allgemeine Geschwindigkeiten $\vec v$ mit Komponenten in alle Raumrichtunge
 \end{align*}
 Die Rücktransformation lautet einfach
 \begin{align*}
-    \Lambda^{-1}_{\vec v}= \Delta_{-\vec v}.
+    \Lambda^{-1}_{\vec v}= \Lambda_{-\vec v}.
 \end{align*}
 Eine noch allgemeinere Form erhält man durch Anwenden einer (rein räumlichen) Rotation,
 \begin{align*}
@@ -341,10 +341,10 @@ bzw.
 \end{align}
 Der Ursprung des bewegten Systems $x'=0$ bewegt sich im ruhenden System gleichförmig,
 \begin{align}
-    0 & = a_{21} ct + a_{22}x \nonumber  \\ 
-    \equivalence x &= -\frac{a_{21}}{a_{22}}ct \overset{!}{=}vt \nonumber  \\ 
+    0              & = a_{21} ct + a_{22}x \nonumber                       \\
+    \equivalence x & = -\frac{a_{21}}{a_{22}}ct \overset{!}{=}vt \nonumber \\
     \label{eq:herleitung_lorentz_v1}
-    \equivalence v &= -\frac{a_{21}}{a_{22}} c.
+    \equivalence v & = -\frac{a_{21}}{a_{22}} c.
 \end{align}
 Einseten in \eqref{eq:herleitung_lorentz_lin_trafo_x} liefert
 \begin{align}
@@ -353,19 +353,19 @@ Einseten in \eqref{eq:herleitung_lorentz_lin_trafo_x} liefert
 \end{align}
 Analog lässt sich die Bewegung des Ursprungs $x=0$ des ruhenden Systems im bewegten System beschreiben:
 \begin{align}
-    ct' & = a_{11}ct \nonumber                                                \\
-    x'  & = a_{21}ct = \frac{a_{21}}{a_{11}}ct' \overset{!}{=} -vt' \nonumber \\
+    ct'            & = a_{11}ct \nonumber                                                \\
+    x'             & = a_{21}ct = \frac{a_{21}}{a_{11}}ct' \overset{!}{=} -vt' \nonumber \\
     \label{eq:herleitung_lorentz_v2}
-    \equivalence v=-\frac{a_{21}}{a_{11}}c
+    \equivalence v & =-\frac{a_{21}}{a_{11}}c
 \end{align}
-Durch Vergleich von \eqref{eq:herleitung_lorentz_v1} und \eqref{eq:herleitung_lorentz_v2} erhält man 
+Durch Vergleich von \eqref{eq:herleitung_lorentz_v1} und \eqref{eq:herleitung_lorentz_v2} erhält man
 \begin{align*}
     a_{11}=a_{22}
 \end{align*}
 und damit
 \begin{align}
     \label{eq:herleitung_lorentz_ctprime}
-    ct'=a_{22}\left(ct+\frac{a_{12}}{a_{22}}x\right). 
+    ct'=a_{22}\left(ct+\frac{a_{12}}{a_{22}}x\right).
 \end{align}
 Setzt man nun die Gleichungen \eqref{eq:herleitung_lorentz_xprime} und \eqref{eq:herleitung_lorentz_ctprime} in die Bedingungn der Invarianz der Minkowski-Norm
 \begin{align*}
@@ -375,22 +375,22 @@ ein, so erhält man
 \begin{align*}
     x^2-(ct)^2 = \underbrace{\left(a_{22}^2-a_{12}^2\right)}_{=1}x^2 - \underbrace{\left(a_{22}^2-a_{22}^2 \frac{v^2}{c^2}\right)}_{=1}(ct)^2 + \underbrace{\left(-a_{22}a_{12}-a_{22}^2 \frac{v}{c}\right)}_{=0}2xct
 \end{align*}
-Durch Koeffizientenvergleich erhält man 
+Durch Koeffizientenvergleich erhält man
 \begin{align*}
     a_{22}^2 \left(1-\frac{v^2}{c^2}\right) = 1 \implication a_{22} = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
 \end{align*}
 und
 \begin{align*}
-    a_{12} = -a_{22} \frac{v}{c} \implication a_{12} = -\frac{v}{c \sqrt{1-\frac{v^2}{c^2}}}. 
+    a_{12} = -a_{22} \frac{v}{c} \implication a_{12} = -\frac{v}{c \sqrt{1-\frac{v^2}{c^2}}}.
 \end{align*}
 Daraus ergibt sich die Lorentz-Transformation
 \begin{align*}
-    x' &= \gamma(x-\beta ct) \\ 
-    ct' &= \gamma(ct- \beta x) 
+    x'  & = \gamma(x-\beta ct)  \\
+    ct' & = \gamma(ct- \beta x)
 \end{align*}
-mit 
+mit
 \begin{align*}
-    \beta=\frac{v}{c}, \quad \gamma=\frac{1}{\sqrt{1-\beta^2}}. 
+    \beta=\frac{v}{c}, \quad \gamma=\frac{1}{\sqrt{1-\beta^2}}.
 \end{align*}
 
 \subsection{Geschwindigkeitsaddition}

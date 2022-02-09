@@ -43,10 +43,10 @@ Durch Einführung des dielektrischen Verschiebungsfeldes $\vec {D}$ und des Magn
 	\vec {D}=\varepsilon _{0}\vec {E}+\vec {P}-\nabla Q, \vec {B}=\mu _{0}\left(\vec {H}+\vec {M}\right)
 \end{equation*}
 bzw. in linearen Medien einfacher
-\begin{align*}
-	\vec {P} & =\varepsilon _{0}\chi _{e}\vec {E} & \implication \vec {D} & =\varepsilon \vec {E},\quad \varepsilon =\varepsilon _{0}\left(1+\chi _{e}\right)=\varepsilon _{0}\varepsilon _{r} \\
-	\vec {M} & =\chi _{m}\vec {H}                 & \implication \vec {B} & =\mu \vec {H},\quad \mu =\mu _{0}\left(1+\chi _{m}\right)=\mu _{0}\mu _{r}.
-\end{align*}
+\begin{alignat*}{4}
+	\vec {P} & =\varepsilon _{0}\chi _{e}\vec {E} &  & \implication \vec {D} &  & =\varepsilon \vec {E},\quad &  & \varepsilon =\varepsilon _{0}\left(1+\chi _{e}\right)=\varepsilon _{0}\varepsilon _{r} \\
+	\vec {M} & =\chi _{m}\vec {H}                 &  & \implication \vec {B} &  & =\mu \vec {H},\quad         &  & \mu =\mu _{0}\left(1+\chi _{m}\right)=\mu _{0}\mu _{r}.
+\end{alignat*}
 Die Kraftdichte auf Ladungsdichten und Stromdichten ist
 \begin{equation*}
 	f\left(\vec {r},t\right)=\rho \vec {E}+\vec {j}\times \vec {B},
@@ -196,7 +196,7 @@ Wir betrachten zeitlich periodische (und harmonische) Felder und beschreiben sie
 	\vec {E}\left(\vec {r},t\right) & =\vec {E}_{0}\left(\vec {r}\right)e^{-i\omega t},                 & \vec {H}\left(\vec {r},t\right) & =\vec {H}_{0}\left(\vec {r}\right)e^{-i\omega t}         \\
 	\vec {D}\left(\vec {r},t\right) & =\varepsilon \left(\omega \right)\vec {E}\left(\vec {r},t\right), & \vec {B}\left(\vec {r},t\right) & =\mu \left(\omega \right)\vec {H}\left(\vec {r},t\right)
 \end{align*}
-Physikalisch sind natürlich nur die reellen Felder $\vec {E}_{\mathrm{R}}=\mathfrak{R}\left(\vec {E}\right), \vec {H}_{\mathrm{R}}=\mathfrak{R}\left(\vec {H}\right)$ usw. messbar. 
+Physikalisch sind natürlich nur die reellen Felder $\vec {E}_{\mathrm{R}}=\mathfrak{R}\left(\vec {E}\right), \vec {H}_{\mathrm{R}}=\mathfrak{R}\left(\vec {H}\right)$ usw. messbar.
 
 Die Änderung der elektromagnetischen Energiedichte lässt sich als Mittelung über eine Periode schreiben:
 \begin{align*}
@@ -232,8 +232,8 @@ Die zeitliche Änderung des mechanischen Impulses $P_{\text{mech}}$ lässt sich 
 \end{equation*}
 Die elektromagnetische Kraftdichte lässt sich mithilfe der Maxwellschen Gleichungen umformen zu
 \begin{align*}
-	\rho \vec {E}+\vec {j}\times \vec {B} & =\nabla \cdot \vec {D}\vec {E}+\left(\nabla \times \vec {H}-\frac{\partial \vec {D}}{\partial t}\right)\times \vec {B}                                                                                                                                                                                                         \\
-	                                      & =\vec {E}\left(\nabla \cdot \vec {D}\right)+\vec {B}\times \frac{\partial \vec {D}}{\partial t}-\vec {B}\times \left(\nabla \times \vec {H}\right)                                                                                                                                                                             \\
+	\rho \vec {E}+\vec {j}\times \vec {B} & =\nabla \cdot \vec {D}\vec {E}+\left(\nabla \times \vec {H}-\frac{\partial \vec {D}}{\partial t}\right)\times \vec {B}                                                                                                                                                                                                          \\
+	                                      & =\vec {E}\left(\nabla \cdot \vec {D}\right)+\vec {B}\times \frac{\partial \vec {D}}{\partial t}-\vec {B}\times \left(\nabla \times \vec {H}\right)                                                                                                                                                                              \\
 	                                      & =\underset{\mathrm{A}}{\underbrace{\vec {E}\left(\nabla \cdot \vec {D}\right)+\left(\nabla \times \vec {E}\right)\times \vec {D}}}-\frac{\partial }{\partial t}\underset{\mathrm{B}}{\underbrace{\left(\vec {D}\times \vec {B}\right)}}-\underset{\mathrm{C}}{\underbrace{\vec {B}\times \left(\nabla \times \vec {H}\right)}}.
 \end{align*}
 Der Term B beschreibt die neue Impulsdichte des elektromagnetischen Feldes

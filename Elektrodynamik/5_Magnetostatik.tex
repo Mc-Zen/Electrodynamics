@@ -815,11 +815,11 @@ bzw. in einem linearen Material
 \end{equation}
 Alternativ kann man auch die Poisson-Gleichung
 \begin{equation*}
-	\nabla ^{2}\vec {A}=-\mu \vec {j}\implication \vec {A}=\frac{\mu }{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}
+	\nabla ^{2}\vec {A}=-\mu \vec {j}\implication \vec {A}=\frac{\mu }{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
 \end{equation*}
 aufstellen und erhält mit Gleichung \eqref{eq:magnetische_energie_linear}
 \begin{equation*}
-	U=\vec {A}=\frac{\mu }{4\pi }\int \diff ^{3}\vec {r}\int \diff ^{3}\vec {r}\frac{\vec {j}\left(\vec {r}\right)\cdot \vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }.
+	U = \frac{\mu }{8\pi }\int \diffa[3]{\vec {r}'}\int \diffa[3]{\vec {r}}\frac{\vec {j}\left(\vec {r}\right)\cdot \vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }.
 \end{equation*}
 
 \subsection{Induktivität}
@@ -867,7 +867,7 @@ und für eine unendliche lange Spule mit Querschnittsfläche $A$ und $N$ Windung
 \begin{equation*}
 	L=\mu N^{2}\frac{A}{h},
 \end{equation*}
-denn $U=\frac{1}{2}HBV=\frac{1}{2}\mu H^{2}A$ mit $H=\frac{N}{h}I$ liefert
+denn $U=HBV/2=\mu H^{2}A/2$ mit $H=NI/h$ liefert
 \begin{equation*}
 	U=\frac{1}{2}\mu N^{2}I^{2}\frac{A}{h}
 \end{equation*}

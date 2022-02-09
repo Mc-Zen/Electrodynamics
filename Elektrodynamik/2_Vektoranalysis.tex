@@ -31,14 +31,15 @@ Sie gibt die Quellenhaftigkeit von $\vec {a}$ an. In kartesischen Koordinaten is
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{vecanalysis_flow.pdf}
-	\caption{}
-	\label{fig:vecanalysis_flow}
+	\tfigVolumeWithNormal
+	\caption{Volumen $V$ mit Oberflächennormale $\hat{\vec{n}}$. }
+	\label{fig:volume_with_normal}
 \end{figure}
 
-Betrachte zum Verständnis ein kleines Volumen $\Delta  V$ bei $\vec {r}$. Die Normalen $\hat{\vec {\nu }}$ zeigen überall nach außen. Der Fluss aus $\Delta  V$ heraus ist
+Betrachte zum Verständnis ein kleines Volumen $ V$ bei $\vec {r}$. Die Normalen $\hat{\vec {n }}$ zeigen überall nach außen (siehe \Abbref{fig:volume_with_normal}). 
+Der Fluss aus $V$ heraus ist gegeben durch
 \begin{equation*}
-	q\left(r\right)\Delta  V,
+	q\left(r\right) V,
 \end{equation*}
 wobei $q\left(r\right)=\divg \vec {a}$. Wir können sagen, dass
 \begin{align*}
@@ -60,16 +61,17 @@ Die Rotation eines Vektorfeldes $\vec {a}$ ist definiert als
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{vecanaylsis_curl.pdf}
-	\caption{}
-	\label{fig:vecanaylsis_curl}
+	%\includegraphics{vecanaylsis_curl.pdf}
+	\tfigAreaWithCurveAndNormal
+	\caption{Die Kurve $C$ mit Tangentialvektor $\hat{\vec{t}}$ schließt die Fläche $A$ mit Normalenvektor $\hat{\vec{n}}$ ein. }
+	\label{fig:area_with_curve_normal}
 \end{figure}
 
 und es wird auch als das Wirbelfeld von $\vec {a}$ bezeichnet. Wieder ist die Darstellung in kartesischen Koordinaten einfach: $\left(\rot \vec {a}\right)_{i}=\varepsilon _{ijk}\partial _{{x_{j}}}a_{k}$.
 
-Wir schauen uns ein kleines orientiertes Flächenelement $\Delta\vec f$ an. Dann ist die Verwirbelung/Zirkulation um $\Delta\vec  f$
+Wir schauen uns ein kleines orientiertes Flächenelement $\vec F$ an, wie in \Abbref{fig:area_with_curve_normal} dargestellt. Dann ist die Verwirbelung/Zirkulation um $\vec F$
 \begin{equation*}
-	\sum _{C}\vec {a}\cdot \hat{\vec {t}}_{C}\Delta  r_{C}=\rot \vec {a}\cdot \Delta \vec f
+	\sum _{C}\vec {a}\cdot \hat{\vec {t}}_{C}\Delta  r_{C}=\rot \vec {a}\cdot  \vec F
 \end{equation*}
 mit Tangentialvektor $\hat{\vec {t}}_{C}$ und Parallelkomponente $\vec {a}\cdot \hat{\vec {t}}_{C}$. Wir bezeichnen $\vec {\omega }=\rot \vec {a}$ als lokale Wirbelstärke.
 
@@ -104,7 +106,7 @@ Das Helmholtz-Theorem besagt, dass Quellen und Wirbel ein Vektorfeld $\vec {a}\l
 		}}{\underbrace{\vec {a}_{l}}}+\underset{\substack{
 			\rot \vec {a}_{r}=\divg \vec {a}_{r}=0 \\
 			\text{Randbedingungen}                 \\
-			\hat{\vec {\nu }}\cdot \vec {a}=f\left(\vec {r}\right),\vec {r}\in \partial V
+			\hat{\vec {n }}\cdot \vec {a}=f\left(\vec {r}\right),\vec {r}\in \partial V
 		}}{\underbrace{\vec {a}_{r}}}
 \end{equation*}
 Eine zusätzliche, sowohl quellen- als auch wirbelfreie Komponente kann vorkommen, um Randbedingungen zu erfüllen oder einen konstanten Untergrund zu addieren.
@@ -130,8 +132,9 @@ Ebene Transversalwellen ($e^{i\vec {k}\cdot \vec {r}}\perp \vec {k}$) sind zum B
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{vecanaylsis_curve.pdf}
-	\caption{}
+	\tfigLinienintegral
+	\caption{Eine Kurve ist nach Bogenlänge $s$ parametrisiert, sodass für $s=0$ der Startpunkt $\vec r_0$ und für $s=1$ der Endpunkt $\vec r_1$ angenommen wird. 
+	Für einen auf der Kurve liegenden Punkt $\vec r$ ist der Tangentialvektor $\diff r$ eingezeichnet. }
 	\label{fig:vecanaylsis_curve}
 \end{figure}
 
@@ -151,7 +154,7 @@ Für rotationsfreie (Einschränkung, siehe Satz von Poincaré) Felder ist das Li
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{vecanaylsis_normal.pdf}
+	\tfigHalbkugel
 	\caption{}
 	\label{fig:vecanaylsis_normal}
 \end{figure}
