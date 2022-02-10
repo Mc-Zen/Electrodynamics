@@ -78,26 +78,78 @@ Für Konstanten deren Wert per Definition festgelegt wurde, wird ein $\equiv $-Z
 
 \section{Grundlegende Formeln der Elektrodynamik}
 
-Maxwellsche Feldgleichungen
-\begin{equation*}
-	\nabla \cdot \vec {D}=\rho _{f},\quad\nabla \cdot \vec {B}=0,\quad\nabla \times \vec {E}=-\frac{\partial \vec {B}}{\partial t},\quad\nabla \times \vec {H}=\vec {j}_{f}+\frac{\partial \vec {D}}{\partial t}
-\end{equation*}
-Materialgleichungen
-\begin{equation*}
-	\vec {D}=\varepsilon _{0}\vec {E}+\vec {P},\quad \vec {B}=\mu _{0}\left(\vec {H}+\vec {M}\right)
-\end{equation*}
-In linearen und isotropen Medien gilt
-\begin{equation*}
-	\vec {D}=\varepsilon _{0}\varepsilon _{r}\vec {E},\quad \vec {B}=\mu _{0}\mu _{r}\vec {H}
-\end{equation*}
-Im Vakuum gilt
-\begin{equation*}
-	\vec {D}=\varepsilon _{0}\vec {E}, \quad\vec {B}=\mu _{0}\vec {H}
-\end{equation*}
+Maxwellsche Feldgleichungen:
+\begin{align*}
+	\nabla \cdot \vec {D}                        & =\rho _{f}                                                       &
+	\nabla \cdot \vec {B}                        & =0                                                               &
+	\nabla \times \vec {E}                       & =-\frac{\partial \vec {B}}{\partial t}                           &
+	\nabla \times \vec {H}                       & =\vec {j}_{f}+\frac{\partial \vec {D}}{\partial t}                 \\
+	\oint_A D \cdot\diffa{\vec{A}}               & =Q                                                               &
+	\oint_A B \cdot\diffa{\vec{A}}               & =0                                                               &
+	\oint_{\partial A}\vec E\cdot \diffa{\vec s} & =    -\int_A\frac{\partial\vec B}{\partial t}\cdot\diffa{\vec A} &
+	\oint_{\partial A}\vec H\cdot \diffa{\vec s} & = I + \int_A\frac{\partial\vec D}{\partial t}\cdot\diffa{\vec A}
+\end{align*}
+% \begin{table}[H]
+% 	\centering\begin{tabular}{llll}
+% 		$\displaystyle \nabla \times \vec {E}=-\frac{\partial \vec {B}}{\partial t} $                                                  &
+% 		$\displaystyle \nabla \cdot \vec {B}=0 $                                                                                       &
+% 		$\displaystyle \nabla \times \vec {E}=-\frac{\partial \vec {B}}{\partial t} $                                                  &
+% 		$\displaystyle \nabla \times \vec {H}=\vec {j}_{f}+\frac{\partial \vec {D}}{\partial t} $                                        \\ \\
+% 		$\displaystyle \oint_A D \cdot\diffa{\vec{A}}=Q $                                                                              &
+% 		$\displaystyle \oint_A B \cdot\diffa{\vec{A}}=0 $                                                                              &
+% 		$\displaystyle \oint_{\partial A}\vec E\cdot \diffa{\vec s} =    -\int_A\frac{\partial\vec B}{\partial t}\cdot\diffa{\vec A} $ &
+% 		$\displaystyle \oint_{\partial A}\vec H\cdot \diffa{\vec s} = I + \int_A\frac{\partial\vec D}{\partial t}\cdot\diffa{\vec A} $
+% 	\end{tabular}
+% 	\label{<label>}
+% \end{table}
+
+Materialgleichungen (allgemein und in linearen, isotropen Medien (Vakuum: $\epsilon_r=\mu_r=1$):
+\begin{align*}
+	\vec {D} & =\varepsilon _{0}\vec {E}+\vec {P}        & \vec {B} & =\mu _{0}\left(\vec {H}+\vec {M}\right) \\
+	\vec {D} & =\varepsilon _{0}\varepsilon _{r}\vec {E} & \vec {B} & =\mu _{0}\mu _{r}\vec {H}
+\end{align*}
+
+Statische Potentiale:
+\begin{align*}
+	\phi(\vec r)   & =\frac{1}{4\pi\epsilon_0}\int \frac{\rho(\vec r')}{\left|\vec r-\vec r'\right|}\diffa[3]{\vec r'} &
+	\vec A(\vec r) & =\frac{\mu_0}{4\pi}\int \frac{\vec j(\vec r')}{\left|\vec r-\vec r'\right|}\diffa[3]{\vec r'}       \\
+	\vec E         & =-\nabla \phi                                                                                     &
+	\vec B         & =\nabla \times\vec A                                                                              &
+\end{align*}
+
+Biot-Savart-Gesetz historisch (für unendlich lange, gerade Leiter) und modern:
+\begin{align*}
+	B(\rho) = \frac{\mu_0}{2\pi}\frac{I}{\rho} \qquad B(\vec r)=\frac{\mu_0}{4\pi}\int\vec j(\vec r')\times \frac{\vec r-\vec r'}{\left|\vec r-\vec r'\right|^3}\diffa[3]{\vec r'}
+\end{align*}
+
+Feldenergie und Feldenergiedichte:
+\begin{align*}
+	u(\vec r) & =\frac{1}{2}\vec E\cdot \vec D                      & u(\vec r) & =\frac{1}{2}\vec H\cdot \vec B                       \\
+	U(\vec r) & =\frac{1}{2}\int\vec E\cdot \vec D\diffa[3]{\vec r} & U(\vec r) & =\frac{1}{2}\int\vec H\cdot \vec B \diffa[3]{\vec r}
+\end{align*}
+
+
+Multipole:
+\begin{align*}
+	p            & = \int\rho(\vec r)\vec r'\diffa[3]{\vec r'}                                                                                   & m                       & =\frac{1}{2}\int \vec r'\times\vec j(\vec r)	\diffa[3]{\vec r'} \\
+	Q_{ij}       & =\int (3x_i'x_j'-\delta_{ij} {\vec r'}^2)\diffa[3]{\vec r'}                                                                   &                         &                                                                \\
+	\phi(\vec r) & = \frac{1}{4\pi\epsilon_0}\left(\frac{q}{r}+\frac{\vec p\cdot \vec r}{r^3}+\frac{1}{2}Q_{ij} \frac{x_ix_j}{r^5}+\ldots\right) & \vec A_\text{Dipol} (\vec r) & =\frac{\mu_0}{4\pi} \frac{\vec m\times \vec r}{r^3}
+\end{align*}
+
+Randbedingungen an Grenzflächen:
+\begin{align*}
+	\hat{\vec n}\times(\vec E^{(1)}-\vec E^{(2)}) & = 0      & \hat{\vec n}\times(\vec H^{(1)}-\vec H^{(2)}) & = \vec k\cdot \vec m \\
+	\hat{\vec n}\cdot(\vec D^{(1)}-\vec D^{(2)})  & = \sigma & \hat{\vec n}\cdot(\vec B^{(1)}-\vec B^{(2)})  & = 0
+\end{align*}
+
+Lorentzkraft und Lorentzkraft-Dichte:
+\begin{align*}
+	\vec F_\text{L} = q(\vec E+\vec v\times \vec B) = \int \vec f_\text{L}\diffa[3]{\vec r}, \qquad \vec f_\text{L}=\rho\vec E+\vec j\times \vec B
+\end{align*}
+
 Relationen von Lichtgeschwindigkeit, Feldkonstanten und Brechungsindex:
 \begin{align*}
-	c_{0} & =\frac{1}{\sqrt{\varepsilon _{0}\mu _{0}}} \\
-	n     & =\frac{c_{0}}{c}
+	c_{0} & =\frac{1}{\sqrt{\varepsilon _{0}\mu _{0}}} , & n & =\frac{c_{0}}{c}
 \end{align*}
 In linearen, isotropen Medien gilt
 \begin{equation*}
@@ -106,8 +158,4 @@ In linearen, isotropen Medien gilt
 Gradient
 \begin{equation*}
 	\nabla \frac{1}{r}=-\frac{\vec {r}}{r^{3}}
-\end{equation*}
-Elektrisches Potential und elektrisches Feld:
-\begin{equation*}
-	\vec {E}=-\nabla \phi ,\quad \phi \left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\int \frac{\rho \left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diff ^{3}\vec {r}'
 \end{equation*}
