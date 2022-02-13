@@ -263,7 +263,7 @@ In diesem neuen Raum suchen wir jetzt eine Transformation, die die Minkowski-Nor
 
 \subsection{Die Lorentz-Transformation}
 
-Die allgemeinste Form der Lorentz-Transformation ist (eine Herleitung folgt im nächsten Unterkapitel)
+Die allgemeinste Form der Lorentz-Transformation ist
 \begin{align*}
     x^{\alpha'}=\tensor{\Lambda}{^i_j}x^\alpha+a^{\alpha'},
 \end{align*}
@@ -272,11 +272,21 @@ wobei man für $a^{\alpha'}=0$ die homogene Lorentz-Transformation erhält und f
 Diese Form hat genau wie die Galilei-Transformation zehn Parameter (drei für die Geschwindigkeit, drei für die Rotation und vier für die Zeit- und Raumtranslationen).
 Außerdem bilden diese Transformationen eine Gruppe (Poincaré-Gruppe) bezüglich Hintereinanderausführung.
 
-Für den Spezialfall eines Geschwindigkeitsboosts in $x$-Richtung ist (definiere $\beta=v/c$)
+Die spezielle Lorentz-Transformation ergibt sich für den Spezialfall eines Geschwindigkeitsboosts in $x$-Richtung,
+\begin{align}
+    \label{eq:spezielle_lorentz_trafo}
+    \begin{split}
+        x'  & = \gamma(x-\beta ct)   \\
+        ct' & = \gamma (ct-\beta x),
+    \end{split}
+\end{align}
+wobei $\beta=v/c$ definiert wird. Die Herleitung folgt im Unterkapitel \ref{sec:herleitung_1D_lorentz_trafo}.
+
+Mithilfe von Matrizen lässt sich die spezielle Lorentz-Transformation zu
 \begin{align*}
-    \begin{pmatrix}ct' \\ x' \end{pmatrix} = \begin{pmatrix}\gamma&-\beta\gamma \\ -\beta\gamma &\gamma \end{pmatrix} \begin{pmatrix}ct \\ x \end{pmatrix},
+    \begin{pmatrix}ct' \\ x' \end{pmatrix} = \begin{pmatrix}\gamma&-\beta\gamma \\ -\beta\gamma &\gamma \end{pmatrix} \begin{pmatrix}ct \\ x \end{pmatrix}
 \end{align*}
-also
+umschreiben, also
 \begin{align*}
     \left(\begin{array}{c|ccc}
               \gamma       & -\beta\gamma & 0 & 0 \\
@@ -311,16 +321,16 @@ Die Rücktransformation lautet einfach
 \end{align*}
 Eine noch allgemeinere Form erhält man durch Anwenden einer (rein räumlichen) Rotation,
 \begin{align*}
-    \Lambda = \Lambda_R\Lambda_v, \quad \Lambda_R=\begin{pmatrix}
-                                                      1      & \vec 0^T \\
-                                                      \vec 0 & R
-                                                  \end{pmatrix},
+    \Lambda = \Lambda_R\Lambda_{\vec v}, \quad \Lambda_R=\begin{pmatrix}
+                                                             1      & \vec 0^T \\
+                                                             \vec 0 & R
+                                                         \end{pmatrix},
 \end{align*}
 wobei $R$ eine orthogonale $3\times 3$-Matrix ist.
 
 
 
-\subsection{Herleitung der eindimensionalen Lorentz-Transformation}
+\subsection{Herleitung der eindimensionalen Lorentz-Transformation\label{sec:herleitung_1D_lorentz_trafo}}
 
 Zur Vereinfachung soll nur eine Relativgeschwindigkeit $v$ in $x$-Richtung betrachtet werden.
 Die anderen Raumkoordinaten transformieren also mit
@@ -397,11 +407,15 @@ mit
 
 Betrachte zwei Inertialsysteme $\Sigma$ und $\Sigma'$, die gleichförmig mit der Relativgeschwindigkeit  $v$ zueinander bewegt sind, wie in \Abbref{fig:Geschwindigkeitsaddition} dargestellt.
 Eine Punktmasse bewegt sich im System $\Sigma'$ mit der Geschwindigkeit $u$.
-Um nun die Geschwindigkeit der Masse im System $\Sigma$ zu bestimmen, wird die (spezielle, in $x$-Richtung) Lorentz-Transformation invertiert, indem $v$ durch $-v$ (bzw. $\beta$ durch $-\beta$ in $\beta=v/c$) ersetzt wird:
-\begin{align*}
-    x  & =\gamma(x'+\beta ct') \\
-    ct & =\gamma(ct'+\beta x')
-\end{align*}
+Um nun die Geschwindigkeit der Masse im System $\Sigma$ zu bestimmen, wird die (spezielle, in $x$-Richtung) Lorentz-Transformation
+\eqref{eq:spezielle_lorentz_trafo} invertiert, indem $v$ durch $-v$ (bzw. $\beta$ durch $-\beta$ in $\beta=v/c$) ersetzt wird:
+\begin{align}
+    \label{eq:spezielle_inv_lorentz_trafo}
+    \begin{split}
+        x  & =\gamma(x'+\beta ct') \\
+        ct & =\gamma(ct'+\beta x')
+    \end{split}
+\end{align}
 \begin{figure}[htp]
     \centering
     \tfigGeschwindigkeitsaddition
@@ -510,3 +524,101 @@ Im Minkowski-Raum dagegen beschreiben Lösungen von
     x^2-(ct)^2={x'}^2-(ct')^2=\pm1
 \end{align*}
 Hyperbeln (zweischalige Hyperboloide für drei Dimensionen).
+
+
+
+\subsection{Zeitdilatation und Längenkontraktion}
+
+Zwei prominente Beispiele für Effekte, die aus der speziellen Relativitätstheorie folgen, sind die Zeitdilatation und die Längenkontraktion.
+Beide sollen anhand eines illustrativen Beispiels erläutert werden.
+
+Wenn die kosmische Strahlung auf die Schichten der Atmosphäre trifft, entstehen in ungefähr \SI{10}{\km} Höhe sogenannte Myonen \textendash{} Elementarteilchen, die sich dann mit nahezu Lichtgeschwindigkeit (ca. $\num{0,9995}c$) auf die Erdoberfläche zu bewegen.
+Allerdings ist ihre Lebensdauer mit $\tau=\SI{2,2e-6}{\s}$ sehr gering \textendash{} so gering, dass nach Zurücklegen der Strecke bis zum Erdboden nur noch ca. \SI{0,000026}{\percent} der Myonen nicht zerfallen wäre, was sich nicht mit den gemachten Messungen deckt (Detektion einer sehr hohen Rate von Myonen).
+
+Um dieses Problem zu lösen, müssen die Effekte der spezielle Relativitätstheorie berücksichtigt werden, weil bei dieser Geschwindigkeit der Lorentzfaktor schon bei \num{31,63} liegt.
+Legt man die Erde als ruhendes System $\Sigma$ fest, vergeht von der Entstehung der Myonen bis zum Auftreffen die Zeit nach den Gleichungen \eqref{eq:spezielle_lorentz_trafo}
+\begin{align}
+    \label{eq:myonen_x}
+    \Delta x'  & = \gamma(\Delta x-\beta c\Delta t) \overset{!}{=} 0 \\
+    \label{eq:myonen_t}
+    c\Delta t' & = \gamma(c \Delta t-\beta \Delta x)
+\end{align}
+Die Myonen bewegen sich in ihrem System $\Sigma'$ nicht, daher ist $\Delta x'= 0$.
+Einsetzen von \eqref{eq:myonen_x} in \eqref{eq:myonen_t} liefert
+\begin{align}
+    \label{eq:zeitdilatation}
+    \Delta t' = \frac{1}{\gamma}\Delta t.
+\end{align}
+Da $1/\gamma < 1$, ist
+\begin{align*}
+    \Delta t' < \Delta t,
+\end{align*}
+die Zeit vergeht also im bewegten System langsamer. 
+Dadurch leben die Myonen aus Sicht des Systems der Erde länger und erreichen den Erdboden in hoher Zahl,
+denn während die Myonen innerhalb ihrer mittleren Lebensdauer klassisch nur $0,995c\cdot\SI{2,2e-6}{\s}=\SI{656}{\m}$ zurücklegen,
+reicht die Zeit relativistisch für $0,995c\cdot\SI{2,2e-6}{\s}/\gamma\approx\SI{20}{\km}$.
+
+
+Aus Sicht der Myonen muss das Problem anders gelöst werden, da ja die Zeit für die Myonen nicht langsamer vergeht
+(aus Gründen der Symmetrie muss sogar aus Sicht der Myonen stattdessen die Zeit im Erdsystem langsamer vergehen, was allerdings für diesen Effekt keine Rolle spielt).
+Wir untersuchen einmal die Länge der Strecke, die die Myonen zurückzulegen haben, aus deren System. Dafür setzen wir $\Delta t'=0$ und erhalten
+\begin{align}
+    \Delta x'              & = \gamma(\Delta x-\beta c\Delta t)                   \nonumber\\
+    c\Delta t'             & = \gamma(c \Delta t-\beta \Delta x) \overset{!}{=} 0 \nonumber\\
+    \label{eq:laengenkontraktion}
+    \implication \Delta x' & = \frac{1}{\gamma}\Delta x,
+\end{align}
+es ist also
+\begin{align*}
+    \Delta x'< \Delta x,
+\end{align*}
+für die Myonen ist der Weg durch die Atmosphäre kürzer. 
+
+Zusammenfassend:
+\begin{formal}
+    Bewegte Uhren gehen langsamer (aus Sicht des ruhenden Systems). Also messen ruhende Systeme das dilatierte Zeitintervall
+    \begin{align*}
+        \Delta t = \gamma \Delta t_\text{E}
+    \end{align*}
+    der Eigenzeit $\Delta_\text{E}$. 
+\end{formal}
+\begin{formal}
+    Bewegte Maßstäbe sind kürzer (aus Sicht des ruhenden Systems). Die Ruhelänge $\Delta x_\text{E}$ im bewegten System ist im ruhenden System kontrahiert\footnotemark,
+    \begin{align*}
+        \Delta x = \frac{1}{\gamma} \Delta x_\text{E}.
+    \end{align*}
+\end{formal}
+\footnotetext{Achtung, diese Gleichung steht nicht im Widerspruch zu Gleichung \eqref{eq:laengenkontraktion}, 
+denn für die Myonen haben wir die Ruhelänge der Atmosphäre aus dem bewegten System betrachtet und 
+nicht beispielsweise den Radius der Myonen aus dem ruhenden System. 
+Natürlich dürfen genausogut die Myonen als ruhend angenommen werden. 
+Wie die Zeitdilatation ist auch die Längenkontraktion ein symmetrischer Effekt. 
+Die größte Länge (Ruhelänge) wird stets im eigenen System (in dem die zu messende Länge ruht) gemessen. }
+
+In Abbildung \Abbref{fig:minkowski_zeitdilatation_laengenkontraktion} sind die Maßstäbe veranschaulicht, die zur Zeitdilatation und zur Längenkontraktion führen. 
+
+\begin{figure}[htp]
+    \centering
+    \tfigMinkowskiZeitdilatationLaengenkontraktion
+    \caption{Minkowski-Diagramm zur Veranschaulichung der Zeitdilatation und der Längenkontraktion: 
+    Die Länge vom Ursprung zum Punkt P beschreibt den Einheitsmaßstab der Zeitachse im bewegten System. 
+    Im ruhenden System wirkt diese Zeit um den Faktor $\gamma$ länger. 
+    Der Abstand von Ursprung zum Punkt M beschreibt den Längeneinheitsmaßstab im bewegten System. 
+    Eine Ruhelänge wirkt im bewegten System kürzer. }
+    \label{fig:minkowski_zeitdilatation_laengenkontraktion}
+\end{figure}
+
+
+
+\subsection{Die Eigenzeit}
+
+Als Eigenzeit $\tau$ wird die Zeit im Ruhesystem einer bewegten Uhr bezeichnet. Es ist 
+\begin{align*}
+    c\diff\tau=c\diff t' \overset{\eqref{eq:zeitdilatation}}{=} \frac{1}{\gamma} c\diff t =\left(c^2\diff t^2-v^2\diff t^2\right)^{1/2} = \left(c^2\diff t^2-\diff\vec r^2\right)^{1/2},
+\end{align*}
+was eine Invariante ist \textendash{} ein sogenanntes Lorentzskalar, das in allen Inertialsystemen gleich ist. 
+Wir wollen den Ausdruck $\left(c^2\diff t^2-\diff\vec r^2\right)^{1/2}$ als Wegelement $\diff\bar{s}$ im vierdimensionalen Raum bezeichnen. 
+Durch Integration erhält man die Eigenzeit. 
+\begin{align*}
+    \boxed{\tau=\int \frac{1}{\gamma}\diff t=\frac{1}{c}\int\diff\bar{s}}. 
+\end{align*}

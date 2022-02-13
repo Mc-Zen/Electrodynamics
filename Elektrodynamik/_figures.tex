@@ -225,6 +225,46 @@ distance marker/.style={|<->|,>={Stealth}},
         \node at (5,-1.4) {$\ldots$};
     \end{tikzpicture}
 }
+
+\newcommand{\tfigComplexProblemsConformalMap}{
+    \begin{tikzpicture}
+        \draw (-3,0) circle [radius=1];
+        \node[align=center] at(-5,0) {Lösung $\phi$\\bekannt};
+        \draw[arr] (-1,0) .. controls +(20:.7) and +(160:.7) .. (1,0) node[align=center,midway,above,yshift=.2cm] {Konforme\\Abbildung}
+        node[align=center,midway,below,yshift=-.4cm] {$\begin{aligned}
+            z&\rightarrow w=w(z) \\
+            f(z)&\rightarrow f(z(w))=g(w)
+        \end{aligned}$};
+        
+        \begin{scope}[shift={(4.5,.2)}]
+        \coordinate (A) at (-2,-1);
+        \coordinate (B) at (-1.8,-.8);
+        \coordinate (C) at (-1.8,.-.2);
+        \coordinate (D) at (-1.8,.3);
+        \coordinate (E) at (-1.3,.5);
+        \coordinate (F) at (-0.8,.3);
+        \coordinate (G) at (-0.2,.4);
+        \coordinate (H) at (0.8,.6);
+        \coordinate (I) at (0.8,-1);
+        \coordinate (J) at (-1.1,-1.4);
+        
+        \node[align=center] at(2.8,0) {$\mathfrak{R}(g(w)$ löst \\$\nabla^2\mathfrak{R}(g(w)=0$};
+        
+        \draw (A) 
+        .. controls +(-150:.1) .. (B) 
+        .. controls +(30:.1) and +( -50: 1.1) ..(C) 
+        .. controls +(130: 1.1) and +(140:1) .. (D)
+        .. controls +(-40:.5) and +(-100:.4) .. (E) 
+        .. controls +(80:.5) and +(120:.8) .. (F) 
+        .. controls +(-60:.8) and +(-95:1) .. (G)
+        .. controls +(85:.8) and +(120:1) .. (H)
+        .. controls +(-60:1.5) and +(5:.9) .. (I)
+        .. controls +(-175:.7) and +(10:.4) .. (J)
+        .. controls +(-170:.7) and +(10:.4) .. cycle;
+        \end{scope}
+    \end{tikzpicture}
+}
+
 \newcommand{\tfigWatermolecule}{
 
     % water molecule
@@ -802,5 +842,45 @@ distance marker/.style={|<->|,>={Stealth}},
             (P1) node [point,clr,label={south east,clr}:1] {};
         \path [name intersections={of=xp axis and hyp right,by={P1}}]
             (P1) node [point,clr,label={north west,clr}:1] {};
+    \end{tikzpicture}
+}
+
+
+
+\newcommand{\tfigMinkowskiZeitdilatationLaengenkontraktion}{
+    % Zeitdilatation und Längenkontraktion
+    \begin{tikzpicture}[scale=1.5,clr/.style={legreen}]
+        \clip (-1,-1) rectangle (3,3);
+        \draw[arr] (-2,0) -- (2,0) node[anchor=north west] {$x$};
+        \draw[arr] (0,-2) -- (0,2) node[anchor=south east] {$ct$};
+        \draw[color=violet] let \n1={2} in (-\n1,\n1) -- (\n1,-\n1) (-\n1,-\n1) -- (\n1,\n1);
+        \path let \n1={31},\n2={2.3} in 
+            coordinate (A) at (-90-\n1:\n2)
+            coordinate (B) at (90-\n1:\n2)
+            coordinate (C) at (-180+\n1:\n2)
+            coordinate (D) at (\n1:\n2);
+        
+        \draw[clr,arr,name path global/.expanded={ctp axis}] (A) -- (B) node[anchor=south east] {$ct'$};
+        \draw[clr,arr,name path global/.expanded={xp axis}] (C) -- (D) node[anchor=north west] {$x'$};
+        \draw[name path global/.expanded={hyp top}] plot[domain=0:1.7,samples=30] ({\x},{sqrt(1+\x*\x)});
+        \draw[name path global/.expanded={hyp right}] plot[domain=1:2,samples=50] ({\x},{sqrt(\x*\x-1)});
+
+        \node[point] at (1,0) {};
+        \node[point] at (0,1) {};
+        
+        \path [name intersections={of=ctp axis and hyp top,by={P1}}]
+            (P1) node [point,label={north west}:P] {};
+        \path [name intersections={of=xp axis and hyp right,by={P2}}]
+            (P2) node [point,label={south east}:M] {};
+        \draw[dashed] let \p1=(P1),\p2=(P2) in 
+            coordinate (PCT) at (0,\y1) 
+            coordinate (PX) at (\x2,0) 
+            (PCT) -- (P1)
+            (PX) -- (P2);
+        
+        \draw[decorate, decoration = {brace,raise=3pt}] 
+        (0,1) -- (PCT) node[midway, left,xshift=-3pt] {$ct>ct'$};
+        \draw[decorate, decoration = {brace,raise=3pt}] 
+        (PX) -- (1,0) node[midway, below,yshift=-3pt] {$x'<x$};
     \end{tikzpicture}
 }
