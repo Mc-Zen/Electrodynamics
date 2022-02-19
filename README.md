@@ -4,7 +4,7 @@ LaTeX script of a German theoretical physics lecture on electrodynamics.
 
 Website: https://mc-zen.github.io/Electrodynamics/
 
-## Formatierung- und Style-Richtlinien
+## Formatierung- und Style-Richtlinien für dieses Skript
 
 - Der Gradient wird ohne Vektorpfeil geschrieben (es ist offensichtlich, dass er ein Vektoroperator ist)
 - Der Laplace-Operator wird als \nabla^2 geschrieben, nicht \Delta
