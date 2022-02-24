@@ -5,9 +5,11 @@
 %\tikzexternalize[prefix=figures/] % activate
 
 \tikzset{
-object color/.style={blue!30!black!90!white,thick},
+object color/.style={blue!40!black!80!white},
+object style/.style={object color,thick},
 legreen/.style={green!50!black},
 lorange/.style={red!60!yellow!70!black!90!white},
+polarisation color/.style={purple},
 charge color/.style={blue!50!white!70!black},
 red laser/.style={red!70!black},
 moving system color/.style={blue!60!black!70!white},
@@ -15,6 +17,7 @@ coordsystem/.style={very thin, color=#1!50},
 invisible point/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
 point/.style={invisible point,fill=black,minimum size=4pt},
 arr/.style={->,>={Stealth},thin},
+rarr/.style={<-,>={Stealth},thin},
 midarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrow{Stealth}}} },
 midarrow/.default=.5,
 rmidarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrowreversed{Stealth}}} },
@@ -26,7 +29,7 @@ distance marker/.style={|<->|,>={Stealth}},
 
 \newcommand{\tfigVolumeWithNormal}{
     \begin{tikzpicture}[scale=2]
-        \draw[object color] (0,1,1) -- (0,1,0) -- (1,1,0) -- (1,0,0)
+        \draw[object style] (0,1,1) -- (0,1,0) -- (1,1,0) -- (1,0,0)
         -- (1,0,1) -- (0,0,1) --(0,1,1) -- (1,1,1) 
         -- (1,0,1) --  (1,1,1) -- (1,1,0);
         % \node at (.5,.5,1) {$\vec a(\vec r)$};
@@ -37,7 +40,7 @@ distance marker/.style={|<->|,>={Stealth}},
 
 \newcommand{\tfigAreaWithCurveAndNormal}{
     \begin{tikzpicture}[scale=2.3]
-        \draw[object color,rmidarrow=.1] (0,0) rectangle (1,1) node[below,right] {$C$};
+        \draw[object style,rmidarrow=.1] (0,0) rectangle (1,1) node[below,right] {$C$};
         \node at (.5,.5) {$F$};
         \node[point, label={$\hat{\vec n}$}] at (-.2,.6) {};
         \draw[decorate, decoration = {brace, mirror}]  (0,-.1) -- +(1,0) node[midway, below,yshift=-3pt] {$\Delta r_C$};
@@ -57,7 +60,7 @@ distance marker/.style={|<->|,>={Stealth}},
         \node[point, label=right:{$\vec r_0$}] at (A) {};
         \node[point, label=right:{$\vec r_1$}] at (B) {};
         
-        \draw[object color] (A) .. controls ($(A)+(NC)$) and ($(R)-(FC)$) .. (R) .. controls  ($(R)+(FC)$) and ($(B)-(NC)$) .. (B)
+        \draw[object style] (A) .. controls ($(A)+(NC)$) and ($(R)-(FC)$) .. (R) .. controls  ($(R)+(FC)$) and ($(B)-(NC)$) .. (B)
           node[very near end, left] {$C$};
         
         \node[point,clr,label={below,clr}:{$\vec r$}] at (R) {};
@@ -69,9 +72,9 @@ distance marker/.style={|<->|,>={Stealth}},
 \newcommand{\tfigHalbkugel}{
     \begin{tikzpicture}[scale=2]
         \coordinate (A) at (0,0);
-        \draw[object color] (0,0) arc (0:180:1) node[midway, above] {$F$};
-        \draw[object color,dashed] (0,0) arc (0:180:1 and .3);
-        \draw[object color,rmidarrow] (0,0) arc (0:-180:1 and .3) node[midway, below] {$C=\partial F$};
+        \draw[object style] (0,0) arc (0:180:1) node[midway, above] {$F$};
+        \draw[object style,dashed] (0,0) arc (0:180:1 and .3);
+        \draw[object style,rmidarrow] (0,0) arc (0:-180:1 and .3) node[midway, below] {$C=\partial F$};
         
         \draw[arr] (-.4,.5) -- +(45:.5) node[right] {$\diff \vec f=\hat{\vec n}\diff f$};
     \end{tikzpicture}
@@ -226,6 +229,56 @@ distance marker/.style={|<->|,>={Stealth}},
     \end{tikzpicture}
 }
 
+\newcommand{\tfigSpecialCapacitors}{
+
+% capacitors
+\begin{tikzpicture}[scale=1.2]
+    \begin{scope}
+        \coordinate (A0) at (-.7,0);
+        \coordinate (A1) at (-.7,2.5);
+        \coordinate (B0) at (.7,0);
+        \coordinate (B1) at (.7,2.5);
+        \draw[very thick] (A0) -- (A1) 
+        node[at start,below,legreen] {$\phi_1$}
+        node[at end,above] {$-Q$};
+        \draw[very thick] (B0) -- (B1) 
+        node[at start,below,legreen] {$\phi_2$}
+        node[at end,above] {$Q$};
+        
+        \draw[distance marker] ($(A0)!.5!(A1)$) -- ($(B0)!.5!(B1)$) node[midway,below] {$d$};
+    \end{scope}
+    
+    \begin{scope}[shift={(3.2cm,1.2cm)}]
+        \coordinate (O) at (0,0);
+        \draw[thick] (O) circle[radius=.6];
+        \draw[thick] (O) circle[radius=1];
+        
+        \draw[arr] (O) -- (30:1) node[pos=.9, below,yshift=-3] {$r_2$};
+        \draw[arr] (O) -- (45:.6) node[midway, above, left,yshift=3] {$r_1$};
+        \node[legreen] at (-160:1.2) {$\phi_2$};
+        \node[legreen] at (-140:.4) {$\phi_1$};
+        
+        \draw (135:1) -- +(45:1) (-45:1) -- +(45:1);
+        \begin{scope}
+            \clip (O) circle[radius=1];
+            \draw (135:.6) -- +(45:1) (-45:.6) -- +(45:1);
+        \end{scope}
+    \end{scope}
+    
+    \begin{scope}[shift={(7cm,1.2cm)}]
+        \coordinate (O) at (0,0);
+        \draw[thick] (O) circle[radius=.6];
+        \draw[thick] (O) circle[radius=1];
+        
+        \draw[arr] (O) -- (30:1) node[pos=.9, below,yshift=-3] {$r_2$};
+        \draw[arr] (O) -- (45:.6) node[midway, above, left,yshift=3] {$r_1$};
+        \node[legreen] at (-160:1.2) {$\phi_2$};
+        \node[legreen] at (-140:.4) {$\phi_1$};
+    \end{scope}
+\end{tikzpicture}
+
+}
+
 \newcommand{\tfigComplexProblemsConformalMap}{
     \begin{tikzpicture}
         \draw (-3,0) circle [radius=1];
@@ -301,6 +354,200 @@ distance marker/.style={|<->|,>={Stealth}},
     \end{scope}
     \end{tikzpicture}
 }
+
+
+\newcommand{\tfigDipoles}{
+    % dipoles
+    \begin{tikzpicture}[scale=1]
+        \begin{scope}[shift={(-1cm,0)}]
+            \coordinate (A0) at (0,0);
+            \coordinate (A1) at (-1,1.2);
+            \coordinate (B0) at (1,-.2);
+            \coordinate (B1) at (1.3,1.4);
+            
+            \draw[arr] (A0) -- (A1) node[midway, anchor=north east] {$\vec p_1$};
+            \draw[arr] (B0) -- (B1) node[midway, right] {$\vec p_2$};
+            \draw[arr] ($(A0)!.5!(A1)$) -- ($(B0)!.5!(B1)$) node[midway, above] {$\vec r$};
+        \end{scope}
+        \begin{scope}[shift={(3.5cm,0)}]
+            \draw[arr] (0,0) -- +(0,0.5);
+            \draw[arr] (0,0.6) -- +(0,0.5);
+            \node at (0,-.5) {$U$ minimal};
+        \end{scope}
+        \begin{scope}[shift={(7cm,0)}]
+            \draw[arr] (-.8,0.55-0.25) -- +(0,0.5);
+            \draw[arr] (-.4,0.55-0.25) -- +(0,0.5);
+            \draw[rarr] (.8,0) -- +(0,0.5);
+            \draw[arr] (.8,0.6) -- +(0,0.5);
+            \node at (0,-.5) {$U$ maximal};
+        \end{scope}
+        \begin{scope}[shift={(11cm,0)}]
+            \draw[arr] (-.2,0.55-0.25) -- +(0,0.5);
+            \draw[rarr] (.2,0.55-0.25) -- +(0,0.5);
+            \node at (0,-.5) {Lokales Minimum};
+        \end{scope}
+    \end{tikzpicture}
+}
+
+\newcommand{\tFigRandbedingungenDielektrikum}{
+    \begin{tikzpicture}[
+        scale=1,
+        dosenfarbe/.style={blue!50!black!80!white}
+    ]
+    \draw
+    (0,0) .. controls (1.8,.6) and +(-3,.4) .. (7,.3)
+    node[pos=.9, above, sloped] {$\vec E^{(2)},\vec D^{(2)},\vec P^{(2)}$}
+    node[pos=.9, below, sloped] {$\vec E^{(1)},\vec D^{(1)},\vec P^{(1)}$}
+    node[very near start, above, sloped] {$\varepsilon_2$}
+    node[very near start, below, sloped] {$\varepsilon_1$}
+    node[pos=.65,below,sloped] {$\sigma(\vec r)$};
+
+    \coordinate (P) at (2, .446);
+
+    \node[point] at (P) {};
+    \draw[arr]
+    (P) -- +(7:1)
+    node[midway, below] {$\hat{\vec t}$};
+    \draw[arr]
+    (P) -- +(97:1)
+    node[midway, left] {$\hat{\vec n}$};
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigDielektrischeBrechung}{
+    \begin{tikzpicture}[
+        scale=2,
+        incolor/.style = {red!50!black},
+        outcolor/.style = {blue!50!black}
+    ]
+    \coordinate (Start) at (-140:1);
+    \coordinate (StartFoot) at ($(Start) + (0,.2)$);
+    \coordinate (Middle) at (0,0);
+    \coordinate (End) at (70:0.7);
+    \coordinate (EndFoot) at (0,0.2);
+
+    \draw[arr,legreen] 
+        (Start) -- (Middle) 
+        node[at start,anchor=north west] {$\vec D^{(1)}$}
+        (Middle) -- (End)
+        node[at end,anchor=south west] {$\vec D^{(2)}$};
+    \draw[arr] ($.6*(Start)$) -- (Middle) 
+        node[at start,anchor=south east] {$\vec E^{(1)}$};
+    \draw[arr] 
+        (Middle) -- ($.7*(End)$)
+        node[at end,anchor=north west] {$\vec E^{(2)}$};
+
+    \draw[thick] (-1,0) -- +(2,0);
+    \draw[dashed] (0,-1) -- +(0,2);
+    \node at (-0.5,.7) {$\varepsilon_2<\varepsilon_1$};
+    \node at (0.5,-.7) {$\varepsilon_1$};
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigMessungVonFeldDurchRandbedingungen}{
+    \begin{tikzpicture}[probeladung/.style={point,outer sep=1mm}]
+    \draw[yshift=-1mm] (-5,0) rectangle +(3,.2);
+    \node (E0) at (-5.8,0) {$\vec E_0$} edge[arr] (-4.8,0);
+    \node[probeladung] (P1) at (-2.8,0) {};
+    \node at (-5+3/4,-.8) {$\varepsilon_r$};
+    \foreach \x in {1,2,...,4}{
+        \draw[arr, object color] (3/4*\x-5-3/8,1.3) -- +(0,-2.6);
+    };
+
+    \draw[xshift=-1mm] (3.5,1.4) rectangle +(.2,-2.8);
+    \node (E0) at (5.8,0) {$\vec E_0$} edge[arr] (3.5,0.7);
+    \node[probeladung] (P2) at (3.5,0) {};
+    \node at (5-3/4,-.8) {$\varepsilon_r$};
+    \foreach \x in {1,2,...,4}{
+        \draw[arr, object color] (3/4*\x+2-3/8,1.3) -- +(0,-2.6);
+    };
+    \node[object color] at (-3.5,1.8) {$\vec E\parallel\vec D$};
+    \node[object color] at (3.5,1.8) {$\vec E$};
+
+    \node at (0,0) {Probeladung} edge[arr] (P1) edge[arr] (P2);
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigDielektrischeKugelHomogenesEFeld}{
+    \begin{tikzpicture}[scale=1,earr/.style={arr,object color}]
+    \draw[thick] (0,0) circle[radius=1];
+    \draw[arr] (0,0) -- (45:1) node[midway, anchor=south east] {$R$};
+    \node at (0,-.7) {$\varepsilon_r> 1$};
+    \draw[earr] (-2.5,2) -- +(5,0);
+    \draw[earr] (-2.5,-2) -- +(5,0);
+    \draw[earr] (-2.5,0) -- (-1,0) (1,0) -- +(1.5,0);
+    \foreach \i in {1,-1} {
+        \draw[earr] (-2.5,\i*2/3) .. controls +(0:.7) and +(\i*160:.3) .. (\i*160:1) (\i*20:1) .. controls +(\i*20:.3) and +(\i*180:.7) .. (2.5,\i*2/3); 
+        \draw[earr] (-2.5,\i*4/3) .. controls +(0:1) and +(180:.5) .. (0,\i*1.1) .. controls +(0:.5) and +(180:1) .. (2.5,\i*4/3);
+    };
+
+    \draw[earr] (160:1) -- (20:1);
+    \draw[earr] (180:1) -- (0:1);
+    \draw[earr] (-160:1) -- (-20:1);
+
+    \draw[arr] (3,0) -- +(1,0) node[at end, right] {$z$};
+
+    \node at (0,-1.6) {$\varepsilon_r=1$};
+    \node at (3.5,1.3) {$\vec E_0=E_0\vec e_z$};
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigEntelektrisierung}{
+    \begin{tikzpicture}[scale=1.8]
+        \foreach \x in {0,1,...,4}
+            \draw[arr, object color] (-1.2+2.4*\x/4, -1.3) -- +(0,2.6);
+        \draw[fill=white] (0,0) circle[radius=1]; 
+        \foreach \x in {0,1,...,4} {
+            \node at (135 - \x*90/4:.8) {$+$};
+            \node at (-45 - \x*90/4:.8) {$-$};
+        };
+        \foreach \i in {0,1,2}
+            \draw[arr,polarisation color] (-.5+\i/2,-.3) -- +(0,.6);
+        \foreach \i in {0,1}
+            \draw[arr] (-.25+\i/2,.2) -- +(0,-.4);
+        
+        \node[object color] at (1.5,1) {$\vec E_0$};
+        \node[polarisation color] at (.8,0) {$\vec P$};
+        \node[] at (-.2,-.4) {$\vec E'$};
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigSimpleDielectricBodiesEntelektrisierungsfeld}{
+    \begin{tikzpicture}
+        \foreach \i in {0,...,5}{
+            \foreach \y in {-1,0,1}{
+                \draw[arr,object color] (\i*3-1,\y*.4) -- +(2,0);
+            }
+        }
+        \draw[thick] (0,0) circle[radius=.7];
+        \begin{scope}[xshift=3cm]
+            \draw[thick,rotate=45] (0,0) ellipse[x radius=.7,y radius=.5];
+        \end{scope}
+        \draw[thick] (6-.1,-.8) -- +(0,1.6)(6+.1,-.8) -- +(0,1.6);
+        \draw[thick] (9-.8,.2) -- +(1.6,0) (9-.8,-.2) -- +(1.6,0);
+        
+        \draw[thick] let \n1={12-.8},\n2={12+.7} in
+        (\n1,.2) -- +(\n2-\n1,0) (\n1,-.2) -- +(\n2-\n1,0) 
+        (\n1,0) ellipse[y radius=.2,x radius=.1]
+        (\n2,.2) arc[y radius=.2,x radius=.1,start angle=90, end angle=-90];
+        
+        \draw[thick] let \n1={15-.2},\n2={15+.2} in
+        (\n1,-.8) -- +(0,1.6) (\n2,-.8) -- +(0,1.6) 
+        (15,.8) ellipse[x radius=.2,y radius=.1]
+        (\n1,-.8) arc[x radius=.2,y radius=.1,start angle=-180, end angle=0];
+        
+        \node at (0,-1.5) {$\lambda=\frac13$};
+        \node at (3,-1.5) {$\lambda=\begin{pmatrix}\lambda_1&0&0\\0&\lambda_2&0\\0&0&\lambda_3\end{pmatrix}$};
+        \node at (6,-1.5) {$\lambda=1$};
+        \node at (9,-1.5) {$\lambda=0$};
+        \node at (12,-1.5) {$\lambda=0$};
+        \node at (15,-1.5) {$\lambda=\frac12$};
+    \end{tikzpicture}
+}
+
 
 \newcommand{\tfigMagnetfeldBeiLeiter}{
     \begin{tikzpicture}[scale=3]
