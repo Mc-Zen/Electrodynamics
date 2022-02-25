@@ -5,27 +5,45 @@
 %\tikzexternalize[prefix=figures/] % activate
 
 \tikzset{
-object color/.style={blue!40!black!80!white},
-object style/.style={object color,thick},
-legreen/.style={green!50!black},
-lorange/.style={red!60!yellow!70!black!90!white},
-polarisation color/.style={purple},
-charge color/.style={blue!50!white!70!black},
-red laser/.style={red!70!black},
-moving system color/.style={blue!60!black!70!white},
-coordsystem/.style={very thin, color=#1!50},
-invisible point/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
-point/.style={invisible point,fill=black,minimum size=4pt},
-arr/.style={->,>={Stealth},thin},
-rarr/.style={<-,>={Stealth},thin},
-midarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrow{Stealth}}} },
-midarrow/.default=.5,
-rmidarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrowreversed{Stealth}}} },
-rmidarrow/.default=.5,
-distance marker/.style={|<->|,>={Stealth}},
+    object color/.style={blue!40!black!80!white},
+    object style/.style={object color,thick},
+    legreen/.style={green!50!black},
+    lorange/.style={red!60!yellow!70!black!90!white},
+    polarisation color/.style={purple},
+    charge color/.style={blue!50!white!70!black},
+    red laser/.style={red!70!black},
+    moving system color/.style={blue!60!black!70!white},
+    coordsystem/.style={very thin, color=#1!50},
+    invisible point/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
+    point/.style={invisible point,fill=black,minimum size=4pt},
+    arr/.style={->,>={Stealth},thin},
+    rarr/.style={<-,>={Stealth},thin},
+    midarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrow{Stealth}}} },
+    midarrow/.default=.5,
+    rmidarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrowreversed{Stealth}}} },
+    rmidarrow/.default=.5,
+    distance marker/.style={|<->|,>={Stealth}},
 }
 \tikzstyle{every node}=[font=\footnotesize]
 
+
+\newcommand{\tfigTitel}{
+    \begin{tikzpicture}
+        \pgfmathsetmacro{\shadowangle}{132}
+        \newlength{\shadowdistance}
+        \pgfmathsetlength{\shadowdistance}{0.1ex}
+        \pgfmathsetmacro{\shadowopacity}{1}
+        \pgfmathsetmacro{\shadowspread}{0.003}
+        \pgfmathsetmacro{\shadowsize}{5}
+        \pgfmathtruncatemacro{\totshadow}{100}
+        \path[red laser,opacity={\shadowopacity/\totshadow},shift={({132-180}:\shadowdistance)},scale={1+\shadowsize}] 
+        foreach \nshadow [evaluate=\nshadow as \angshadow using \nshadow/\totshadow*360] in {1,...,\totshadow}{
+            node[align=center] at (\angshadow:\shadowspread) {\huge Theoretische Physik 3\\ \\ \\
+            \Large Elektrodynamik}
+            };
+        \node[align=center] at (0,0) {\huge Theoretische Physik 3\\ \\ \\ \Large Elektrodynamik};
+    \end{tikzpicture}
+}
 
 \newcommand{\tfigVolumeWithNormal}{
     \begin{tikzpicture}[scale=2]
@@ -186,7 +204,7 @@ distance marker/.style={|<->|,>={Stealth}},
             node[above left] at (\n1/2,\n1/2/\n1^3) {$\propto r$} 
             plot[domain=\n1:\n2] (\x,1/\x^2) 
             let \n4={.5*\n2-.5*\n1+\n1} in % x value of middle point of second graph 
-            node[above] at (\n4,1/\n4^2) {$\propto\frac{1}{r^2}$};
+            node[above] at (\n4,1/\n4^2) {$\displaystyle\propto\frac{1}{r^2}$};
         \draw[dashed, very thin] (0.5,.8) -- +(0,-.8) 
             node[below] {$R$};
             
@@ -199,10 +217,10 @@ distance marker/.style={|<->|,>={Stealth}},
             \draw[charge color,yscale=.3] 
                 let \n1={0.5},\n2={1.7} in 
                 plot[domain=0:\n1] (\x,3/\n1/2 -\x^2/\n1^3/2)
-                node[right, xshift=-25,yshift=25] {$\propto \frac3{2R}-\frac{r^2}{2R^3}$}
+                node[right, xshift=-25,yshift=25] {$\displaystyle\propto \frac3{2R}-\frac{r^2}{2R^3}$}
                 plot[domain=\n1:\n2] (\x,1/\x)
                 let \n4={.5*\n2-.5*\n1+\n1} in % x value of middle point of second graph 
-                node[above] at (\n4,1/\n4) {$\propto\frac{1}{r}$};
+                node[above] at (\n4,1/\n4) {$\displaystyle\propto\frac{1}{r}$};
                 
             \draw[dashed, very thin] (0.5,1/1.7) -- +(0,-1/1.7) 
                 node[below] {$R$};
@@ -390,10 +408,7 @@ distance marker/.style={|<->|,>={Stealth}},
 }
 
 \newcommand{\tFigRandbedingungenDielektrikum}{
-    \begin{tikzpicture}[
-        scale=1,
-        dosenfarbe/.style={blue!50!black!80!white}
-    ]
+    \begin{tikzpicture}[scale=1]
     \draw
     (0,0) .. controls (1.8,.6) and +(-3,.4) .. (7,.3)
     node[pos=.9, above, sloped] {$\vec E^{(2)},\vec D^{(2)},\vec P^{(2)}$}
@@ -539,12 +554,34 @@ distance marker/.style={|<->|,>={Stealth}},
         (15,.8) ellipse[x radius=.2,y radius=.1]
         (\n1,-.8) arc[x radius=.2,y radius=.1,start angle=-180, end angle=0];
         
-        \node at (0,-1.5) {$\lambda=\frac13$};
+        \node at (0,-1.5) {$\displaystyle\lambda=\frac13$};
         \node at (3,-1.5) {$\lambda=\begin{pmatrix}\lambda_1&0&0\\0&\lambda_2&0\\0&0&\lambda_3\end{pmatrix}$};
         \node at (6,-1.5) {$\lambda=1$};
         \node at (9,-1.5) {$\lambda=0$};
         \node at (12,-1.5) {$\lambda=0$};
-        \node at (15,-1.5) {$\lambda=\frac12$};
+        \node at (15,-1.5) {$\displaystyle\lambda=\frac12$};
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigClausiusMosotti}{
+    % dipol in dielektrikum in äußerem Feld - Beschreibung durch lokale dipole
+    \begin{tikzpicture}[scale=1]
+        \draw[arr, object color] (-2,-2) -- +(0,4) node[anchor=south west] {$\vec E_0$};
+        \draw (-2.3,-1.7) -- +(7.3,0) (-2.3,1.7) -- +(7.3,0);
+
+        \draw[fill=white] (0,0) circle[radius=1]; 
+        \foreach \x in {0,1,...,3} {
+            \node at (135 - \x*90/3:1.2) {$-$};
+            \node at (-45 - \x*90/3:1.2) {$+$};
+        }; 
+        
+        \draw[arr,polarisation color] (0,-.3) -- +(0,.6) node[midway,right] {$\vec p$};
+        \foreach \i in {0,1,...,4}
+            \draw[arr] ($(12+\i*360/5:.7)+(0,-.2)$) -- +(0,.4);
+        \draw[arr] (2.5,0) -- +(0,1) node[midway,right,xshift=2mm] {$\displaystyle\vec E=\frac{1}{\varepsilon_r}\vec E_0$};
+        \node[polarisation color] at (1.5,0) {$\vec P$};
+        \node at (3.5,-1) {$\varepsilon_r>1$};
     \end{tikzpicture}
 }
 
@@ -575,6 +612,137 @@ distance marker/.style={|<->|,>={Stealth}},
             edge[arr] node[midway,below] {$\vec r'$} 
             (b point);
             
+    \end{tikzpicture}
+}
+
+\newcommand{\tfigKraftParalleleLeiter}{
+    \begin{tikzpicture}[scale=1.5,distance marker nobar/.style={<->,>={Stealth}},]
+        \draw[distance marker nobar] (0,0.8) -- +(1,0) node[midway, above] {$d$};
+        \draw[object color,midarrow] (0,-1) -- +(0,2) node[pos=.75,left] {$I_1$};
+        \draw[object color,midarrow] (1,1) -- +(0,-2) node[pos=.25,right] {$I_2$};
+        \draw[arr] (0,-.5) -- +(-.4,0) node[left] {$\diff\vec F$};
+        \draw[arr] (1,-.5) -- +(.4,0);
+        
+        \begin{scope}[xshift=4cm]
+            \draw[distance marker nobar] (0,0.8) -- +(1,0) node[midway, above] {$d$};
+            \draw[object color,midarrow] (0,-1) -- +(0,2) node[pos=.75,left] {$I_1$};
+            \draw[object color,midarrow] (1,-1) -- +(0,2) node[pos=.75,right] {$I_2$};
+            \draw[arr] (0,-.5) -- +(.4,0) node[at start, left] {$\diff\vec F$};
+            \draw[arr] (1,-.5) -- +(-.4,0);
+        \end{scope}
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigCylinderConductorJandB}{
+    \begin{tikzpicture}
+        \draw[arr] (0,-1) -- +(0,4.5) node[anchor=south east] {$z$};
+        
+        \draw[arr] ($(100:.5)-(0,.7)$) arc[start angle=-260, end angle=80,x radius=.5, y radius=.25] node[pos=.75,right] {$\vec B$};
+        
+        \draw (-.7,2.5) -- ++(0,-2) arc [x radius=0.7, y radius=0.35, start angle=-180, end angle=0] -- ++(0,2) +(-.7,0) ellipse[x radius=0.7, y radius=0.35];
+        \draw[arr] (-.2,1) -- +(0,.8) node[midway, left] {$\vec j$};
+        \draw[arr] (0,1.4) -- +(1,0) node[midway, above] {$\vec r$};
+        \draw[arr] (0,.5) -- +(.7,0) node[midway, above] {$R$};
+        
+        \begin{scope}[xshift=3cm]
+            \coordinate (C) at (0,1.5);
+            \draw[midarrow] (C) circle[radius=.7] circle[radius=1.2] node[pos=.5] {$C$};
+            \draw[arr] (C) -- +(.7,0) node[midway, below] {$R$};
+            \draw[arr] (C) -- +(40:1.2) node[near end, anchor=south east] {$r$};
+            
+        \end{scope}
+        
+        \begin{scope}[xshift=5.5cm]
+            \coordinate (A) at (2, 1.7);
+            
+            \draw[arr] (0,0) -- (0, 3) 
+                node[at end, anchor=south east] {$j(r)$};
+            \draw[arr] (0,0) -- (4, 0) 
+                node[at end, anchor=north west] {$r$};
+            \draw[charge color] let \p1 = (A) in
+                (0, \y1) -- (A) 
+                node[at start, left] {$j_0$}
+                -- (\x1, 0)
+                node[charge color, below] {$R$};
+        \end{scope}
+            
+        \begin{scope}[xshift=11cm]
+            % electric field
+            \draw[arr] (0,0) -- +(0, 3) 
+                node[at end, anchor=south east] {$B(r)$};
+            \draw[arr] (0,0) -- +(4, 0) 
+                node[at end, anchor=north west] {$r$};
+                
+            \draw[charge color] 
+                let \n0={2},\n1={1.7},\n3={3.7}, in
+                plot[domain=0:\n0] (\x,\x) 
+                node[above left] at (\n0/2,\n0/2) {$\propto r$} 
+                plot[domain=\n0:\n3] (\x,\n0*\n0/\x)
+                let \n5={\n0+(\n3-\n0)/2} in % x value of middle point of second graph 
+                node[above] at (\n5,\n0*\n0/\n5) {$\displaystyle\propto\frac{1}{r}$};
+            \draw[dashed, very thin]  let \n0={2} in (\n0,\n0) -- +(0,-\n0) node[below] {$R$};
+        \end{scope}
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigCoil}{
+    \begin{tikzpicture}[scale=1]
+        \draw[arr] (0,0) -- (0,4.5)
+        node[anchor=south east] {$z$};
+
+        \draw[rmidarrow=.10] (-1,0)
+        \foreach \a in {1,...,6}{
+                .. controls +(0,.6) and +(0,.6)
+                .. +(2,.35)
+                .. controls +(0,-.6) and +(0,-.6)
+                .. ++(0,.7)
+            };
+        \node[anchor=north west] at (.5,0) {$I$};
+        \draw[legreen, rounded corners=6pt, midarrow=.7]
+        (.8,.7) rectangle (1.2,3.5);
+        \draw[legreen, |-|] (1.4,.7) -- +(0,2.8)
+        node[midway, right] {$L$}
+        node[near start, right] {$C=\partial F$};
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigMagnDipoleFieldCircleConductorEllipsoid}{
+    \begin{tikzpicture}
+        \foreach \i in {-1,1}{
+            \draw[legreen,arr] (-\i,-1.2) .. controls (\i*.12,0) .. +(0,2.4);
+            \draw[legreen,arr] (-\i*.9,-1.7) .. controls (\i*.13,0) .. +(0,3.4);
+            \draw[legreen,arr] (-\i*.6,-2.1) .. controls (\i*.15,0) .. +(0,4.2);
+        }
+        \draw[legreen,arr,midarrow=.3] (-1,0) ellipse[x radius=.8, y radius=.35];
+        \draw[legreen,arr,rmidarrow=.2] (1,0) ellipse[x radius=.8, y radius=.35];
+        
+        \draw[midarrow=.75,thick] (0,0) ellipse[x radius=1, y radius=.5];
+        \node at (-.9,-.7) {$\vec j$};
+        \node[legreen] at (1.5,.8) {$\vec B$};
+        
+        \begin{scope}[xshift=5cm,xscale=2]
+            \fill[black!20!white] (0,0) -- (.8,0) arc[radius=.8,start angle=0, end angle=-20] -- cycle;
+            \draw[thick] (0,0) ellipse[x radius=.8, y radius=.8];
+            \draw[arr] (0,0) -- (0,1.5) node[anchor=south west] {$\vec n$};
+            \draw[arr] (0,0) -- (0:.8);
+            \draw[arr] (0,0) -- (-20:.8) node[midway, below] {$\vec r$};
+            \draw[arr, red laser] (-20:.8) arc[radius=.8,start angle=-20, end angle=0] node[midway, right] {$\diff\vec r$};
+            
+            \node at (0,-1.5) {$\displaystyle\diff f=\frac12|\vec r\times \diff\vec r|$} edge (-10:.65); 
+        \end{scope}
+        \begin{scope}[xshift=10cm]
+            \begin{scope}[rotate=-20,yscale=.5]
+                \draw[thick] (0,0) ellipse[x radius=.7, y radius=3.2];
+                \draw (-.7,0) arc[x radius=.7, y radius=.7,start angle=-180, end angle=0];
+                \draw[dashed] (-.7,0) arc[x radius=.7, y radius=.7,start angle=180, end angle=0];
+                \node at (0,-2) {$\rho(\vec r)$};
+                \draw[arr] (0,-4.5) -- (0,-3.2) (0,0) -- (0,4.5) node[right] {$\vec\omega$};
+            \end{scope}
+            \draw[arr] (0,0) -- (0,1) node[midway, left] {$\vec r$};
+        \end{scope}
     \end{tikzpicture}
 }
 
@@ -703,27 +871,6 @@ distance marker/.style={|<->|,>={Stealth}},
 % }
 
 
-\newcommand{\tfigCoil}{
-    \begin{tikzpicture}[scale=1]
-        \draw[arr] (0,0) -- (0,4.5)
-        node[anchor=south east] {$z$};
-
-        \draw[rmidarrow=.10] (-1,0)
-        \foreach \a in {1,...,6}{
-                .. controls +(0,.6) and +(0,.6)
-                .. +(2,.35)
-                .. controls +(0,-.6) and +(0,-.6)
-                .. ++(0,.7)
-            };
-        \node[anchor=north west] at (.5,0) {$I$};
-        \draw[legreen, rounded corners=6pt, midarrow=.7]
-        (.8,.7) rectangle (1.2,3.5);
-        \draw[legreen, |-|] (1.4,.7) -- +(0,2.8)
-        node[midway, right] {$L$}
-        node[near start, right] {$C=\partial F$};
-    \end{tikzpicture}
-}
-
 \newcommand{\tfigInductionA}{
     \begin{tikzpicture}[scale=1]
         \draw[midarrow=.5] (0,0)
@@ -821,10 +968,10 @@ distance marker/.style={|<->|,>={Stealth}},
         ]
         \draw
         (0,0) .. controls (1.8,.6) and +(-3,0) .. (13,.3)
-        node[pos=.17, above] {$\vec B^{(2)},\vec H^{(2)},\vec D^{(2)}$}
-        node[pos=.22, below] {$\vec B^{(1)},\vec H^{(1)},\vec D^{(1)}$}
-        node[very near end, above] {$\vec k\ldots$ Flächenstrom}
-        node[very near end, below] {Grenzfläche};
+        node[pos=.17, above, sloped] {$\vec B^{(2)},\vec H^{(2)},\vec D^{(2)}$}
+        node[pos=.22, below, sloped] {$\vec B^{(1)},\vec H^{(1)},\vec D^{(1)}$}
+        node[very near end, above, sloped] {$\vec k\ldots$ Flächenstrom}
+        node[very near end, below, sloped] {Grenzfläche};
 
         \coordinate (P) at (5.5, .37);
 

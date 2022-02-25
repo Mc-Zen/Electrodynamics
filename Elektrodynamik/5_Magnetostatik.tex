@@ -95,7 +95,7 @@ Für das Feld eines unendlich langen, geraden Leiters gilt
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{force_parallel_conductors.pdf}
+	\tfigKraftParalleleLeiter
 	\caption{Die Kraft auf parallele, stromdurchflossene Leiter ist anziehend, wenn der Stromfluss in verschiedene Richtungen geht und abstoßend, wenn der Strom in beiden Leiter in der gleichen Richtung fließt. }
 	\label{fig:force_parallel_conductors}
 \end{figure}
@@ -183,7 +183,7 @@ Diese Gleichung ist als Ampèresches Gesetz bekannt. Mit seiner Nutzung kann man
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{cylinder_conductor_with_diagrams.pdf}
+	\tfigCylinderConductorJandB
 	\caption{Ein stromdurchflossener, zylindrischer Leiter mit Radius $R$ und Stromdichte $r$ erzeugt ein magnetisches Wirbelfeld. Links: schematische Darstellung, Mitte links: Querschnitt mit gedachter kreisförmiger Kurve $C$ mit Radius $r$ um den Leiter herum, Mitte rechts: Die Stromdichte ist konstant im Leiter und fällt außerhalb auf $0$ ab, rechts: im Leiter steigt der Betrag des Magnetfelds linear mit dem Abstand an und fällt außerhalb ab mit $r^{-1}$.  }
 	\label{fig:cylinder_conductor_with_diagrams}
 \end{figure}
@@ -284,7 +284,7 @@ Für eine ebene Schleife mit Fläche $F$ und Normalenvektor $\vec {n}$ (\Abbref{
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{magnetic_dipole_field_circle_conductor_ellipsoid.pdf}
+	\tfigMagnDipoleFieldCircleConductorEllipsoid
 	\caption{Links: Magnetfeld eines magnetischen Dipols, Mitte: Ein Kreisstrom erzeugt ein magnetisches Dipolmoment, rechts: starrer Körper, der mit $\vec\omega$ rotiert und einer Ladungsverteilung $\rho(\vec r)$ besitzt. }
 	\label{fig:magnetic_dipole_field_circle_conductor_ellipsoid}
 \end{figure}
@@ -444,7 +444,7 @@ und wir können die makroskopischen Feldgleichungen formulieren:
 \end{align*}
 Nun führen wir noch das magnetische Feld $\vec {H}$ ein,
 \begin{equation*}
-	\vec {H}\left(\vec {r},t\right)=\frac{1}{\mu _{0}}\vec {B}\left(\vec {r},t\right)-M\left(\vec {r},t\right)\equivalence \vec {B}\left(\vec {r},t\right)=\mu _{0}\left(H\left(\vec {r},t\right)+M\left(\vec {r},t\right)\right)
+	\vec {H}\left(\vec {r},t\right)=\frac{1}{\mu _{0}}\vec {B}\left(\vec {r},t\right)-\vec M\left(\vec {r},t\right)\equivalence \vec {B}\left(\vec {r},t\right)=\mu _{0}\left(\vec H\left(\vec {r},t\right)+\vec M\left(\vec {r},t\right)\right)
 \end{equation*}
 Die Magnetisierung $\vec {M}$ wird also wieder in ein Hilfsfeld integriert, was einen einfacheren Ausdruck für die zweite Feldgleichung erlaubt:
 \begin{equation*}
@@ -470,7 +470,7 @@ Für den Fall, dass die Magnetisierung linear vom Magnetfeld abhängt, führen w
 \end{equation*}
 Nur wegen der historischen Konvention drücken wir die Magnetisierung als $\vec {M}\left(\vec {H}\right)$ aus und nicht (sinnvollererweise) als $\vec {M}\left(\vec {B}\right)$. Wir schreiben dann also
 \begin{equation*}
-	\vec {B}=\mu \vec {H}, \mu =\mu _{0}\left(1+\chi _{m}\right)
+	\vec {B}=\mu \vec {H}, \quad \mu =\mu _{0}\left(1+\chi _{m}\right)
 \end{equation*}
 mit dem Tensor der magnetischen Permeabilität $\mu $. Im Allgemeinen ist $\vec {M}\nparallel \vec {H}$.
 
