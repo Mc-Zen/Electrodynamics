@@ -53,7 +53,9 @@ Die Kraftdichte auf Ladungsdichten und Stromdichten ist
 \end{equation*}
 also gerade die "`Lorentzkraft-Dichte`` als Kontinuumsform der Lorentzkraft.
 
-\section{Elektromagnetische Potentiale}
+
+
+\section{Elektromagnetische Potentiale\label{sec:elektromagnetische_potentiale}}
 
 Eine allgemeine Lösungsstrategie der Maxwellschen Gleichungen liefert die Bestimmung der elektromagnetischen Potentiale. Die Maxwellschen Gleichungen lassen sich als Paare von zwei homogenen Differentialgleichungen,
 \begin{equation*}
@@ -91,9 +93,10 @@ was man umstellen kann zu
 	\nabla ^{2}\vec {A}=\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}\vec {A}-\nabla \left(\nabla \cdot \vec {A}+\frac{1}{c^{2}}\frac{\partial \varphi }{\partial t}\right)=-\mu _{0}\vec {j}.
 \end{equation}
 Wir erhalten also insgesamt vier gekoppelte partielle Differentialgleichungen für $\vec {A}$ und $\varphi $ statt acht für $\vec {E}$ und $\vec {B}$. In der Wellengleichung \eqref{eq:em_wellengleichung} können wir zur Bequemlichkeit den D’Alembert-Operator oder auch Wellenoperator
-\begin{equation*}
+\begin{equation}
+	\label{eq:wellenoperator_klassisch}
 	\Box\equiv\frac{1}{c^{2}}\frac{\partial ^{2}}{\partial t^{2}}-\nabla ^{2}
-\end{equation*}
+\end{equation}
 einführen.
 
 In den Gleichungen \eqref{eq:equations_for_B_and_E} sind allerdings die Potentiale $\varphi $ und $\vec {A}$ nicht eindeutig, denn sie können mithilfe einer beliebigen skalaren Eichfunktion $\lambda \left(\vec {r},t\right)$ umgeeicht werden:

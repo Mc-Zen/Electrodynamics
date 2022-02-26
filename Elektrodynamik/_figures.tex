@@ -1278,3 +1278,26 @@
         (PX) -- (1,0) node[midway, below,yshift=-3pt] {$x'<x$};
     \end{tikzpicture}
 }
+
+
+\newcommand{\tfigZunahmeImpulsmasse}{
+    \begin{tikzpicture}
+        \draw[arr] (0,0) -- (0,3) node[anchor=south east] {$m_r=\gamma m$}; 
+        \draw[arr] (0,0) -- (3,0) node[anchor=north west] {$v/c$};
+        \draw (-.1,1) -- +(.2,0) node[at start, left] {$m$};
+        % hack: we parametrize with sqrt(x) so the precision goes up for values near 1:
+        \draw plot[domain=0:.88,smooth] ({sqrt(\x)*2},{1/sqrt(1-\x)}); 
+        \draw[dashed] (2,-.1) -- +(0,3) node[at start, below] {1};
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigMassenschale}{
+    \begin{tikzpicture}
+        \draw[arr] (0,-1) -- (0,3) node[anchor=south east] {$p^0$}; 
+        \draw[arr] (-2.5,0) -- (2.5,0) node[anchor=north west] {$\vec p$};
+        \draw[dashed] let \n1={2} in (-2,2) -- (1,-1) (2,2) -- (-1,-1);
+        \draw plot[domain=-2:2] (\x,{sqrt(\x*\x+1)});
+        \draw (-.1,1) -- +(.2,0) node[at start, anchor=north east] {$mc$};
+    \end{tikzpicture}
+}

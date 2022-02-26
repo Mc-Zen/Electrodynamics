@@ -222,7 +222,7 @@ mit dem metrischen Tensor $g_{ij}=\delta_{ij}$, also
             0 & 0 & 1
         \end{pmatrix}.
 \end{align*}
-Die Norm $\Delta s^2$ ist invariant gegenüber beliebigen Rotationen des Koordinatensystems und ist daher ein Skalar im Sinne des Tensorkalküls\footnote{Erinnerung: Ein Skalar ist in der Tensorrechung eine Größe, die sich beim Transformieren in andere Koordinatensysteme nicht ändert. }.
+Die Norm $\Delta s^2$ ist invariant gegenüber beliebigen Rotationen des Koordinatensystems und ist daher ein Skalar im Sinne des Tensorkalküls\footnote{Erinnerung: Ein Skalar ist in der Tensorrechung eine Größe, die invariant unter (bestimmten) Transformationen ist. }.
 Ferner gilt die Gleichung \eqref{eq:euklidische_norm} auch für Differenzvektoren $\Delta\vec r=\vec r_2-\vec r_1$.
 
 Im Minkowski-Raum werden Punkte der vierdimensionalen Raumzeit jetzt durch sogenannte kontravariante Vierervektoren (notiert durch hochgestellte, meist griechische Indizes) beschrieben:
@@ -237,7 +237,7 @@ Die Minkowski-Norm ist dann
 \begin{align*}
     \Delta s^2=x^\alpha g_{\alpha\beta}x^\beta=-(x^0)^2+(x^1)^2+(x^2)^2+(x^3)^2
 \end{align*}
-mit dem metrischen Tensor $g_{\alpha\beta}$ mit Elementen von
+mit dem metrischen Tensor $g_{\alpha\beta}$ mit Elementen von\footnote{Hier wird die Signatur $(-1,1,1,1)$ verwendet. Ebenso üblich (und in der allgemeinen Relativitätstheorie heutzutage sehr verbreitet) ist dagegen die Signatur $(1,-1,-1,-1)$. Beide Konventionen sind gültig, allerdings ändern sich die Vorzeichen vieler Definitionen, sodass die Varianten nicht gemischt werden sollten. }
 \begin{align*}
     g = \begin{pmatrix}
             -1 & 0 & 0 & 0 \\
@@ -265,7 +265,7 @@ In diesem neuen Raum suchen wir jetzt eine Transformation, die die Minkowski-Nor
 
 Die allgemeinste Form der Lorentz-Transformation ist
 \begin{align*}
-    x^{\alpha'}=\tensor{\Lambda}{^i_j}x^\alpha+a^{\alpha'},
+    x^{\alpha'}=\tensor{\Lambda}{^{\alpha'}_\alpha}x^\alpha+a^{\alpha'},
 \end{align*}
 wobei man für $a^{\alpha'}=0$ die homogene Lorentz-Transformation erhält und für $a^{\alpha'}$ die inhomogene bzw. Poincaré-Transformation.
 
@@ -616,9 +616,221 @@ Als Eigenzeit $\tau$ wird die Zeit im Ruhesystem einer bewegten Uhr bezeichnet. 
 \begin{align*}
     c\diff\tau=c\diff t' \overset{\eqref{eq:zeitdilatation}}{=} \frac{1}{\gamma} c\diff t =\left(c^2\diff t^2-v^2\diff t^2\right)^{1/2} = \left(c^2\diff t^2-\diff\vec r^2\right)^{1/2},
 \end{align*}
-was eine Invariante ist \textendash{} ein sogenanntes Lorentzskalar, das in allen Inertialsystemen gleich ist. 
+was eine Invariante ist \textendash{} ein sogenanntes Lorentz-Skalar, das in allen Inertialsystemen gleich ist. 
 Wir wollen den Ausdruck $\left(c^2\diff t^2-\diff\vec r^2\right)^{1/2}$ als Wegelement $\diff\bar{s}$ im vierdimensionalen Raum bezeichnen. 
-Durch Integration erhält man die Eigenzeit. 
+Durch Integration erhält man die Eigenzeit
 \begin{align*}
-    \boxed{\tau=\int \frac{1}{\gamma}\diff t=\frac{1}{c}\int\diff\bar{s}}. 
+    \boxed{\tau=\int \frac{1}{\gamma}\diff t=\frac{1}{c}\int\diff\bar{s}.}
+\end{align*}
+Die momentane $ct'=c\tau$-Achse liegt stets tangential an der Weltlinie einer Uhr bzw. eines Teilchens, da $x'=0$ ist. 
+
+Wir betrachten einmal ein berühmtes Problem der speziellen Relativitätstheorie: das Zwillingsparadoxon. 
+Dabei steigt von einem Zwillingspaar der eine Zwilling in eine schnelle Rakete, macht eine Reise und kehrt anschließend auf die Erde zurück, wo der andere Bruder zurückgeblieben ist. 
+
+Dieser könnte jetzt argumentieren, dass der gereiste Bruder jünger bei der Rückkehr ist, da die Zeit im bewegten Bezugssystem langsamer vergeht. 
+Genauso könnte der andere Bruder behaupten, der auf der Erde gebliebene Bruder sei jünger, weil dieser sich ja relativ zu der Rakete bewegt hat. 
+
+Die Lösung dieses Widerspruchs ergibt sich aus der Asymmetrie der Situation: der Bruder, der in die Rakete steigt, wechselt während der Fahrt sein Bezugssystem, indem er auf halbem Weg umkehrt und in die Rückrichtung beschleunigt. 
+Während die Eigenzeit des Zwillings auf der Erde
+\begin{align*}
+    \tau_\text{A}\overset!= t=\int\diff t
+\end{align*}
+ist, berechnet sich die Eigenzeit des anderen Zwillings aufgrund der Beschleunigung durch 
+\begin{align*}
+    \tau_\mathrm{B} =\frac{1}{c}\int\diff s=\int \sqrt{\diff t^2-\frac{\diff x^2}{c^2}} < \tau_\mathrm{A}.
+\end{align*}
+Der gereiste Bruder altert also langsamer. 
+
+
+
+\subsection{Kontra- und kovariante Vektoren}
+
+Wir haben bereits kontra- und kovariante Vierervektoren kennengelernt. Wir können einen Differenzvektor schreiben als
+\begin{align*}
+    \begin{pmatrix}c\diff t \\ \diff \vec r\end{pmatrix} = \begin{pmatrix}c(t_2-t_1) \\ \diff \vec r_2-\vec r_1\end{pmatrix}.
+\end{align*}
+Mithilfe des kovarianten Vierervektors
+\begin{align*}
+    \diff x_\alpha = g_{\alpha\beta}\diff x^\beta, \quad \diff x^\beta =g^{\beta\alpha}\diff x_\alpha
+\end{align*}
+können wir die (Minkowski-) Norm als 
+\begin{align*}
+    \diff s^2=\diff\vec r^2-(c\diff t)^2=\diff x^\alpha g_{\alpha\beta}\diff x^\beta=\diff x^\alpha\diff x_\alpha 
+\end{align*}
+schreiben. 
+
+Transformationen zwischen Inertialsystemen werden mit der Lorentz-Transformation durchgeführt. 
+Um von Koordinaten des ungestrichenen Systems $\Sigma$ in das gestrichene System $\Sigma'$ zu transformieren, wird die Lorentz-Matrix angewandt:
+\begin{align*}
+    \diff x^{\alpha'}=\tensor{L}{^{\alpha'}_\alpha}\diff x^\alpha + a^\alpha
+\end{align*}
+Kontravariante Differenzvektoren $x^\alpha=x^\alpha_2-x^\alpha_1$ transformieren also folgendermaßen:
+\begin{align*}
+    \diff x^{\alpha'}=\tensor{L}{^{\alpha'}_\alpha}\diff x^\alpha
+\end{align*}
+Entsprechend transformieren kovariante Vierervektoren mit
+\begin{align*}
+    \diff x_{\beta'}=\tensor{L}{_{\beta'}^\beta}\diff x_\beta =\diff x_\beta \tensor{(L^T)}{^\beta_{\beta'}},
+\end{align*}
+%Streng genommen sind alle Größen in dieser Gleichung Skalare und können also im Produkt vertauscht werden, sodass z.B. $\diff x_\beta \tensor{(L^T)}{^\beta_{\beta'}}=\tensor{(L^T)}{^\beta_{\beta'}} \diff x_\beta$. Es ist aber sinnvoll
+denn durch Vergleich erhält man aus 
+\begin{align*}
+    \diff x_{\beta'}=g_{\beta'\alpha'}\diff x^{\alpha'}=g_{\beta'\alpha'}\tensor{L}{^{\alpha'}_\alpha}\diff x^\alpha=g_{\beta'\alpha'}\tensor{L}{^{\alpha'}_\alpha}g^{\alpha\beta}\diff x_\beta,
+\end{align*}
+dass 
+\begin{align*}
+    \tensor{L}{_{\beta'}^\beta}=g_{\beta'\alpha'}\tensor{L}{^{\alpha'}_\alpha}g^{\alpha\beta}. 
+\end{align*}
+Die Idee dabei ist, die physikalischen Gesetze mithilfe von Skalaren, Vierervektoren und höheren Tensoren in der vierdimensionalen Raumzeit zu formulieren, sodass die Gesetze in allen Inertialsystemen die gleiche Gestalt haben, da dann das Einsteinsche Relativitätsprinzip erfüllt ist. 
+
+Es soll daran erinnert werden, dass im Tensorkalkül, das auch hier verwendet wird, eine Größe $x,y^\alpha,z^{\alpha\beta}$ als Skalar/Vektor/Tensor (bezüglich der Lorentz-Transformation) bezeichnet wird, wenn sie ein entsprechendes Transformationsverhalten aufweist,
+\begin{align*}
+    x' = x , \quad y^{\alpha'}=\tensor{L}{^{\alpha'}_\alpha}y^\alpha, \quad z^{\alpha'\beta'}=\tensor{L}{^{\alpha'}_\alpha}z^{\alpha\beta}\tensor{L}{_\beta^{\beta'}}
+\end{align*}
+\textendash{} es ist also nicht jede Zahl, nicht jeder Tensor und nicht jede Matrix ein Tensor im Sinne des Tensorkalküls. 
+
+Aus dem Transformationsverhalten sowie aus den schon bekannten Tensoren lassen sich neue Tensoren identifizieren bzw. konstruieren. 
+So kennen wir bereits die Minkowski-Norm $\diff s^2$ und die Eigenzeit $\tau$ als Lorentz-Skalare und den Differenzvektor als Vierervektor. 
+
+Ein weiteres Beispiel für einen Vierervektor ist der Vierergradient
+\begin{align*}
+    \partial_\alpha=\frac{\partial}{\partial x^\alpha}=\begin{pmatrix}\frac{1}{c}\partial_t\\ \nabla \end{pmatrix},
+\end{align*}
+der ordnungsgemäß folgendermaßen transformiert:
+\begin{align*}
+    \frac{\partial}{\partial x^\alpha}=\frac{\partial x^{\alpha'}}{\partial x^{\alpha'}}\frac{\partial}{\partial x^\alpha}=\frac{\partial}{\partial x^{\alpha'}} \tensor{L}{^{\alpha'}_\alpha}=\tensor{(L^T)}{_\alpha^{\alpha'}}\frac{\partial}{\partial x^{\alpha'}} 
+\end{align*}
+Der kovariante Vierergradient ist analog 
+\begin{align*}
+    \partial^\alpha=g^{\alpha\beta}\partial_\beta=\begin{pmatrix}-\frac{1}{c}\partial_t\\ \nabla \end{pmatrix}.
+\end{align*}
+Aus dem Vierergradienten lässt sich der Wellenoperator/Quabla-Operator definieren,
+\begin{align}
+    \label{eq:wellenoperator_srt}
+    \Box =\partial_\alpha\partial^\alpha =\nabla^2-\frac{1}{c^2} \frac{\partial^2}{\partial t^2},
+\end{align}
+der wiederum ein Lorentz-Skalar ist\footnote{Achtung, der Wellenoperator hat hier ein anderes Vorzeichen als in Gleichung 
+\eqref{eq:wellenoperator_klassisch} in Kapitel \ref{sec:elektromagnetische_potentiale}. In diesem Kapitel wird im Folgenden die Definition aus Gleichung \eqref{eq:wellenoperator_srt} verwendet. }. 
+Übrigens ist das Skalarprodukt $v^\alpha w_\alpha$ von zwei beliebigen Vierervektoren $v^\alpha$ und $w^\alpha$ im Minkowski-Raum stets ein Lorentz-Skalar, also invariant unter Lorentz-Transformation. 
+
+
+
+\section{Relativistische Mechanik}
+
+Basierend auf der neu eingeführten Notation werden nun die Newtonschen Grundgleichungen verallgemeinert für Geschwindigkeiten $v$ nahe der Lichtgeschwindigkeit $c$. 
+Dazu werden neue Vierervektoren eingeführt und verknüpft. Man wird sehen, dass man für den Grenzfall $v/c\ll 1$ wieder die Newtonsche Mechanik erhält. 
+
+
+\subsection{Impuls}
+
+Aus dem bereits eingeführten Differenzvektor $\diff x^\alpha, \diff x=(c\diff t,\diff \vec r)$ lässt sich die Vierergeschwindigkeit aus Differentiation nach der Eigenzeit ableiten,
+\begin{align*}
+    u^\alpha=\frac{\diff x^\alpha}{\diff\tau} = \gamma\frac{\diff x^\alpha}{\diff t}, \quad u=\begin{pmatrix}\gamma c \\ \gamma \frac{\diff\vec r}{\diff t} \end{pmatrix}=\begin{pmatrix}\gamma c \\ \gamma \vec v \end{pmatrix},
+\end{align*}
+wobei $\vec v$ die ursprüngliche (klassische) Dreier-Geschwindigkeit ist. 
+
+Der Viererimpuls lässt sich dann wie gewohnt als Produkt aus Geschwindigkeit $u^\alpha$ und (Ruhe-) Masse $m$ definieren,
+\begin{align}
+    \label{eq:viererimpuls}
+    \boxed{p^\alpha=mu^\alpha, \quad p=\begin{pmatrix}m\gamma c \\ m \gamma \vec v\end{pmatrix} = \begin{pmatrix}p^0 \\ \vec p \end{pmatrix}.}
+\end{align}
+Die Masse $m$ ist dabei ein Skalar. An dem Raumanteil in Gleichung \eqref{eq:viererimpuls} lässt sich ableiten, dass 
+\begin{align*}
+    \vec p = m\gamma \vec v \equivalence\vec v= \frac{\vec pc}{p^0}. 
+\end{align*}
+Den geschwindigkeitsabhängigen Ausdruck $m\gamma$ bezeichnen wir als relativistische Masse oder Impulsmasse $m_r$. 
+Die relativistische Masse ist bei geringen Geschwindigkeiten nahezu gleich der Ruhemasse, doch für Geschwindigkeiten nahe der Lichtgeschwindigkeit geht die relativistische Masse gegen unendlich, wie in \Abbref{fig:zunahme_impulsmasse} dargestellt. 
+Aus diesem Grund können Körper und Teilchen, die eine Ruhemasse $m$ aufweisen, niemals auf die Lichtgeschwindigkeit beschleunigt werden \textendash{} aufgrund der divergierenden relativistischen Masse wird der Körper oder das Teilchen immer schwerer zu beschleunigen und kann die Lichtgeschwindigkeit niemals erreichen, da hierfür eine unendliche Menge an Energie benötigt würde. 
+
+\begin{figure}[htb]
+    \centering
+    \tfigZunahmeImpulsmasse
+    \caption{Relativistische Masse $m_r$ in Abhängigkeit von $v/c$. Für $v=0$ ist $m_r$ gleich der Ruhemasse $m$. Geht $v/c$ gegen den Wert $1$, so steigt die relativistische Masse rasch an und divergiert für $v/c\rightarrow 1$.}
+    \label{fig:zunahme_impulsmasse}
+\end{figure}
+
+
+
+\subsection{Impulssatz}
+
+Nun wollen wir die Viererkraft $K^\alpha$ einführen. Wie in der Newtonschen Mechanik ergibt sich die Kraft durch Ableitung des Impulses nach der Zeit, nur dass hier der Viererimpuls und die Eigenzeit eingesetzt werden:
+\begin{align}
+    \label{eq:impulssatz}
+    \boxed{K^\alpha = \frac{\diff p^\alpha}{\diff\tau},  \quad K=\begin{pmatrix} K^0\\ \vec K \end{pmatrix}}
+\end{align}
+Für die räumlichen Komponenten ($\alpha=1,2,3$) ergibt sich 
+\begin{align*}
+    \vec K = \frac{\diff\vec p}{\diff\tau} = \gamma \frac{\diff\vec p}{\diff t} = \gamma\vec F. 
+\end{align*}
+Für die zeitliche Komponente ($\alpha=0$) betrachten wir einmal den Ausdruck
+\begin{align}
+    \label{eq:ausdruck_fuer_herleitung_K0}
+    \frac{1}{2}m\frac{\diff}{\diff\tau}u^\alpha u_\alpha.
+\end{align}
+Dieser verschwindet, weil $u^\alpha u_\alpha$ als Skalarprodukt zweier Vierervektoren ein Lorentz-Skalar ist\footnote{Beweis: $u^\alpha u_\alpha=\gamma^2(v^2-c^2)=\gamma^2\left(-c^2\left(1-\frac{v^2}{c^2}\right)\right)=-\gamma^2 \frac{c^2}{\gamma^2}=-c^2$}.
+Ableiten von \eqref{eq:ausdruck_fuer_herleitung_K0} mithilfe der Produktregel liefert aber auch 
+\begin{align*}
+    0 = m u_\alpha\frac{\diff}{\diff\tau}u^\alpha,
+\end{align*}
+sodass klar wird, dass
+\begin{align*}
+    u_\alpha K^\alpha = -u^0 K^0 + \gamma\vec v\cdot \vec K = 0 \equivalence \gamma c K^0=\gamma\vec v\cdot \vec K.
+\end{align*}
+Wir wissen bereits, dass $\vec K=\gamma \vec F$ und können daher $K^0$ bestimmen:
+\begin{align*}
+    K^0 = \frac{\gamma}{c}\vec v\cdot \vec F= \frac{\gamma}{c} \frac{\diff E}{\diff t}
+\end{align*}
+was gerade dem $\gamma/c$-fachen der übertragenen Leistung entspricht (pro Zeiteinheit verrichtete Arbeit). Wir sehen also:
+\begin{formal}
+    Teilchen mit einer Ruhemasse $m>0$ können nicht in endlicher Zeit mit einer endlichen Kraft auf Lichtgeschwindigkeit gebracht werden\footnotemark. 
+\end{formal}
+\footnotetext{Beweis: $\int_0^T \vec F\diff t = \vec p=\frac{m\vec v}{\sqrt{1-\frac{v^2}{c^2}}}\xrightarrow{v\rightarrow c} \infty$, was der Annahme widerspricht dass das Zeitintervall $T$ und die Kraft $\vec F$ endlich sind. }
+
+
+
+\subsection{Energiesatz}
+
+Wir haben bereits gesehen, dass die Leistung (also Arbeit pro Zeiteinheit) 
+\begin{align*}
+    \frac{\diff E}{\diff t} = \vec v\cdot\vec F
+\end{align*}
+ist. Aus der nullten Komponente des Impulssatzes \eqref{eq:impulssatz} 
+\begin{align*}
+    \frac{\diff p^0}{\diff\tau} = \gamma \frac{\diff p^0}{\diff t}=K^0= \frac{\gamma}{c}\vec v\cdot \vec F
+\end{align*}
+gewinnen wir durch Vergleich, dass die Energie einer Masse durch 
+\begin{align*}
+    \boxed{E=cp^0=m\gamma c^2 = m_r c^2 }
+\end{align*}
+gegeben ist. In der relativistischen Mechanik folgt also aus dem Impulssatz direkt der Energiesatz. 
+Für den klassischen Grenzfall $v/c\ll 1$ kann der Lorentzfaktor taylorentwickelt werden,
+\begin{align*}
+    E&=\frac{m}{\sqrt{1-\frac{v^2}{c^2}}} \approx mc^2\left(1+\frac{v^2}{2c^2}\right)  \\
+    E &= mc^2 + \frac{1}{2}mv^2,
+\end{align*}
+wobei $mv^2/2$ der bekannten kinetischen Energie in der Newtonschen Mechanik entspricht und der Term $mc^2$ die Ruheenergie des Körpers oder Teilchens beschreibt. 
+
+\begin{figure}[htb]
+    \centering
+    \tfigMassenschale
+    \caption{Relativistische Massenschale: Alle Viererimpulse, die ein Teilchen mit fester Ruhemasse $m$ annehmen kann, erfüllen die Gleichung $\left(p^0\right)^2-\vec p^2=m^2 c^2$. Trägt man $p^0$ gegen $\vec p$ auf, so stellt die Gleichung ein zweischaliges Hyperboloid dar. Für $\vec p=0$ ist $p^0=mc$. }
+    \label{fig:massenschale}
+\end{figure}
+
+Betrachte jetzt einmal das Quadrat des Viererimpulses
+\begin{align*}
+    p^2&=p^\alpha p_\alpha=-\left(p^0\right)^2+\vec p^2 \\ 
+    &=m^2 u^2 = -m^2 c^2 = \mathrm{const},
+\end{align*}
+also auch ein Lorentz-Skalar. Die Gleichung
+\begin{align*}
+    \left(p^0\right)^2-\vec p^2 = m^2 c^2
+\end{align*}
+beschreibt ein zweischaliges Hyperboloid, die sogenannte relativistische Massenschale (siehe \Abbref{fig:massenschale}). 
+Auf dieser Schale liegen alle möglichen Viererimpulse für ein Teilchen der Ruhemasse $m$, die dieses Teilchen annehmen kann. 
+Zu einer Masse $m$ gehören eigentlich beide Schalen des Hyperboloids, aber nur die positive Lösung ist relevant, weil der Viererimpuls stets nach vorne gerichtet ist (in Richtung der Zukunft im Minkowski-Diagramm). 
+
+Damit lässt sich nun der Energiesatz formulieren:
+\begin{align*}
+    \boxed{E=m_r c^2=\sqrt{\vec p^2 c^2+m^2 c^4}.} 
 \end{align*}
