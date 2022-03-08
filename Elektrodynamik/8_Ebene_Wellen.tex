@@ -1,0 +1,156 @@
+% !TeX root = Theo_III.tex
+
+
+
+\chapter{Ebene elektromagnetische Wellen}
+
+
+Das Ziel dieses Kapitels ist die Beschreibung von elektromagnetischen Wellen, was eine wesentliche Errungenschaft der Maxwellschen Theorie darstellt. 
+Außerdem soll die dynamische Theorie und Frequenzabhängigkeit der komplexen Dielektrizität $\varepsilon\in\mathbb{C}$ erläutert werden\footnote{Natürlich ist auch die Permeabilität $\mu$ im Grunde frequenzabhängig und komplex, allerdings ist für die meisten Materialien $\mu(\omega)\approx 1$. Insbesondere in der Optik wird diese Näherung fast immer angewandt. }. 
+
+Als Ausgangspunkt dienen die Maxwell-Gleichungen in Materie, wobei wir freie Ladungen und Ströme vernachlässigen wollen\footnote{In diesem und dem folgenden Kapitel wird anstelle der kovarianten Vierer-Notation wieder die alte Vektorschreibweise verwendet.}:
+\begin{align}
+    \nabla\cdot\vec E=0,\quad \nabla\cdot\vec B=0, \quad \nabla\times \vec E=-\frac{\partial\vec B}{\partial t}, \quad \nabla\times \vec B=\mu\varepsilon \frac{\partial\vec E}{\partial t}
+\end{align}
+Zur Vereinfachung sollen die Materialgrößen ortsunabhängig sein, $\varepsilon\neq\varepsilon(\vec r),\mu\neq\mu(\vec r)$. 
+
+
+
+
+\section{Ebene Wellen im nichtleitenden, homogenen Medium}
+
+Die Wellengleichungen für nichtleitende homogene Medien erhalten wir durch Anwenden der Rotation auf $\nabla\times \vec E$ und $\nabla\times\vec B$:
+\begin{align*}
+    \nabla\times\nabla\times\vec E &= -\frac{\partial}{\partial t}\nabla\times \vec B =-\mu\varepsilon \frac{\partial^2}{\partial t^2}\vec E\\
+    \nabla(\nabla\cdot \vec E)-\nabla^2\vec E  &= -\mu\varepsilon \frac{\partial^2}{\partial t^2}\vec E.
+\end{align*}
+Analog wird die Wellengleichung für das magnetische Feld hergeleitet. Zusammengefasst ist
+\begin{align}
+    \label{eq:wellengleichungen}
+    \boxed{\begin{aligned}
+        \left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right) \vec E(\vec r,t) &=0 \\
+        \left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right) \vec B(\vec r,t) &=0
+    \end{aligned}}
+\end{align}
+mit der Ausbreitungsgeschwindigkeit
+\begin{align*}
+    c=\frac{1}{\sqrt{\varepsilon\mu}} = \frac{c_0}{\sqrt{\varepsilon_r\mu_r}}
+\end{align*}
+der elektromagnetischen Wellen in Materie und Vakuumlichtgeschwindigkeit
+\begin{align*}
+    c_0 = \frac{1}{\sqrt{\varepsilon_0\mu_0}}.
+\end{align*}
+Die Ausbreitungsgeschwindigkeit von Licht im Vakuum ist also gleich der von elektromagnetischen Wellen und die Vermutung liegt nahe, 
+dass es sich bei Licht selbst um eine elektromagnetische Welle handelt, was von Heinrich Hertz 1886 auch bestätigt wurde. 
+
+Zur Lösung der Wellengleichungen \eqref{eq:wellengleichungen} machen wir den Lösungsansatz einer ebenen (komplexen\footnote{Natürlich existieren in der Realität keine komplexen Wellen, aber ihre Verwendung macht viele Rechnungen deutlich komfortabler. 
+Es gilt, dass wenn eine komplexe Funktion eine Differentialgleichung erfüllt, dass dann auch Realteil und Imaginärteil für sich diese Differentialgleichung erfüllen. 
+Um also die physikalische Welle zu erhalten, muss lediglich der Realteil $\real(\vec E),\real(\vec B)$ gebildet werden. }) Welle,
+\begin{align}
+    \label{eq:ansatz_ebene_welle}
+    \begin{pmatrix}
+        \vec E(\vec r,t) \\
+        \vec B(\vec r,t) 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \vec E_0\\
+        \vec B_0
+    \end{pmatrix}
+    e^{i(\vec k\cdot \vec r-\omega t)}. 
+\end{align}
+Dabei ist $\omega=2\pi/T$ die Kreisfrequenz und $T$ die Periodendauer. 
+Ferner ist $\vec k=k \vec{\hat{k}}$ der Wellenvektor, der in Ausbreitungsrichtung zeigt und dessen Betrag $k=|k|=2\pi/\lambda$ auch als Wellenzahl bezeichnet wird, welche umgekehrt zu der Wellenlänge $\lambda$ ist. 
+
+Einsetzen des Ansatzes \eqref{eq:ansatz_ebene_welle} in die Wellengleichungen \eqref{eq:wellengleichungen} liefert 
+\begin{align*}
+    \left(-k^2+\frac{1}{c^2}\omega^2\right) \begin{pmatrix} \vec E \\ \vec B \end{pmatrix} = 0,
+\end{align*}
+woraus die bekannte Dispersionsrelation folgt:
+\begin{align}
+    \label{eq:dispersionsrelation}
+    \omega^2 = c^2k^2
+\end{align}
+Man erkennt, dass es sich bei der Ausbreitungsgeschwindigkeit $c$ auch um die Phasengeschwindigkeit von elektromagnetischen Wellen handelt, die ja als $\omega/k$ definiert ist. 
+Dieser Zusammenhang lässt sich gut veranschaulichen, indem die Welle mithilfe von \eqref{eq:dispersionsrelation} zu (zur Vereinfachung eindimensional)
+\begin{align*}
+    \begin{pmatrix}
+        \vec E(\vec r,t) \\
+        \vec B(\vec r,t) 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \vec E_0\\
+        \vec B_0
+    \end{pmatrix}
+    e^{ik(z \mp ct)} =
+    \begin{pmatrix}
+        \vec E(z\mp ct)\\
+        \vec B(z\mp ct)
+    \end{pmatrix}
+\end{align*}
+umgeschrieben wird. Orte gleicher Phase (also bei konstantem Argument $z\mp ct$) wandern bei fortschreitender Zeit $t$ mit der Geschwindigkeit $c$ in (oder entgegen der) Ausbreitungsrichtung $\hat{\vec k}$. 
+
+
+Das Verhältnis von Vakuumlichtgeschwindigkeit und Ausbreitungsgeschwindigkeit in einem Medium wird als Brechungsindex definiert:
+\begin{align}
+    \label{eq:definition_brechungsindex}
+    n=\frac{c_0}{c} \implication n=\sqrt{\varepsilon_r\mu_r}
+\end{align}
+Meistens (vor allem in der Optik) kann man $\mu_r$ auf $1$ setzen und erhält.
+\begin{align*}
+    n = \sqrt{\varepsilon_r}
+\end{align*}
+Natürlich treten (unendlich ausgedehnte) ebene Wellen in der Realität nicht auf, aber sie stellen häufig eine gute Näherung dar. 
+Außerdem lässt sich aus der Überlagerung von vielen ebenen Wellen ein Wellenpaket konstruieren, das praktisch eine endliche Ausdehnung hat. 
+Aufgrund der Dispersion zerläuft allerdings ein solches Wellenpaket in Medien mit $\varepsilon\neq 1$ und $\mu\neq 1$, weil Wellen mit verschiedenen Frequenzen auch unterschiedliche Ausbreitungsgeschwindigkeiten haben, $c=c(\omega)$. 
+
+Obwohl hier ohne Beweis aufgeführt, löst auch eine Kugelwelle
+\begin{align*}
+    \begin{pmatrix} \vec E \\ \vec B \end{pmatrix} \propto \frac{1}{r}e^{i(kr-\omega t)}
+\end{align*}
+die Wellengleichungen \eqref{eq:wellengleichungen}.
+
+
+
+
+\subsection{Dämpfung}
+
+Findet in einem Medium Absorption statt, wird die elektromagnetische Welle gedämpft. 
+Dies lässt sich durch eine komplexe Dielektrizität und einen komplexen Brechungsindex
+\begin{align*}
+    \bar{n} = \sqrt{\varepsilon_r} = n + i\kappa
+\end{align*}
+beschreiben, bei dem der Imaginärteil $\kappa$ die Absorption beschreibt. 
+Unter Verwendung von der Dispersionsrelation \eqref{eq:dispersionsrelation} und der Definition des Brechungsindexes \eqref{eq:definition_brechungsindex} erhält man so 
+\begin{align*}
+    k=\frac{\omega}{c_0} \bar n = \frac{\omega}{c_0}(n+i\kappa).
+\end{align*}
+Setzt man diesen Ausdruck in die eindimensionale ebene Welle ein, 
+\begin{align*}
+    \begin{pmatrix} \vec E \\ \vec B \end{pmatrix} = \begin{pmatrix} \vec E_0 \\ \vec B_0 \end{pmatrix} e^{i(kz-\omega t)} =\begin{pmatrix} \vec E_0 \\ \vec B_0 \end{pmatrix} e^{i\left(\frac{\omega}{c_0}(n+i\kappa) z-\omega t\right)}
+    =\begin{pmatrix} \vec E_0 \\ \vec B_0 \end{pmatrix} e^{i\frac{\omega}{c_0}n \left( z- \frac{c_0}{n} t\right)}e^{-\frac{\omega\kappa}{c_0}z}
+\end{align*}
+erhält man einen Anteil mit realer Exponentialfunktion 
+\begin{align*}
+    e^{-\frac{z}{\xi}}, \quad \xi = \frac{c_0}{\omega\kappa},
+\end{align*}
+der eine exponentielle Dämpfung mit Absorptionslänge $\xi$ kennzeichnet (siehe \Abbref{fig:daempfung_em_welle}). 
+Diese ist gerade antiproportional zu $\kappa$ \textendash{} also bestimmt der Imaginärteil des komplexen Brechungsindexes $\bar n$ die Dämpfung. 
+
+\begin{figure}[htb]
+    \centering
+    \tfigDaempfungEMWelle
+    \caption{Gedämpfte Welle mit Einhüllender $\pm e^{-z/\xi}$ (grün). Die Absorptionslänge $\xi$ liegt dort, wo die Amplitude der Welle auf $1/e$ abgesunken ist. }
+    \label{fig:daempfung_em_welle}
+\end{figure}
+
+
+\subsection{Polarisation}
+
+Die Polarisation einer elektromagnetischen Welle gibt die Schwingungsrichtung des Feldes an und ist nicht zu verwechseln mit der dielektrischen Polarisation, welche das elektrische Dipolmoment beschreibt. 
+
+Aus den Maxwellgleichungen folgt, dass das elektrische und das magnetische Feld senkrecht zur Ausbreitungsrichtung schwingen. 
+\begin{align*}
+    \left. \begin{aligned} \nabla\cdot \vec E &=0 \\ \nabla\cdot \vec B &= 0\end{aligned} \right\} \implication \left. \begin{aligned} \vec k\cdot\vec E_0&=0\equivalence \vec E_0\perp\vec k \\ \vec k\cdot\vec B_0&=0\equivalence\vec B_0\perp\vec k\end{aligned}\right\}
+\end{align*}

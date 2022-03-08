@@ -1117,3 +1117,44 @@ mit $\tensor{F}{^\alpha_\beta} = F^{\alpha\gamma} g_{\gamma\beta}$ und in der ko
     k^\alpha = \tensor{F}{^\alpha_\beta} j^\beta
 \end{align*}
 gegeben. 
+
+
+\subsection{Lagrange-Formulierung der Elektrodynamik}
+
+Analog zu den Bewegungsgleichungen der klassischen Mechanik können auch die Maxwell-Gleichungen aus einem Extremalprinzip hergeleitet werden. 
+Der Vorgang ist bereits aus der Mechanik bekannt und wird daher nur kurz behandelt. 
+
+Wir führen zunächst die Lagrange-Dichte 
+\begin{align}
+    \label{eq:lagrange_dichte}
+    L=-\frac{1}{4\mu_0}F_{\alpha\beta} F^{\alpha\beta}-j^\alpha A_\alpha
+\end{align}
+ein und erweitern die Definition der Wirkung $S$ so, dass über ein vierdimensionales Volumenelement integriert wird\footnote{In der Mechanik wurde die Wirkung folgendermaßen definiert: $S=\int L\diff t$.}:
+\begin{align*}
+    S=\int L \diffa[4]{x}
+\end{align*}
+Um die Wirkung zu minimieren, sodass $\delta S=0$ wird, führen wir nun eine Variation nach $A_\beta$ durch und erhalten 
+die Euler-Lagrange-Gleichungen für die Elektrodynamik:
+\begin{align*}
+    \boxed{\partial_\alpha \frac{\partial L}{\partial(\partial_\alpha A_\beta)}-\frac{\partial L}{\partial A_\beta}=0}
+\end{align*}
+Mit der Lagrange-Funktion \eqref{eq:lagrange_dichte} erhalten wir die Euler-Lagrange-Gleichungen in folgender Form:
+\begin{align*}
+    \boxed{\frac{1}{\mu_0}\partial_\alpha\left(\partial^\alpha A^\beta-\partial^\beta A^\alpha\right) + j^\beta=0}
+\end{align*}
+bzw. 
+\begin{align*}
+    \boxed{\frac{1}{\mu_0}\partial_\alpha F^{\alpha\beta} + j^\beta=0.}
+\end{align*}
+Daraus folgen die homogenen Maxwell-Gleichungen, wenn das Viererpotential (wie notwendig) der Lorentz-Eichung genügt, $\partial_\alpha A^\alpha=0$, denn einerseits ist dann
+\begin{align*}
+    \frac{1}{\mu_0}\partial_\alpha\partial^\alpha A^\beta + j^\beta=0 \equivalence \Box A^\alpha=-\mu_0 j^\alpha
+\end{align*}
+und andererseits 
+\begin{align*}
+    \frac{1}{\mu_0}\partial_\alpha F^{\alpha\beta} + j^\beta = 0 \equivalence -\partial_\alpha F^{\alpha\beta} = \partial_\alpha F^{\beta\alpha}=\mu_0 j^\alpha ,
+\end{align*}
+also genau die Maxwell-Gleichungen in kovarianter Form. 
+
+
+

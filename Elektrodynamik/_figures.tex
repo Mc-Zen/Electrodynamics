@@ -1301,3 +1301,18 @@
         \draw (-.1,1) -- +(.2,0) node[at start, anchor=north east] {$mc$};
     \end{tikzpicture}
 }
+
+
+
+\newcommand{\tfigDaempfungEMWelle}{
+    \begin{tikzpicture}[scale=1.4]
+        \draw[arr] (0,-1.2) -- (0,1.2) node[anchor=south east] {$E$}; 
+        \draw[arr] (0,0) -- (4.7,0) node[anchor=north west] {$z$};
+        \draw plot[domain=0:4.3,samples=100,smooth] (\x,{sin(\x*300)*exp(-\x/2)});
+        \draw[legreen] plot[domain=0:4.3,samples=30] (\x,{exp(-\x/2)});
+        \draw[legreen] plot[domain=0:4.3,samples=30] (\x,{-exp(-\x/2)});
+        \draw[distance marker] (0,.6) -- +(2,0) node[midway, above] {$\xi$};
+        
+        \draw[dashed] (0,1/2.71828) node[left] {$1/e$} -- +(2,0)  -- (2,0);
+    \end{tikzpicture}
+}
