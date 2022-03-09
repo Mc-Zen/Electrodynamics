@@ -49,17 +49,17 @@ Die Kraft, die eine Ladung $q_{2}$ am Ort $\vec {r}_{2}$ auf eine Ladung $q_{1}$
 \end{equation}
 Dieser Zusammenhang ist als Coulombsches Gesetz bekannt und wurde experimentell gefunden. Die Proportionalitätskonstante $k$ ist dabei
 \begin{equation*}
-	k=\frac{1}{4\pi \varepsilon _{0}}.
+	k=\frac{1}{4\pi \varepsilon _{0}}
 \end{equation*}
+mit Dielektrizitätskonstante $\varepsilon _{0}=\SI{8,8541878128e-12}{\farad\per\m}$. Das Coulombsche Gesetz hat die gleiche Form wie das Newtonsche Gravitationsgesetz, aber hier kann die Kraft auch abstoßend wirken, weil die Ladung anders als die Masse negativ sein kann. Genauso wie beim Gravitationsgesetz ist die Kraft antiproportional zum Quadrat des Abstands der Ladungen.\footnote{Es ist möglich, dass die Proportionalität nicht exakt $\vec {F}\propto r^{-2}$ ist, aber es ist durch Experimente bestätigt worden, dass für einen Ansatz $F\propto r^{-2-\varepsilon }$ zumindest $\varepsilon <3\cdot 10^{-16}$ ist und für einen Ansatz $F\propto e^{-\frac{r}{\xi }}r^{-2}$ (siehe sogenanntes Yukawa-Potential) wenigstens $\xi >\SI{1e8}{\m}$. }
 
 \begin{figure}[htb]
 	\centering
 	\tfigCoulombPointCharges
-	\caption{Die Kraft auf zwei Punktladungen $q_1$ und $q_2$ an Orten $\vec r_1$ und $\vec r_2$ wird durch das Coulombsche Gesetz beschrieben und ist invers proportional zum Qudrat des Abstands $\left|\vec r_1-\vec r_2\right|$. }
+	\caption{Die Kraft auf zwei Punktladungen $q_1$ und $q_2$ an Orten $\vec r_1$ und $\vec r_2$ wird durch das Coulombsche Gesetz beschrieben und ist invers proportional zum Quadrat des Abstands $\left|\vec r_1-\vec r_2\right|$. }
 	\label{fig:coulomb_point_charges}
 \end{figure}
 
-mit Dielektrizitätskonstante $\varepsilon _{0}=\SI{8,8541878128e-12}{\farad\per\m}$. Das Coulombsche Gesetz hat die gleiche Form wie das Newtonsche Gravitationsgesetz, aber hier kann die Kraft auch abstoßend wirken, weil die Ladung anders als die Masse negativ sein kann. Genauso wie beim Gravitationsgesetz ist die Kraft antiproportional zum Quadrat des Abstands der Ladungen.\footnote{Es ist möglich, dass die Proportionalität nicht exakt $\vec {F}\propto r^{-2}$ ist, aber es ist durch Experimente bestätigt worden, dass für einen Ansatz $F\propto r^{-2-\varepsilon }$ zumindest $\varepsilon <3\cdot 10^{-16}$ ist und für einen Ansatz $F\propto e^{-\frac{r}{\xi }}r^{-2}$ (siehe sogenanntes Yukawa-Potential) wenigstens $\xi >\SI{1e8}{\m}$. }
 
 Mithilfe des Coulombschen Gesetzes können wir nach dem Superpositionsprinzip die Kraft auf eine Testladung $q_{0}$ am Ort $\vec {r}_{0}$ durch mehrere Ladungen $q_{i}$ bestimmen:
 \begin{equation}
@@ -68,7 +68,7 @@ Mithilfe des Coulombschen Gesetzes können wir nach dem Superpositionsprinzip di
 \end{equation}
 Dieser Ansatz ist der Fernwirkungsstandpunkt (die Kraft wirkt über die Ferne hinweg). Seit Veröffentlichung der Relativitätstheorie ist aber bekannt, dass sich nichts schneller als mit Vakuumlichtgeschwindigkeit bewegen kann \textendash{} also auch keine Kraftwirkung.
 
-Daher führt man den sogenannten Nahwirkungsstandpunkt ein, bei dem man man ein elektrisches Feld $\vec {E}$ betrachtet, das durch Ladungen $q_{i}$ erzeugt wird ($\vec {E}$ zeigt weg von positiven Ladungen und hin zu den negativen):
+Daher führt man den sogenannten Nahwirkungsstandpunkt ein, bei dem man ein elektrisches Feld $\vec {E}$ betrachtet, das durch Ladungen $q_{i}$ erzeugt wird ($\vec {E}$ zeigt weg von positiven Ladungen und hin zu den negativen):
 \begin{equation}
 	\vec {E}\left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\sum _{i}q_{i}\frac{\vec {r}_{0}-\vec {r}_{i}}{\left| \vec {r}_{0}-\vec {r}_{i}\right| ^{3}},\quad \vec {E}\left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\int \rho \left(\vec {r}'\right)\frac{\vec {r}-\vec {r}'}{\left| \vec {r}-\vec {r}'\right| ^{3}}\diffa[3]{\vec{r}'}
 \end{equation}
@@ -600,11 +600,11 @@ Die Energie von Multipolen in einem externen Potential $\phi _{e}\left(\vec {r}\
 \begin{equation*}
 	U=\int _{V}\diffa[3]{\vec{r}}\rho \left(\vec {r}\right)\phi _{e}\left(\vec {r}\right).
 \end{equation*}
-Wir nehmen an, dass die Änderung von $\phi _{e}$ in $V$ nur klein ist und erhalten durch eine Taylor-Entwicklung
+Wir nehmen an, dass die Änderung von $\phi _{e}$ in $V$ nur klein ist und erhalten durch eine Taylorentwicklung
 \begin{align*}
 	U & =\int \diffa[3]{\vec{r}}\rho \left(\vec {r}\right)\left[\phi _{e}\left(0\right)+\vec {r}\nabla \phi _{e}\left(0\right)+\frac{1}{2}x_{i}x_{j}\nabla _{i}\nabla _{j}\phi _{e}\left(0\right)+\ldots \right] \\&=q\phi \left(0\right)-\vec {p}\cdot E_{e}\left(0\right)-\frac{1}{6}Q_{ij}\nabla _{j}E_{e}^{\left(i\right)}\left(0\right)+\ldots
 \end{align*}
-Die Energie der Multipole ist also durch die $n$-fache Ableitung des Potentials $\nabla ^{n}\phi $ bestimmt. Diese Rechnung erlaubt wegen der Taylor-Entwicklung eine beliebige Wahl des Bezugspunkts.
+Die Energie der Multipole ist also durch die $n$-fache Ableitung des Potentials $\nabla ^{n}\phi $ bestimmt. Diese Rechnung erlaubt wegen der Taylorentwicklung eine beliebige Wahl des Bezugspunkts.
 
 \begin{figure}[htb]
 	\centering

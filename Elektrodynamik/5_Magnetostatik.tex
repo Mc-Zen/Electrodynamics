@@ -2,11 +2,11 @@
 \chapter{Magnetostatik}
 
 
-In den vorigen Kapiteln haben wir uns mit der Elektrostatik beschäftigt und gesehen, wie Ladungen dem Coulombgesetz gehorchen und ein elektrisches Feld hervorrufen, das die Grundgleichungen $\rot \vec {E}=0$ und $\divg \vec {D}=0$ erfüllt.
+In den vorigen Kapiteln haben wir uns mit der Elektrostatik beschäftigt und gesehen, wie Ladungen dem Coulomb-Gesetz gehorchen und ein elektrisches Feld hervorrufen, das die Grundgleichungen $\rot \vec {E}=0$ und $\divg \vec {D}=0$ erfüllt.
 
 In der Magnetostatik betrachten wir jetzt stationäre (also nicht zeitabhängige) Ströme und die Kraftwirkung, die sie hervorrufen. Es wird ein Magnetfeld und die Stromdichte eingeführt, was schließlich auf eine integrale und differentielle Formulierung der Grundgesetze der Magnetostatik führt.
 
-Es gibt Ähnlichkeiten zwischen der Elektro- und Magnetostatik, wie zum Beispiel das Abstandsverhalten und die Symmetrie einiger Formeln, aber auch wesentliche Unterschiede, unter Anderem in den Kraftrichtungen und Potentialen.
+Es gibt Ähnlichkeiten zwischen der Elektro- und Magnetostatik, wie zum Beispiel das Abstandsverhalten und die Symmetrie einiger Formeln, aber auch wesentliche Unterschiede, unter anderem in den Kraftrichtungen und Potentialen.
 
 \section{Strom, Stromdichte und Kontinuitätsgleichung}
 
@@ -33,7 +33,7 @@ Die Stromdichte lässt sich auch ausdrücken durch das Produkt aus Ladungsdichte
 \begin{equation*}
 	\vec {j}=\rho \vec {v},
 \end{equation*}
-was eine mikroskopische Definition analog zu der der Ladungsdichte erlaubt\footnote{Zur Erinnerung: $\rho =\sum _{i}q_{i}\delta \left(\vec {r}-\vec {r}_{i}\right)$.}:
+was eine mikroskopische Definition analog zu der Ladungsdichte erlaubt\footnote{Zur Erinnerung: $\rho =\sum _{i}q_{i}\delta \left(\vec {r}-\vec {r}_{i}\right)$.}:
 \begin{equation*}
 	\vec {j}=\sum _{i}q_{i}\vec {v}_{i}\delta \left(\vec {r}-\vec {r}_{i}\right)
 \end{equation*}
@@ -218,7 +218,7 @@ Genauso lässt sich das Feld einer unendlich langen Spule berechnen (\Abbref{fig
 \end{align*}
 Zwischen den Windungen hebt sich das magnetische Feld weg.
 
-Wie aus der Gleichung \eqref{eq:durchflutungsgesetz_magnetostatik} hervorgeht, lässt sich für das Vektorpotential $\vec {A}$ wie in der Elektrostatik eine Poissongleichung formulieren,
+Wie aus der Gleichung \eqref{eq:durchflutungsgesetz_magnetostatik} hervorgeht, lässt sich für das Vektorpotential $\vec {A}$ wie in der Elektrostatik eine Poisson-Gleichung formulieren,
 \begin{equation*}
 	\nabla ^{2}\vec {A}=-\mu _{0}\vec {j}
 \end{equation*}
@@ -237,12 +237,12 @@ Wir führen zunächst wieder eine Entwicklung des magnetischen Potentials nach M
 	\label{eq:entwicklung_magn_potential}
 	\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \diffa[3]{\vec{r}'}\frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\approx \frac{\mu _{0}}{4\pi }\left(\frac{1}{r}\int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)+\frac{\vec {r}}{r^{3}}\cdot \int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)\vec {r}'+\ldots \right)
 \end{equation}
-Die Auswertung ist allerdings viel komplizierter als für das elektrische Potential und daher beschränken wir uns hier auf die Dipole und vernachlässigen höhere Multipolmomente. Außerdem verwenden wir als Hilfsatz folgende Gleichung, die für beliebige skalare Felder $g$ und $f$ sowie für ein quellenfreies Vektorfeld $\vec {j}$ gilt\footnote{Beweis: Betrachte $\int _{V}\nabla \left(gf\vec {j}\right)\diffa[3]{\vec{r}}$. Einerseits ist dieser Ausdruck mit dem Satz von Gauß gleich $\int _{\partial V}gf\vec {j}\cdot \diff \vec {f}$, was gleich $0$ ist, wenn man das Volumen groß genug wählt, dass auf dem Rand $\vec {j}\left(\vec {r}\right)=\vec {0}$ ist. Außerdem findet man mithilfe der Produktregel, dass $\int _{V}\nabla \left(gf\vec {j}\right)\diffa[3]{\vec{r}}=\int _{V}\vec {j}\cdot \nabla \left(gf\right)\diffa[3]{\vec{r}}+\int _{V}gf\nabla \cdot \vec {j}\diffa[3]{\vec{r}}$, wobei der letzte Term aufgrund der Bedingung $\divg \vec {j}=\vec {0}$ verschwindet, q.e.d.}:
+Die Auswertung ist allerdings viel komplizierter als für das elektrische Potential und daher beschränken wir uns hier auf die Dipole und vernachlässigen höhere Multipolmomente. Außerdem verwenden wir als Hilfssatz folgende Gleichung, die für beliebige skalare Felder $g$ und $f$ sowie für ein quellenfreies Vektorfeld $\vec {j}$ gilt\footnote{Beweis: Betrachte $\int _{V}\nabla \left(gf\vec {j}\right)\diffa[3]{\vec{r}}$. Einerseits ist dieser Ausdruck mit dem Satz von Gauß gleich $\int _{\partial V}gf\vec {j}\cdot \diff \vec {f}$, was gleich $0$ ist, wenn man das Volumen groß genug wählt, dass auf dem Rand $\vec {j}\left(\vec {r}\right)=\vec {0}$ ist. Außerdem findet man mithilfe der Produktregel, dass $\int _{V}\nabla \left(gf\vec {j}\right)\diffa[3]{\vec{r}}=\int _{V}\vec {j}\cdot \nabla \left(gf\right)\diffa[3]{\vec{r}}+\int _{V}gf\nabla \cdot \vec {j}\diffa[3]{\vec{r}}$, wobei der letzte Term aufgrund der Bedingung $\divg \vec {j}=\vec {0}$ verschwindet, q.e.d.}:
 \begin{equation}
 	\label{eq:hilfssatz}
 	\int \vec {j}\cdot \nabla \left(gf\right)\diffa[3]{\vec{r}}=0.
 \end{equation}
-Ferner können wir zeigen\footnote{Beweis: Mit der vorigen Formel $\int \vec {j}\cdot \nabla \left(gf\right)\diffa[3]{\vec{r}}=0$ ist mit $g=1$ und $f=x_{i}$ offensichtlicherweise $\int j_{k}\cdot \nabla _{k}x_{i}\diffa[3]{\vec{r}}=\int j_{i}\diffa[3]{\vec{r}}=0$, q.e.d. }, dass
+Ferner können wir zeigen\footnote{Beweis: Mit der vorigen Formel $\int \vec {j}\cdot \nabla \left(gf\right)\diffa[3]{\vec{r}}=0$ ist mit $g=1$ und $f=x_{i}$ offensichtlich $\int j_{k}\cdot \nabla _{k}x_{i}\diffa[3]{\vec{r}}=\int j_{i}\diffa[3]{\vec{r}}=0$, q.e.d. }, dass
 \begin{equation*}
 	\int \vec {j}\left(\vec {r}\right)\diffa[3]{\vec{r}}=0,
 \end{equation*}
@@ -329,7 +329,7 @@ Die potentielle Energie eines Dipols $\vec {m}$ im magnetischen Feld $\vec {B}$ 
 \begin{equation*}
 	\vec F=-\nabla U\implication U=-\vec {m}\cdot \vec {B}.
 \end{equation*}
-Das Minimum wird für $\vec {m} \upupharpoons \vec {B}$ erreicht\footnote{vgl. Funktionsweise von einem Kompass. }. $U$ enthält aber nicht die Energie um den Dipol $\vec {m}$ aufrechtzuerhalten!
+Das Minimum wird für $\vec {m} \upupharpoons \vec {B}$ erreicht\footnote{vgl. Funktionsweise von einem Kompass. }. $U$ enthält aber nicht die Energie, um den Dipol $\vec {m}$ aufrechtzuerhalten!
 
 Das Drehmoment hat die gleiche Form wie für elektrische Dipole,
 \begin{equation*}
@@ -434,7 +434,7 @@ und der neu eingeführten Magnetisierung (Dichte der magnetischen Dipole)
 \begin{equation*}
 	\vec {M}\left(\vec {r},t\right)=\left\langle \sum _{n}\vec {m}_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle .
 \end{equation*}
-Daraus ergibt sich die die gemittelte Stromdichte als Summe der makroskopischen und mikroskopischen Stromdichte,
+Daraus ergibt sich die gemittelte Stromdichte als Summe der makroskopischen und mikroskopischen Stromdichte,
 \begin{equation*}
 	\left\langle \vec {j}\left(\vec {r},t\right)\right\rangle =\left\langle \vec {j}_{\mathrm{f}}\left(\vec {r},t\right)\right\rangle +\left\langle \vec {j}_{\mathrm{b}}\left(\vec {r},t\right)\right\rangle =\underset{\vec {j}_{\mathrm{Ma}}}{\underbrace{\vec {j}_{\mathrm{F}}\left(\vec {r},t\right)+\vec {j}_{\mathrm{M}}\left(\vec {r},t\right)}}+\underset{\vec {j}_{\mathrm{Mi}}\left(\vec {r},t\right)}{\underbrace{\frac{\partial }{\partial t}\vec {P}\left(\vec {r},t\right)+\nabla \times \vec {M}\left(\vec {r},t\right)}}
 \end{equation*}
@@ -501,10 +501,10 @@ Bei Ferromagnetismus gibt es eine permanente Magnetisierung, auch wenn kein Magn
 \begin{figure}[ht]
 	\centering
 	\tfighysterese
-	\caption{Magnetische Hysterese: An ein zuerst unmagnetisches Material wird ein Feld $H$ angelegt und erhöht. Der Verlauf der magnetischen Flussdichte folgt der Kurve (1) und erreicht schließlich einen Sättigungswert $B_\mathrm{S}$ bei $H_\mathrm{S}$. Wird das Feld auf 0 verringert (Kurve (2)) bleibt eine Magnetisierung zurück (Remanenz). Ein entgegengesetztes Feld von der Stärke der Koerzitivfeldstärke $H_\mathrm{C}$ ist nötig, um die Restmagnetisierung aufzuheben. Jenseits dieser Feldstärke wird die Magnetisierung umgedreht und die Hysteresekurve umgekert durchlaufen. }
+	\caption{Magnetische Hysterese: An ein zuerst unmagnetisches Material wird ein Feld $H$ angelegt und erhöht. Der Verlauf der magnetischen Flussdichte folgt der Kurve (1) und erreicht schließlich einen Sättigungswert $B_\mathrm{S}$ bei $H_\mathrm{S}$. Wird das Feld auf 0 verringert (Kurve (2)) bleibt eine Magnetisierung zurück (Remanenz). Ein entgegengesetztes Feld von der Stärke der Koerzitivfeldstärke $H_\mathrm{C}$ ist nötig, um die Restmagnetisierung aufzuheben. Jenseits dieser Feldstärke wird die Magnetisierung umgedreht und die Hysteresekurve umgekehrt durchlaufen. }
 	\label{fig:hysterese}
 \end{figure}
-Zuerst ist das Material unmagnetisch (Punkt im Ursprung). Legt man nun ein Magnetfeld an und erhöht die Feldstärke, erhöht sich der magnetische Fluss im Material entlang der Kurve (1). Dieser wächst aber nicht unbegrenzt, da es schließlich zur Sättigung kommt. Die zugehörige Feldstärke heißt entsprechend Sättigungsfeldstärke $H_{\mathrm{S}}$ und $B_{\mathrm{S}}$ Sättigungswert. Wird nun das Feld wieder verringert, sinkt auch die Flussdichte entlang Kurve (2). Allerdings fällt $B$ nicht bis auf $0$ ab, sondern erreicht den Wert $B_{\mathrm{R}}$, die Remanenzflussdichte. Die Flussdichte fällt erst auf $0$, wenn eine gegengerichtete Koerzitivfeldstärke $H_{\mathrm{C}}$ angelegt wird.
+Zuerst ist das Material unmagnetisch (Punkt im Ursprung). Legt man nun ein Magnetfeld an und erhöht die Feldstärke, erhöht sich der magnetische Fluss im Material entlang der Kurve (1). Dieser wächst aber nicht unbegrenzt, da es schließlich zur Sättigung kommt. Die zugehörige Feldstärke heißt entsprechend Sättigungsfeldstärke $H_{\mathrm{S}}$ und $B_{\mathrm{S}}$ Sättigungswert. Wird nun das Feld wieder verringert, sinkt auch die Flussdichte entlang Kurve (2). Allerdings fällt $B$ nicht bis auf $0$ ab, sondern erreicht den Wert $B_{\mathrm{R}}$, die Remanenzflussdichte. Die Flussdichte fällt erst auf $0$, wenn eine entgegengerichtete Koerzitivfeldstärke $H_{\mathrm{C}}$ angelegt wird.
 
 Wir diskutieren nun die Randbedingungen, die im Wesentlichen die gleichen wie in der Elektrostatik sind.
 
@@ -789,7 +789,7 @@ ist (im Ruhesystem des Leiters bewegt sich $q$ nicht, im Laborsystem allerdings 
 
 Die Energie von einem statischen Magnetfeld entspricht genau der Energie, die zum Aufbau des Feldes beim Einschalten des Stroms aufgebracht werden muss. Dabei entstehen aber auch temporäre elektrische Felder, sodass die Induktion berücksichtigt werden muss.
 
-Die Arbeit pro Zeit $\diff _{t}U$, um den Strom $I$ bzw. die Stromdichte $\vec {j}$ aufrecht zu erhalten ist
+Die Arbeit pro Zeit $\diff _{t}U$, um den Strom $I$ bzw. die Stromdichte $\vec {j}$ aufrechtzuerhalten ist
 \begin{equation*}
 	\frac{\diff U}{\diff t}=-I\int _{C}\vec {E}\cdot \diff \vec {r}
 \end{equation*}
@@ -825,12 +825,12 @@ aufstellen und erhält mit Gleichung \eqref{eq:magnetische_energie_linear}
 
 \subsection{Induktivität}
 
-Mit den Erkenntnissen aus dem letzten Kapitel stellt sich die Frage, wie mehrere Leiterschleifen (wie z.B in \Abbref{fig:TwoInductors} dargestellt) miteinander wechselwirken.
+Mit den Erkenntnissen aus dem letzten Kapitel stellt sich die Frage, wie mehrere Leiterschleifen (wie z.B. in \Abbref{fig:TwoInductors} dargestellt) miteinander wechselwirken.
 
 \begin{figure}[ht]
 	\centering
 	\tfigTwoInductors
-	\caption{Mehrere stromdurchflossene Leiterschleifen $C_i$ mit verschiedenen Induktivitäten $L_i$ beinflussen gegenseitig die Energie, die in den Magnetfeldern enthalten ist. }
+	\caption{Mehrere stromdurchflossene Leiterschleifen $C_i$ mit verschiedenen Induktivitäten $L_i$ beeinflussen gegenseitig die Energie, die in den Magnetfeldern enthalten ist. }
 	\label{fig:TwoInductors}
 \end{figure}
 
