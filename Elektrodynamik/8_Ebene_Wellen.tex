@@ -43,6 +43,10 @@ der elektromagnetischen Wellen in Materie und Vakuumlichtgeschwindigkeit
 Die Ausbreitungsgeschwindigkeit von Licht im Vakuum ist also gleich der von elektromagnetischen Wellen und die Vermutung liegt nahe,
 dass es sich bei Licht selbst um eine elektromagnetische Welle handelt, was von Heinrich Hertz 1886 auch bestätigt wurde.
 
+
+
+\subsection{Ungedämpfte ebene Welle}
+
 Zur Lösung der Wellengleichungen \eqref{eq:wellengleichungen} machen wir den Lösungsansatz einer ebenen (komplexen\footnote{Natürlich existieren in der Realität keine komplexen Wellen, aber ihre Verwendung macht viele Rechnungen deutlich komfortabler.
     Es gilt, dass wenn eine komplexe Funktion eine Differentialgleichung erfüllt, dass dann auch Realteil und Imaginärteil für sich diese Differentialgleichung erfüllen.
     Um also die physikalische Welle zu erhalten, muss lediglich der Realteil $\real(\vec E),\real(\vec B)$ gebildet werden. }) Welle,
@@ -201,10 +205,48 @@ Es gibt verschiedene Arten von Polarisation:
           \begin{align*}
               \vec E_0 = E_{01}\vec e_1 \pm i E_{02}\vec e_2
           \end{align*}
-
-
-          % \item \textbf{Elliptische Polarisation:} Die zirkulare Polarisation ist ein Sonderfall der elliptischen Polarisation, bei der die beiden überlagerten Felder eine unterschiedliche Stärke haben:
-          % \begin{align*}
-          %     \vec E_0 = E_{01}\vec e_1 \pm i E_{02}\vec e_2
-          % \end{align*}
+          
 \end{itemize}
+
+
+
+
+\subsection{Energie- und Impulsdichte}
+
+Die mittlere Energiedichte ergibt sich aus der bereits bekannten Formel \eqref{eq:energiedichte} für die Energiedichte
+\begin{align}
+    \left\langle u\right\rangle & = \frac{1}{T} \int_0^T \frac{1}{2}\left(\vec E_\mathrm{R}\cdot \vec D_\mathrm{R}+\vec H_\mathrm{R}\cdot\vec B_\mathrm{R}\right)\diff t \nonumber \\
+    \label{eq:mittlere_energiedichte}
+    \left\langle u\right\rangle & = \frac{\varepsilon}{2}\left|\vec E_0\right|^2 = \frac{1}{2\mu}\left|\vec B_0\right|^2
+\end{align}
+mit reellen Feldern $\vec E_\mathrm{R}=\real(\vec E)$ usw.
+
+Außerdem ist der mittlere Poynting-Vektor gegeben durch
+\begin{align}
+    \left\langle\vec S\right\rangle & = \frac{1}{t}\int_0^T\real(\vec E\times\vec H)\diff t \nonumber                                                  \\
+    \label{eq:mittlerer_poyntingvektor}
+    \left\langle\vec S\right\rangle & = \frac{1}{2} \sqrt{\frac{\varepsilon}{\mu}} \vec E_0^2 \hat{\vec k}= \left\langle u\right\rangle c \hat{\vec k},
+\end{align}
+die Energie wird folglich mit der Geschwindigkeit $c$ entlang $\vec k$ transportiert. 
+
+Die Impulsdichte einer elektromagnetischen kann im Vakuum mit
+\begin{align}
+    \label{eq:mittlere_impulsdichte}
+    \left\langle\vec p_\mathrm{em}\right\rangle = \frac{1}{c^2}\left\langle\vec S\right\rangle = \frac{1}{c_0} \left\langle u\right\rangle \hat{\vec k} = \frac{1}{\omega} \left\langle u\right\rangle \vec k
+\end{align}
+bestimmt werden. 
+
+Für einen klassischen elektromagnetischen Puls ist der Photonenzahl $N$ nicht scharf. Ein Puls besteht im Mittel aus 
+\begin{align*}
+    \left\langle N\right\rangle = \frac{1}{\hbar\omega} \int \left\langle u\right\rangle \diffa[3]{\vec r}
+\end{align*}
+Photonen. Einsetzen in \eqref{eq:mittlere_impulsdichte} liefert 
+\begin{align*}
+    \vec p = \int\diffa[3]{\vec r}\left\langle\vec p_\mathrm{em}\right\rangle = \left\langle N\right\rangle \hbar\vec k
+\end{align*}
+für den Gesamtimpuls eines Lichtpulses. 
+
+
+
+
+\section{Reflexion, Transmission und Brechung}

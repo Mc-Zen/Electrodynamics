@@ -1,7 +1,17 @@
 % !TEX root = Theo_III.tex
 
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,decorations.markings,intersections,calc,decorations.pathreplacing,external}
+
+\usetikzlibrary{
+    arrows.meta,
+    positioning,
+    decorations.markings,
+    intersections,
+    calc,
+    decorations.pathreplacing,
+    external,
+    3d
+}
 %\tikzexternalize[prefix=figures/] % activate
 
 \tikzset{
@@ -1314,5 +1324,67 @@
         \draw[distance marker] (0,.6) -- +(2,0) node[midway, above] {$\xi$};
         
         \draw[dashed] (0,1/2.71828) node[left] {$1/e$} -- +(2,0)  -- (2,0);
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigLinearePolarisation}{
+    \begin{tikzpicture}[z={(-10:1cm)},x={(45:.7cm)}]
+        \coordinate (O) at (0,0);
+        \def\wave{
+            \draw[fill,fill opacity=.2] (0,0) sin ++(1,1) cos ++(1,-1) sin ++(1,-1) cos ++(1,1) sin ++(1,1) cos ++(1,-1) sin ++(1,-1) cos ++(1,1);
+            \foreach\shift in {0,4}{
+                \begin{scope}[xshift=\shift cm, thin]
+                    \draw (.5,0) -- (.5,0 |- 45:1cm);
+                    \draw (1,0) -- (1,1);
+                    \draw (1.5,0) -- (1.5,0 |- 45:1cm);
+                    \draw (2.5,0) -- (2.5,0 |- -45:1cm);
+                    \draw (3,0) -- (3,-1);
+                    \draw (3.5,0) -- (3.5,0 |- -45:1cm);
+                \end{scope}
+            }
+        }
+        \begin{scope}[canvas is zy plane at x=0, fill=red]
+            \wave 
+            \draw[arr,thick,red laser] (7,0) -- +(0,-1) node[below] {$\vec E$};
+        \end{scope}
+        \begin{scope}[canvas is zx plane at y=0, fill=blue,yscale=-1]
+            \draw[help lines] (0,-2) grid (8,2);
+            \wave 
+            \draw[arr] (0,0) -- (8.2,0) node[right] {$\vec k$};
+            \draw[arr,thick,blue!70!black] (7,0) -- +(0,-1) node[above] {$\vec B$};
+        \end{scope}
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigZirkularePolarisation}{
+    \begin{tikzpicture}[scale=2]
+        \coordinate (O) at (0,0);
+        \draw[arr] (0,-1.2) -- (0,1.2) node[anchor=south east] {$\vec e_1$}; 
+        \draw[arr] (-1.2,0) -- (1.2,0) node[anchor=north west] {$\vec e_2$};
+        \node[point] at (O) [label={south west}:{$\vec k$}] {};
+        
+        \draw[legreen,midarrow=.2] (O) circle [radius=1];
+        \draw[arr] (O) -- (30:1) node[midway, above] {$\vec E$};
+        \draw (0.6,0) arc[radius=0.6, start angle=0, end angle=30];
+        \node at (15:.45) {$\omega t$};
+        
+        \begin{scope}[xshift=4cm]
+            \coordinate (O) at (0,0);
+            \draw[arr] (0,-1.2) -- (0,1.2) node[anchor=south east] {$\vec e_1$}; 
+            \draw[arr] (-1.2,0) -- (1.2,0) node[anchor=north west] {$\vec e_2$};
+            \node[point] at (O) [label={south west}:{$\vec k$}] {};
+            
+            \begin{scope}[yscale=.7]
+                \draw[legreen,midarrow=.2] (O) circle [radius=1];
+                %\draw[arr,legreen] (O) -- (0,1) node[anchor=south, east] {E}
+                \node[point, legreen] at (0,1) [label={south west,legreen}:{$E_{01}$}] {};
+                \node[point, legreen] at (1,0) [label={south west,legreen}:{$E_{02}$}] {};
+                \draw[arr] (O) -- (30:1) node[midway, above] {$\vec E$};
+                \draw (0.6,0) arc[radius=0.6, start angle=0, end angle=30];
+                \node at (15:.45) {$\omega t$};
+            \end{scope}
+        \end{scope}
     \end{tikzpicture}
 }
