@@ -616,45 +616,7 @@ Beispiele
 
 	      \begin{figure}[htb]
 		      \centering
-		      \begin{tikzpicture}[
-				      scale=.7,
-				      mcolor/.style=legreen,
-				      pics/graph/.style={background code={
-								      \coordinate (O) at (0,0);
-								      \coordinate (P) at (1,2);
-								      \draw (O) circle [radius=1];
-								      \foreach \vzx in {1,-1}{
-										      \draw[midarrow] (\vzx*0.5,0.866) ..
-										      controls ($1.2*(\vzx*0.5,0.866)$)
-										      and (\vzx*1.2, 2.4) .. (\vzx*2.5,3);
-										      \draw[midarrow] (\vzx*2.5,-3) ..
-										      controls (\vzx*1.2,-2.4)
-										      and ($1.2*(\vzx*0.5,-0.866)$) .. (\vzx*0.5,-0.866);
-										      \draw[midarrow=.51] (\vzx*0.866,0.5)
-										      .. controls +($.8*(\vzx*0.866,0.5)$)
-										      and (\vzx*3,1)
-										      .. (\vzx*3,0)
-										      .. controls (\vzx*3,-1) and ($1.6*(\vzx*0.866,-0.5)$)
-										      .. (\vzx*0.866,-0.5) ;
-										      \draw[arr] (\vzx*0.866,#1*-0.4) -- (\vzx*0.866,#1*0.4);
-										      \draw[arr] (\vzx*0.5,#1*-0.8) -- (\vzx*0.5,#1*0.8);
-										      \draw[arr, mcolor] (\vzx*0.7,-0.4) -- +(0,0.8);
-										      \draw[arr, mcolor] (\vzx*0.25,-0.4) -- +(0,0.8);
-									      }
-								      \draw[midarrow=.6] (0,1) -- (0,3.2);
-								      \draw[midarrow=.4] (0,-3.2) -- (0,-1);
-								      \draw[arr] (0,#1*-.9) -- (0,#1*0.9);
-							      }}
-			      ]
-
-			      %\pic=1 at (0,0) [transform shape]{graph};
-			      %\pic at (7,0) [transform shape]{graph};
-
-			      \draw (0,0) pic[transform shape] {graph=1} node[outer sep=70,above] {$\vec B$-Feld};
-			      \draw (7,0) pic[transform shape] {graph=-1} node[outer sep=70,above] {$\vec H$-Feld};
-			      \node[mcolor] at (-1.5,0) {$\vec M$};
-			      \node[mcolor] at (-1.5+7,0) {$\vec M$};
-		      \end{tikzpicture}
+		      \tfigMagneticFeldHomogenousBall
 		      \caption{Magnetisches Feld und magnetische Flussdichte einer homogen magnetisierten Kugel. Anders als die magnetische Flussdichte $B$ weist das Magnetfeld $H$ einen Sprung (Umpolung) an der Kugeloberfläche auf.  }
 		      \label{fig:magnetic_field_homogenously_magnetized_ball}
 	      \end{figure}

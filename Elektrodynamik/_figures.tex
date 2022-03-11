@@ -4,6 +4,7 @@
 
 \usetikzlibrary{
     arrows.meta,
+    bending,
     positioning,
     decorations.markings,
     intersections,
@@ -15,10 +16,11 @@
 %\tikzexternalize[prefix=figures/] % activate
 
 \tikzset{
+    % Colors
     object color/.style={blue!40!black!80!white},
     object style/.style={object color,thick},
-    legreen/.style={green!50!black},
-    lorange/.style={red!60!yellow!70!black!90!white},
+    nice green/.style={green!50!black},
+    nice orange/.style={red!60!yellow!70!black!90!white},
     nice dark blue/.style={blue!50!black},
     nice light blue/.style={blue!60!white!70!black},
     nice turquoise/.style={blue!50!green},
@@ -26,18 +28,25 @@
     charge color/.style={blue!50!white!70!black},
     red laser/.style={red!70!black},
     moving system color/.style={blue!60!black!70!white},
+    %
+    % Coordinate system
     coordsystem/.style={very thin, color=#1!50},
     xlabel/.style={anchor=north west},
     ylabel/.style={anchor=south east},
+    %
+    % Nodes and points
     invisible point/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
     point/.style={invisible point,fill=black,minimum size=4pt},
-    arr/.style={->,>={Stealth},thin},
-    rarr/.style={<-,>={Stealth},thin},
-    midarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrow{Stealth}}} },
+    %
+    % Arrows
+    arrow tip/.tip={Stealth},
+    arr/.style={->,>={arrow tip}},
+    rarr/.style={<-,>={arrow tip}},
+    midarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrow[xshift=2.5pt]{arrow tip}}} },
     midarrow/.default=.5,
-    rmidarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrowreversed{Stealth}}} },
+    rmidarrow/.style={postaction=decorate,decoration={markings, mark=at position #1 with {\arrowreversed{arrow tip}}} },
     rmidarrow/.default=.5,
-    distance marker/.style={|<->|,>={Stealth}},
+    distance marker/.style={|<->|,>={arrow tip}},
 }
 \tikzstyle{every node}=[font=\footnotesize]
 
@@ -82,7 +91,7 @@
 }
 
 \newcommand{\tfigLinienintegral}{
-    \begin{tikzpicture}[scale=2, clr/.style={lorange}]
+    \begin{tikzpicture}[scale=2, clr/.style={nice orange}]
         \coordinate (A) at (0,0);
         \coordinate (NC) at (0,.2);
         \coordinate (B) at (1.3,2);
@@ -90,15 +99,15 @@
         \coordinate (C2) at (1.5,1);
         \coordinate (R) at (0.65,1);
         
-        \node[point, label=right:{$\vec r_0$}] at (A) {};
-        \node[point, label=right:{$\vec r_1$}] at (B) {};
-        
         \draw[object style] (A) .. controls ($(A)+(NC)$) and ($(R)-(FC)$) .. (R) .. controls  ($(R)+(FC)$) and ($(B)-(NC)$) .. (B)
           node[very near end, left] {$C$};
         
+        \node[point, label=right:{$\vec r_0$}] at (A) {};
+        \node[point, label=right:{$\vec r_1$}] at (B) {};
+        
         \node[point,clr,label={below,clr}:{$\vec r$}] at (R) {};
         \draw[arr,clr] (R) -- ($(R)+(FC)$) node[below] {$\diff \vec r$};
-        \draw[arr, legreen] (-.1,.2) -- (-.01,.5) node[midway, left] {$s$};
+        \draw[arr, nice green] (-.1,.2) to[bend left=5] node[midway, left] {$s$} (-.01,.5);
     \end{tikzpicture}
 }
 
@@ -245,7 +254,7 @@
 
 \newcommand{\tfigThreeConductors}{
     % Anordnung von elektrischen Leitern Li mit Ladungen Qi und Potentialen φi.
-    \begin{tikzpicture}[clr/.style={legreen},scale=1.2]
+    \begin{tikzpicture}[clr/.style={nice green},scale=1.2]
         \draw[rotate=45] 
             (0,0) ellipse [x radius=1.2, y radius=.5] 
             node {$L_1$} node[charge color] at +(-.9,0) {$Q_1$}
@@ -272,10 +281,10 @@
         \coordinate (B0) at (.7,0);
         \coordinate (B1) at (.7,2.5);
         \draw[very thick] (A0) -- (A1) 
-        node[at start,below,legreen] {$\phi_1$}
+        node[at start,below,nice green] {$\phi_1$}
         node[at end,above] {$-Q$};
         \draw[very thick] (B0) -- (B1) 
-        node[at start,below,legreen] {$\phi_2$}
+        node[at start,below,nice green] {$\phi_2$}
         node[at end,above] {$Q$};
         
         \draw[distance marker] ($(A0)!.5!(A1)$) -- ($(B0)!.5!(B1)$) node[midway,below] {$d$};
@@ -288,8 +297,8 @@
         
         \draw[arr] (O) -- (30:1) node[pos=.9, below,yshift=-3] {$r_2$};
         \draw[arr] (O) -- (45:.6) node[midway, above, left,yshift=3] {$r_1$};
-        \node[legreen] at (-160:1.2) {$\phi_2$};
-        \node[legreen] at (-140:.4) {$\phi_1$};
+        \node[nice green] at (-160:1.2) {$\phi_2$};
+        \node[nice green] at (-140:.4) {$\phi_1$};
         
         \draw (135:1) -- +(45:1) (-45:1) -- +(45:1);
         \begin{scope}
@@ -305,8 +314,8 @@
         
         \draw[arr] (O) -- (30:1) node[pos=.9, below,yshift=-3] {$r_2$};
         \draw[arr] (O) -- (45:.6) node[midway, above, left,yshift=3] {$r_1$};
-        \node[legreen] at (-160:1.2) {$\phi_2$};
-        \node[legreen] at (-140:.4) {$\phi_1$};
+        \node[nice green] at (-160:1.2) {$\phi_2$};
+        \node[nice green] at (-140:.4) {$\phi_1$};
     \end{scope}
 \end{tikzpicture}
 
@@ -457,7 +466,7 @@
     \coordinate (End) at (70:0.7);
     \coordinate (EndFoot) at (0,0.2);
 
-    \draw[arr,legreen] 
+    \draw[arr,nice green] 
         (Start) -- (Middle) 
         node[at start,anchor=north west] {$\vec D^{(1)}$}
         (Middle) -- (End)
@@ -631,7 +640,7 @@
 }
 
 \newcommand{\tfigKraftParalleleLeiter}{
-    \begin{tikzpicture}[scale=1.5,distance marker nobar/.style={<->,>={Stealth}},]
+    \begin{tikzpicture}[scale=1.5,distance marker nobar/.style={<->,>={arrow tip}},]
         \draw[distance marker nobar] (0,0.8) -- +(1,0) node[midway, above] {$d$};
         \draw[object color,midarrow] (0,-1) -- +(0,2) node[pos=.75,left] {$I_1$};
         \draw[object color,midarrow] (1,1) -- +(0,-2) node[pos=.25,right] {$I_2$};
@@ -715,9 +724,9 @@
                 .. ++(0,.7)
             };
         \node[anchor=north west] at (.5,0) {$I$};
-        \draw[legreen, rounded corners=6pt, midarrow=.7]
+        \draw[nice green, rounded corners=6pt, midarrow=.7]
         (.8,.7) rectangle (1.2,3.5);
-        \draw[legreen, |-|] (1.4,.7) -- +(0,2.8)
+        \draw[nice green, |-|] (1.4,.7) -- +(0,2.8)
         node[midway, right] {$L$}
         node[near start, right] {$C=\partial F$};
     \end{tikzpicture}
@@ -727,16 +736,16 @@
 \newcommand{\tfigMagnDipoleFieldCircleConductorEllipsoid}{
     \begin{tikzpicture}
         \foreach \i in {-1,1}{
-            \draw[legreen,arr] (-\i,-1.2) .. controls (\i*.12,0) .. +(0,2.4);
-            \draw[legreen,arr] (-\i*.9,-1.7) .. controls (\i*.13,0) .. +(0,3.4);
-            \draw[legreen,arr] (-\i*.6,-2.1) .. controls (\i*.15,0) .. +(0,4.2);
+            \draw[nice green,arr] (-\i,-1.2) .. controls (\i*.12,0) .. +(0,2.4);
+            \draw[nice green,arr] (-\i*.9,-1.7) .. controls (\i*.13,0) .. +(0,3.4);
+            \draw[nice green,arr] (-\i*.6,-2.1) .. controls (\i*.15,0) .. +(0,4.2);
         }
-        \draw[legreen,arr,midarrow=.3] (-1,0) ellipse[x radius=.8, y radius=.35];
-        \draw[legreen,arr,rmidarrow=.2] (1,0) ellipse[x radius=.8, y radius=.35];
+        \draw[nice green,arr,midarrow=.3] (-1,0) ellipse[x radius=.8, y radius=.35];
+        \draw[nice green,arr,rmidarrow=.2] (1,0) ellipse[x radius=.8, y radius=.35];
         
         \draw[midarrow=.75,thick] (0,0) ellipse[x radius=1, y radius=.5];
         \node at (-.9,-.7) {$\vec j$};
-        \node[legreen] at (1.5,.8) {$\vec B$};
+        \node[nice green] at (1.5,.8) {$\vec B$};
         
         \begin{scope}[xshift=5cm,xscale=2]
             \fill[black!20!white] (0,0) -- (.8,0) arc[radius=.8,start angle=0, end angle=-20] -- cycle;
@@ -744,7 +753,7 @@
             \draw[arr] (0,0) -- (0,1.5) node[anchor=south west] {$\vec n$};
             \draw[arr] (0,0) -- (0:.8);
             \draw[arr] (0,0) -- (-20:.8) node[midway, below] {$\vec r$};
-            \draw[arr, red laser] (-20:.8) arc[radius=.8,start angle=-20, end angle=0] node[midway, right] {$\diff\vec r$};
+            \draw[red laser, thick, -{arrow tip[length=5pt,bend]}] (-20:.8) arc[radius=.8,start angle=-20, end angle=0] node[midway, right] {$\diff\vec r$};
             
             \node at (0,-1.5) {$\displaystyle\diff f=\frac12|\vec r\times \diff\vec r|$} edge (-10:.65); 
         \end{scope}
@@ -842,49 +851,40 @@
     \end{tikzpicture}
 }
 
-% \newcommand{\tfigMagneticFeldHomogenousBall}{
-%     \begin{tikzpicture}[
-%             scale=.7,
-%             mcolor/.style=legreen,
-%             pics/graph/.style={background code={
-%                             \coordinate (O) at (0,0);
-%                             \coordinate (P) at (1,2);
-%                             \draw (O) circle [radius=1];
-%                             \foreach \vzx in {1,-1}{
-%                                     \draw[midarrow] (\vzx*0.5,0.866) ..
-%                                     controls ($1.2*(\vzx*0.5,0.866)$)
-%                                     and (\vzx*1.2, 2.4) .. (\vzx*2.5,3);
-%                                     \draw[midarrow] (\vzx*2.5,-3) ..
-%                                     controls (\vzx*1.2,-2.4)
-%                                     and ($1.2*(\vzx*0.5,-0.866)$) .. (\vzx*0.5,-0.866);
-%                                     \draw[midarrow=.51] (\vzx*0.866,0.5)
-%                                     .. controls +($.8*(\vzx*0.866,0.5)$)
-%                                     and (\vzx*3,1)
-%                                     .. (\vzx*3,0)
-%                                     .. controls (\vzx*3,-1) and ($1.6*(\vzx*0.866,-0.5)$)
-%                                     .. (\vzx*0.866,-0.5) ;
-%                                     \draw[arr] (\vzx*0.866,#1*-0.4) -- (\vzx*0.866,#1*0.4);
-%                                     \draw[arr] (\vzx*0.5,#1*-0.8) -- (\vzx*0.5,#1*0.8);
-%                                     \draw[arr, mcolor] (\vzx*0.7,-0.4) -- +(0,0.8);
-%                                     \draw[arr, mcolor] (\vzx*0.25,-0.4) -- +(0,0.8);
-%                                 }
-%                             \draw[midarrow=.6] (0,1) -- (0,3.2);
-%                             \draw[midarrow=.4] (0,-3.2) -- (0,-1);
-%                             \draw[arr] (0,#1*-.9) -- (0,#1*0.9);
-%                         }}
-%         ]
 
-%         %\pic=1 at (0,0) [transform shape]{graph};
-%         %\pic at (7,0) [transform shape]{graph};
-
-%         \draw (0,0) pic[transform shape] {graph=1} node[outer sep=70,above] {$\vec B$-Feld};
-%         \draw (7,0) pic[transform shape] {graph=-1} node[outer sep=70,above] {$\vec H$-Feld};
-%         \node[mcolor] at (-1.5,0) {$\vec M$};
-%         \node[mcolor] at (-1.5+7,0) {$\vec M$};
-
-%     \end{tikzpicture}
-% }
-
+\newcommand{\tfigMagneticFeldHomogenousBall}{
+    \begin{tikzpicture}[
+          scale=.7,
+          magnetisierung color/.style=nice green
+      ]
+    \newcommand{\drawMainStuff}[1]{
+            \coordinate (O) at (0,0);
+    	    \coordinate (P) at (1,2);
+    	    \draw (O) circle [radius=1];
+    	    \foreach \vzx in {1,-1}{
+                \draw[midarrow] (\vzx*0.5,0.866) .. controls ($1.2*(\vzx*0.5,0.866)$) and (\vzx*1.2, 2.4) .. (\vzx*2.5,3);
+                \draw[midarrow] (\vzx*2.5,-3) .. controls (\vzx*1.2,-2.4) and ($1.2*(\vzx*0.5,-0.866)$) .. (\vzx*0.5,-0.866);
+                \draw[midarrow=0.5] (\vzx*0.866,0.5) .. controls +($.8*(\vzx*0.866,0.5)$) and (\vzx*3,1)
+                    .. (\vzx*3,0) .. controls (\vzx*3,-1) and ($1.6*(\vzx*0.866,-0.5)$) .. (\vzx*0.866,-0.5) ;
+                \draw[arr] (\vzx*0.866,##1*-0.4) -- (\vzx*0.866,##1*0.4);
+                \draw[arr] (\vzx*0.5,##1*-0.8) -- (\vzx*0.5,##1*0.8);
+                \draw[arr, magnetisierung color] (\vzx*0.7,-0.4) -- +(0,0.8);
+                \draw[arr, magnetisierung color] (\vzx*0.25,-0.4) -- +(0,0.8);
+    		}
+            \draw[midarrow=.6] (0,1) -- (0,3.2);
+            \draw[midarrow=.4] (0,-3.2) -- (0,-1);
+            \draw[arr] (0,##1*-.9) -- (0,##1*0.9);
+        }
+        \drawMainStuff{1}
+        \node at (0,4) {$\vec B$-Feld};
+        \node[magnetisierung color] at (-1.5,0) {$\vec M$};
+        \begin{scope}[xshift=7cm]
+            \drawMainStuff{-1}
+            \node at (0,4) {$\vec H$-Feld};
+            \node[magnetisierung color] at (-1.5,0) {$\vec M$};
+        \end{scope}
+    \end{tikzpicture}
+}
 
 \newcommand{\tfigInductionA}{
     \begin{tikzpicture}[scale=1]
@@ -897,9 +897,9 @@
         \draw[arr] (1.7,-.19) -- ++(-1.1,0) node[near start, below] {$\vec v$};
         \node[below] at (0,-2) {$C=\partial F$};
         \node[anchor=south east] at (-1,0) {$I$};
-        \draw[legreen,arr] (2,0.25) .. controls +(-1.5,0) and +(1,-1) .. (-2,1.6);
-        \draw[legreen,arr] (2,-0.25) .. controls +(-1.5,0) and +(1,1) .. (-2,-1.6);
-        \draw[legreen,arr] (2,0) -- (-2,0);
+        \draw[nice green,arr] (2,0.25) .. controls +(-1.5,0) and +(1,-1) .. (-2,1.6);
+        \draw[nice green,arr] (2,-0.25) .. controls +(-1.5,0) and +(1,1) .. (-2,-1.6);
+        \draw[nice green,arr] (2,0) -- (-2,0);
     \end{tikzpicture}
 }
 
@@ -911,12 +911,12 @@
         \draw (4, -.5) -- ++(-2,0)
         -- ++(0,1) node[midway, right] {N}
         -- +(2,0);
-        \draw[arr] (1.2,-1) -- ++(1.1,0) node[near start, below] {$\vec v$};
+        \draw[arr] (1.2,-1) -- ++(1.1,0) node[midway, below] {$\vec v$};
         \node[below] at (0,-2) {$C=\partial F$};
         \node[anchor=south east] at (-1,0) {$I$};
-        \draw[legreen,arr] (2,0.25) .. controls +(-1.5,0) and +(1,-1) .. (-2,1.6);
-        \draw[legreen,arr] (2,-0.25) .. controls +(-1.5,0) and +(1,1) .. (-2,-1.6);
-        \draw[legreen,arr] (2,0) -- (-2,0);
+        \draw[nice green,arr] (2,0.25) .. controls +(-1.5,0) and +(1,-1) .. (-2,1.6);
+        \draw[nice green,arr] (2,-0.25) .. controls +(-1.5,0) and +(1,1) .. (-2,-1.6);
+        \draw[nice green,arr] (2,0) -- (-2,0);
     \end{tikzpicture}
 }
 
@@ -1097,28 +1097,6 @@
 
 
 \newcommand{\tfigSRTGedankenExperimentLichtkegel}{
-    \begin{tikzpicture}[scale=2.5]
-
-        \coordinate (O) at (0,0);
-        \coordinate (O2) at (2.5,0.3);
-        
-        \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$z$} node[midway, left] {$\Sigma$};
-        \draw[arr] (0,0) -- (1,0) node[anchor=south west] {$x$};
-        \draw[arr] (0,0) -- (45:0.8) node[ylabel] {$y$};
-
-        \foreach \angle in {0,45,...,360}{
-            \draw[arr, red laser] (O) -- (\angle:0.3);
-        }
-        \draw[arr] ($.7*(O2)$) -- ($0.9*(O2)$) node[midway, above] {$\vec v$};
-
-        \begin{scope}[shift={(O2)}, moving system color]
-            \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$z'$} node[midway, left] {$\Sigma'$};
-            \draw[arr] (0,0) -- (1,0) node[anchor=south west] {$x'$};
-            \draw[arr] (0,0) -- (45:0.8) node[ylabel] {$y'$};
-        \end{scope}
-    \end{tikzpicture}
-}
-\renewcommand{\tfigSRTGedankenExperimentLichtkegel}{
     \begin{tikzpicture}[scale=3]
         \begin{scope}          
             \draw[arr] (0,0) -- (0,1) node[ylabel] {$y,\textcolor{blue!60!black!70!white}{y'}$} 
@@ -1225,7 +1203,7 @@
     \end{tikzpicture}
 }
 \newcommand{\tfigMinkowskiDiagramB}{
-    \begin{tikzpicture}[scale=1.5,clr/.style={legreen}]
+    \begin{tikzpicture}[scale=1.5,clr/.style={nice green}]
         \draw[arr] (-3,0) -- (3,0) node[xlabel] {$x$};
         \draw[arr] (0,-3) -- (0,3) node[ylabel] {$ct$};
         \draw[color=violet] let \n1={3} in (-\n1,\n1) -- (\n1,-\n1) (-\n1,-\n1) -- (\n1,\n1);
@@ -1235,8 +1213,8 @@
         \draw[clr,arr,dashed] (-2.9,.4) -- +(20:6) node[xlabel] {$ct'=\mathrm{const}$};
         \draw[clr,arr,dashed] (-2.9,-2.85) -- +(70:6) node[ylabel] {$x'=\mathrm{const}$};
         
-        \draw[name path global/.expanded={hyp top}] plot[domain=-3:3,samples=30] ({\x},{sqrt(1+\x*\x)});
-        \draw[name path global/.expanded={hyp right}] plot[domain=1:3,samples=50] ({\x},{sqrt(\x*\x-1)});
+        \draw[name path global/.expanded={hyp top}] plot[domain=-3:3,samples=30,smooth] ({\x},{sqrt(1+\x*\x)});
+        \draw[name path global/.expanded={hyp right}] plot[domain=1:3,samples=50,smooth] ({\x},{sqrt(\x*\x-1)});
         \draw plot[domain=1:3,samples=50] ({\x},{-sqrt(\x*\x-1)});
         
         \draw[clr] (0,0) -- (1.5,0) arc [start angle=0, end angle=20, radius=1.5];
@@ -1258,7 +1236,7 @@
 
 \newcommand{\tfigMinkowskiZeitdilatationLaengenkontraktion}{
     % Zeitdilatation und Längenkontraktion
-    \begin{tikzpicture}[scale=1.5,clr/.style={legreen}]
+    \begin{tikzpicture}[scale=1.5,clr/.style={nice green}]
         \clip (-1,-1) rectangle (3,3);
         \draw[arr] (-2,0) -- (2,0) node[xlabel] {$x$};
         \draw[arr] (0,-2) -- (0,2) node[ylabel] {$ct$};
@@ -1299,7 +1277,7 @@
     \begin{tikzpicture}
         \draw[arr] (0,0) -- (0,3) node[ylabel] {$m_r=\gamma m$}; 
         \draw[arr] (0,0) -- (3,0) node[xlabel] {$v/c$};
-        \draw (-.1,1) -- +(.2,0) node[at start, left] {$m$};
+        \draw (-.1,1) -- +(.1,0) node[at start, left] {$m$};
         % hack: we parametrize with sqrt(x) so the precision goes up for values near 1:
         \draw plot[domain=0:.88,smooth] ({sqrt(\x)*2},{1/sqrt(1-\x)}); 
         \draw[dashed] (2,-.1) -- +(0,3) node[at start, below] {1};
@@ -1313,7 +1291,7 @@
         \draw[arr] (-2.5,0) -- (2.5,0) node[xlabel] {$\vec p$};
         \draw[dashed] let \n1={2} in (-2,2) -- (1,-1) (2,2) -- (-1,-1);
         \draw plot[domain=-2:2] (\x,{sqrt(\x*\x+1)});
-        \draw (-.1,1) -- +(.2,0) node[at start, anchor=north east] {$mc$};
+        \draw[thick] (-.1,1) -- +(.2,0) node[at start, anchor=north east] {$mc$};
     \end{tikzpicture}
 }
 
@@ -1324,8 +1302,8 @@
         \draw[arr] (0,-1.2) -- (0,1.2) node[ylabel] {$E$}; 
         \draw[arr] (0,0) -- (4.7,0) node[xlabel] {$z$};
         \draw plot[domain=0:4.3,samples=100,smooth] (\x,{sin(\x*300)*exp(-\x/2)});
-        \draw[legreen] plot[domain=0:4.3,samples=30] (\x,{exp(-\x/2)});
-        \draw[legreen] plot[domain=0:4.3,samples=30] (\x,{-exp(-\x/2)});
+        \draw[nice green] plot[domain=0:4.3,samples=30] (\x,{exp(-\x/2)});
+        \draw[nice green] plot[domain=0:4.3,samples=30] (\x,{-exp(-\x/2)});
         \draw[distance marker] (0,.6) -- +(2,0) node[midway, above] {$\xi$};
         
         \draw[dashed] (0,1/2.71828) node[left] {$1/e$} -- +(2,0)  -- (2,0);
@@ -1349,15 +1327,15 @@
                 \end{scope}
             }
         }
-        \begin{scope}[canvas is zy plane at x=0, fill=red]
-            \wave 
-            \draw[arr,thick,red laser] (7,0) -- +(0,-1) node[below] {$\vec E$};
-        \end{scope}
         \begin{scope}[canvas is zx plane at y=0, fill=blue,yscale=-1]
             \draw[help lines] (0,-2) grid (8,2);
             \wave 
             \draw[arr] (0,0) -- (8.2,0) node[right] {$\vec k$};
             \draw[arr,thick,blue!70!black] (7,0) -- +(0,-1) node[above] {$\vec B$};
+        \end{scope}
+        \begin{scope}[canvas is zy plane at x=0, fill=red]
+            \wave 
+            \draw[arr,thick,red laser] (7,0) -- +(0,-1) node[below] {$\vec E$};
         \end{scope}
     \end{tikzpicture}
 }
@@ -1370,7 +1348,7 @@
         \draw[arr] (-1.2,0) -- (1.2,0) node[xlabel] {$\vec e_1$};
         \node[point] at (O) [label={south west}:{$\vec k$}] {};
         
-        \draw[legreen,midarrow=.2] (O) circle [radius=1];
+        \draw[nice green,midarrow=.2] (O) circle [radius=1];
         \draw[arr] (O) -- (30:1) node[midway, above] {$\vec E$};
         \draw (0.6,0) arc[radius=0.6, start angle=0, end angle=30];
         \node at (15:.45) {$\omega t$};
@@ -1382,10 +1360,10 @@
             \node[point] at (O) [label={south west}:{$\vec k$}] {};
             
             \begin{scope}[yscale=.7]
-                \draw[legreen,midarrow=.2] (O) circle [radius=1];
-                %\draw[arr,legreen] (O) -- (0,1) node[anchor=south, east] {E}
-                \node[point, legreen] at (0,1) [label={south west,legreen}:{$E_{02}$}] {};
-                \node[point, legreen] at (1,0) [label={south west,legreen}:{$E_{01}$}] {};
+                \draw[nice green,midarrow=.2] (O) circle [radius=1];
+                %\draw[arr,nice green] (O) -- (0,1) node[anchor=south, east] {E}
+                \node[point, nice green] at (0,1) [label={south west,nice green}:{$E_{02}$}] {};
+                \node[point, nice green] at (1,0) [label={south west,nice green}:{$E_{01}$}] {};
                 \draw[arr] (O) -- (30:1) node[midway, above] {$\vec E$};
                 \draw (0.6,0) arc[radius=0.6, start angle=0, end angle=30];
                 \node at (15:.45) {$\omega t$};
