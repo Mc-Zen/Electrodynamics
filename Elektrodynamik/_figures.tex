@@ -69,18 +69,21 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfigVolumeWithNormal}{
+% Cube with volume V and surface normal n
+\newcommand{\tfigCubeWithNormal}{
     \begin{tikzpicture}[scale=2]
-        \draw[object style] (0,1,1) -- (0,1,0) -- (1,1,0) -- (1,0,0)
-        -- (1,0,1) -- (0,0,1) --(0,1,1) -- (1,1,1) 
-        -- (1,0,1) --  (1,1,1) -- (1,1,0);
+        \draw[object style] 
+               (0,1,1) -- (0,1,0) -- (1,1,0) -- (1,0,0)
+            -- (1,0,1) -- (0,0,1) -- (0,1,1) -- (1,1,1) 
+            -- (1,0,1) --  (1,1,1) -- (1,1,0);
         % \node at (.5,.5,1) {$\vec a(\vec r)$};
         \node at (.5,.5,1) {$V$};
         \draw[arr] (1,.5,.5) -- +(0.5,0,0) node[right] {$\hat{\vec n}$};
     \end{tikzpicture}
 }
 
-\newcommand{\tfigAreaWithCurveAndNormal}{
+% Rectangular surface F with normal n and edge curve C with tangent t_C
+\newcommand{\tfigSurfaceWithCurveAndNormal}{
     \begin{tikzpicture}[scale=2.3]
         \draw[object style,rmidarrow=.1] (0,0) rectangle (1,1) node[below,right] {$C$};
         \node at (.5,.5) {$F$};
@@ -90,7 +93,8 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfigLinienintegral}{
+% Curve C from point r_0 to r_1 parametrized by s with point r with tangent dr
+\newcommand{\tfigCurveIntegral}{
     \begin{tikzpicture}[scale=2, clr/.style={nice orange}]
         \coordinate (A) at (0,0);
         \coordinate (NC) at (0,.2);
@@ -100,7 +104,7 @@
         \coordinate (R) at (0.65,1);
         
         \draw[object style] (A) .. controls ($(A)+(NC)$) and ($(R)-(FC)$) .. (R) .. controls  ($(R)+(FC)$) and ($(B)-(NC)$) .. (B)
-          node[very near end, left] {$C$};
+            node[very near end, left] {$C$};
         
         \node[point, label=right:{$\vec r_0$}] at (A) {};
         \node[point, label=right:{$\vec r_1$}] at (B) {};
@@ -111,7 +115,8 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfigHalbkugel}{
+% Half sphere surface F with edge circle curve C and normal df
+\newcommand{\tfigHalfSphere}{
     \begin{tikzpicture}[scale=2]
         \coordinate (A) at (0,0);
         \draw[object style] (0,0) arc (0:180:1) node[midway, above] {$F$};
@@ -122,8 +127,8 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfigCoulombPointCharges}{
-    % Forces on to charges
+% Coulomb forces on two point charges q_1 and q_2 at r_1 and r_2
+\newcommand{\tfigCoulombForceOnPointCharges}{
     \begin{tikzpicture}[scale=1]
         \coordinate (O) at (0.0,0.0);
         \coordinate (Q1) at (1.0,1.1);
@@ -144,8 +149,8 @@
     \end{tikzpicture}
 }
 
-% äquipotentiallinien und elektrische feld Linien zweier ungleichnamiger ladungen
-\newcommand{\tfigDipoleFieldPotential}{
+% Equipotential lines and electric field of two charges with different signs (dipole)
+\newcommand{\tfigDipoleFieldAndPotential}{
     \begin{tikzpicture}[scale=1.3]
         \coordinate (Q1) at (-1,0);
         \coordinate (Q2) at (1,0);
@@ -166,19 +171,14 @@
             (\x1-\x1/3,0) arc(0:180:1/3)
             (\x2+\x2/3,0) arc(0:180:1/3);
         
-        \node[point, charge color] (Q2 node) at (Q2) 
-            [label=south:$-q$] {} ;
-        \node at (A2) {} 
-            edge[arr] node {} (Q2 node);
-        \node[point, charge color] (Q1 node) at (Q1) 
-            [label=south:$q$] {} 
-            edge[arr] node {} (A1)
-            edge[arr] (Q2 node);
+        \node[point, charge color] (Q2 node) at (Q2) [label=south:$-q$] {} ;
+        \node at (A2) {} edge[arr] node {} (Q2 node);
+        \node[point, charge color] (Q1 node) at (Q1) [label=south:$q$] {} edge[arr] node {} (A1) edge[arr] (Q2 node);
     \end{tikzpicture}
 }
 
+% Field and equipotential lines of a homogenously charged sphere
 \newcommand{\tfigEfieldAndPotLinesAndChargeDensitityHomoChargedSphere}{
-    % Field and equipotential lines of a charged sphere
     \begin{tikzpicture}[
         scale=2,
         potential color/.style={violet!60!black}
@@ -199,28 +199,22 @@
     \begin{scope}[shift={(2.3,-.6)}]
         \coordinate (A) at (1.2, 0.8);
         
-        \draw[arr] (0,0) -- (0, 1.3) 
-            node[at end, ylabel] {$\rho(r)$};
-        \draw[arr] (0,0) -- (1.6, 0) 
-            node[at end, xlabel] {$r$};
+        \draw[arr] (0,0) -- (0, 1.3) node[at end, ylabel] {$\rho(r)$};
+        \draw[arr] (0,0) -- (1.6, 0) node[at end, xlabel] {$r$};
         \draw[charge color] let \p1 = (A) in
-            (0, \y1) -- (A) 
-            node[at start, left] {$\rho_0$}
-            -- (\x1, 0)
-            node[charge color, below] {$R$};
+            (0, \y1) -- (A) node[at start, left] {$\rho_0$} -- (\x1, 0) node[charge color, below] {$R$};
     \end{scope}
     \end{tikzpicture}
 }
+
+% Function graph of field and potential of a homogenously charged sphere
 \newcommand{\tfigEfieldAndPotentialHomoChargedSphere}{
-    % field and potential function for sphere
     \begin{tikzpicture}[scale=3]
         \coordinate (A) at (0.8, 0.8);
         
         % electric field
-        \draw[arr] (0,0) -- +(0, 1.1) 
-            node[at end, ylabel] {$E(r)$};
-        \draw[arr] (0,0) -- +(1.8, 0) 
-            node[at end, xlabel] {$r$};
+        \draw[arr] (0,0) -- +(0, 1.1) node[at end, ylabel] {$E(r)$};
+        \draw[arr] (0,0) -- +(1.8, 0) node[at end, xlabel] {$r$};
             
         \draw[charge color,yscale=.2] 
             let \n1={0.5},\n2={1.7} in
@@ -229,15 +223,12 @@
             plot[domain=\n1:\n2] (\x,1/\x^2) 
             let \n4={.5*\n2-.5*\n1+\n1} in % x value of middle point of second graph 
             node[above] at (\n4,1/\n4^2) {$\displaystyle\propto\frac{1}{r^2}$};
-        \draw[dashed, very thin] (0.5,.8) -- +(0,-.8) 
-            node[below] {$R$};
+        \draw[dashed, very thin] (0.5,.8) -- +(0,-.8) node[below] {$R$};
             
         % potential
         \begin{scope}[shift={(2.5,0)}]
-            \draw[arr] (0,0) -- +(0, 1.1) 
-                node[at end, ylabel] {$\phi(r)$};
-            \draw[arr] (0,0) -- +(1.8, 0) 
-                node[at end, xlabel] {$r$};
+            \draw[arr] (0,0) -- +(0, 1.1) node[at end, ylabel] {$\phi(r)$};
+            \draw[arr] (0,0) -- +(1.8, 0) node[at end, xlabel] {$r$};
             \draw[charge color,yscale=.3] 
                 let \n1={0.5},\n2={1.7} in 
                 plot[domain=0:\n1] (\x,3/\n1/2 -\x^2/\n1^3/2)
@@ -246,14 +237,13 @@
                 let \n4={.5*\n2-.5*\n1+\n1} in % x value of middle point of second graph 
                 node[above] at (\n4,1/\n4) {$\displaystyle\propto\frac{1}{r}$};
                 
-            \draw[dashed, very thin] (0.5,1/1.7) -- +(0,-1/1.7) 
-                node[below] {$R$};
+            \draw[dashed, very thin] (0.5,1/1.7) -- +(0,-1/1.7) node[below] {$R$};
         \end{scope}
     \end{tikzpicture}
 }
 
+% Array of three electrical conductors L_i with charges Q_i and potentials φ_i
 \newcommand{\tfigThreeConductors}{
-    % Anordnung von elektrischen Leitern Li mit Ladungen Qi und Potentialen φi.
     \begin{tikzpicture}[clr/.style={nice green},scale=1.2]
         \draw[rotate=45] 
             (0,0) ellipse [x radius=1.2, y radius=.5] 
@@ -271,65 +261,60 @@
     \end{tikzpicture}
 }
 
+% Visualization of a plane, spherical and cylindrical capcitor
 \newcommand{\tfigSpecialCapacitors}{
-
-% capacitors
-\begin{tikzpicture}[scale=1.2]
-    \begin{scope}
-        \coordinate (A0) at (-.7,0);
-        \coordinate (A1) at (-.7,2.5);
-        \coordinate (B0) at (.7,0);
-        \coordinate (B1) at (.7,2.5);
-        \draw[very thick] (A0) -- (A1) 
-        node[at start,below,nice green] {$\phi_1$}
-        node[at end,above] {$-Q$};
-        \draw[very thick] (B0) -- (B1) 
-        node[at start,below,nice green] {$\phi_2$}
-        node[at end,above] {$Q$};
-        
-        \draw[distance marker] ($(A0)!.5!(A1)$) -- ($(B0)!.5!(B1)$) node[midway,below] {$d$};
-    \end{scope}
-    
-    \begin{scope}[shift={(3.2cm,1.2cm)}]
-        \coordinate (O) at (0,0);
-        \draw[thick] (O) circle[radius=.6];
-        \draw[thick] (O) circle[radius=1];
-        
-        \draw[arr] (O) -- (30:1) node[pos=.9, below,yshift=-3] {$r_2$};
-        \draw[arr] (O) -- (45:.6) node[midway, above, left,yshift=3] {$r_1$};
-        \node[nice green] at (-160:1.2) {$\phi_2$};
-        \node[nice green] at (-140:.4) {$\phi_1$};
-        
-        \draw (135:1) -- +(45:1) (-45:1) -- +(45:1);
+    \begin{tikzpicture}[scale=1.2]
         \begin{scope}
-            \clip (O) circle[radius=1];
-            \draw (135:.6) -- +(45:1) (-45:.6) -- +(45:1);
+            \coordinate (A0) at (-.7,0);
+            \coordinate (A1) at (-.7,2.5);
+            \coordinate (B0) at (.7,0);
+            \coordinate (B1) at (.7,2.5);
+            \draw[very thick] (A0) -- (A1) node[at start,below,nice green] {$\phi_1$} node[at end,above] {$-Q$};
+            \draw[very thick] (B0) -- (B1) node[at start,below,nice green] {$\phi_2$} node[at end,above] {$Q$};
+            
+            \draw[distance marker] ($(A0)!.5!(A1)$) -- ($(B0)!.5!(B1)$) node[midway,below] {$d$};
         \end{scope}
-    \end{scope}
-    
-    \begin{scope}[shift={(7cm,1.2cm)}]
-        \coordinate (O) at (0,0);
-        \draw[thick] (O) circle[radius=.6];
-        \draw[thick] (O) circle[radius=1];
         
-        \draw[arr] (O) -- (30:1) node[pos=.9, below,yshift=-3] {$r_2$};
-        \draw[arr] (O) -- (45:.6) node[midway, above, left,yshift=3] {$r_1$};
-        \node[nice green] at (-160:1.2) {$\phi_2$};
-        \node[nice green] at (-140:.4) {$\phi_1$};
-    \end{scope}
-\end{tikzpicture}
-
+        \begin{scope}[shift={(3.2cm,1.2cm)}]
+            \coordinate (O) at (0,0);
+            \draw[thick] (O) circle[radius=.6];
+            \draw[thick] (O) circle[radius=1];
+            
+            \draw[arr] (O) -- (30:1) node[pos=.9, below,yshift=-3] {$r_2$};
+            \draw[arr] (O) -- (45:.6) node[midway, above, left,yshift=3] {$r_1$};
+            \node[nice green] at (-160:1.2) {$\phi_2$};
+            \node[nice green] at (-140:.4) {$\phi_1$};
+            
+            \draw (135:1) -- +(45:1) (-45:1) -- +(45:1);
+            \begin{scope}
+                \clip (O) circle[radius=1];
+                \draw (135:.6) -- +(45:1) (-45:.6) -- +(45:1);
+            \end{scope}
+        \end{scope}
+        
+        \begin{scope}[shift={(7cm,1.2cm)}]
+            \coordinate (O) at (0,0);
+            \draw[thick] (O) circle[radius=.6];
+            \draw[thick] (O) circle[radius=1];
+            
+            \draw[arr] (O) -- (30:1) node[pos=.9, below,yshift=-3] {$r_2$};
+            \draw[arr] (O) -- (45:.6) node[midway, above, left,yshift=3] {$r_1$};
+            \node[nice green] at (-160:1.2) {$\phi_2$};
+            \node[nice green] at (-140:.4) {$\phi_1$};
+        \end{scope}
+    \end{tikzpicture}
 }
 
+% Visualization: Problems with complex geometry can be solved by solving for a spherical geometry and applying a conformal map
 \newcommand{\tfigComplexProblemsConformalMap}{
     \begin{tikzpicture}
         \draw (-3,0) circle [radius=1];
         \node[align=center] at(-5,0) {Lösung $\phi$\\bekannt};
         \draw[arr] (-1,0) .. controls +(20:.7) and +(160:.7) .. (1,0) node[align=center,midway,above,yshift=.2cm] {Konforme\\Abbildung}
-        node[align=center,midway,below,yshift=-.4cm] {$\begin{aligned}
-            z&\rightarrow w=w(z) \\
-            f(z)&\rightarrow f(z(w))=g(w)
-        \end{aligned}$};
+            node[align=center,midway,below,yshift=-.4cm] {$\begin{aligned}
+                z&\rightarrow w=w(z) \\
+                f(z)&\rightarrow f(z(w))=g(w)
+            \end{aligned}$};
         
         \begin{scope}[shift={(4.5,.2)}]
         \coordinate (A) at (-2,-1);
@@ -346,23 +331,22 @@
         \node[align=center] at(2.8,0) {$\mathfrak{R}(g(w)$ löst \\$\nabla^2\mathfrak{R}(g(w)=0$};
         
         \draw (A) 
-        .. controls +(-150:.1) .. (B) 
-        .. controls +(30:.1) and +( -50: 1.1) ..(C) 
-        .. controls +(130: 1.1) and +(140:1) .. (D)
-        .. controls +(-40:.5) and +(-100:.4) .. (E) 
-        .. controls +(80:.5) and +(120:.8) .. (F) 
-        .. controls +(-60:.8) and +(-95:1) .. (G)
-        .. controls +(85:.8) and +(120:1) .. (H)
-        .. controls +(-60:1.5) and +(5:.9) .. (I)
-        .. controls +(-175:.7) and +(10:.4) .. (J)
-        .. controls +(-170:.7) and +(10:.4) .. cycle;
+            .. controls +(-150:.1) .. (B) 
+            .. controls +(30:.1) and +( -50: 1.1) ..(C) 
+            .. controls +(130: 1.1) and +(140:1) .. (D)
+            .. controls +(-40:.5) and +(-100:.4) .. (E) 
+            .. controls +(80:.5) and +(120:.8) .. (F) 
+            .. controls +(-60:.8) and +(-95:1) .. (G)
+            .. controls +(85:.8) and +(120:1) .. (H)
+            .. controls +(-60:1.5) and +(5:.9) .. (I)
+            .. controls +(-175:.7) and +(10:.4) .. (J)
+            .. controls +(-170:.7) and +(10:.4) .. cycle;
         \end{scope}
     \end{tikzpicture}
 }
 
+% Polar water molecule
 \newcommand{\tfigWatermolecule}{
-
-    % water molecule
     \begin{tikzpicture}[scale=3]
         \node[circle] (H1) at ($(-90+104.45/2:1)$) {$\mathrm{H}^+$};
         \node[circle] (H2) at ($(-90-104.45/2:1)$) {$\mathrm{H}^+$};
@@ -375,8 +359,8 @@
     \end{tikzpicture}
 }
 
+% Elemental quadrupole configurations
 \newcommand{\tfigElementalQuadrupoles}{
-    % elemental quadrupoles
     \begin{tikzpicture}[
         scale=1.2,
         charge/.style={point, charge color, outer sep=2mm}
@@ -397,9 +381,8 @@
     \end{tikzpicture}
 }
 
-
+% Configurations of dipoles with maximum/minimum energy
 \newcommand{\tfigDipoles}{
-    % dipoles
     \begin{tikzpicture}[scale=1]
         \begin{scope}[shift={(-1cm,0)}]
             \coordinate (A0) at (0,0);
@@ -431,30 +414,27 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tFigRandbedingungenDielektrikum}{
+% Field and polarisation at a boundary surface between to media
+\newcommand{\tFigBoundaryConditionsDielectrica}{
     \begin{tikzpicture}[scale=1]
     \draw
-    (0,0) .. controls (1.8,.6) and +(-3,.4) .. (7,.3)
-    node[pos=.9, above, sloped] {$\vec E^{(2)},\vec D^{(2)},\vec P^{(2)}$}
-    node[pos=.9, below, sloped] {$\vec E^{(1)},\vec D^{(1)},\vec P^{(1)}$}
-    node[very near start, above, sloped] {$\varepsilon_2$}
-    node[very near start, below, sloped] {$\varepsilon_1$}
-    node[pos=.65,below,sloped] {$\sigma(\vec r)$};
+        (0,0) .. controls (1.8,.6) and +(-3,.4) .. (7,.3)
+        node[pos=.9, above, sloped] {$\vec E^{(2)},\vec D^{(2)},\vec P^{(2)}$}
+        node[pos=.9, below, sloped] {$\vec E^{(1)},\vec D^{(1)},\vec P^{(1)}$}
+        node[very near start, above, sloped] {$\varepsilon_2$}
+        node[very near start, below, sloped] {$\varepsilon_1$}
+        node[pos=.65,below,sloped] {$\sigma(\vec r)$};
 
     \coordinate (P) at (2, .446);
 
     \node[point] at (P) {};
-    \draw[arr]
-    (P) -- +(7:1)
-    node[midway, below] {$\hat{\vec t}$};
-    \draw[arr]
-    (P) -- +(97:1)
-    node[midway, left] {$\hat{\vec n}$};
+    \draw[arr] (P) -- +(7:1) node[midway, below] {$\hat{\vec t}$};
+    \draw[arr] (P) -- +(97:1) node[midway, left] {$\hat{\vec n}$};
     \end{tikzpicture}
 }
 
-
-\newcommand{\tfigDielektrischeBrechung}{
+% Dielectric refraction at a boundary surface between to media
+\newcommand{\tfigDielectricRefraction}{
     \begin{tikzpicture}[
         scale=2,
         incolor/.style = {red!50!black},
@@ -484,8 +464,8 @@
     \end{tikzpicture}
 }
 
-
-\newcommand{\tfigMessungVonFeldDurchRandbedingungen}{
+% Visualization of how to measure the electric field using boundary conditions
+\newcommand{\tfigMeasureFieldWithBoundaryCondition}{
     \begin{tikzpicture}[probeladung/.style={point,outer sep=1mm}]
     \draw[yshift=-1mm] (-5,0) rectangle +(3,.2);
     \node (E0) at (-5.8,0) {$\vec E_0$} edge[arr] (-4.8,0);
@@ -509,7 +489,8 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfigDielektrischeKugelHomogenesEFeld}{
+% Field of a ball that is brought in to a homogeneous electric field
+\newcommand{\tfigDielectricBallInHomogenousField}{
     \begin{tikzpicture}[scale=1,earr/.style={arr,object color}]
     \draw[thick] (0,0) circle[radius=1];
     \draw[arr] (0,0) -- (45:1) node[midway, anchor=south east] {$R$};
@@ -533,7 +514,8 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfigEntelektrisierung}{
+% Depolarization 
+\newcommand{\tfigDepolarization}{
     \begin{tikzpicture}[scale=1.8]
         \foreach \x in {0,1,...,4}
             \draw[arr, object color] (-1.2+2.4*\x/4, -1.3) -- +(0,2.6);
@@ -553,8 +535,8 @@
     \end{tikzpicture}
 }
 
-
-\newcommand{\tfigSimpleDielectricBodiesEntelektrisierungsfeld}{
+% Depolarization factors of simple bodies (sphere, ellipsoid, parallel planes, cylinder)
+\newcommand{\tfigSimpleDielectricBodiesDepolarizationFactors}{
     \begin{tikzpicture}
         \foreach \i in {0,...,5}{
             \foreach \y in {-1,0,1}{
@@ -579,7 +561,7 @@
         (\n1,-.8) arc[x radius=.2,y radius=.1,start angle=-180, end angle=0];
         
         \node at (0,-1.5) {$\displaystyle\lambda=\frac13$};
-        \node at (3,-1.5) {$\lambda=\begin{pmatrix}\lambda_1&0&0\\0&\lambda_2&0\\0&0&\lambda_3\end{pmatrix}$};
+        \node at (3,-1.5) {$\lambda=\begin{pmatrix} \lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3 \end{pmatrix}$};
         \node at (6,-1.5) {$\lambda=1$};
         \node at (9,-1.5) {$\lambda=0$};
         \node at (12,-1.5) {$\lambda=0$};
@@ -587,9 +569,8 @@
     \end{tikzpicture}
 }
 
-
+% Visualization for the Clausius-Mosotti formular: dipole in dielectricum in outer field - description through local dipoles
 \newcommand{\tfigClausiusMosotti}{
-    % dipol in dielektrikum in äußerem Feld - Beschreibung durch lokale dipole
     \begin{tikzpicture}[scale=1]
         \draw[arr, object color] (-2,-2) -- +(0,4) node[anchor=south west] {$\vec E_0$};
         \draw (-2.3,-1.7) -- +(7.3,0) (-2.3,1.7) -- +(7.3,0);
@@ -609,8 +590,8 @@
     \end{tikzpicture}
 }
 
-
-\newcommand{\tfigMagnetfeldBeiLeiter}{
+% Magnetic field B at a conductor (curve)
+\newcommand{\tfigMagneticFieldAtAConductor}{
     \begin{tikzpicture}[scale=3]
         \coordinate (O) at (0. 8,0);   % Koordinatenursprung
         \coordinate (A) at (1, 0.5);   % Punkt auf Leiter
@@ -639,7 +620,8 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfigKraftParalleleLeiter}{
+% Force on parallel conductors with current flowing in a) same and b) opposite directions
+\newcommand{\tfigForceOnParallelConductors}{
     \begin{tikzpicture}[scale=1.5,distance marker nobar/.style={<->,>={arrow tip}},]
         \draw[distance marker nobar] (0,0.8) -- +(1,0) node[midway, above] {$d$};
         \draw[object color,midarrow] (0,-1) -- +(0,2) node[pos=.75,left] {$I_1$};
@@ -657,7 +639,7 @@
     \end{tikzpicture}
 }
 
-
+% Visualization of a cylindrical conductor. Function graphs of current density and magnetic field
 \newcommand{\tfigCylinderConductorJandB}{
     \begin{tikzpicture}
         \draw[arr] (0,-1) -- +(0,4.5) node[ylabel] {$z$};
@@ -680,10 +662,8 @@
         \begin{scope}[xshift=5.5cm]
             \coordinate (A) at (2, 1.7);
             
-            \draw[arr] (0,0) -- (0, 3) 
-                node[at end, ylabel] {$j(r)$};
-            \draw[arr] (0,0) -- (4, 0) 
-                node[at end, anchor=north west] {$r$};
+            \draw[arr] (0,0) -- (0, 3) node[at end, ylabel] {$j(r)$};
+            \draw[arr] (0,0) -- (4, 0) node[at end, anchor=north west] {$r$};
             \draw[charge color] let \p1 = (A) in
                 (0, \y1) -- (A) 
                 node[at start, left] {$j_0$}
@@ -693,10 +673,8 @@
             
         \begin{scope}[xshift=11cm]
             % electric field
-            \draw[arr] (0,0) -- +(0, 3) 
-                node[at end, ylabel] {$B(r)$};
-            \draw[arr] (0,0) -- +(4, 0) 
-                node[at end, anchor=north west] {$r$};
+            \draw[arr] (0,0) -- +(0, 3) node[at end, ylabel] {$B(r)$};
+            \draw[arr] (0,0) -- +(4, 0) node[at end, anchor=north west] {$r$};
                 
             \draw[charge color] 
                 let \n0={2},\n1={1.7},\n3={3.7}, in
@@ -710,7 +688,7 @@
     \end{tikzpicture}
 }
 
-
+% Cylindrical coil
 \newcommand{\tfigCoil}{
     \begin{tikzpicture}[scale=1]
         \draw[arr] (0,0) -- (0,4.5)
@@ -732,7 +710,7 @@
     \end{tikzpicture}
 }
 
-
+% Magnetic field of a magnetic dipole, ellipsoid
 \newcommand{\tfigMagnDipoleFieldCircleConductorEllipsoid}{
     \begin{tikzpicture}
         \foreach \i in {-1,1}{
@@ -770,7 +748,8 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfighysterese}{
+% Hysteresis
+\newcommand{\tfigHysteresis}{
     \begin{tikzpicture}[scale=2]
 
         \coordinate (saturation) at (1,1);
@@ -782,33 +761,62 @@
 
         % Curve (1) (magnetize)
         \draw[midarrow,dashed,nice dark blue]
-        (0,0) .. controls (0.3,.2) and (0.1,1) .. (saturation)
-        node[midway,right,xshift=-1.5mm,yshift=-2mm] {(1)};
+            (0,0) .. controls (0.3,.2) and (0.1,1) .. (saturation)
+            node[midway,right,xshift=-1.5mm,yshift=-2mm] {(1)};
         % Curve (2)  (change field to negative)
         \draw[name path=dcurve, midarrow,nice turquoise]
-        (saturation) .. controls (-0.8,1) and (-0.1,-1) .. (inv saturation)
-        node[near end,left] {(2)};
+            (saturation) .. controls (-0.8,1) and (-0.1,-1) .. (inv saturation)
+            node[near end,left] {(2)};
         % Curve (2)  (change field to positive)
         \draw[midarrow,nice light blue]
-        (inv saturation) .. controls (0.8,-1) and (0.1,1) .. (saturation)
-        node[near start,right,xshift=1mm,yshift=1mm] {(3)};
+            (inv saturation) .. controls (0.8,-1) and (0.1,1) .. (saturation)
+            node[near start,right,xshift=1mm,yshift=1mm] {(3)};
         % Coordinates of Saturation
-        \draw[dashed] (saturation) -- (1,0)
-        node[below] {$H_\mathrm{S}$};
-        \draw[dashed] (saturation) -- (0,1)
-        node[left] {$B_\mathrm{S}$};
+        \draw[dashed] (saturation) -- (1,0) node[below] {$H_\mathrm{S}$};
+        \draw[dashed] (saturation) -- (0,1) node[left] {$B_\mathrm{S}$};
 
         % Remanence and coercitive field
         \path[name intersections={of=yaxis and dcurve, by=remanenz}];
         \path[name intersections={of=xaxis and dcurve, by=coercitive}];
-        \draw ($(remanenz)+(1pt,0)$) -- ($(remanenz)-(1pt,0)$)
-        node[left] {$B_\mathrm{R}$};
-        \draw ($(coercitive)+(0,1pt)$) -- ($(coercitive)-(0,1pt)$)
-        node[anchor=north west,xshift=-2mm] {$H_\mathrm{C}$};
+        \draw ($(remanenz)+(1pt,0)$) -- ($(remanenz)-(1pt,0)$) node[left] {$B_\mathrm{R}$};
+        \draw ($(coercitive)+(0,1pt)$) -- ($(coercitive)-(0,1pt)$) node[anchor=north west,xshift=-2mm] {$H_\mathrm{C}$};
 
     \end{tikzpicture}
 }
 
+% Magnetic field and magnetisation at a boundary surface between two media
+\newcommand{\tfigBoundarySurfaceMagnetic}{
+    \begin{tikzpicture}[
+            scale=1,
+            dosenfarbe/.style={blue!50!black!80!white}
+        ]
+        \draw
+            (0,0) .. controls (1.8,.6) and +(-3,0) .. (13,.3)
+            node[pos=.17, above, sloped] {$\vec B^{(2)},\vec H^{(2)},\vec D^{(2)}$}
+            node[pos=.22, below, sloped] {$\vec B^{(1)},\vec H^{(1)},\vec D^{(1)}$}
+            node[very near end, above, sloped] {$\vec k\ldots$ Flächenstrom}
+            node[very near end, below, sloped] {Grenzfläche};
+
+        \coordinate (P) at (5.5, .37);
+
+        \node[point] at (P) {};
+        \draw[arr] (P) -- +(0:1) node[midway, below] {$\hat{\vec t}$};
+        \draw[arr] (P) -- +(90:1) node[midway, left] {$\hat{\vec n}$};
+
+        \node at (5.2,.1) {$\otimes$} node at(4.7,-.2) {$\hat{\vec m}=\hat{\vec n}\times\hat{\vec t}$};
+
+        \draw [dosenfarbe]
+            (7,.6) -- +(0,-.4)
+            arc[start angle=-180, end angle=0,x radius=.5, y radius=.15]
+            -- +(0,.4)
+            arc[start angle=0, end angle=180,x radius=.5, y radius=.15]
+            node[midway, above] {Dose}
+            arc[start angle=-180, end angle=0,x radius=.5, y radius=.15];
+        \draw[dosenfarbe] (8.5,.55) rectangle +(1,-0.4) node[midway,above,yshift=10] {Schleife};
+    \end{tikzpicture}
+}
+
+% Refraction of magnetic fields between two media
 \newcommand{\tfigMagneticRefraction}{
     \begin{tikzpicture}[
             scale=2,
@@ -825,25 +833,19 @@
         \node[circle] at (-1,.9) {$\mu_1$};
         \node[circle] at (.5,.9) {$\mu_2\gg\mu_1$};
 
-        \draw[arr, incolor] (Start) -- (Middle)
-        node[midway, below] {$\vec H^{(1)}$};
-        \draw[arr, outcolor] (Middle) -- (End)
-        node[midway, right] {$\vec H^{(2)}$};
-        \draw[dashed, incolor] (Start) -- (StartFoot)
-        node[midway,left] {$H_\parallel^{(1)}$}
-        -- (Middle) node[midway, above] {$H_\perp^{(1)}$};
-        \draw[dashed, outcolor] (EndFoot)
-        -- (End) node[midway, above] {$H_\perp^{(2)}$};
+        \draw[arr, incolor] (Start) -- (Middle) node[midway, below] {$\vec H^{(1)}$};
+        \draw[arr, outcolor] (Middle) -- (End) node[midway, right] {$\vec H^{(2)}$};
+        \draw[dashed, incolor] (Start) -- (StartFoot) node[midway,left] {$H_\parallel^{(1)}$} -- (Middle) node[midway, above] {$H_\perp^{(1)}$};
+        \draw[dashed, outcolor] (EndFoot) -- (End) node[midway, above] {$H_\perp^{(2)}$};
     \end{tikzpicture}
 }
 
-
+% Conductor loop with a reference point out of plane
 \newcommand{\tfigConductorLoopWithRefPoint}{
     \begin{tikzpicture}[scale=1]
         \coordinate (O) at (0,0);
         \coordinate (P) at (1,2);
-        \draw[midarrow=.75] (O) ellipse [x radius=1, y radius=.5]
-        node[] {$F$};
+        \draw[midarrow=.75] (O) ellipse [x radius=1, y radius=.5] node[] {$F$};
         \node[below] at (0,-.5) {$I$};
         \foreach \angle in{0, 55, ..., 360}
         \draw[gray] ($cos(\angle)*(1,0)+sin(\angle)*(0,.5)$) -- (P);
@@ -852,7 +854,7 @@
 }
 
 
-\newcommand{\tfigMagneticFeldHomogenousBall}{
+\newcommand{\tfigMagneticFieldHomogenousBall}{
     \begin{tikzpicture}[
           scale=.7,
           magnetisierung color/.style=nice green
@@ -886,14 +888,12 @@
     \end{tikzpicture}
 }
 
+% Permanent magnet moving through a conductor loop
 \newcommand{\tfigInductionA}{
     \begin{tikzpicture}[scale=1]
-        \draw[midarrow=.5] (0,0)
-        ellipse[x radius=1, y radius=2];
+        \draw[midarrow=.5] (0,0) ellipse[x radius=1, y radius=2];
 
-        \draw (4, -.5) -- ++(-2,0)
-        -- ++(0,1) node[midway, right] {N}
-        -- +(2,0);
+        \draw (4, -.5) -- ++(-2,0) -- ++(0,1) node[midway, right] {N} -- +(2,0);
         \draw[arr] (1.7,-.19) -- ++(-1.1,0) node[near start, below] {$\vec v$};
         \node[below] at (0,-2) {$C=\partial F$};
         \node[anchor=south east] at (-1,0) {$I$};
@@ -903,14 +903,13 @@
     \end{tikzpicture}
 }
 
+% Conductor loop moving through a permanent magnet
 \newcommand{\tfigInductionB}{
     \begin{tikzpicture}[scale=1]
         \draw[midarrow=.5] (0,0)
         ellipse[x radius=1, y radius=2];
 
-        \draw (4, -.5) -- ++(-2,0)
-        -- ++(0,1) node[midway, right] {N}
-        -- +(2,0);
+        \draw (4, -.5) -- ++(-2,0) -- ++(0,1) node[midway, right] {N} -- +(2,0);
         \draw[arr] (1.2,-1) -- ++(1.1,0) node[midway, below] {$\vec v$};
         \node[below] at (0,-2) {$C=\partial F$};
         \node[anchor=south east] at (-1,0) {$I$};
@@ -920,28 +919,35 @@
     \end{tikzpicture}
 }
 
+% Array of inductors
+\newcommand{\tfigTwoInductors}{
+    \begin{tikzpicture}[scale=1]
+        \draw[rotate=20, midarrow=0.75]
+            (0,0) ellipse [x radius=1, y radius=.5]
+            node {$C_1$}
+            node[xshift=13, yshift=-20] {$I_1$};
+        \draw[rotate=-40, midarrow=0.75]
+            (3,0) ellipse [x radius=1, y radius=.5]
+            node {$C_2$}
+            node[xshift=-13, yshift=-20] {$I_2$};
+        \node at (0,-2) {$\mu$};
+        \node at (3,0) {$\ldots$};
+    \end{tikzpicture}
+}
 
-\newcommand{\tfigcylindricalConductorAndCoil}{
+% Scheme of a cylindrical conductor and a coil
+\newcommand{\tfigCylindricalConductorAndCoil}{
     \begin{tikzpicture}[scale=1]
         \coordinate (bottom) at (0,0);
         \coordinate (top) at (0,3);
         \coordinate (offset) at (1,0);
 
         % cylindrical conductor
-        \draw (top)
-        ellipse[x radius=1, y radius=.5];
-        \draw
-        ($(bottom) + (offset)$)
-        arc[start angle=0, end angle=-180, x radius=1, y radius=.5];
-        \draw
-        ($(bottom) + (offset)$) -- ($(top) + (offset)$)
-        ($(bottom) - (offset)$) -- ($(top) - (offset)$);
-        \draw
-        (top) -- ($(top) + (offset)$)
-        node[midway, below] {$a$};
-        \draw[distance marker]
-        ($(bottom) + (offset) + (.2, 0)$) -- +(top)
-        node[midway, right] {$h$};
+        \draw (top) ellipse[x radius=1, y radius=.5];
+        \draw ($(bottom) + (offset)$) arc[start angle=0, end angle=-180, x radius=1, y radius=.5];
+        \draw ($(bottom) + (offset)$) -- ($(top) + (offset)$) ($(bottom) - (offset)$) -- ($(top) - (offset)$);
+        \draw (top) -- ($(top) + (offset)$) node[midway, below] {$a$};
+        \draw[distance marker] ($(bottom) + (offset) + (.2, 0)$) -- +(top) node[midway, right] {$h$};
         \node at ($(bottom) + (-2,.75)$) {$\mu$};
         % coil
         \begin{scope}[shift={(4,0)}]
@@ -953,81 +959,22 @@
                 .. ++(0,.7)
             };
             \node at (1,0.1) {$\mu$};
-            \draw[distance marker]
-                (2.2, 0) -- +(0,3)
-                node[midway, right] {$h$};
+            \draw[distance marker] (2.2, 0) -- +(0,3) node[midway, right] {$h$};
         \end{scope}
     \end{tikzpicture}
 }
 
-
-\newcommand{\tfigTwoInductors}{
-    \begin{tikzpicture}[scale=1]
-        \draw[rotate=20, midarrow=0.75]
-        (0,0) ellipse [x radius=1, y radius=.5]
-        node {$C_1$}
-        node[xshift=13, yshift=-20] {$I_1$};
-        \draw[rotate=-40, midarrow=0.75]
-        (3,0) ellipse [x radius=1, y radius=.5]
-        node {$C_2$}
-        node[xshift=-13, yshift=-20] {$I_2$};
-        \node at (0,-2) {$\mu$};
-        \node at (3,0) {$\ldots$};
-    \end{tikzpicture}
-}
-
-\newcommand{\tfigGrenzflaecheMagnetic}{
-    \begin{tikzpicture}[
-            scale=1,
-            dosenfarbe/.style={blue!50!black!80!white}
-        ]
-        \draw
-        (0,0) .. controls (1.8,.6) and +(-3,0) .. (13,.3)
-        node[pos=.17, above, sloped] {$\vec B^{(2)},\vec H^{(2)},\vec D^{(2)}$}
-        node[pos=.22, below, sloped] {$\vec B^{(1)},\vec H^{(1)},\vec D^{(1)}$}
-        node[very near end, above, sloped] {$\vec k\ldots$ Flächenstrom}
-        node[very near end, below, sloped] {Grenzfläche};
-
-        \coordinate (P) at (5.5, .37);
-
-        \node[point] at (P) {};
-        \draw[arr]
-        (P) -- +(0:1)
-        node[midway, below] {$\hat{\vec t}$};
-        \draw[arr]
-        (P) -- +(90:1)
-        node[midway, left] {$\hat{\vec n}$};
-
-        \node at (5.2,.1) {$\otimes$}
-        node at(4.7,-.2) {$\hat{\vec m}=\hat{\vec n}\times\hat{\vec t}$};
-
-        \draw [dosenfarbe]
-        (7,.6) -- +(0,-.4)
-        arc[start angle=-180, end angle=0,x radius=.5, y radius=.15]
-        -- +(0,.4)
-        arc[start angle=0, end angle=180,x radius=.5, y radius=.15]
-        node[midway, above] {Dose}
-        arc[start angle=-180, end angle=0,x radius=.5, y radius=.15];
-        \draw[dosenfarbe]
-        (8.5,.55) rectangle +(1,-0.4) node[midway,above,yshift=10] {Schleife};
-    \end{tikzpicture}
-}
-
-
-\newcommand{\tfigBewegungDurchLichtaetherA}{
+% Earth moving through the light ether as inertial system
+\newcommand{\tfigEarthMovingThroughLightEther}{
     \begin{tikzpicture}[scale=3]
         \begin{scope}
-            \draw[arr] (0,0) -- (0,1)
-                node[ylabel] {$\vec e_2$};
-            \draw[arr] (0,0) -- (1,0)
-                node[xlabel] {$\vec e_1$};
+            \draw[arr] (0,0) -- (0,1) node[ylabel] {$\vec e_2$};
+            \draw[arr] (0,0) -- (1,0) node[xlabel] {$\vec e_1$};
             \node at (.5,.5) {Äther};
         \end{scope}
         \begin{scope}[shift={(2cm,0)}]
-            \draw[arr] (0,0) -- (0,1)
-                node[ylabel] {$\vec e_2$};
-            \draw[arr] (0,0) -- (1,0)
-                node[xlabel] {$\vec e_1$};
+            \draw[arr] (0,0) -- (0,1) node[ylabel] {$\vec e_2$};
+            \draw[arr] (0,0) -- (1,0) node[xlabel] {$\vec e_1$};
             \node at (.5,.5) {Erde};
 
             \draw[arr] (.2,.2) -- +(.6,0) node[anchor=west] {$\vec v=v \vec e_1$};            
@@ -1035,29 +982,25 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfigBewegungDurchLichtaetherB}{
+% Measuring the speed of light in direction of movement and orthogonal to it
+\newcommand{\tfigMeasurementDirections}{
     \begin{tikzpicture}[scale=1.5]
         \begin{scope}
-            \draw[arr] (0,0) -- +(1,0)
-                node[midway, below] {$v\vec e_1$};
-            \draw[arr] (1,0) -- +(1,0)
-                node[midway, below] {$\vec c'$};
-            \draw[arr] (0,.1) -- +(2,0)
-                node[midway, above] {$c \vec n$};
+            \draw[arr] (0,0) -- +(1,0) node[midway, below] {$v\vec e_1$};
+            \draw[arr] (1,0) -- +(1,0) node[midway, below] {$\vec c'$};
+            \draw[arr] (0,.1) -- +(2,0) node[midway, above] {$c \vec n$};
         \end{scope}
 
         \begin{scope}[shift={(3cm,-0.5cm)}]
-            \draw[arr] (0,0) -- (0,1)
-                node[midway, left] {$\vec c'$};
-            \draw[arr] (0,1) -- +(1,0)
-                node[midway, above] {$v\vec e_1$};
-            \draw[arr] (0,0) -- +(1,1)
-                node[midway, anchor=north west] {$c\vec n$};
+            \draw[arr] (0,0) -- (0,1) node[midway, left] {$\vec c'$};
+            \draw[arr] (0,1) -- +(1,0) node[midway, above] {$v\vec e_1$};
+            \draw[arr] (0,0) -- +(1,1) node[midway, anchor=north west] {$c\vec n$};
 
         \end{scope}
     \end{tikzpicture}
 }
 
+% Scheme of a michelson interferometer
 \newcommand{\tfigMichelsonInterferometer}{
     \begin{tikzpicture}[scale=2]
         \coordinate (ST) at (0,0);
@@ -1072,10 +1015,8 @@
         \draw[midarrow, red laser] (ST) -- (D);
 
         \draw[dashed, very thick] ($(ST) + (45:.3)$) -- ($(ST) - (45:.3)$);
-        \draw[very thick] ($(S1) + (.3,0)$) -- ($(S1) - (.3,0)$)
-            node[midway, above] {S1};
-        \draw[very thick] ($(S2) + (0,.3)$) -- ($(S2) - (0,.3)$)
-            node[midway, right] {S2};
+        \draw[very thick] ($(S1) + (.3,0)$) -- ($(S1) - (.3,0)$) node[midway, above] {S1};
+        \draw[very thick] ($(S2) + (0,.3)$) -- ($(S2) - (0,.3)$) node[midway, right] {S2};
         
         \draw[fill=black] ($(L) - (.4, .1)$) rectangle ($(L) + (0, .1)$);
         \draw[fill=black] ($(D) - (.3, .05)$) rectangle ($(D) + (.3, 0)$)
@@ -1095,12 +1036,12 @@
     \end{tikzpicture}
 }
 
-
-\newcommand{\tfigSRTGedankenExperimentLichtkegel}{
+% Two inertial systems moving away from each other - measuring length and time
+\newcommand{\tfigTwoInertialSystemsMovingAway}{
     \begin{tikzpicture}[scale=3]
         \begin{scope}          
             \draw[arr] (0,0) -- (0,1) node[ylabel] {$y,\textcolor{blue!60!black!70!white}{y'}$} 
-            node[midway, left] {$\Sigma,\textcolor{blue!60!black!70!white}{\Sigma'}$};
+                node[midway, left] {$\Sigma,\textcolor{blue!60!black!70!white}{\Sigma'}$};
             \draw[arr] (0,0) -- (1,0) node[xlabel] {$x,\textcolor{blue!60!black!70!white}{x'}$};
             \node at (.5,-.2) {$t_0=0$};
         \end{scope}
@@ -1121,14 +1062,12 @@
             
             \draw[arr] (0,0) -- (0,1) node[ylabel] {$y$} node[midway, left] {$\Sigma$};
             \draw[arr] (0,0) -- (1,0) node[xlabel] {$x$};
-            %\draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y$};
 
             \draw[arr] (O) -- (O2) node[midway, above] {$\vec v$};
 
             \begin{scope}[shift={(O2)}, moving system color]
                 \draw[arr] (0,0) -- (0,1) node[ylabel] {$y'$} node[midway, left] {$\Sigma'$};
                 \draw[arr] (0,0) -- (1,0) node[xlabel] {$x'$};
-                %\draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y'$};
                 \draw[blue!50!gray,decorate,decoration = {brace}] let \p1 = (L) in 
                     (0,\y1+1) -- +(\x1,0) node[midway, above] {$\diff x'$};
                 \draw[blue!50!gray,decorate, decoration = {brace,mirror}] let \p1 = (L) in 
@@ -1138,7 +1077,8 @@
     \end{tikzpicture}
 }
 
-\newcommand{\tfigSRTLichtkegel}{
+% Light cone in ct-x-diagram
+\newcommand{\tfigLightCone}{
     \begin{tikzpicture}[scale=2.5]
         \draw[arr] (0,-1) -- (0,1) node[ylabel] {$ct$};
         \draw[arr] (-1,0) -- (1,0) node[xlabel] {$x$};
@@ -1148,9 +1088,8 @@
     \end{tikzpicture}
 }
 
-
-
-\newcommand{\tfigGeschwindigkeitsaddition}{
+% Addition of velocities
+\newcommand{\tfigAdditionOfVelocities}{
     \begin{tikzpicture}[scale=2]
         \begin{scope}
             \draw[arr] (0,0) -- (0,1)
@@ -1173,6 +1112,7 @@
     \end{tikzpicture}
 }
 
+% Minkowski Diagram - future and past cones. 
 \newcommand{\tfigMinkowskiDiagramA}{
     \begin{tikzpicture}[scale=3.5]
         \coordinate (C1) at (.9,.9);
@@ -1202,6 +1142,8 @@
             node[point] at (P1) {};
     \end{tikzpicture}
 }
+
+% Minkowski Diagram - hyperboloid lines
 \newcommand{\tfigMinkowskiDiagramB}{
     \begin{tikzpicture}[scale=1.5,clr/.style={nice green}]
         \draw[arr] (-3,0) -- (3,0) node[xlabel] {$x$};
@@ -1232,10 +1174,8 @@
     \end{tikzpicture}
 }
 
-
-
-\newcommand{\tfigMinkowskiZeitdilatationLaengenkontraktion}{
-    % Zeitdilatation und Längenkontraktion
+% Visualization of time dilatation and length contraction
+\newcommand{\tfigMinkowskiTimeDilatationLengthContraction}{
     \begin{tikzpicture}[scale=1.5,clr/.style={nice green}]
         \clip (-1,-1) rectangle (3,3);
         \draw[arr] (-2,0) -- (2,0) node[xlabel] {$x$};
@@ -1266,14 +1206,14 @@
             (PX) -- (P2);
         
         \draw[decorate, decoration = {brace,raise=3pt}] 
-        (0,1) -- (PCT) node[midway, left,xshift=-3pt] {$ct>ct'$};
+            (0,1) -- (PCT) node[midway, left,xshift=-3pt] {$ct>ct'$};
         \draw[decorate, decoration = {brace,raise=3pt}] 
-        (PX) -- (1,0) node[midway, below,yshift=-3pt] {$x'<x$};
+            (PX) -- (1,0) node[midway, below,yshift=-3pt] {$x'<x$};
     \end{tikzpicture}
 }
 
-
-\newcommand{\tfigZunahmeImpulsmasse}{
+% Function graph showing the increase of the relativistic mass when the velocity approaches the speed of light
+\newcommand{\tfigIncreaseOfRelativisticMass}{
     \begin{tikzpicture}
         \draw[arr] (0,0) -- (0,3) node[ylabel] {$m_r=\gamma m$}; 
         \draw[arr] (0,0) -- (3,0) node[xlabel] {$v/c$};
@@ -1284,7 +1224,7 @@
     \end{tikzpicture}
 }
 
-
+% Relatvistic "Massenschale"
 \newcommand{\tfigMassenschale}{
     \begin{tikzpicture}
         \draw[arr] (0,-1) -- (0,3) node[ylabel] {$p^0$}; 
@@ -1295,9 +1235,8 @@
     \end{tikzpicture}
 }
 
-
-
-\newcommand{\tfigDaempfungEMWelle}{
+% Expontial dampening of an electromagnetic wave
+\newcommand{\tfigDampeningElectromagneticWave}{
     \begin{tikzpicture}[scale=1.4]
         \draw[arr] (0,-1.2) -- (0,1.2) node[ylabel] {$E$}; 
         \draw[arr] (0,0) -- (4.7,0) node[xlabel] {$z$};
@@ -1310,8 +1249,8 @@
     \end{tikzpicture}
 }
 
-
-\newcommand{\tfigLinearePolarisation}{
+% 3D diagram depicting linear polarisation 
+\newcommand{\tfigLinearPolarisation}{
     \begin{tikzpicture}[z={(-10:1cm)},x={(45:.7cm)}]
         \coordinate (O) at (0,0);
         \def\wave{
@@ -1340,8 +1279,8 @@
     \end{tikzpicture}
 }
 
-
-\newcommand{\tfigZirkularePolarisation}{
+% 2D diagram depicting circular polarisation 
+\newcommand{\tfigCircularPolarisation}{
     \begin{tikzpicture}[scale=2]
         \coordinate (O) at (0,0);
         \draw[arr] (0,-1.2) -- (0,1.2) node[ylabel] {$\vec e_2$}; 
