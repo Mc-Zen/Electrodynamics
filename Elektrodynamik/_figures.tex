@@ -19,11 +19,16 @@
     object style/.style={object color,thick},
     legreen/.style={green!50!black},
     lorange/.style={red!60!yellow!70!black!90!white},
+    nice dark blue/.style={blue!50!black},
+    nice light blue/.style={blue!60!white!70!black},
+    nice turquoise/.style={blue!50!green},
     polarisation color/.style={purple},
     charge color/.style={blue!50!white!70!black},
     red laser/.style={red!70!black},
     moving system color/.style={blue!60!black!70!white},
     coordsystem/.style={very thin, color=#1!50},
+    xlabel/.style={anchor=north west},
+    ylabel/.style={anchor=south east},
     invisible point/.style={circle,inner sep=0pt,outer sep=0pt,minimum size=0pt},
     point/.style={invisible point,fill=black,minimum size=4pt},
     arr/.style={->,>={Stealth},thin},
@@ -186,9 +191,9 @@
         \coordinate (A) at (1.2, 0.8);
         
         \draw[arr] (0,0) -- (0, 1.3) 
-            node[at end, anchor=south east] {$\rho(r)$};
+            node[at end, ylabel] {$\rho(r)$};
         \draw[arr] (0,0) -- (1.6, 0) 
-            node[at end, anchor=north west] {$r$};
+            node[at end, xlabel] {$r$};
         \draw[charge color] let \p1 = (A) in
             (0, \y1) -- (A) 
             node[at start, left] {$\rho_0$}
@@ -204,9 +209,9 @@
         
         % electric field
         \draw[arr] (0,0) -- +(0, 1.1) 
-            node[at end, anchor=south east] {$E(r)$};
+            node[at end, ylabel] {$E(r)$};
         \draw[arr] (0,0) -- +(1.8, 0) 
-            node[at end, anchor=north west] {$r$};
+            node[at end, xlabel] {$r$};
             
         \draw[charge color,yscale=.2] 
             let \n1={0.5},\n2={1.7} in
@@ -221,9 +226,9 @@
         % potential
         \begin{scope}[shift={(2.5,0)}]
             \draw[arr] (0,0) -- +(0, 1.1) 
-                node[at end, anchor=south east] {$\phi(r)$};
+                node[at end, ylabel] {$\phi(r)$};
             \draw[arr] (0,0) -- +(1.8, 0) 
-                node[at end, anchor=north west] {$r$};
+                node[at end, xlabel] {$r$};
             \draw[charge color,yscale=.3] 
                 let \n1={0.5},\n2={1.7} in 
                 plot[domain=0:\n1] (\x,3/\n1/2 -\x^2/\n1^3/2)
@@ -646,7 +651,7 @@
 
 \newcommand{\tfigCylinderConductorJandB}{
     \begin{tikzpicture}
-        \draw[arr] (0,-1) -- +(0,4.5) node[anchor=south east] {$z$};
+        \draw[arr] (0,-1) -- +(0,4.5) node[ylabel] {$z$};
         
         \draw[arr] ($(100:.5)-(0,.7)$) arc[start angle=-260, end angle=80,x radius=.5, y radius=.25] node[pos=.75,right] {$\vec B$};
         
@@ -667,7 +672,7 @@
             \coordinate (A) at (2, 1.7);
             
             \draw[arr] (0,0) -- (0, 3) 
-                node[at end, anchor=south east] {$j(r)$};
+                node[at end, ylabel] {$j(r)$};
             \draw[arr] (0,0) -- (4, 0) 
                 node[at end, anchor=north west] {$r$};
             \draw[charge color] let \p1 = (A) in
@@ -680,7 +685,7 @@
         \begin{scope}[xshift=11cm]
             % electric field
             \draw[arr] (0,0) -- +(0, 3) 
-                node[at end, anchor=south east] {$B(r)$};
+                node[at end, ylabel] {$B(r)$};
             \draw[arr] (0,0) -- +(4, 0) 
                 node[at end, anchor=north west] {$r$};
                 
@@ -700,7 +705,7 @@
 \newcommand{\tfigCoil}{
     \begin{tikzpicture}[scale=1]
         \draw[arr] (0,0) -- (0,4.5)
-        node[anchor=south east] {$z$};
+        node[ylabel] {$z$};
 
         \draw[rmidarrow=.10] (-1,0)
         \foreach \a in {1,...,6}{
@@ -763,19 +768,19 @@
         \coordinate (inv saturation) at (-1,-1);
 
         % Axis
-        \draw[name path=xaxis,arr] (-1.4,0) -- (1.4,0) node[anchor=north west] {$H$};
-        \draw[name path=yaxis,arr] (0,-1.4) -- (0,1.4) node[anchor=south east] {$B$};
+        \draw[name path=xaxis,arr] (-1.4,0) -- (1.4,0) node[xlabel] {$H$};
+        \draw[name path=yaxis,arr] (0,-1.4) -- (0,1.4) node[ylabel] {$B$};
 
         % Curve (1) (magnetize)
-        \draw[midarrow,dashed,color=blue!50!black]
+        \draw[midarrow,dashed,nice dark blue]
         (0,0) .. controls (0.3,.2) and (0.1,1) .. (saturation)
         node[midway,right,xshift=-1.5mm,yshift=-2mm] {(1)};
         % Curve (2)  (change field to negative)
-        \draw[name path=dcurve, midarrow,color=blue!50!green]
+        \draw[name path=dcurve, midarrow,nice turquoise]
         (saturation) .. controls (-0.8,1) and (-0.1,-1) .. (inv saturation)
         node[near end,left] {(2)};
         % Curve (2)  (change field to positive)
-        \draw[midarrow,color=blue!60!white!70!black]
+        \draw[midarrow,nice light blue]
         (inv saturation) .. controls (0.8,-1) and (0.1,1) .. (saturation)
         node[near start,right,xshift=1mm,yshift=1mm] {(3)};
         % Coordinates of Saturation
@@ -1013,16 +1018,16 @@
     \begin{tikzpicture}[scale=3]
         \begin{scope}
             \draw[arr] (0,0) -- (0,1)
-                node[anchor=south east] {$\vec e_2$};
+                node[ylabel] {$\vec e_2$};
             \draw[arr] (0,0) -- (1,0)
-                node[anchor=north west] {$\vec e_1$};
+                node[xlabel] {$\vec e_1$};
             \node at (.5,.5) {Äther};
         \end{scope}
         \begin{scope}[shift={(2cm,0)}]
             \draw[arr] (0,0) -- (0,1)
-                node[anchor=south east] {$\vec e_2$};
+                node[ylabel] {$\vec e_2$};
             \draw[arr] (0,0) -- (1,0)
-                node[anchor=north west] {$\vec e_1$};
+                node[xlabel] {$\vec e_1$};
             \node at (.5,.5) {Erde};
 
             \draw[arr] (.2,.2) -- +(.6,0) node[anchor=west] {$\vec v=v \vec e_1$};            
@@ -1084,8 +1089,8 @@
             node[midway, above] {$l_2$};
 
         \begin{scope}[shift={(-2cm, -1cm)}, scale=.5]
-            \draw[arr] (0,0) -- (0,1) node[anchor=south east] {$\vec e_2$};
-            \draw[arr] (0,0) -- (1,0) node[anchor=north west] {$\vec e_1$};
+            \draw[arr] (0,0) -- (0,1) node[ylabel] {$\vec e_2$};
+            \draw[arr] (0,0) -- (1,0) node[xlabel] {$\vec e_1$};
         \end{scope}
     \end{tikzpicture}
 }
@@ -1099,7 +1104,7 @@
         
         \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$z$} node[midway, left] {$\Sigma$};
         \draw[arr] (0,0) -- (1,0) node[anchor=south west] {$x$};
-        \draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y$};
+        \draw[arr] (0,0) -- (45:0.8) node[ylabel] {$y$};
 
         \foreach \angle in {0,45,...,360}{
             \draw[arr, red laser] (O) -- (\angle:0.3);
@@ -1109,16 +1114,16 @@
         \begin{scope}[shift={(O2)}, moving system color]
             \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$z'$} node[midway, left] {$\Sigma'$};
             \draw[arr] (0,0) -- (1,0) node[anchor=south west] {$x'$};
-            \draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y'$};
+            \draw[arr] (0,0) -- (45:0.8) node[ylabel] {$y'$};
         \end{scope}
     \end{tikzpicture}
 }
 \renewcommand{\tfigSRTGedankenExperimentLichtkegel}{
     \begin{tikzpicture}[scale=3]
         \begin{scope}          
-            \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$y,\textcolor{blue!60!black!70!white}{y'}$} 
+            \draw[arr] (0,0) -- (0,1) node[ylabel] {$y,\textcolor{blue!60!black!70!white}{y'}$} 
             node[midway, left] {$\Sigma,\textcolor{blue!60!black!70!white}{\Sigma'}$};
-            \draw[arr] (0,0) -- (1,0) node[anchor=north west] {$x,\textcolor{blue!60!black!70!white}{x'}$};
+            \draw[arr] (0,0) -- (1,0) node[xlabel] {$x,\textcolor{blue!60!black!70!white}{x'}$};
             \node at (.5,-.2) {$t_0=0$};
         \end{scope}
         \begin{scope}[xshift=2cm]
@@ -1136,15 +1141,15 @@
             \draw[gray,decorate, decoration = {brace}] let \p1 = (L) in 
                 (\x1,0) -- (\x1,\y1) node[midway, left] {$\diff y$};
             
-            \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$y$} node[midway, left] {$\Sigma$};
-            \draw[arr] (0,0) -- (1,0) node[anchor=north west] {$x$};
+            \draw[arr] (0,0) -- (0,1) node[ylabel] {$y$} node[midway, left] {$\Sigma$};
+            \draw[arr] (0,0) -- (1,0) node[xlabel] {$x$};
             %\draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y$};
 
             \draw[arr] (O) -- (O2) node[midway, above] {$\vec v$};
 
             \begin{scope}[shift={(O2)}, moving system color]
-                \draw[arr] (0,0) -- (0,1) node[anchor=south west] {$y'$} node[midway, left] {$\Sigma'$};
-                \draw[arr] (0,0) -- (1,0) node[anchor=north west] {$x'$};
+                \draw[arr] (0,0) -- (0,1) node[ylabel] {$y'$} node[midway, left] {$\Sigma'$};
+                \draw[arr] (0,0) -- (1,0) node[xlabel] {$x'$};
                 %\draw[arr] (0,0) -- (45:0.8) node[anchor=north west] {$y'$};
                 \draw[blue!50!gray,decorate,decoration = {brace}] let \p1 = (L) in 
                     (0,\y1+1) -- +(\x1,0) node[midway, above] {$\diff x'$};
@@ -1157,8 +1162,8 @@
 
 \newcommand{\tfigSRTLichtkegel}{
     \begin{tikzpicture}[scale=2.5]
-        \draw[arr] (0,-1) -- (0,1) node[anchor=south west] {$ct$};
-        \draw[arr] (-1,0) -- (1,0) node[anchor=north west] {$x$};
+        \draw[arr] (0,-1) -- (0,1) node[ylabel] {$ct$};
+        \draw[arr] (-1,0) -- (1,0) node[xlabel] {$x$};
 
         \draw[color=blue!50!green] (-.9,.9) -- (.9,-.9) (-.9,-.9) -- (.9,.9) 
         node[right] {$-(ct)^2+x^2=0$};
@@ -1172,16 +1177,16 @@
         \begin{scope}
             \draw[arr] (0,0) -- (0,1)
                 node[midway, left] {$\Sigma$}
-                node[anchor=south east] {$y$};
+                node[ylabel] {$y$};
             \draw[arr] (0,0) -- (1,0)
-                node[anchor=north west] {$x$};
+                node[xlabel] {$x$};
         \end{scope}
         \begin{scope}[shift={(2cm,0)}]
             \draw[arr] (0,0) -- (0,1)
                 node[midway, left] {$\Sigma'$}
-                node[anchor=south east] {$y'$};
+                node[ylabel] {$y'$};
             \draw[arr] (0,0) -- (1,0)
-                node[anchor=north west] {$x'$};
+                node[xlabel] {$x'$};
 
             \draw[arr] (.2,.2) -- +(.6,0) node[anchor=west] {$v$};
             \node (U) at (.9,.6) {$u$};
@@ -1200,8 +1205,8 @@
         \fill[blue!2!white] (C2) -- (C4) -- (C3) -- (C1);
         \fill[red!2!white] (C2) -- (C4) -- (C1) -- (C3);
 
-        \draw[arr] (-1,0) -- (1,0) node[anchor=north west] {$x$};
-        \draw[arr] (0,-1) -- (0,1) node[anchor=south east] {$ct$};
+        \draw[arr] (-1,0) -- (1,0) node[xlabel] {$x$};
+        \draw[arr] (0,-1) -- (0,1) node[ylabel] {$ct$};
         \draw[color=violet] (-1,1) -- (1,-1) (-1,-1) -- (1,1) 
             node[right] {Lichtkegel $-(ct)^2+x^2=0$};
         
@@ -1221,14 +1226,14 @@
 }
 \newcommand{\tfigMinkowskiDiagramB}{
     \begin{tikzpicture}[scale=1.5,clr/.style={legreen}]
-        \draw[arr] (-3,0) -- (3,0) node[anchor=north west] {$x$};
-        \draw[arr] (0,-3) -- (0,3) node[anchor=south east] {$ct$};
+        \draw[arr] (-3,0) -- (3,0) node[xlabel] {$x$};
+        \draw[arr] (0,-3) -- (0,3) node[ylabel] {$ct$};
         \draw[color=violet] let \n1={3} in (-\n1,\n1) -- (\n1,-\n1) (-\n1,-\n1) -- (\n1,\n1);
     
-        \draw[clr,arr,name path global/.expanded={ctp axis}] (-110:3) -- (70:3) node[anchor=south east] {$ct'$};
-        \draw[clr,arr,name path global/.expanded={xp axis}] (-160:3) -- (20:3) node[anchor=north west] {$x'$};
-        \draw[clr,arr,dashed] (-2.9,.4) -- +(20:6) node[anchor=north west] {$ct'=\mathrm{const}$};
-        \draw[clr,arr,dashed] (-2.9,-2.85) -- +(70:6) node[anchor=south east] {$x'=\mathrm{const}$};
+        \draw[clr,arr,name path global/.expanded={ctp axis}] (-110:3) -- (70:3) node[ylabel] {$ct'$};
+        \draw[clr,arr,name path global/.expanded={xp axis}] (-160:3) -- (20:3) node[xlabel] {$x'$};
+        \draw[clr,arr,dashed] (-2.9,.4) -- +(20:6) node[xlabel] {$ct'=\mathrm{const}$};
+        \draw[clr,arr,dashed] (-2.9,-2.85) -- +(70:6) node[ylabel] {$x'=\mathrm{const}$};
         
         \draw[name path global/.expanded={hyp top}] plot[domain=-3:3,samples=30] ({\x},{sqrt(1+\x*\x)});
         \draw[name path global/.expanded={hyp right}] plot[domain=1:3,samples=50] ({\x},{sqrt(\x*\x-1)});
@@ -1255,8 +1260,8 @@
     % Zeitdilatation und Längenkontraktion
     \begin{tikzpicture}[scale=1.5,clr/.style={legreen}]
         \clip (-1,-1) rectangle (3,3);
-        \draw[arr] (-2,0) -- (2,0) node[anchor=north west] {$x$};
-        \draw[arr] (0,-2) -- (0,2) node[anchor=south east] {$ct$};
+        \draw[arr] (-2,0) -- (2,0) node[xlabel] {$x$};
+        \draw[arr] (0,-2) -- (0,2) node[ylabel] {$ct$};
         \draw[color=violet] let \n1={2} in (-\n1,\n1) -- (\n1,-\n1) (-\n1,-\n1) -- (\n1,\n1);
         \path let \n1={31},\n2={2.3} in 
             coordinate (A) at (-90-\n1:\n2)
@@ -1264,8 +1269,8 @@
             coordinate (C) at (-180+\n1:\n2)
             coordinate (D) at (\n1:\n2);
         
-        \draw[clr,arr,name path global/.expanded={ctp axis}] (A) -- (B) node[anchor=south east] {$ct'$};
-        \draw[clr,arr,name path global/.expanded={xp axis}] (C) -- (D) node[anchor=north west] {$x'$};
+        \draw[clr,arr,name path global/.expanded={ctp axis}] (A) -- (B) node[ylabel] {$ct'$};
+        \draw[clr,arr,name path global/.expanded={xp axis}] (C) -- (D) node[xlabel] {$x'$};
         \draw[name path global/.expanded={hyp top}] plot[domain=0:1.7,samples=30] ({\x},{sqrt(1+\x*\x)});
         \draw[name path global/.expanded={hyp right}] plot[domain=1:2,samples=50] ({\x},{sqrt(\x*\x-1)});
 
@@ -1292,8 +1297,8 @@
 
 \newcommand{\tfigZunahmeImpulsmasse}{
     \begin{tikzpicture}
-        \draw[arr] (0,0) -- (0,3) node[anchor=south east] {$m_r=\gamma m$}; 
-        \draw[arr] (0,0) -- (3,0) node[anchor=north west] {$v/c$};
+        \draw[arr] (0,0) -- (0,3) node[ylabel] {$m_r=\gamma m$}; 
+        \draw[arr] (0,0) -- (3,0) node[xlabel] {$v/c$};
         \draw (-.1,1) -- +(.2,0) node[at start, left] {$m$};
         % hack: we parametrize with sqrt(x) so the precision goes up for values near 1:
         \draw plot[domain=0:.88,smooth] ({sqrt(\x)*2},{1/sqrt(1-\x)}); 
@@ -1304,8 +1309,8 @@
 
 \newcommand{\tfigMassenschale}{
     \begin{tikzpicture}
-        \draw[arr] (0,-1) -- (0,3) node[anchor=south east] {$p^0$}; 
-        \draw[arr] (-2.5,0) -- (2.5,0) node[anchor=north west] {$\vec p$};
+        \draw[arr] (0,-1) -- (0,3) node[ylabel] {$p^0$}; 
+        \draw[arr] (-2.5,0) -- (2.5,0) node[xlabel] {$\vec p$};
         \draw[dashed] let \n1={2} in (-2,2) -- (1,-1) (2,2) -- (-1,-1);
         \draw plot[domain=-2:2] (\x,{sqrt(\x*\x+1)});
         \draw (-.1,1) -- +(.2,0) node[at start, anchor=north east] {$mc$};
@@ -1316,8 +1321,8 @@
 
 \newcommand{\tfigDaempfungEMWelle}{
     \begin{tikzpicture}[scale=1.4]
-        \draw[arr] (0,-1.2) -- (0,1.2) node[anchor=south east] {$E$}; 
-        \draw[arr] (0,0) -- (4.7,0) node[anchor=north west] {$z$};
+        \draw[arr] (0,-1.2) -- (0,1.2) node[ylabel] {$E$}; 
+        \draw[arr] (0,0) -- (4.7,0) node[xlabel] {$z$};
         \draw plot[domain=0:4.3,samples=100,smooth] (\x,{sin(\x*300)*exp(-\x/2)});
         \draw[legreen] plot[domain=0:4.3,samples=30] (\x,{exp(-\x/2)});
         \draw[legreen] plot[domain=0:4.3,samples=30] (\x,{-exp(-\x/2)});
@@ -1361,8 +1366,8 @@
 \newcommand{\tfigZirkularePolarisation}{
     \begin{tikzpicture}[scale=2]
         \coordinate (O) at (0,0);
-        \draw[arr] (0,-1.2) -- (0,1.2) node[anchor=south east] {$\vec e_1$}; 
-        \draw[arr] (-1.2,0) -- (1.2,0) node[anchor=north west] {$\vec e_2$};
+        \draw[arr] (0,-1.2) -- (0,1.2) node[ylabel] {$\vec e_2$}; 
+        \draw[arr] (-1.2,0) -- (1.2,0) node[xlabel] {$\vec e_1$};
         \node[point] at (O) [label={south west}:{$\vec k$}] {};
         
         \draw[legreen,midarrow=.2] (O) circle [radius=1];
@@ -1372,15 +1377,15 @@
         
         \begin{scope}[xshift=4cm]
             \coordinate (O) at (0,0);
-            \draw[arr] (0,-1.2) -- (0,1.2) node[anchor=south east] {$\vec e_1$}; 
-            \draw[arr] (-1.2,0) -- (1.2,0) node[anchor=north west] {$\vec e_2$};
+            \draw[arr] (0,-1.2) -- (0,1.2) node[ylabel] {$\vec e_2$}; 
+            \draw[arr] (-1.2,0) -- (1.2,0) node[xlabel] {$\vec e_1$};
             \node[point] at (O) [label={south west}:{$\vec k$}] {};
             
             \begin{scope}[yscale=.7]
                 \draw[legreen,midarrow=.2] (O) circle [radius=1];
                 %\draw[arr,legreen] (O) -- (0,1) node[anchor=south, east] {E}
-                \node[point, legreen] at (0,1) [label={south west,legreen}:{$E_{01}$}] {};
-                \node[point, legreen] at (1,0) [label={south west,legreen}:{$E_{02}$}] {};
+                \node[point, legreen] at (0,1) [label={south west,legreen}:{$E_{02}$}] {};
+                \node[point, legreen] at (1,0) [label={south west,legreen}:{$E_{01}$}] {};
                 \draw[arr] (O) -- (30:1) node[midway, above] {$\vec E$};
                 \draw (0.6,0) arc[radius=0.6, start angle=0, end angle=30];
                 \node at (15:.45) {$\omega t$};
