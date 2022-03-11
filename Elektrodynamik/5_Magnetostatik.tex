@@ -55,6 +55,8 @@ In der Magnetostatik ist $\partial _{t}\rho =0$ und damit
 \begin{equation*}
 	\divg \vec {j}=0.
 \end{equation*}
+
+
 \section{Leiter und Magnetfeld}
 
 Auf Erde kommen im Wesentlichen zwei natürliche bekannte Magnetfelder vor: dasjenige der Erde und das Magnetfeld von speziellen Mineralen, wie zum Beispiel Magnetit. Hans Christian \O{}rsted entdeckte im 19. Jahrhundert, dass auch stromdurchflossene Leiter ein Magnetfeld erzeugen und André-Marie Ampère entdeckte fast zeitgleich, dass ein Magnetfeld eine Kraftwirkung auf Leiter hervorruft.
@@ -76,7 +78,7 @@ Im Spezialfall für einen dünnen Leiter $C$ und ein Leiterelement $\diff\vec r$
 
 \begin{figure}[htb]
 	\centering
-	\tfigMagnetfeldBeiLeiter
+	\tfigMagneticFieldAtAConductor
 	\caption{Stromelement $I\diff\vec r$ und Magnetfeld $\vec B$ eines Leiterelements $\diff \vec r$. }
 	\label{fig:magnetic_field_conductor_diff_view}
 \end{figure}
@@ -96,7 +98,7 @@ Für das Feld eines unendlich langen, geraden Leiters gilt
 
 \begin{figure}[htb]
 	\centering
-	\tfigKraftParalleleLeiter
+	\tfigForceOnParallelConductors
 	\caption{Die Kraft auf parallele, stromdurchflossene Leiter ist anziehend, wenn der Stromfluss in verschiedene Richtungen geht und abstoßend, wenn der Strom in beiden Leiter in der gleichen Richtung fließt. }
 	\label{fig:force_parallel_conductors}
 \end{figure}
@@ -500,7 +502,7 @@ Bei Ferromagnetismus gibt es eine permanente Magnetisierung, auch wenn kein Magn
 
 \begin{figure}[ht]
 	\centering
-	\tfighysterese
+	\tfigHysteresis
 	\caption{Magnetische Hysterese: An ein zuerst unmagnetisches Material wird ein Feld $H$ angelegt und erhöht. Der Verlauf der magnetischen Flussdichte folgt der Kurve (1) und erreicht schließlich einen Sättigungswert $B_\mathrm{S}$ bei $H_\mathrm{S}$. Wird das Feld auf 0 verringert (Kurve (2)) bleibt eine Magnetisierung zurück (Remanenz). Ein entgegengesetztes Feld von der Stärke der Koerzitivfeldstärke $H_\mathrm{C}$ ist nötig, um die Restmagnetisierung aufzuheben. Jenseits dieser Feldstärke wird die Magnetisierung umgedreht und die Hysteresekurve umgekehrt durchlaufen. }
 	\label{fig:hysterese}
 \end{figure}
@@ -510,7 +512,7 @@ Wir diskutieren nun die Randbedingungen, die im Wesentlichen die gleichen wie in
 
 \begin{figure}[ht]
 	\centering
-	\tfigGrenzflaecheMagnetic
+	\tfigBoundarySurfaceMagnetic
 	\caption{Beim Übergang zwischen Medien mit verschiedener Permeabilität ändern sich Magnetfeld und magnetische Flussdichte. Außerdem kann ein Flächenstrom $\vec k$ in der Grenzfläche fließen.
 		Die Randbedingungen werden aus Anwendung des Satzes von Gauß auf eine kleine "`Dose`` und des Satzes von Stokes auf eine kleine Schleife, die jeweils einen Teil der Grenzfläche enthalten, hergeleitet. }
 	\label{fig:grenzflaeche_magnetic}
@@ -616,7 +618,7 @@ Beispiele
 
 	      \begin{figure}[htb]
 		      \centering
-		      \tfigMagneticFeldHomogenousBall
+		      \tfigMagneticFieldHomogenousBall
 		      \caption{Magnetisches Feld und magnetische Flussdichte einer homogen magnetisierten Kugel. Anders als die magnetische Flussdichte $B$ weist das Magnetfeld $H$ einen Sprung (Umpolung) an der Kugeloberfläche auf.  }
 		      \label{fig:magnetic_field_homogenously_magnetized_ball}
 	      \end{figure}
@@ -841,7 +843,7 @@ und
 
 \begin{figure}[htb]
 	\centering
-	\tfigcylindricalConductorAndCoil
+	\tfigCylindricalConductorAndCoil
 	\caption{Links: Zylindrisches Drahtstück der Länge $h$ und Radius $a$ in einem Medium mit Permeabilität $\mu$. Rechts: Stück einer (eng gewickelten) Spule der Länge $h$. }
 	\label{fig:cylindricalConductorAndCoil}
 \end{figure}
