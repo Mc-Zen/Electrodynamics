@@ -205,7 +205,7 @@ Es gibt verschiedene Arten von Polarisation:
           \begin{align*}
               \vec E_0 = E_{01}\vec e_1 \pm i E_{02}\vec e_2
           \end{align*}
-          
+
 \end{itemize}
 
 
@@ -223,32 +223,238 @@ mit reellen Feldern $\vec E_\mathrm{R}=\real(\vec E)$ usw.
 
 Außerdem ist der mittlere Poynting-Vektor gegeben durch
 \begin{align}
-    \left\langle\vec S\right\rangle & = \frac{1}{t}\int_0^T\real(\vec E\times\vec H)\diff t \nonumber                                                  \\
+    \left\langle\vec S\right\rangle & = \frac{1}{t}\int_0^T\real(\vec E\times\vec H)\diff t \nonumber                                                   \\
     \label{eq:mittlerer_poyntingvektor}
     \left\langle\vec S\right\rangle & = \frac{1}{2} \sqrt{\frac{\varepsilon}{\mu}} \vec E_0^2 \hat{\vec k}= \left\langle u\right\rangle c \hat{\vec k},
 \end{align}
-die Energie wird folglich mit der Geschwindigkeit $c$ entlang $\vec k$ transportiert. 
+die Energie wird folglich mit der Geschwindigkeit $c$ entlang $\vec k$ transportiert.
 
 Die Impulsdichte einer elektromagnetischen kann im Vakuum mit
 \begin{align}
     \label{eq:mittlere_impulsdichte}
     \left\langle\vec p_\mathrm{em}\right\rangle = \frac{1}{c^2}\left\langle\vec S\right\rangle = \frac{1}{c_0} \left\langle u\right\rangle \hat{\vec k} = \frac{1}{\omega} \left\langle u\right\rangle \vec k
 \end{align}
-bestimmt werden. 
+bestimmt werden.
 
-Für einen klassischen elektromagnetischen Puls ist der Photonenzahl $N$ nicht scharf. Ein Puls besteht im Mittel aus 
+Für einen klassischen elektromagnetischen Puls ist der Photonenzahl $N$ nicht scharf. Ein Puls besteht im Mittel aus
 \begin{align*}
     \left\langle N\right\rangle = \frac{1}{\hbar\omega} \int \left\langle u\right\rangle \diffa[3]{\vec r}
 \end{align*}
-Photonen. Einsetzen in \eqref{eq:mittlere_impulsdichte} liefert 
+Photonen. Einsetzen in \eqref{eq:mittlere_impulsdichte} liefert
 \begin{align*}
     \vec p = \int\diffa[3]{\vec r}\left\langle\vec p_\mathrm{em}\right\rangle = \left\langle N\right\rangle \hbar\vec k
 \end{align*}
-für den Gesamtimpuls eines Lichtpulses. 
+für den Gesamtimpuls eines Lichtpulses.
 
 
 
 
 \section{Reflexion, Transmission und Brechung}
 
-Ziel dieses Kapitels ist es, den Übergang einer ebenen elektromagnetischen Welle an einer Trennfläche von zwei Medien zu beschreiben. 
+Ziel dieses Kapitels ist es, den Übergang einer ebenen elektromagnetischen Welle an einer Trennfläche von zwei Medien zu beschreiben.
+
+Betrachte eine ebene Welle, die an einer Grenzfläche reflektiert und gebrochen wird, wie in \Abbref{fig:reflection_refraction_plane_wave} abgebildet.
+Die Grenzfläche mit Normalenvektor $\vec n$ trennt zwei Medien mit unterschiedlichen Permittivitäten $\varepsilon,\varepsilon'$ und Permeabilitätem $\mu,\mu'$ und somit verschiedenen Brechungsindizes $n$ und $n'$.
+Die vom ersten Medium aus unter dem Winkel $\varphi$ auf die Grenzfläche einfallende Welle (1) hat den Wellenvektor $\vec k$.
+
+Die Ebene, die den Wellenvektor $\vec k$ und den Normalenvektor $\vec n$ der Grenzfläche enthält, wird als Einfallsebene bezeichnet und der Tangentialvektor $\vec t$ der Grenzfläche wird so gewählt, dass er in der Einfallsebene liegt.
+Wir haben bereits gesehen, dass beliebig polarisiertes Licht in zwei linear polarisierte Anteile zerlegt werden kann. Den Anteil, für den die Schwingungsrichtung des elektrischen Feldes in der Einfallsebene liegt, nennt man parallel bzw. p-polarisierten Anteil und den anderen senkrecht bzw. s-polarisiert.
+Zur Vereinfachung wird in diesem Kapitel ohne Beschränkung der Allgemeinheit die $xz$-Ebene als Einfallsebene gewählt.
+
+Ein Teil der Welle wird unter einem Winkel $\varphi'$ in das zweite Medium transmittiert. Der Wellenvektor der transmittierten Welle (2) soll $\vec k'$ genannt werden.
+Der Rest wird unter einem Winkel $\psi$ und mit einem neuen Wellenvektor $\vec k''$ in das erste Medium zurückreflektiert (3).
+
+\begin{figure}[htb]
+    \centering
+    \tfigReflectionRefractionPlaneWave
+    \caption{Eine ebene Welle, die unter einem Winkel $\varphi$ auf eine Grenzfläche mit Normalenvektor $\vec n$ zwischen zwei Medien mit verschiedenen Brechungsindizes $n$ und $n'$ fällt,
+        wird zum Teil unter dem Winkel $\psi$ in das erste Medium zurückreflektiert und der Rest wird unter dem Winkel $\phi'$ in das zweite Medium transmittiert. Mit $\vec t$ wird außerdem der Tangentialvektor auf der Grenzfläche bezeichnet, der in der Einfallsebene (jene Ebene, die den Wellenvektor $k$ der einfallende Welle und das Lot enthält) liegt. }
+    \label{fig:reflection_refraction_plane_wave}
+\end{figure}
+
+Alle Wellen sollen durch ebene Wellen beschrieben werden. Für die einfallende Welle gilt allgemein
+\begin{align*}
+    \vec E =\vec E_0 e^{i(\vec k\cdot\vec r-\omega t)}, \quad \vec B =\frac{n}{c_0}\hat{\vec k}\times\vec E, \quad\omega = ck=\frac{c_0}{n}k.
+\end{align*}
+Die transmittierte Welle lässt sich als
+\begin{align*}
+    \vec E' =\vec E_0' e^{i(\vec k'\cdot\vec r-\omega t)}, \quad \vec B'  =\frac{n'}{c_0}\hat{\vec k}'\times\vec E', \quad \omega = c'k'=\frac{c_0}{n'}k'
+\end{align*}
+schreiben und die reflektierte als (Achtung, gleicher Brechungsindex, wie für die einfallende, da das Medium das Gleiche ist)
+\begin{align*}
+    \vec E'' =\vec E_0'' e^{i(\vec k''\cdot\vec r-\omega t)}, \quad \vec B''  =\frac{n}{c_0}\hat{\vec k}''\times\vec E'', \quad k''  =k.
+\end{align*}
+Zur Lösung des Problems ist die Betrachtung der Randbedingungen bei $z=0$ nötig.
+Diese gehen aus den vier Maxwellgleichungen hervor.
+Zum einen müssen die Normalkomponeneten $\vec D$ und $\vec B$ stetig sein,
+\begin{align}
+    \label{eq:ebene_welle_RB_stetige_normalkomponenten}
+    \begin{aligned}
+        \nabla\cdot \vec D & =0 &  & \implication & \left(\vec D+\vec D''-\vec D'\right)\cdot \vec n & =0 \\
+        \nabla\cdot \vec B & =0 &  & \implication & \left(\vec B+\vec B''-\vec B'\right)\cdot \vec n & =0
+    \end{aligned}
+\end{align}
+und zum anderen müssen die Tangentialkomponenten von $\vec E$ und $\vec H$ stetig sein,
+\begin{align}
+    \label{eq:ebene_welle_RB_stetige_tangentialkomponenten}
+    \begin{aligned}
+        \nabla\times \vec E & = -\frac{1}{c}\frac{\partial\vec B}{\partial t} &  & \implication & \left(\vec E+\vec E''-\vec E'\right)\cdot \vec t & =0  \\
+        \nabla\times \vec H & =\frac{\partial\vec D}{\partial t}              &  & \implication & \left(\vec H+\vec H''-\vec H'\right)\cdot \vec t & =0.
+    \end{aligned}
+\end{align}
+Diese Bedingungen müssen für alle $x,t$ bei $z=0$ erfüllt sein ($y$ ist bereits 0, da als Einfallsebene die $xz$-Ebene gewählt wurde). Alle Wellen müssen demnach identische Phasen haben,
+\begin{align}
+    \label{eq:ebene_welle_identische_phasen}
+    \boxed{\left.\vec k\cdot\vec r\right|_{z=0}=\left.\vec k'\cdot\vec r\right|_{z=0}=\left.\vec k''\cdot\vec r\right|_{z=0}.}
+\end{align}
+Daraus folgt, dass $\vec k$, $\vec k'$ und $\vec k''$ alle in einer Ebene liegen müssen, denn
+\begin{align*}
+    \vec k\cdot \vec e_y=0 \implication \vec k'\cdot \vec e_z=\vec k''\cdot \vec e_y=0.
+\end{align*}
+Außerdem lässt sich das Snelliussche Brechungsgesetz ableiten, das die Relation zwischen den Winkeln von einfallender und transmittierter Welle angibt.
+Durch Projektion der Gleichung \eqref{eq:ebene_welle_identische_phasen} auf die $z=0$-Ebene erhält man
+\begin{align*}
+    k \sin\varphi = k' \sin\varphi' = k''\sin\psi,
+\end{align*}
+also
+\begin{align}
+    \label{eq:snelliussches_brechungsgesetz}
+    \boxed{\frac{\sin\varphi}{\sin\varphi'}=\frac{k'}{k}=\frac{n'}{n}.}
+\end{align}
+Beim Übergang zum optisch dichteren Medium ($n'>n$) erfolgt die Brechung zum Lot hin, $\varphi'<\varphi$, beim Übergang zum opisch dünneren Medium vom Lot weg.
+Ferner folgt wegen $k=k''$, dass Einfallswinkel und Ausfallswinkel (der reflektierten Welle) gleich sind:
+\begin{align*}
+    \varphi=\psi.
+\end{align*}
+
+
+
+\subsubsection{Die Fresnelschen Formeln}
+
+Aus den Randbedingungen \eqref{eq:ebene_welle_RB_stetige_normalkomponenten} und \eqref{eq:ebene_welle_RB_stetige_tangentialkomponenten} können außerdem die sogenannten Fresnelschen Formeln hergeleitet werden, die die Reflektivität und Transmittivität abhängig vom Winkel angeben.
+Dazu werden die elektrischen Feldvektoren aufgespaltet in
+\begin{itemize}
+    \item den s-polarisierten Teil, $\vec E_{0,\perp},\vec E_{0,\perp}',\vec E_{0,\perp}''$ (orthogonal zur Einfallsebene) mit
+          \begin{align}
+              \label{eq:fresnel_senkrecht}
+              t_\perp = \frac{E_{0,\perp}'}{E_{0,\perp}}=\frac{2n\cos\varphi}{n\cos\varphi+n'\frac{\mu}{\mu'}\cos\varphi'},\quad r_\perp = \frac{E_{0,\perp}''}{E_{0,\perp}}=\frac{n\cos\varphi-n'\frac{\mu}{\mu'}\cos\varphi}{n\cos\varphi+n'\frac{\mu}{\mu'}\cos\varphi'}
+          \end{align}
+          Im optischen Bereich ist i.d.R. $\mu\approx\mu'\approx 1$.
+    \item und den p-polarisierten Teil $\vec E_{0,\parallel},\vec E_{0,\parallel}',\vec E_{0,\parallel}''$ (in der Einfallsebene). Es gilt
+          \begin{align}
+              \label{eq:fresnel_parallel}
+              t_\parallel = \frac{E_{0,\parallel}'}{E_{0,\parallel}}=\frac{2n\cos\varphi}{n'\frac{\mu}{\mu'}\cos\varphi+n\cos\varphi'},\quad r_\parallel\frac{E_{0,\parallel}''}{E_{0,\parallel}}=\frac{n'\frac{\mu}{\mu'}\cos\varphi-n\cos\varphi}{n'\frac{\mu}{\mu'}\cos\varphi+n\cos\varphi'}
+          \end{align}
+\end{itemize}
+
+\begin{figure}[htb]
+    \centering
+    \tfigFresnelEquations
+    \caption{Darstellung der Fresnelschen Formeln: Die Amplitudenkoeffizienten $r$ und $t$ sowie der Reflexionsgrad $R$ und der Transmissionsgrad $T$ sind über den Einfallswinkel $\varphi$ aufgetragen, oben für die Reflexion am optisch dichteren Medium und unten am optisch dünneren Medium und jeweils für den senkrecht und den parallel polarisierten Anteil. Bei der Reflexion am dichteren Medium sinkt der Reflexionsgrad für den parallelen Anteil am Brewsterwinkel auf 0 ab und bei Reflexion am dünneren Medium steigt der Reflexionsgrad auf 1, wenn der Winkel der Totalreflexion erreicht wird. Für die Funktionsgraphen wurde $n=1$ und $n'=\num{1,8}$ gewählt. }
+    \label{fig:fresnel_equations}
+\end{figure}
+
+Der sogenannte Reflexionsgrad $R$ gibt das Verhältnis aus einfallender und reflektierter Intensität an und ergibt sich aus dem Betragsquadrat der Reflektivität,
+\begin{align*}
+    R=\left| \frac{E_0'}{E_0} \right|.
+\end{align*}
+Der Transmissionsgrad $T$ gibt entsprechend das Verhältnis aus einfallender und transmittierter Intensität an. Es gilt
+\begin{align*}
+    T=1-R.
+\end{align*}
+Die Reflektivitäten und Transmittivitäten, sowie der Reflexions- und Transmissionsgrad des senkrechten und des parallelen Anteils sind in \Abbref{fig:fresnel_equations}
+über den Einfallswinkel $\varphi$ aufgetragen. Die Fälle für $n<n'$ und $n>n'$ unterscheiden sich.
+
+Zuletzt ist für senkrechtes Licht $\varphi=\varphi'=\psi=0$ und damit nach den Fresnelschen Gleichungen
+\begin{align*}
+    \frac{E_{0,\perp}''}{E_{0,\perp}}=\frac{E_{0}''}{E_{0}} = \frac{n-n'}{n+n'} < 0
+\end{align*}
+für $n'>n$. Da das Verhältnis von einfallendem und reflektiertem Feld kleiner als $0$ ist, findet ein Vorzeichenwechsel des elektrischen Felds statt.
+Dies entspricht einem Phasensprung um $\pi$ bzw. \SI{180}{\degree} bei der Reflexion am optisch dichteren Medium.
+% Wird am optisch dünneren Medium reflektiert, also $n'<n$, dann findet der Phasensprung
+
+
+\subsubsection{Der Brewsterwinkel}
+
+Wie in \Abbref{fig:fresnel_equations} zu sehen, fällt die Amplitude des p-polarisierten reflektierten Strahls für einen bestimmten Winkel (welcher von den Brechungsindizes abhängt) auf $0$ ab.
+Dieser Winkel wird als Brewsterwinkel $\varphi_\mathrm{B}$ bezeichnet. Aus der Bedingung, dass das reflektierte Feld verschwindet, $E_{0,\parallel}''=0$ folgt mit Gleichung \eqref{eq:fresnel_parallel}, dass
+\begin{align*}
+    n' \cos\varphi_\mathrm{B} = n \cos\varphi'
+\end{align*}
+und näherungsweise
+\begin{align}
+    \label{eq:brewsterwinkel}
+    \varphi_\mathrm{B} = \arctan\frac{n'}{n}.
+\end{align}
+Zum Beispiel liegt für den Übergang von Luft ($n\approx 1$) zu Glas $n'\approx \num{1,5}$ der Brewsterwinkel bei $\varphi_\mathrm{B}=\SI{56}{\degree}$.
+Da unter dem Brewsterwinkel reflektiertes Licht keine parallele Komponente aufweist, ist der reflektierte Strahl vollständig s-polarisiert, was eine Anwendung in Polarisatoren ermöglicht.
+
+
+\subsubsection{Die Totalreflexion}
+
+Beim Übergang zu einem optisch dünneren Medium ($n'<n$) wird wie bereits erwähnt der transmittierte Strahl vom Lot weg gebrochen, der Transmissionswinkel $\varphi'$ ist also größer als der Einfallswinkel $\varphi$.
+Vergrößert man den Einfallswinkel, erreicht der Transmissionswinkel schließlich \SI{90}{\degree} und die Welle wird totalreflektiert.
+Dann ist
+\begin{align}
+    \label{eq:totalreflexion}
+    \varphi_\mathrm{T} = \arcsin\frac{n'}{n}.
+\end{align}
+Für noch größere Einfallswinkel $\varphi>\varphi_\mathrm{T}$ ist
+\begin{align*}
+    \sin\varphi'=\frac{n}{n'}\sin\varphi>1
+\end{align*}
+und
+\begin{align*}
+    \cos\varphi'=\sqrt{1-\sin^2\varphi'}=i\sqrt{\left(\frac{n}{n'}\right)^2\sin^2\varphi-1}=i\sqrt{\frac{\sin^2\varphi}{\sin^2\varphi_\mathrm{T}}-1}.
+\end{align*}
+Einsetzen in den Ansatz der ebenen Welle liegert dann
+\begin{align*}
+    e^{i\vec k'\cdot \vec r} = e^{ik' \sin\varphi' x+ik'\cos\varphi' z}  = e^{ik' \sin\varphi' x}e^{ik'\cos\varphi' z} = e^{ik' \sin\varphi' x}e^{-\frac{z}{\delta}}
+\end{align*}
+mit Eindringtiefe
+\begin{align*}
+    \delta=\frac{1}{k'} \frac{\sin\varphi_\mathrm{T}}{\sqrt{\sin^2\varphi-\sin^2\varphi_\mathrm{T}}}.
+\end{align*}
+Der total reflektierte Strahl dringt also exponentiel gedämpft in das optisch dünnere Medium ein. Man spricht von der evaneszenten Welle bzw. dem evaneszenten Feld.
+
+Dieser Effekt findet Anwendung in Wellenleitern (z.B. Glasfaser), in der Röntgenoptik (Reflexion unter streifendem Einfall) und in der Mikroskopie,
+wo am zu vermessenden Objekt seitlich ein Strahl gestreut wird und aus der seitlichen Verschiebung des totalreflektierten Strahls der Abstand gemessen werden kann.
+
+
+
+
+\section{Dynamische Theorie der Dielektrizitätskonstanten}
+
+In dispersiven Materialien ist die Dielektrizitätskonstante abhängig von der Frequenz,
+\begin{align*}
+    \varepsilon=\varepsilon(\omega).
+\end{align*}
+Dies ist in gewissen Maße bei allen Medien außer Vakuum der Fall. Allerdings können Medien in bestimmten Frequenzbereichen praktisch nicht-dispersiv sein.
+
+Die Frequenzabhängigkeit der Dielektrizitätskonstante hat einige wichtige Auswirkungen:
+\begin{itemize}
+    \item Die Phasengeschwindigkeit $c$ ist von der Frequenzabhängig, sodass Wellenpakete, die aus verschiedenen Frequenzkomponenten bestehen, im Raum zerlaufen:
+     \begin{align*}
+              c(\omega) = \frac{c_0}{n(\omega)} = \frac{c_0}{\sqrt{\varepsilon_r(\omega)}}
+          \end{align*}
+    \item Es wird sich zeigen, dass der Imaginärteil $\imag\varepsilon(\omega)$ ungleich 0 ist, was eine Absorption von Energie durch das Medium zur Folge hat (siehe Kapitel \ref{sec:satz_von_poynting}). 
+    \item Insgesamt ist $\varepsilon(\omega)$ komplex, $\varepsilon(\omega) = \varepsilon'(\omega) + i\varepsilon''(\omega)$ und es gibt einen formalen Zusammenhang zwischen $\varepsilon'(\omega)$ und $\varepsilon''(\omega)$. Dieser Zusammenhang ist als Kramers-Kronig-Relation bekannt und wird in dem Abschnitt \ref{sec:kramers_kronig_relation} behandelt. 
+\end{itemize}
+
+Es gibt verschiedene Theoriemodelle, mithilfe derer die Dielektrizitätskonstante quanitativ beschrieben wird. 
+In Abschnitt \ref{sec:lorentzmodell_gebundene_elektronen} wird das Lorentzmodell für gebundene Elektronen disktutiert und in Abschnitt \ref{sec:freie_elektronen} die Dielektrizitätskonstante bei freien Elektronen behandelt. 
+
+
+Zunächst soll eine grobe Einordnung des Problems erfolgen. 
+In Kapitel \ref{sec:Makroskopische_Gleichungen_der_Elektrostatik} haben wir die dielektrische Verschiebung $\vec D$ auf verschiedene Weisen beschrieben:
+\begin{align*}
+    \vec D= \varepsilon \vec E=\varepsilon_0 \vec E+\vec P=\varepsilon_0 \underbrace{(1+\chi)}_{\varepsilon _r }\vec E
+\end{align*}
+Die Suszeptibilität $\chi$ hat ihren Ursprung im atomaren oder molekularen Dipolmoment $\vec p=\varepsilon_0 \alpha\vec E$ und bewirkt eine makroskopische Polarisation 
+$\vec P=N\vec p = \varepsilon_0 N\alpha\vec E = \varepsilon\chi\vec E$. Hier beschreibt $N$ die Dipoldichte, 
+
+
+
+\subsection{Lorentzmodell für gebundene Elektronen\label{sec:lorentzmodell_gebundene_elektronen}}
+\subsection{Beitrag freier Elektronen\label{sec:freie_elektronen}}
+\subsection{Kramers Kronig Relationen\label{sec:kramers_kronig_relation}}

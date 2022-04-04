@@ -1,6 +1,8 @@
 % !TEX root = Theo_III.tex
 
 \usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 \usetikzlibrary{
     arrows.meta,
@@ -13,7 +15,7 @@
     external,
     3d
 }
-%\tikzexternalize[prefix=figures/] % activate
+%\tikzexternalize[prefix=figures/,shell escape=-enable-write18] % activate
 
 \tikzset{
     % Colors
@@ -859,32 +861,32 @@
           scale=.7,
           magnetisierung color/.style=nice green
       ]
-    \newcommand{\drawMainStuff}[1]{
-            \coordinate (O) at (0,0);
-    	    \coordinate (P) at (1,2);
-    	    \draw (O) circle [radius=1];
-    	    \foreach \vzx in {1,-1}{
-                \draw[midarrow] (\vzx*0.5,0.866) .. controls ($1.2*(\vzx*0.5,0.866)$) and (\vzx*1.2, 2.4) .. (\vzx*2.5,3);
-                \draw[midarrow] (\vzx*2.5,-3) .. controls (\vzx*1.2,-2.4) and ($1.2*(\vzx*0.5,-0.866)$) .. (\vzx*0.5,-0.866);
-                \draw[midarrow=0.5] (\vzx*0.866,0.5) .. controls +($.8*(\vzx*0.866,0.5)$) and (\vzx*3,1)
-                    .. (\vzx*3,0) .. controls (\vzx*3,-1) and ($1.6*(\vzx*0.866,-0.5)$) .. (\vzx*0.866,-0.5) ;
-                \draw[arr] (\vzx*0.866,##1*-0.4) -- (\vzx*0.866,##1*0.4);
-                \draw[arr] (\vzx*0.5,##1*-0.8) -- (\vzx*0.5,##1*0.8);
-                \draw[arr, magnetisierung color] (\vzx*0.7,-0.4) -- +(0,0.8);
-                \draw[arr, magnetisierung color] (\vzx*0.25,-0.4) -- +(0,0.8);
-    		}
-            \draw[midarrow=.6] (0,1) -- (0,3.2);
-            \draw[midarrow=.4] (0,-3.2) -- (0,-1);
-            \draw[arr] (0,##1*-.9) -- (0,##1*0.9);
-        }
-        \drawMainStuff{1}
-        \node at (0,4) {$\vec B$-Feld};
-        \node[magnetisierung color] at (-1.5,0) {$\vec M$};
-        \begin{scope}[xshift=7cm]
-            \drawMainStuff{-1}
-            \node at (0,4) {$\vec H$-Feld};
-            \node[magnetisierung color] at (-1.5,0) {$\vec M$};
-        \end{scope}
+    % \newcommand{\drawMainStuff}[1]{
+    %         \coordinate (O) at (0,0);
+    % 	    \coordinate (P) at (1,2);
+    % 	    \draw (O) circle [radius=1];
+    % 	    \foreach \vzx in {1,-1}{
+    %             \draw[midarrow] (\vzx*0.5,0.866) .. controls ($1.2*(\vzx*0.5,0.866)$) and (\vzx*1.2, 2.4) .. (\vzx*2.5,3);
+    %             \draw[midarrow] (\vzx*2.5,-3) .. controls (\vzx*1.2,-2.4) and ($1.2*(\vzx*0.5,-0.866)$) .. (\vzx*0.5,-0.866);
+    %             \draw[midarrow=0.5] (\vzx*0.866,0.5) .. controls +($.8*(\vzx*0.866,0.5)$) and (\vzx*3,1)
+    %                 .. (\vzx*3,0) .. controls (\vzx*3,-1) and ($1.6*(\vzx*0.866,-0.5)$) .. (\vzx*0.866,-0.5) ;
+    %             \draw[arr] (\vzx*0.866,##1*-0.4) -- (\vzx*0.866,##1*0.4);
+    %             \draw[arr] (\vzx*0.5,##1*-0.8) -- (\vzx*0.5,##1*0.8);
+    %             \draw[arr, magnetisierung color] (\vzx*0.7,-0.4) -- +(0,0.8);
+    %             \draw[arr, magnetisierung color] (\vzx*0.25,-0.4) -- +(0,0.8);
+    % 		}
+    %         \draw[midarrow=.6] (0,1) -- (0,3.2);
+    %         \draw[midarrow=.4] (0,-3.2) -- (0,-1);
+    %         \draw[arr] (0,##1*-.9) -- (0,##1*0.9);
+    %     }
+    %     \drawMainStuff{1}
+    %     \node at (0,4) {$\vec B$-Feld};
+    %     \node[magnetisierung color] at (-1.5,0) {$\vec M$};
+    %     \begin{scope}[xshift=7cm]
+    %         \drawMainStuff{-1}
+    %         \node at (0,4) {$\vec H$-Feld};
+    %         \node[magnetisierung color] at (-1.5,0) {$\vec M$};
+    %     \end{scope}
     \end{tikzpicture}
 }
 
@@ -1308,5 +1310,190 @@
                 \node at (15:.45) {$\omega t$};
             \end{scope}
         \end{scope}
+    \end{tikzpicture}
+}
+
+% Schematic of a plane wave being reflected and refracted at a boundary surface between two media. 
+\newcommand{\tfigReflectionRefractionPlaneWave}{
+    \begin{tikzpicture}[scale=2.5]
+        \coordinate (O) at (0,0);
+        \draw[arr] (-2,0) -- (1,0) node[xlabel] {$x$};
+        \draw[arr, dashed] (0,-1) -- +(0,2) node[ylabel] {$z$};
+        
+        \path let \n1={45}, \n2={70} in
+            coordinate (einfallend start) at (-90-\n1:1)
+            coordinate (reflektiert ende) at (-90+\n1:1)
+            coordinate (transmittiert ende) at (90-\n2:1)
+            coordinate (einfalled winkelname) at (-90-\n1/2:0.27)
+            coordinate (reflektiert winkelname) at (-90+\n1/2:0.3)
+            coordinate (transmittiert winkelname) at (90-\n2/2:0.22);
+        
+        \draw[arr, nice dark blue] (einfallend start) -- (O) node[midway, anchor=south east] {$\vec k$} node[near start,anchor=north west] {(1)};
+        \draw (0,-0.4) arc[radius=0.4, start angle=-90, end angle =-135] node at (einfalled winkelname) {$\varphi$};
+        
+        \draw[arr, nice light blue] (O) -- (reflektiert ende) node[midway, anchor=south west] {$\vec k''$} node[near end,anchor=north east] {(3)};
+        \draw (0,-0.45) arc[radius=0.45, start angle=-90, end angle =-45] node at (reflektiert winkelname) {$\psi$};
+        
+        \draw[arr, nice turquoise] (O) -- (transmittiert ende) node[anchor=west] {$\vec k'$} node[at end,anchor=south east] {(2)};
+        \draw(0,0.35) arc[radius=0.35, start angle=90, end angle=20] node at (transmittiert winkelname) {$\varphi'$};
+        
+        \draw[arr, thick] (O) -- (0,0.5) node[midway, left] {$\vec n$};
+        \draw[arr, thick] (O) -- (0.5,0) node[midway, below] {$\vec t$};
+        
+        \node[align=center] at (-1.5,-0.5) {$\varepsilon,\mu$\\$n=\sqrt{\varepsilon\mu}$};
+        \node[align=center] at (-1.5,0.5) {$\varepsilon',\mu'$\\$n'=\sqrt{\varepsilon'\mu'}$};
+    \end{tikzpicture}
+}
+
+% Visualization of the brewster angle for incident, reflected and transmitted wave (s and p polarisation). 
+\newcommand{\tfigBrewsterAngle}{
+    \begin{tikzpicture}[
+        scale=2.5,
+        sp polarisation/.style={decoration={
+            markings,
+            mark=between positions .2 and .8 step .2 with {\draw[<->,>={Stealth}] (0,-.25) -- (0,.25);},
+            mark=between positions.2 and .8 step .2 with {\fill circle(1.2pt);}
+        }},
+        s polarisation/.style={decoration={
+            markings,
+            mark=between positions.2 and .8 step .2 with {\fill circle(1.2pt);}
+        }}
+    ]
+    \coordinate (O) at (0,0);
+    \draw[arr] (-2,0) -- (1,0) node[xlabel] {$x$};
+    \draw[arr, dashed] (0,-1) -- +(0,2) node[ylabel] {$z$};
+    \path let \n1={50}, \n2={180-90-\n1} in
+        coordinate (einfallend start) at (-90-\n1:1)
+        coordinate (reflektiert ende) at (-90+\n1:1)
+        coordinate (transmittiert ende) at (90-\n2:1)
+        coordinate (einfalled winkelname) at (-90-\n1/2:0.4)
+        coordinate (reflektiert winkelname) at (-90+\n1/2:0.4)
+        coordinate (transmittiert winkelname) at (90-\n2/2:0.4)
+        coordinate (angles) at (\n1 pt,\n2 pt);
+        
+    % draw all beams
+
+    \draw[arr, nice dark blue,postaction={sp polarisation,decorate}] (einfallend start) -- (O) node[at start, anchor=south east] {$\vec k$};
+
+    \draw[arr, nice light blue,postaction={s polarisation,decorate}] (O) -- (reflektiert ende) node[at end, anchor=south west] {$\vec k''$};
+
+    \draw[arr, nice turquoise, postaction={sp polarisation,decorate}] (O) -- (transmittiert ende) node[at end, anchor=north west] {$\vec k'$};
+
+    % draw all angles
+    \draw let \p1=(angles),\n1={\x1},\n2={\y1} in 
+    (0,-0.55) arc[radius=0.55, start angle=-90, end angle =-90-\n1] node at (einfalled winkelname) {$\varphi$}
+    (0,0.55) arc[radius=0.55, start angle=90, end angle=90-\n2] node at (transmittiert winkelname) {$\varphi'$}
+    %(0,-0.45) arc[radius=0.45, start angle=-90, end angle =-90+\n1] node at (reflektiert winkelname) {$\psi$}
+    (90-\n2:0.3) arc[radius=0.3,start angle=90-\n2, end angle=-\n2] node[point] at (90-\n2-45:0.15) {};
+
+    \node[align=center] at (-1.5,-0.5) {$n$};
+    \node[align=center] at (-1.5,0.5) {$n'>n$};
+
+    \end{tikzpicture}
+}
+
+
+\newcommand{\tfigFresnelEquations}{
+    \begin{tikzpicture}
+        \begin{axis}
+        [
+                axis line style={arrow tip/.tip},
+                grid=major,minor tick num=1,
+                xmin=0,xmax=90,
+                ymin=-1,ymax=1,
+                xtick={0,10,...,90},ytick={-1,-.8,...,1},
+                xlabel={Winkel [\si{\degree}]},ylabel={Amplitudenkoeffizienten},ylabel near ticks,
+                title={$n<n'$},
+                legend style={at={(0.03,0.03)},anchor=south west},
+                height=7cm,width=7cm
+        ]
+            \draw[thick] (0,0) -- (90,0);
+            
+            % reflection
+            \addplot[domain=0:90,color=blue!60!white!70!black] {((cos(\x)-1.8*cos(asin(1/1.8*sin(\x))))/(cos(\x)+1.8*cos(asin(1/1.8*sin(\x)))))};
+            \addplot[domain=0:90,samples=50,color=blue!50!white] {((1.8*cos(\x)-cos(asin(1/1.8*sin(\x))))/(1.8*cos(\x)+cos(asin(1/1.8*sin(\x)))))};
+            
+            % transmission
+            \addplot[domain=0:90,color=blue!50!green] {(2*cos(\x))/(cos(\x)+1.8*cos(asin(1/1.8*sin(\x)))))};
+            \addplot[domain=0:90,samples=50,blue!20!green] {((2*cos(\x))/(1.8*cos(\x)+cos(asin(1/1.8*sin(\x)))))};
+            
+            \legend{$r_\perp$,$r_\parallel$,$t_\perp$,$t_\parallel$};
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}
+            [
+                axis line style={arrow tip/.tip},
+                grid=major,minor tick num=1,
+                xmin=0,xmax=90,
+                ymin=0,ymax=1,
+                xtick={0,10,...,90},ytick={0,.1,...,1},
+                xlabel={Winkel [\si{\degree}]},ylabel={Reflexion/Transmission},ylabel near ticks,
+                title={$n<n'$},
+                legend style={at={(0.03,0.5)},anchor=west},
+                height=7cm,width=7cm
+            ]
+            % reflection
+            \addplot[domain=0:90,color=blue!60!white!70!black] {((cos(\x)-1.8*cos(asin(1/1.8*sin(\x))))/(cos(\x)+1.8*cos(asin(1/1.8*sin(\x)))))^2};
+            \addplot[domain=0:90,samples=50,color=blue!50!white] {((1.8*cos(\x)-cos(asin(1/1.8*sin(\x))))/(1.8*cos(\x)+cos(asin(1/1.8*sin(\x)))))^2};
+            
+            % transmission
+            \addplot[domain=0:90,color=blue!50!green] {1-((cos(\x)-1.8*cos(asin(1/1.8*sin(\x))))/(cos(\x)+1.8*cos(asin(1/1.8*sin(\x)))))^2};
+            \addplot[domain=0:90,samples=50,blue!20!green] {1-((1.8*cos(\x)-cos(asin(1/1.8*sin(\x))))/(1.8*cos(\x)+cos(asin(1/1.8*sin(\x)))))^2};
+            
+            \legend{$R_\perp$,$R_\parallel$,$T_\perp$,$T_\parallel$};
+        \end{axis}
+    \end{tikzpicture}
+
+
+    \begin{tikzpicture}
+        \begin{axis}
+        [
+                axis line style={arrow tip/.tip},
+                grid=major,minor tick num=1,
+                xmin=0,xmax=90,
+                ymin=-1,ymax=2,
+                xtick={0,10,...,90},ytick={-1,-.6,...,2},
+                xlabel={Winkel [\si{\degree}]},ylabel={Amplitudenkoeffizienten},ylabel near ticks,
+                title={$n>n'$},
+                legend style={at={(0.97,0.97)},anchor=north east},
+                height=7cm,width=7cm
+        ]
+            \draw[thick] (0,0) -- (90,0);
+            
+            % reflection
+            \addplot[domain=0:33.75,color=blue!60!white!70!black,samples=50,smooth] {((cos(\x)-1.8*cos(asin(1.8*sin(\x))))/(cos(\x)+1.8*cos(asin(1.8*sin(\x)))))}; % r_\perp
+            \addplot[domain=0:33.75,samples=50,color=blue!50!white] {((1.8*cos(\x)-cos(asin(1.8*sin(\x))))/(1.8*cos(\x)+cos(asin(1.8*sin(\x)))))}; % r_\parallel
+            
+            % transmission
+            \addplot[domain=0:33.75,color=blue!50!green,samples=50,smooth] {(2*cos(\x))/(cos(\x)+1.8*cos(asin(1.8*sin(\x)))))}; % t_\perp
+            \addplot[domain=0:33.75,samples=50,blue!20!green] {((2*cos(\x))/(1.8*cos(\x)+cos(asin(1.8*sin(\x)))))}; % t_\parallel
+            
+            \legend{$r_\perp$,$r_\parallel$,$t_\perp$,$t_\parallel$};
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}
+            [
+                axis line style={arrow tip/.tip},
+                grid=major,minor tick num=1,
+                xmin=0,xmax=90,
+                ymin=0,ymax=1,
+                xtick={0,10,...,90},ytick={0,.1,...,1},
+                xlabel={Winkel [\si{\degree}]},ylabel={Reflexion/Transmission},ylabel near ticks,
+                title={$n>n'$},
+                legend style={at={(0.97,0.5)},anchor=east},
+                height=7cm,width=7cm
+            ]
+            % reflection
+            \addplot[domain=0:33.75,color=blue!60!white!70!black] {((1.8*cos(\x)-cos(asin(1.8*sin(\x))))/(1.8*cos(\x)+cos(asin(1.8*sin(\x)))))^2};
+            \addplot[domain=0:33.75,samples=50,color=blue!50!white] {((cos(\x)-1.8*cos(asin(1.8*sin(\x))))/(cos(\x)+1.8*cos(asin(1.8*sin(\x)))))^2};
+            
+            % transmission
+            \addplot[domain=0:33.75,color=blue!50!green] {1-((1.8*cos(\x)-cos(asin(1.8*sin(\x))))/(1.8*cos(\x)+cos(asin(1.8*sin(\x)))))^2};
+            \addplot[domain=0:33.75,samples=50,blue!20!green] {1-((cos(\x)-1.8*cos(asin(1.8*sin(\x))))/(cos(\x)+1.8*cos(asin(1.8*sin(\x)))))^2};
+            
+            \legend{$R_\perp$,$R_\parallel$,$T_\perp$,$T_\parallel$};
+        \end{axis}
     \end{tikzpicture}
 }
