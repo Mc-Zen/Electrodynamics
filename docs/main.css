@@ -32,18 +32,8 @@ h1 {
 .alnk {
     padding: 3px;
     border-radius: 4px;
-    color: green;
     transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
-
-    .alnk:hover {
-        background: #d6e3d5;
-    }
-
-    .alnk:active {
-        background: #b3c5b2;
-        color: #075207;
-    }
 
 .button-wrapper {
     display: flex;
@@ -56,7 +46,6 @@ h1 {
 
 .bbutton {
     font-family: Comfortaa, sans-serif;
-    background-color: #dfecff;
     padding: 10px;
     border-radius: 7px;
     border: 1px solid gray;
@@ -66,14 +55,6 @@ h1 {
     color: black;
     font-size: 13px;
 }
-
-    .bbutton:hover {
-        background-color: #c2cedf;
-    }
-
-    .bbutton:active {
-        background-color: #a6b3c7;
-    }
 
 .status-label {
     color: gray;

@@ -1,0 +1,24 @@
+﻿.alnk {
+    color: green;
+}
+
+    .alnk:hover {
+        background: #d6e3d5;
+    }
+
+    .alnk:active {
+        background: #b3c5b2;
+        color: #075207;
+    }
+
+.bbutton {
+    background-color: #d9f5d8;
+}
+
+    .bbutton:hover {
+        background-color: #adc9ac;
+    }
+
+    .bbutton:active {
+        background-color: #96ad95;
+    }
