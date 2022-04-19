@@ -11,8 +11,8 @@
 *.syntex
 __latexindent_temp.tex
 
-Elektrodynamik/*.pdf
-Elektrodynamik/*.auxlock
+src/*.pdf
+src/*.auxlock
 
 *.md5
 
