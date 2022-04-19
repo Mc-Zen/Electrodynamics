@@ -268,7 +268,7 @@ Der Rest wird unter einem Winkel $\psi$ und mit einem neuen Wellenvektor $\vec k
     \centering
     \tfigReflectionRefractionPlaneWave
     \caption{Eine ebene Welle, die unter einem Winkel $\varphi$ auf eine Grenzfläche mit Normalenvektor $\vec n$ zwischen zwei Medien mit verschiedenen Brechungsindizes $n$ und $n'$ fällt,
-        wird zum Teil unter dem Winkel $\psi$ in das erste Medium zurückreflektiert und der Rest wird unter dem Winkel $\phi'$ in das zweite Medium transmittiert. Mit $\vec t$ wird außerdem der Tangentialvektor auf der Grenzfläche bezeichnet, der in der Einfallsebene (jene Ebene, die den Wellenvektor $k$ der einfallende Welle und das Lot enthält) liegt. }
+        wird zum Teil unter dem Winkel $\psi$ in das erste Medium zurückreflektiert und der Rest wird unter dem Winkel $\varphi'$ in das zweite Medium transmittiert. Mit $\vec t$ wird außerdem der Tangentialvektor auf der Grenzfläche bezeichnet, der in der Einfallsebene (jene Ebene, die den Wellenvektor $k$ der einfallende Welle und das Lot enthält) liegt. }
     \label{fig:reflection_refraction_plane_wave}
 \end{figure}
 
@@ -347,13 +347,6 @@ Dazu werden die elektrischen Feldvektoren aufgespaltet in
           \end{align}
 \end{itemize}
 
-\begin{figure}[htb]
-    \centering
-    \tfigFresnelEquations
-    \caption{Darstellung der Fresnelschen Formeln: Die Amplitudenkoeffizienten $r$ und $t$ sowie der Reflexionsgrad $R$ und der Transmissionsgrad $T$ sind über den Einfallswinkel $\varphi$ aufgetragen, oben für die Reflexion am optisch dichteren Medium und unten am optisch dünneren Medium und jeweils für den senkrecht und den parallel polarisierten Anteil. Bei der Reflexion am dichteren Medium sinkt der Reflexionsgrad für den parallelen Anteil am Brewsterwinkel auf 0 ab und bei Reflexion am dünneren Medium steigt der Reflexionsgrad auf 1, wenn der Winkel der Totalreflexion erreicht wird. Für die Funktionsgraphen wurde $n=1$ und $n'=\num{1,8}$ gewählt. }
-    \label{fig:fresnel_equations}
-\end{figure}
-
 Der sogenannte Reflexionsgrad $R$ gibt das Verhältnis aus einfallender und reflektierter Intensität an und ergibt sich aus dem Betragsquadrat der Reflektivität,
 \begin{align*}
     R=\left| \frac{E_0'}{E_0} \right|.
@@ -373,6 +366,13 @@ für $n'>n$. Da das Verhältnis von einfallendem und reflektiertem Feld kleiner 
 Dies entspricht einem Phasensprung um $\pi$ bzw. \SI{180}{\degree} bei der Reflexion am optisch dichteren Medium.
 % Wird am optisch dünneren Medium reflektiert, also $n'<n$, dann findet der Phasensprung
 
+\begin{figure}[H]
+    \centering
+    \tfigFresnelEquations
+    \caption{Darstellung der Fresnelschen Formeln: Die Amplitudenkoeffizienten $r$ und $t$ sowie der Reflexionsgrad $R$ und der Transmissionsgrad $T$ sind über den Einfallswinkel $\varphi$ aufgetragen, oben für die Reflexion am optisch dichteren Medium und unten am optisch dünneren Medium und jeweils für den senkrecht und den parallel polarisierten Anteil. Bei der Reflexion am dichteren Medium sinkt der Reflexionsgrad für den parallelen Anteil am Brewsterwinkel auf 0 ab und bei Reflexion am dünneren Medium steigt der Reflexionsgrad auf 1, wenn der Winkel der Totalreflexion erreicht wird. Für die Funktionsgraphen wurde $n=1$ und $n'=\num{1,8}$ gewählt. }
+    \label{fig:fresnel_equations}
+\end{figure}
+
 
 \subsubsection{Der Brewsterwinkel}
 
@@ -389,6 +389,12 @@ und näherungsweise
 Zum Beispiel liegt für den Übergang von Luft ($n\approx 1$) zu Glas $n'\approx \num{1,5}$ der Brewsterwinkel bei $\varphi_\mathrm{B}=\SI{56}{\degree}$.
 Da unter dem Brewsterwinkel reflektiertes Licht keine parallele Komponente aufweist, ist der reflektierte Strahl vollständig s-polarisiert, was eine Anwendung in Polarisatoren ermöglicht.
 
+\begin{figure}[htb]
+    \centering
+    \tfigBrewsterAngle
+    \caption{Brewsterwinkel: Die Reflexion von unter dem Brewsterwinkel auf ein optisch dichteres Medium einfallende Wellen ist vollständig s-polarisiert. }
+    \label{fig:brewsterwinkel}
+\end{figure}
 
 \subsubsection{Die Totalreflexion}
 
@@ -434,27 +440,113 @@ Dies ist in gewissen Maße bei allen Medien außer Vakuum der Fall. Allerdings k
 Die Frequenzabhängigkeit der Dielektrizitätskonstante hat einige wichtige Auswirkungen:
 \begin{itemize}
     \item Die Phasengeschwindigkeit $c$ ist von der Frequenzabhängig, sodass Wellenpakete, die aus verschiedenen Frequenzkomponenten bestehen, im Raum zerlaufen:
-     \begin{align*}
+          \begin{align*}
               c(\omega) = \frac{c_0}{n(\omega)} = \frac{c_0}{\sqrt{\varepsilon_r(\omega)}}
           \end{align*}
-    \item Es wird sich zeigen, dass der Imaginärteil $\imag\varepsilon(\omega)$ ungleich 0 ist, was eine Absorption von Energie durch das Medium zur Folge hat (siehe Kapitel \ref{sec:satz_von_poynting}). 
-    \item Insgesamt ist $\varepsilon(\omega)$ komplex, $\varepsilon(\omega) = \varepsilon'(\omega) + i\varepsilon''(\omega)$ und es gibt einen formalen Zusammenhang zwischen $\varepsilon'(\omega)$ und $\varepsilon''(\omega)$. Dieser Zusammenhang ist als Kramers-Kronig-Relation bekannt und wird in dem Abschnitt \ref{sec:kramers_kronig_relation} behandelt. 
+    \item Es wird sich zeigen, dass der Imaginärteil $\imag\varepsilon(\omega)$ ungleich 0 ist, was eine Absorption von Energie durch das Medium zur Folge hat (siehe Kapitel \ref{sec:satz_von_poynting}).
+    \item Insgesamt ist $\varepsilon(\omega)$ komplex, $\varepsilon(\omega) = \varepsilon'(\omega) + i\varepsilon''(\omega)$ und es gibt einen formalen Zusammenhang zwischen $\varepsilon'(\omega)$ und $\varepsilon''(\omega)$. Dieser Zusammenhang ist als Kramers-Kronig-Relation bekannt und wird in dem Abschnitt \ref{sec:kramers_kronig_relation} behandelt.
 \end{itemize}
 
-Es gibt verschiedene Theoriemodelle, mithilfe derer die Dielektrizitätskonstante quanitativ beschrieben wird. 
-In Abschnitt \ref{sec:lorentzmodell_gebundene_elektronen} wird das Lorentzmodell für gebundene Elektronen disktutiert und in Abschnitt \ref{sec:freie_elektronen} die Dielektrizitätskonstante bei freien Elektronen behandelt. 
+Es gibt verschiedene Theoriemodelle, mithilfe derer die Dielektrizitätskonstante quanitativ beschrieben wird.
+In Abschnitt \ref{sec:lorentzmodell_gebundene_elektronen} wird das Lorentzmodell für gebundene Elektronen disktutiert und in Abschnitt \ref{sec:freie_elektronen} die Dielektrizitätskonstante bei freien Elektronen behandelt.
 
 
-Zunächst soll eine grobe Einordnung des Problems erfolgen. 
+Zunächst soll eine grobe Einordnung des Problems erfolgen.
 In Kapitel \ref{sec:Makroskopische_Gleichungen_der_Elektrostatik} haben wir die dielektrische Verschiebung $\vec D$ auf verschiedene Weisen beschrieben:
 \begin{align*}
     \vec D= \varepsilon \vec E=\varepsilon_0 \vec E+\vec P=\varepsilon_0 \underbrace{(1+\chi)}_{\varepsilon _r }\vec E
 \end{align*}
-Die Suszeptibilität $\chi$ hat ihren Ursprung im atomaren oder molekularen Dipolmoment $\vec p=\varepsilon_0 \alpha\vec E$ und bewirkt eine makroskopische Polarisation 
-$\vec P=N\vec p = \varepsilon_0 N\alpha\vec E = \varepsilon\chi\vec E$. Hier beschreibt $N$ die Dipoldichte, 
+Die Suszeptibilität $\chi$ hat ihren Ursprung im atomaren oder molekularen Dipolmoment $\vec p=\varepsilon_0 \alpha\vec E$ und bewirkt eine makroskopische Polarisation
+$\vec P=N\vec p = \varepsilon_0 N\alpha\vec E = \varepsilon\chi\vec E$. Hier beschreibt $N$ die Dipoldichte und $\alpha$ die Polarisierbarkeit.
+
+Wir haben ferner gesehen, dass die Suszeptibilität in dichten Systemen durch
+\begin{align*}
+    \chi =\frac{N\alpha}{1-\frac{1}{3}N\alpha}
+\end{align*}
+gegeben ist, weil $\vec E_\mathrm{lokal}\neq\vec E$.
+
+Es gibt verschiedene Beiträge zu der Polarisierbarkeit, die durch unterschiedliche Mechanismen zustande kommen.
+\begin{enumerate}
+    \item Elektronische Dipolmomente bewirken eine Verschiebungspolarisation.
+    \item Ähnlich funktionieren ionische Dipolmomente, die aber durch die Ladungstrennung in Ionen entsteht.
+    \item Die Orientierungspolarisation ist die Polarisation, die durch die Ausrichtung von molekularen, statistisch verteilten Dipolen entsteht.
+\end{enumerate}
+
+Bei welchen Frequenzen diese Beiträge eine Rolle spielen ist in \Abbref{fig:polarisierbarkeit_ueber_spektrum} grob schematisch skizziert.
+Die Idee dabei ist, dass verschiedene Beträge charakteristische Frequenzen haben mit
+\begin{align*}
+    \omega_\mathrm{O}<\omega_\mathrm{I}<\omega_\mathrm{e}
+\end{align*}
+($\omega_\mathrm{O}$ für die Orientierungspolarisation, $\omega_\mathrm{I}$ für ionische Dipolmomente und $\omega_\mathrm{e}$ für elektronische Dipolmomente).
+Für viel größere Frequenzen als die höchste charakteristische Frequenz sinkt die Polarisierbarkeit auf $0$.
+
+\begin{figure}[htb]
+    \centering
+    \tfigPolarizabilityOverSpectrum
+    \caption{Polarisierbarkeit skizzenhaft aufgetragen über das elektromagnetische Spektrum von Radiowellen bis zum UV-Bereich. }
+    \label{fig:polarisierbarkeit_ueber_spektrum}
+\end{figure}
 
 
 
 \subsection{Lorentzmodell für gebundene Elektronen\label{sec:lorentzmodell_gebundene_elektronen}}
+
+Das Lorentzmodell beschreibt die mit den auftreffenden elektrischen Feldern wechselwirkenden Elektronen als klassische harmonische Oszillatoren.
+Das Elektron erfährt eine lineare, rücktreibende Anziehungskraft durch den Atomkern $\vec F_\mathrm{A} = -m\omega_0^2 \vec r$ mit Eigenfrequenz $\omega_0$ (mit einer Feder vergleichbar),
+eine von der Geschwindigkeit abhängige Reibungskraft $\vec F_\mathrm{R}=-m\gamma\dot{\vec r}$ mit Dämpfungskonstante $\gamma$ und zuletzt die externe Kraft, die durch ein äußeres, mit Frequenz $\omega$ oszillierendes elektrisches Feld gegeben ist.
+Diese äußere Kraft schreiben wir als $-e\vec E_0(\omega)e^{-i\omega t}$
+
+Insgesamt gilt also
+\begin{align*}
+    \vec F_\mathrm{ges} & =\vec F_\mathrm{A} + \vec F_\mathrm{R} + \vec F_\mathrm{ext}               \\
+    m\ddot{\vec r}      & = -m\omega_0^2 \vec r-m\gamma\dot{\vec r} -e\vec E_0(\omega)e^{-i\omega t}
+\end{align*}
+bzw.
+\begin{align*}
+    m\left(\ddot{\vec r}+\gamma\dot{\vec r} +\omega_0^2 \vec r\right) & = -e\vec E_0(\omega)e^{-i\omega t}.
+\end{align*}
+Diese inhomogene Differentialgleichung zweiten Grades wird mit einem Exponentialansatz $\vec r(t)=\vec r(\omega)e^{-i\omega t}$ gelöst:
+\begin{align*}
+    \vec r(t) = -\frac{e}{m} \frac{1}{\omega_0^2-\omega^2-i\gamma\omega} \vec E_0(\omega)e^{-i\omega t}
+\end{align*}
+Für das Dipolmoment $\vec p(t)=\vec p(\omega)e^{-i\omega t} = -e\vec r(t)$ folgt
+\begin{align*}
+    \vec p(\omega) = e\vec r(\omega)= -\frac{e^2}{m} \frac{1}{\omega_0^2-\omega^2-i\gamma\omega} \vec E_0(\omega) = \varepsilon_0 \alpha(\omega)\vec E_0(\omega).
+\end{align*}
+Im Allgemeinen gibt es pro Atom viele Elektronen mit Eigenfrequenzen $\omega_i$ und Dämpfungen $\gamma_i$, was sich durch die Überlagerung von mehreren harmonischen Oszillatoren der Stärke $f_i$ modellieren lässt\footnote{Die Oszillatorstärken $f_i$ addieren sich bei Atomen zu der Kernladungszahl $Z$ auf.}.
+Die makroskopische Polarisation ist dann (mit Anzahl $N$ der Atome)
+\begin{align*}
+    P = \sum_i p_i = \frac{Ne^2}{m}\sum_i  \frac{f_i}{\omega_i^2-\omega^2-i\gamma_i\omega} \vec E_0(\omega)e^{-i\omega t}.
+\end{align*}
+Da aber $\vec P=\varepsilon_0 \chi \vec E$, ist
+\begin{align*}
+    \chi = \frac{Ne^2}{\varepsilon_0 m} \sum_i \frac{f_i}{\omega_i^2-\omega^2-i\gamma_i\omega}
+\end{align*}
+und
+\begin{align*}
+    \varepsilon_r = 1+\chi = 1+ \frac{Ne^2}{\varepsilon_0 m} \sum_i \frac{f_i}{\omega_i^2-\omega^2-i\gamma_i\omega}.
+\end{align*}
+Eine Zerlegung in Real- und Imaginärteil liefert
+\begin{align*}
+    \varepsilon_r'(\omega)  & = 1 + \frac{Ne^2}{\varepsilon_0 m} \sum_i f_i\frac{\omega_i^2-\omega^2}{\omega_i^2-\omega^2-i\gamma_i\omega} \\
+    \varepsilon_r''(\omega) & = \frac{Ne^2}{\varepsilon_0 m} \sum_i f_i\frac{ \gamma_i\omega}{\omega_i^2-\omega^2-i\gamma_i\omega} .
+\end{align*}
+Für nur einen einzigen Oszillator beschreibt deren Verlauf eine typische Resonanzkurve, wie in \Abbref{fig:dielectric_constant_real_and_imaginary_one_resonance} dargestellt. 
+
+
+\begin{figure}[htb]
+    \centering
+    \tfigDielectricConstantRealPart
+    \tfigDielectricConstantImaginaryPart
+    \caption{<caption>}
+    \label{fig:dielectric_constant_real_and_imaginary_one_resonance}
+\end{figure}
+
+
+
+
+
+
+
 \subsection{Beitrag freier Elektronen\label{sec:freie_elektronen}}
 \subsection{Kramers Kronig Relationen\label{sec:kramers_kronig_relation}}

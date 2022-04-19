@@ -1392,7 +1392,7 @@
     \end{tikzpicture}
 }
 
-
+% Plot of Fresnels equations for parallel and orthogonal polarized waves. Chosen n=1 and n'=1.8.
 \newcommand{\tfigFresnelEquations}{
     \begin{tikzpicture}
         \begin{axis}
@@ -1495,5 +1495,85 @@
             
             \legend{$R_\perp$,$R_\parallel$,$T_\perp$,$T_\parallel$};
         \end{axis}
+    \end{tikzpicture}
+}
+
+
+
+% Polarizability plotted over wide ranges of the frequency spectrum (from radio waves to XUV).
+\newcommand{\tfigPolarizabilityOverSpectrum}{
+    \begin{tikzpicture}
+        \draw[arr] (0,0) node[below] {$0$} -- (0,5) node[ylabel] {$\alpha(\omega)$};
+        \draw[arr] (0,0) -- (9,0) node[xlabel] {$\omega$};
+        
+        
+        \draw[dashed] (0,2.5) -- +(9,0); 
+        \draw[dashed] (0,3.5) -- +(9,0);
+        \node[align=left, text width=4cm] at (2.15,2) {elektronisch};
+        \node[align=left, text width=4cm] at (2.15,3) {ionisch};
+        \node[align=left, text width=4cm] at (2.15,4) {dipolar};
+        \draw[charge color] 
+            (0,4.5) .. controls +(0:1.2) and +(120:.6) .. 
+            ++(1.3,-.5) node[midway,anchor=south west]{Funk} node (Debye Relaxation) {}
+            .. controls +(-60:.6) and +(180:1.2) ..
+            ++(1.3,-.5) %
+            .. controls +(0:.5) and +(180:.2) ..
+            ++(.5,.4) node[anchor=south west]{IR} .. controls +(0:.1) and +(95:.9) ..
+            ++(.2,-.9) node (Resonanz) {} .. controls +(-85:.9) and +(180:.1) ..
+            ++(.2,-.9) .. controls +(0:.2) and +(180:.8) ..
+            ++(.8,.4) node (Verschiebung von Ionen) {}%
+            .. controls +(0:.5) and +(180:.1) ..
+            ++(.5,.25) .. controls +(0:.1) and +(95:.6) ..
+            ++(.15,-.55) 
+            .. controls +(-85:.6) and +(180:.1) ..
+            ++(.15,-.6) .. controls +(0:.1) and +(180:.6) ..
+            ++(.6,.3) node[anchor=north,yshift=-2mm]{UV} %
+            .. controls +(0:.5) and +(180:.1) ..
+            ++(.5,.25) .. controls +(0:.1) and +(95:.6) ..
+            ++(.15,-.55) .. controls +(-85:.6) and +(180:.1) ..
+            ++(.15,-.6) .. controls +(0:.05) and +(180:.6) ..
+            ++(.6,.3) %
+            .. controls +(0:.5) and +(180:.1) ..
+            ++(.5,.3)    .. controls +(0:.1) and +(95:.6) ..
+            ++(.15,-.55) .. controls +(-85:.4) and +(180:.1) ..
+            ++(.15,-.4) .. controls +(0:.05) and +(180:.4) ..
+            ++(.6,.3);
+            
+        \node at (3.5,5) {Debye-Relaxation} edge[arr,bend left=10] (Debye Relaxation);
+        \node at (4.7,4) {Resonanz} edge[arr,bend left=10] (Resonanz);
+        \node[align=center] at (7,3) {Verschiebung von Ionen\\kann $\vec E(\omega)$ nicht mehr folgen} edge[arr,out=180,in=50,left] (Verschiebung von Ionen);
+        
+        \draw[decorate, decoration = {brace,mirror,amplitude=5pt}] (4.7,-.4) -- +(3.8,0) node[midway,below,align=center,yshift=-2mm] {Resonanzen durch\\gebundene Elektronen};
+    \end{tikzpicture}
+}
+
+% Function plot of the real part of the dielectric constant (Lorentz model) for one resonance 
+\newcommand{\tfigDielectricConstantRealPart}{
+    \begin{tikzpicture}[scale=1.2]
+        \draw[arr] (0,0) node[below] {$0$} -- (0,3) node[ylabel] {$\varepsilon_r'(\omega)$};
+        \draw[arr] (0,0) -- (5,0) node[xlabel] {$\omega$};
+        
+        \draw let \n1={2.3},\n2={2},\n3={.7} in plot[domain=0:5,samples=50,smooth] (\x,{1+\n1*(\n2^2-\x^2)/((\n2^2-\x^2)^2+\x^2*\n3^2}) 
+        node at (-1,1+\n1/\n2^2) {$1+\frac{Ne^2}{\varepsilon_0m}\frac{f}{\omega_0^2}$} (\n2,1) -- (\n2,0)
+        node[below] {$\omega_0$};
+        
+        \draw[dashed] (0,1) node[left] {1} -- +(5,0) ;
+    \end{tikzpicture}
+}
+
+% Function plot of the imaginary part of the dielectric constant (Lorentz model) for one resonance 
+\newcommand{\tfigDielectricConstantImaginaryPart}{
+    \begin{tikzpicture}[scale=1.2]
+        \draw[arr] (0,0) node[below] {$0$} -- (0,3) node[ylabel] {$\varepsilon_r''(\omega)$};
+        \draw[arr] (0,0) -- (5,0) node[xlabel] {$\omega$};
+        
+        \draw[yscale=1.4] let \n{f}={2.3},\n{w0}={2},\n{g}={.7} in
+            plot[domain=0.0000:4.8,samples=80,smooth] (\x+.03,{(\n{f}*\x*\n{g})/((\n{w0}^2-\x^2)^2+\x^2*\n{g}^2});
+        \draw[yscale=1.4]
+            let \n{f}={2.3},\n{w0}={2},\n{g}={.7},\n{max}={\n{f}/(\n{w0}*\n{g}-.007} in
+            [dashed] (0,1) node[left] {1} -- +(5,0)
+            [dashed] (0,\n{max}) node[left] {$\frac{Ne^2}{\varepsilon_0m}\frac{f}{\omega_0\gamma}$} -- +(\n{w0},0)
+            (\n{w0},\n{max}) -- (\n{w0},0)
+            node[below] {$\omega_0$} [distance marker] (\n{w0}-\n{g}/2,\n{max}/2) -- +(\n{g},0) node[fill=white,midway, below,yshift=-0mm] {$\gamma$};
     \end{tikzpicture}
 }
