@@ -8,7 +8,7 @@ Die Elektrostatik behandelt elektrische Felder ruhender oder langsam bewegter el
 
 Es gibt zwei Arten von Ladungen: positive und negative Ladung. Die Ladung ist eine diskrete Größe und nimmt stets ein ganzzahliges Vielfaches der sogenannten Elementarladung $e_{0}$ an:
 \begin{equation*}
-	e_{0}=\SI{1.602176624e-19}{\coulomb}
+	e_{0}=\SI{1.602176624e-19}{\coulomb}.
 \end{equation*}
 Diese wurde zuerst bei dem Millikan-Versuch bestimmt. So trägt zum Beispiel das Proton die Ladung $+e_{0}$ und das Elektron die Ladung $-e_{0}$. Quarks haben zwar Bruchteile der Elementarladung, treten aber nie frei, sondern nur in Kombinationen auf, die ein Vielfaches der Elementarladung bilden.
 
@@ -22,11 +22,11 @@ Eine Ladung auf einem infinitesimalen Raum wird als Punktladung bezeichnet. In d
 \end{equation*}
 Daraus lässt sich die Ladungsdichte für viele Punktladungen $q_{i}$ an Orten $\vec {r}_{i}$ verallgemeinern:
 \begin{equation*}
-	\rho \left(\vec {r}\right)=\sum _{i}q_{i}\delta \left(\vec {r}-\vec {r}_{i}\right)
+	\rho \left(\vec {r}\right)=\sum _{i}q_{i}\delta \left(\vec {r}-\vec {r}_{i}\right).
 \end{equation*}
 Im Grenzwert für kleinste Abstände kann man schließlich auch mit kontinuierlichen Ladungsdichten rechnen:
 \begin{equation*}
-	\rho \left(\vec {r}\right)=\frac{\diff Q}{\diff V}
+	\rho \left(\vec {r}\right)=\frac{\diff Q}{\diff V}.
 \end{equation*}
 Die gesamte Ladung in einem Volumen $V$ ist also
 \begin{equation*}
@@ -64,17 +64,17 @@ mit Dielektrizitätskonstante $\varepsilon _{0}=\SI{8,8541878128e-12}{\farad\per
 Mithilfe des Coulombschen Gesetzes können wir nach dem Superpositionsprinzip die Kraft auf eine Testladung $q_{0}$ am Ort $\vec {r}_{0}$ durch mehrere Ladungen $q_{i}$ bestimmen:
 \begin{equation}
 	\label{3.2}
-	\vec {F}=\frac{q_{0}}{4\pi \varepsilon _{0}}\sum _{i}q_{i}\frac{\vec {r}_{0}-\vec {r}_{i}}{\left| \vec {r}_{0}-\vec {r}_{i}\right| ^{3}}
+	\vec {F}=\frac{q_{0}}{4\pi \varepsilon _{0}}\sum _{i}q_{i}\frac{\vec {r}_{0}-\vec {r}_{i}}{\left| \vec {r}_{0}-\vec {r}_{i}\right| ^{3}}.
 \end{equation}
 Dieser Ansatz ist der Fernwirkungsstandpunkt (die Kraft wirkt über die Ferne hinweg). Seit Veröffentlichung der Relativitätstheorie ist aber bekannt, dass sich nichts schneller als mit Vakuumlichtgeschwindigkeit bewegen kann \textendash{} also auch keine Kraftwirkung.
 
 Daher führt man den sogenannten Nahwirkungsstandpunkt ein, bei dem man ein elektrisches Feld $\vec {E}$ betrachtet, das durch Ladungen $q_{i}$ erzeugt wird ($\vec {E}$ zeigt weg von positiven Ladungen und hin zu den negativen):
 \begin{equation}
-	\vec {E}\left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\sum _{i}q_{i}\frac{\vec {r}_{0}-\vec {r}_{i}}{\left| \vec {r}_{0}-\vec {r}_{i}\right| ^{3}},\quad \vec {E}\left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\int \rho \left(\vec {r}'\right)\frac{\vec {r}-\vec {r}'}{\left| \vec {r}-\vec {r}'\right| ^{3}}\diffa[3]{\vec{r}'}
+	\vec {E}\left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\sum _{i}q_{i}\frac{\vec {r}_{0}-\vec {r}_{i}}{\left| \vec {r}_{0}-\vec {r}_{i}\right| ^{3}},\quad \vec {E}\left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\int \rho \left(\vec {r}'\right)\frac{\vec {r}-\vec {r}'}{\left| \vec {r}-\vec {r}'\right| ^{3}}\diffa[3]{\vec{r}'}.
 \end{equation}
 Damit ergibt sich die folgende Kraft auf eine Testladung $q_{0}$:
 \begin{equation}
-	\vec {F}=q_{0}\vec {E}\left(\vec {r}_{0}\right)
+	\vec {F}=q_{0}\vec {E}\left(\vec {r}_{0}\right).
 \end{equation}
 
 
@@ -85,7 +85,7 @@ Damit ergibt sich die folgende Kraft auf eine Testladung $q_{0}$:
 Wir definieren zunächst das elektrostatische Potential:
 \begin{equation}
 	\label{3.3}
-	\boxed{\vec {E}=-\nabla \phi ,\quad \phi \left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\int \frac{\rho \left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}}
+	\boxed{\vec {E}=-\nabla \phi ,\quad \phi \left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\int \frac{\rho \left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}.}
 \end{equation}
 Weil $\vec {E}$ ein Potentialfeld ist, ist $\rot \vec {E}=0$. Das elektrostatische Feld ist also wirbelfrei.
 
@@ -95,7 +95,7 @@ Zum Beispiel ist das Potential einer Punktladung $\rho \left(\vec {r}\right)=q\d
 	\end{equation*}
 }:
 \begin{equation*}
-	\phi \left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\frac{q}{\left| \vec {r}-\vec {r}_{0}\right| }
+	\phi \left(\vec {r}\right)=\frac{1}{4\pi \varepsilon _{0}}\frac{q}{\left| \vec {r}-\vec {r}_{0}\right| }.
 \end{equation*}
 Die Quellen des elektrischen Feldes werden durch die Divergenz von $\vec E$ beschrieben,
 \begin{equation*}
@@ -110,7 +110,7 @@ Die soeben gefundenen Zusammenhänge werden als Feldgleichungen der Elektrostati
 	\label{3.4}
 	\Aboxed{\divg \vec {E} & =\frac{1}{\varepsilon _{0}}\rho \left(\vec {r}\right)} \\
 	\label{3.5}
-	\Aboxed{\rot \vec {E}  & =0}
+	\Aboxed{\rot \vec {E}  & =0}.
 \end{align}
 Die erste Gleichung wird als Gaußsches Gesetz bezeichnet und beschreibt die elektrische Ladung als Quelle des elektrischen Feldes. Die zweite beschreibt die Wirbelfreiheit des elektrostatischen Feldes.
 
@@ -121,7 +121,7 @@ Mit $\vec {D}=\varepsilon _{0}\vec {E}$ im Vakuum kann man das Gaußsche Gesetz 
 \end{equation}
 Zu beiden Feldgleichungen gibt es integrale Formulierungen:
 \begin{equation*}
-	\int _{V}\diff ^{3}\vec r\divg \vec {E}=\int _{\partial V}\vec {E}\cdot \diff \vec {f}=\frac{1}{\varepsilon _{0}}\int \diff ^{3}\vec r\rho \left(\vec {r}\right)\implication \boxed{\int _{\partial V}\vec {E}\cdot \diff \vec f=\frac{1}{\varepsilon _{0}}Q}
+	\int _{V}\diff ^{3}\vec r\divg \vec {E}=\int _{\partial V}\vec {E}\cdot \diff \vec {f}=\frac{1}{\varepsilon _{0}}\int \diff ^{3}\vec r\rho \left(\vec {r}\right)\implication \boxed{\int _{\partial V}\vec {E}\cdot \diff \vec f=\frac{1}{\varepsilon _{0}}Q}.
 \end{equation*}
 \begin{formal}
 	Der Fluss aus einem Volumen $V$ heraus ist proportional zu der Gesamtladung. Die elektrische Ladungsdichte ist die Quelle des elektrischen Feldes.
@@ -132,7 +132,7 @@ Betrachte als Beispiel eine Punktladung, die das Feld
 \end{align*}
 erzeugt:
 \begin{equation*}
-	\int _{\partial V_{K}}\vec {E}\cdot \diff \vec {f}=\frac{q}{4\pi \varepsilon _{0}}\int _{\partial V_{K}}\frac{\hat{\vec {R}}}{R^{2}}\cdot \hat{\vec {R}}R^{2}\diff \Omega  =\frac{q}{4\pi \varepsilon _{0}}\int _{\partial V_{K}}\diff \Omega  =\frac{q}{\varepsilon _{0}}
+	\int _{\partial V_{K}}\vec {E}\cdot \diff \vec {f}=\frac{q}{4\pi \varepsilon _{0}}\int _{\partial V_{K}}\frac{\hat{\vec {R}}}{R^{2}}\cdot \hat{\vec {R}}R^{2}\diff \Omega  =\frac{q}{4\pi \varepsilon _{0}}\int _{\partial V_{K}}\diff \Omega  =\frac{q}{\varepsilon _{0}}.
 \end{equation*}
 Für die andere Feldgleichung betrachten wir das Arbeitsintegral, also die von einer Punktladung $q$ verrichtete Arbeit gegen die elektrische Kraft $\vec F_{\mathrm{el}}=q\vec {E}$,
 \begin{equation*}
@@ -155,7 +155,7 @@ Insbesondere gilt
 Aus dem Gaußschen Gesetz können wir die folgende Poisson-Gleichung ableiten, die für $\rho =0$ zu einer Laplace-Gleichung wird:
 \begin{equation}
 	\label{3.8}
-	\boxed{\nabla ^{2}\phi =-\frac{1}{\varepsilon _{0}}\rho }
+	\boxed{\nabla ^{2}\phi =-\frac{1}{\varepsilon _{0}}\rho .}
 \end{equation}
 Zur Lösung einer linearen Differentialgleichung können wir die Methode der Greenschen Funktion verwenden. Dabei drücken wir die Lösung allgemein als Faltung der Ladungsdichte mit einer sogenannten Greenschen Funktion aus,
 \begin{equation}
@@ -165,7 +165,7 @@ Zur Lösung einer linearen Differentialgleichung können wir die Methode der Gre
 Durch Vergleich mit der Bestimmungsgleichung des elektrischen Potentials können wir die Greensche Funktion für diese Differentialgleichung ablesen:
 \begin{equation}
 	\label{3.10}
-	G\left(\vec {r}-\vec {r}'\right)=\frac{1}{4\pi \varepsilon _{0}}\frac{1}{\left| \vec {r}-\vec {r}'\right| }
+	G\left(\vec {r}-\vec {r}'\right)=\frac{1}{4\pi \varepsilon _{0}}\frac{1}{\left| \vec {r}-\vec {r}'\right| }.
 \end{equation}
 Insbesondere gilt für eine Punktladung $\rho \left(\vec {r}\right)=q\delta \left(\vec {r}-\vec {r}_{0}\right)$, dass $\phi \left(\vec {r}\right)=qG\left(\vec {r}-\vec {r}_{0}\right)$ und damit, dass
 \begin{equation*}
@@ -192,7 +192,7 @@ Als Äquipotentiallinien bzw. -flächen werden die Linien/Flächen gleichen Pote
 Die potentielle Energie einer Ladung $q$ am Ort $\vec {r}$ im Feld $\vec {E}=-\nabla \phi $ ist definiert über einen Referenzpunkt $\phi _{1}=0$, der zum Beispiel im Unendlichen liegt (aber je nach Anwendung auch an anderen Punkten liegen kann):
 \begin{equation}
 	\label{3.11}
-	U\left(\vec {r}\right)=q\phi \left(\vec {r}\right)
+	U\left(\vec {r}\right)=q\phi \left(\vec {r}\right).
 \end{equation}
 Zum Beispiel ist die potentielle Energie von zwei Punktladungen
 \begin{equation*}
@@ -224,7 +224,7 @@ Bemerkungen:
 \end{itemize}
 Es ist auch möglich, die Energie durch das Feld $\vec {E}\left(\vec {r}\right)$ auszudrücken:
 \begin{equation*}
-	U=\frac{\varepsilon _{0}}{2}\int \diffa[3]{\vec{r}}\phi \nabla ^{2}\phi \overset{\text{partielle Int}.}{=}\frac{\varepsilon _{0}}{2}\int \diffa[3]{\vec{r}}\nabla \phi \cdot \nabla \phi =\frac{\varepsilon _{0}}{2}\int \diffa[3]{\vec{r}}\left| \vec {E}\right| ^{2}
+	U=\frac{\varepsilon _{0}}{2}\int \diffa[3]{\vec{r}}\phi \nabla ^{2}\phi \overset{\text{partielle Int}.}{=}\frac{\varepsilon _{0}}{2}\int \diffa[3]{\vec{r}}\nabla \phi \cdot \nabla \phi =\frac{\varepsilon _{0}}{2}\int \diffa[3]{\vec{r}}\left| \vec {E}\right| ^{2}.
 \end{equation*}
 Damit lässt sich die Energiedichte in der Elektrostatik folglich schreiben als
 \begin{equation*}
@@ -262,7 +262,7 @@ Feld und Potential können zum Beispiel über das Gaußsche Gesetz berechnet wer
 	\end{cases} \quad\xrightarrow{\text{Integration}}\quad \phi \left(r\right)=\frac{Q}{4\pi \varepsilon _{0}}
 	\begin{cases} \frac{3}{2R}-\frac{r^{2}}{2R^{3}}, & r<R     \\
               \frac{1}{r},                       & r\geq R
-	\end{cases}
+	\end{cases}\:\:.
 \end{align*}
 Beide Größen sind in \Abbref{fig:homogenously_charged_ball_field_potential} dargestellt. Bemerkenswert ist, dass für $r\geq R$ das elektrische Feld $\vec {E}\left(\vec {r}\right)=E\left(r\right)\cdot \vec {e}_{r}$ gerade dem Feld einer Punktladung $Q$ im Mittelpunkt der Kugel entspricht.
 
@@ -270,7 +270,7 @@ Es soll nun die Energiedichte $u\left(\vec {r}\right)$ für die homogen geladene
 \begin{align*}
 	u\left(\vec {r}\right)=\frac{\varepsilon _{0}}{2}\left| \vec {E}\right| ^{2}=\frac{Q^{2}}{32\pi ^{2}\varepsilon _{0}}\begin{cases} \frac{r^{2}}{R^{6}}, & r<R     \\
               \frac{1}{r^{4}},     & r\geq R
-	                                                                                                                     \end{cases}
+	                                                                                                                     \end{cases}\:\:.
 \end{align*}
 Daraus ergibt sich die elektrostatische Energie ("`Selbstenergie`` einer homogen geladenen Kugel)
 \begin{equation*}
@@ -278,7 +278,7 @@ Daraus ergibt sich die elektrostatische Energie ("`Selbstenergie`` einer homogen
 \end{equation*}
 Diese Rechnung lässt über die Ruheenergie eines Elektrons eine Abschätzung für den Elektronenradius zu (sogenannter klassischer Elektronenradius):
 \begin{equation*}
-	U\overset{!}{=} m_{e}c^{2}\approx \SI{0.5}{\mega\eV}\implication R_{e}= \SI{1,7e-15}{\m}
+	U\overset{!}{=} m_{e}c^{2}\approx \SI{0.5}{\mega\eV}\implication R_{e}= \SI{1,7e-15}{\m}.
 \end{equation*}
 Allerdings liegt die Compton-Wellenlänge $\lambda _{e}=h/({m_{e}c})=\SI{2e-12}{\m}$ schon weit über diesem Radius, sodass Quanteneffekte hier nicht vernachlässigbar sind.
 
@@ -307,7 +307,7 @@ Es soll untersucht werden, wie aus der Ladungsverteilung die Potentiale und das 
 \end{formal}
 Für den Beweis wird die Gesamtenergie betrachtet:
 \begin{equation*}
-	U=\frac{1}{8\pi \varepsilon _{0}}\sum _{ij}\int _{L_{i}}\diffa[3]{\vec {r}_{i}}\int _{L_{j}}\diffa[3]{\vec {r}_{i}}\frac{\rho _{i}\left(\vec {r}_{i}\right)\rho _{j}\left(\vec {r}_{j}\right)}{\left| \vec {r}_{i}-\vec {r}_{j}\right| }
+	U=\frac{1}{8\pi \varepsilon _{0}}\sum _{ij}\int _{L_{i}}\diffa[3]{\vec {r}_{i}}\int _{L_{j}}\diffa[3]{\vec {r}_{i}}\frac{\rho _{i}\left(\vec {r}_{i}\right)\rho _{j}\left(\vec {r}_{j}\right)}{\left| \vec {r}_{i}-\vec {r}_{j}\right| }.
 \end{equation*}
 Minimierung unter der Nebenbedingung $\int _{{L_{i}}}\diffa[3]{\vec {r}}\rho _{i}\left(\vec {r}\right)=Q_{i}$ führt auf
 \begin{equation*}
@@ -435,7 +435,7 @@ an. Die Lösung lässt sich in Eigenfunktionen des Laplace-Operators zerlegen. D
 
 Für kugelsymmetrische Problem bietet es sich an in Kugelkoordinaten zu rechnen. In Kugelkoordinaten lässt sich der Laplace-Operator in Radial- und Winkelanteil zerlegen:
 \begin{align*}
-	\nabla ^{2}\phi & =\nabla _{r}^{2}\phi +\frac{1}{r^{2}}\nabla _{\varphi ,\vartheta }^{2}\phi \\&=\frac{1}{r^{2}}\frac{\partial }{\partial r}r^{2}\frac{\partial }{\partial r}\phi +\frac{1}{r^{2}\sin \vartheta }\frac{\partial }{\partial \vartheta }\sin \varphi \frac{\partial }{\partial \vartheta }\phi -\frac{1}{r^{2}\sin ^{2} \vartheta }\frac{\partial ^{2}}{\partial \varphi ^{2}}\phi
+	\nabla ^{2}\phi & =\nabla _{r}^{2}\phi +\frac{1}{r^{2}}\nabla _{\varphi ,\vartheta }^{2}\phi \\&=\frac{1}{r^{2}}\frac{\partial }{\partial r}r^{2}\frac{\partial }{\partial r}\phi +\frac{1}{r^{2}\sin \vartheta }\frac{\partial }{\partial \vartheta }\sin \varphi \frac{\partial }{\partial \vartheta }\phi -\frac{1}{r^{2}\sin ^{2} \vartheta }\frac{\partial ^{2}}{\partial \varphi ^{2}}\phi.
 \end{align*}
 Zur Lösung wird ein Produktansatz gemacht,
 \begin{equation*}
@@ -455,13 +455,13 @@ und die bereits aus der Quantenmechanik bekannten Kugelflächenfunktionen $Y_{lm
 \end{equation*}
 Die Gesamtlösung setzt sich dann zusammen aus dem Radial- und Winkelanteil:
 \begin{equation*}
-	\phi \left(r,\varphi ,\vartheta \right)=\sum _{l=0}^{\infty }\sum _{m=-l}^{l}\underset{\text{Radialanteil}}{\underbrace{\left(\alpha _{lm}r^{l}+\beta _{lm}r^{-\left(l+1\right)}\right)}}\underset{\text{Winkelanteil}}{\underbrace{Y_{lm}\left(\varphi ,\vartheta \right)}}
+	\phi \left(r,\varphi ,\vartheta \right)=\sum _{l=0}^{\infty }\sum _{m=-l}^{l}\underset{\text{Radialanteil}}{\underbrace{\left(\alpha _{lm}r^{l}+\beta _{lm}r^{-\left(l+1\right)}\right)}}\cdot\underset{\text{Winkelanteil}}{\underbrace{Y_{lm}\left(\varphi ,\vartheta \right)}}.
 \end{equation*}
 Für zylindersymmetrische Probleme ist die $\varphi $-Abhängigkeit aufgehoben und es brauchen nur Funktionen mit $m=0$ betrachtet zu werden.
 
 Für die Kugelflächenfunktionen von zwei Vektoren $\vec {r}_{1}=\left(r_{1},\varphi _{1},\vartheta _{1}\right)$ und $\vec {r}_{2}=\left(r_{2},\varphi _{2},\vartheta _{2}\right)$ gilt das folgende Additionstheorem:
 \begin{equation*}
-	\sum _{m=-l}^{l}Y_{lm}\left(\varphi _{1},\vartheta _{1}\right)Y_{lm}^{*}\left(\varphi _{2},\vartheta _{2}\right)=\frac{2l+1}{4\pi }P_{l}\left(\cos \angle \left(\vec {r}_{1},\vec {r}_{2}\right)\right)
+	\sum _{m=-l}^{l}Y_{lm}\left(\varphi _{1},\vartheta _{1}\right)Y_{lm}^{*}\left(\varphi _{2},\vartheta _{2}\right)=\frac{2l+1}{4\pi }P_{l}\left(\cos \angle \left(\vec {r}_{1},\vec {r}_{2}\right)\right).
 \end{equation*}
 Die Greensche Funktion kann mit diesem Additionstheorem nach den Kugelflächenfunktionen entwickelt werden,
 \begin{equation*}
@@ -501,7 +501,7 @@ Für die Multipolentwicklung wird das Potential
 \end{equation*}
 nach den sogenannten Momenten der Ladungsverteilung entwickelt. Dazu wird zunächst eine Taylorentwicklung für den Ausdruck $1/\left| \vec {r}-\vec {r}'\right| $ um $\vec {r}$ durchgeführt ($\left| \vec {r}\right| =r$, Einsteinsche Summenkonvention):
 \begin{equation*}
-	\frac{1}{\left| \vec {r}-\vec {r}'\right| }=\frac{1}{r}-x_{i}'\partial _{i}\frac{1}{r}+\frac{1}{2}x_{i}'x_{j}'\partial _{i}\partial _{j}\frac{1}{r}+\ldots +\frac{\left(-1\right)^{n}}{n!}x_{i_{1}}'\ldots x_{i_{n}}'\partial _{{i_{1}}}\ldots \partial _{{i_{n}}}\frac{1}{r}
+	\frac{1}{\left| \vec {r}-\vec {r}'\right| }=\frac{1}{r}-x_{i}'\partial _{i}\frac{1}{r}+\frac{1}{2}x_{i}'x_{j}'\partial _{i}\partial _{j}\frac{1}{r}+\ldots +\frac{\left(-1\right)^{n}}{n!}x_{i_{1}}'\ldots x_{i_{n}}'\partial _{{i_{1}}}\ldots \partial _{{i_{n}}}\frac{1}{r}.
 \end{equation*}
 Damit lässt sich das Potential nähern als
 \begin{align*}
@@ -615,7 +615,7 @@ Die Energie der Multipole ist also durch die $n$-fache Ableitung des Potentials 
 
 Als typisches Beispiel soll die Wechselwirkung zweier Dipole betrachtet werden. Die potentielle Energie kann berechnet werden, indem der Dipol $\vec {p}_{2}$ wie oben beschrieben in das Feld des Dipols $\vec {p}_{1}$ gesetzt wird (oder umgekehrt):
 \begin{equation*}
-	U_{\mathrm{DD}}=-\vec {p}_{2}\cdot \vec {E}_{1}\left(\vec {r}\right)=-\frac{1}{4\pi \varepsilon _{0}}\frac{1}{r^{3}}\left(\frac{3\left(\vec {r}\cdot \vec {p}_{1}\right)\left(\vec {r}\cdot \vec {p}_{2}\right)}{r^{2}}-\vec {p}_{1}\cdot \vec {p}_{2}\right)
+	U_{\mathrm{DD}}=-\vec {p}_{2}\cdot \vec {E}_{1}\left(\vec {r}\right)=-\frac{1}{4\pi \varepsilon _{0}}\frac{1}{r^{3}}\left(\frac{3\left(\vec {r}\cdot \vec {p}_{1}\right)\left(\vec {r}\cdot \vec {p}_{2}\right)}{r^{2}}-\vec {p}_{1}\cdot \vec {p}_{2}\right).
 \end{equation*}
 Diese wird minimal für $\vec {p}_{1}\parallel \vec {p}_{2}\parallel \vec {r}$ und maximal für $\vec {p}_{1}\parallel \vec {p}_{2}\perp \vec {r}$. Diese Konfigurationen sind in \Abbref{fig:dipoles} zusammengestellt. Für antiparallele $\vec {p}_{1}$ und $\vec {p}_{2}$ und $\vec {p}_{1},\vec {p}_{2}\perp \vec {r}$ wird außerdem ein lokales Minimum erreicht. Aus diesem Grund bilden Dipolmoleküle auch häufig Molekülketten.
 

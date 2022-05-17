@@ -24,7 +24,7 @@ durchgeführt. Wir haben bisher einzelne Ladungen durch $\delta $-Funktionen in 
 
 Um eine stark variierende Funktion $F\left(\vec {r},t\right)$ zu mitteln, wird sie mit einer sogenannten Glättungsfunktion $f$ gefaltet. Dabei kann es sich z.B. um eine Gauß-Funktion handeln:
 \begin{equation*}
-	F\left(\vec {r},t\right) \xrightarrow{\text{Mittelung}} \left\langle F\left(\vec {r},t\right)\right\rangle =\int f\left(\left| \vec {r}-\vec {r}'\right| \right)F\left(\vec {r}',t\right)\diffa[3]{\vec{r}'}
+	F\left(\vec {r},t\right) \xrightarrow{\text{Mittelung}} \left\langle F\left(\vec {r},t\right)\right\rangle =\int f\left(\left| \vec {r}-\vec {r}'\right| \right)F\left(\vec {r}',t\right)\diffa[3]{\vec{r}'}.
 \end{equation*}
 Für eine Punktladung $F\left(\vec {r}\right)=F_{0}\delta \left(\vec {r}-\vec {r}_{0}\right)$ ist dann zum Beispiel $\left\langle F\right\rangle =F_{0}f\left(\vec {r}-\vec {r}_{0}\right)$.
 
@@ -54,7 +54,7 @@ Die gebundenen Ladungen werden als Summe der Ladungsdichten einzelner Moleküle 
 \end{equation*}
 mit neuen Bezugspunkten $\vec {r}_{n}$ für die einzelnen Moleküle. Für die Mittelung wird dann eine Taylor-Entwicklung um diese neuen Bezugspunkte $\vec {r}_{n}$ durchgeführt:
 \begin{align*}
-	\left\langle \rho _{n}\left(\vec {r}\right)\right\rangle & =\sum _{i}q_{i}f\left(\vec {r}-\left(\vec {r}_{n}+\vec {r}_{ni}\right)\right) \\&=\sum _{i}q_{i}\left[f\left(\vec {r}-\vec {r}_{n}\right)-\vec {r}_{ni}\cdot \nabla f\left(\vec {r}-\vec {r}_{n}\right)+\frac{1}{2}\left(\vec {r}_{ni}\right)_{k}\left(\vec {r}_{ni}\right)_{l}\nabla _{k}\nabla _{l}f\left(\vec {r}-\vec {r}_{n}\right)+\ldots \right]
+	\left\langle \rho _{n}\left(\vec {r}\right)\right\rangle & =\sum _{i}q_{i}f\left(\vec {r}-\left(\vec {r}_{n}+\vec {r}_{ni}\right)\right) \\&=\sum _{i}q_{i}\left[f\left(\vec {r}-\vec {r}_{n}\right)-\vec {r}_{ni}\cdot \nabla f\left(\vec {r}-\vec {r}_{n}\right)+\frac{1}{2}\left(\vec {r}_{ni}\right)_{k}\left(\vec {r}_{ni}\right)_{l}\nabla _{k}\nabla _{l}f\left(\vec {r}-\vec {r}_{n}\right)+\ldots \right].
 \end{align*}
 Daraus können die molekularen Dipolmomente bestimmt werden:
 \begin{align*}
@@ -62,11 +62,11 @@ Daraus können die molekularen Dipolmomente bestimmt werden:
 	\vec {p}_{n}                     & =\sum _{i}q_{i}\vec {r}_{ni}                                                 & \text{(Molekulares Dipolmoment)}     \\
 	\left(\mathrm{Q}_{n}\right)_{kl} & =3\sum _{i}q_{i}\left(\vec {r}_{ni}\right)_{k}\left(\vec {r}_{ni}\right)_{l} & \text{(Molekulares Quadrupolmoment)}
 \end{align*}
-(vgl. Multipolmomente einer kontinuierlichen Ladungsverteilung, aber hier jetzt diskret). Insgesamt ergibt sich eine Verschmierung punktförmiger molekularer Multipole:
+(vgl. Multipolmomente einer kontinuierlichen Ladungsverteilung, aber hier jetzt diskret). Insgesamt ergibt sich eine Verschmierung punktförmiger molekularer Multipole
 \begin{align*}
 	\left\langle \rho _{n}\left(\vec {r}\right)\right\rangle & =q_{n}f\left(\vec {r}-\vec {r}_{n}\right)-\vec {p}_{n}\cdot \nabla f\left(\vec {r}-\vec {r}_{n}\right)+\frac{1}{6}\left(\mathrm{Q}_{n}\right)_{kl}\nabla _{k}\nabla _{l}f\left(\vec {r}-\vec {r}_{n}\right) \\&=\left\langle q_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle -\nabla \cdot \left\langle p_{n}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\frac{1}{6}\nabla _{k}\nabla _{l}\left\langle \left(\mathrm{Q}_{n}\right)_{kl}\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle
 \end{align*}
-und für die gemittelte gebundene Ladungsdichte:
+und für die gemittelte gebundene Ladungsdichte
 \begin{equation*}
 	\left\langle \rho _{b}\left(\vec {r}\right)\right\rangle =\rho _{\mathrm{m}}\left(\vec {r}\right)-\nabla \cdot \vec {P}\left(\vec {r}\right)+\nabla _{k}\nabla _{l}{Q}_{\mathrm{kl}}+\ldots
 \end{equation*}
@@ -96,7 +96,7 @@ und
 \end{equation*}
 An dieser Stelle führen wir jetzt das sogenannte dielektrische Verschiebungsfeld $\vec {D}$ ein:
 \begin{equation*}
-	\vec {D}\left(\vec {r}\right)=\varepsilon _{0}\vec {E}\left(\vec {r}\right)+\vec {P}\left(\vec {r}\right)-\nabla Q\left(\vec {r}\right)
+	\vec {D}\left(\vec {r}\right)=\varepsilon _{0}\vec {E}\left(\vec {r}\right)+\vec {P}\left(\vec {r}\right)-\nabla Q\left(\vec {r}\right).
 \end{equation*}
 Dabei ist die Idee, dass höhere Multipole der Ladungen jetzt in dem Hilfsfeld $\vec {D}$ stecken. In der Regel wird übrigens bereits das Quadrupolmoment vernachlässigt.
 
@@ -118,7 +118,7 @@ wobei $\chi $ ein Skalar ist. Das trifft hauptsächlich auf Gase, Flüssigkeiten
 
 Häufig wird auch der dielektrische Tensor $\varepsilon $ eingeführt:
 \begin{equation*}
-	\vec {D}\left(\vec {r}\right)=\varepsilon _{0}\vec {E}\left(\vec {r}\right)+\vec {P}\left(\vec {r}\right)\equiv \varepsilon \vec {E}\left(\vec {r}\right), \quad\varepsilon \equiv \varepsilon _{0}\left(1+\chi ^{\left(1\right)}\right)
+	\vec {D}\left(\vec {r}\right)=\varepsilon _{0}\vec {E}\left(\vec {r}\right)+\vec {P}\left(\vec {r}\right)\equiv \varepsilon \vec {E}\left(\vec {r}\right), \quad\varepsilon \equiv \varepsilon _{0}\left(1+\chi ^{\left(1\right)}\right).
 \end{equation*}
 Dieser ist uns für den linearen, isotropen Fall wiederum schon bekannt als Dielektrizitätskonstante oder Permittivität $\varepsilon _{r}=\chi +1$.
 
@@ -142,7 +142,7 @@ Polarisation kann in einem Medium auftreten als permanente, ausgerichtete Dipole
 
 Die Randbedingungen bei Übergängen zwischen zwei Medien lassen sich ähnlich herleiten wie in Kapitel \ref{sec:randbedingungen_auf_grenzflaechen}. Betrachte zunächst die Tangentialkomponente des elektrischen Feldes, wie in \Abbref{fig:bc_dielectrica} dargestellt. Da $\rot \vec {E}=\vec {0}$, erhält man die folgende Randbedingung für die Tangentialkomponente:
 \begin{equation*}
-	\hat{\vec {t}}\cdot \left(\vec {E}^{\left(2\right)}-\vec {E}^{\left(1\right)}\right)=0\equivalence \vec {E}_{\parallel }^{\left(1\right)}=\vec {E}_{\parallel }^{\left(2\right)}
+	\hat{\vec {t}}\cdot \left(\vec {E}^{\left(2\right)}-\vec {E}^{\left(1\right)}\right)=0\equivalence \vec {E}_{\parallel }^{\left(1\right)}=\vec {E}_{\parallel }^{\left(2\right)}.
 \end{equation*}
 
 
@@ -212,7 +212,7 @@ Das Entelektrisierungsfeld soll exemplarisch für eine dielektrische Kugel in ei
 
 Da es keine freien Ladungen gibt, also $\rho _{\mathrm{Ma}}=0$, ist die Laplace-Gleichung $\nabla ^{2}\phi =0$ zu lösen. Aufgrund der Axialsymmetrie um die $z$-Achse wird als Lösungsansatz eine Linearkombination aus Legendre-Polynomen erster Ordnung für die Beschreibung der Potentiale $\phi _{i}$ innerhalb und $\phi _{a}$ außerhalb der Kugel verwendet:
 \begin{equation*}
-	\phi _{i,a}=\sum _{l=0}^{\infty }\left(a_{l}^{\left(i,a\right)}r^{l}+b_{l}^{\left(i,a\right)}r^{-\left(l+1\right)}\right)P_{l}\left(\cos \vartheta \right)
+	\phi _{i,a}=\sum _{l=0}^{\infty }\left(a_{l}^{\left(i,a\right)}r^{l}+b_{l}^{\left(i,a\right)}r^{-\left(l+1\right)}\right)P_{l}\left(\cos \vartheta \right).
 \end{equation*}
 Aus Betrachtungen für die Grenzfälle können die Koeffizienten $a_{l}^{\left(i,a\right)}$ und $b_{l}^{\left(i,a\right)}$ ermittelt werden:
 
@@ -278,7 +278,7 @@ Im Kapitel \ref{sec:Makroskopische_Gleichungen_der_Elektrostatik} wurde bereits 
 \end{equation*}
 Die Clausius-Mosotti-Formel beschreibt, wie die molekulare Polarisierbarkeit mit der (makroskopischen) Dielektrizität $\varepsilon _{r}$ zusammenhängt:
 \begin{equation*}
-	\frac{\varepsilon _{r}-1}{\varepsilon _{r}+2}=\frac{1}{3}n\alpha
+	\frac{\varepsilon _{r}-1}{\varepsilon _{r}+2}=\frac{1}{3}n\alpha.
 \end{equation*}
 
 \begin{figure}[htb]
@@ -292,13 +292,13 @@ Die Formel wird hergeleitet aus der in \Abbref{fig:clausius_mosotti} dargestellt
 
 Das lokale elektrische Feld hat verschiedene Beiträge: zum einen das Feld $\vec {E}$ im Medium, dann das Feld, das durch die Oberflächenladung (von der Polarisation erzeugt) an der Kugel hervorgerufen wird (sog. Lorentzfeld) und schließlich das Feld, das aus den Dipolen um $\vec {p}$ herum resultiert:
 \begin{equation*}
-	\vec {E}_{\mathrm{loc}}=\vec {E}+\vec {E}_{\sigma }+\vec {E}_{\mathrm{dip}}
+	\vec {E}_{\mathrm{loc}}=\vec {E}+\vec {E}_{\sigma }+\vec {E}_{\mathrm{dip}}.
 \end{equation*}
 Die zweite Komponente lässt sich sofort bestimmen, da es genau dem Entelektrisierungsfeld $\frac{1}{3\varepsilon _{0}}\vec {P}$ entspricht, nur mit verkehrtem Vorzeichen, weil das Dielektrikum jetzt außerhalb der Kugel liegt und nicht innerhalb. Für kubische Gitter, Flüssigkeiten und Gase ist aufgrund der Isotropie $\vec {E}_{\mathrm{dip}}=0$.
 
 Damit kann die Polarisation über die Dipoldichte $n$ ausgerechnet werden:
 \begin{equation*}
-	\vec {P} =n\vec {p}=\varepsilon _{0}n\alpha \vec {E}_{\mathrm{loc}}=\varepsilon _{0}n\alpha \left(\vec {E}+\frac{1}{3\varepsilon _{0}}\vec {P}\right)
+	\vec {P} =n\vec {p}=\varepsilon _{0}n\alpha \vec {E}_{\mathrm{loc}}=\varepsilon _{0}n\alpha \left(\vec {E}+\frac{1}{3\varepsilon _{0}}\vec {P}\right).
 \end{equation*}
 Diese Gleichung kann umgestellt und mit $\vec {P}=\varepsilon _{0}\chi \vec {E}$ verglichen werden, sodass man
 \begin{equation*}

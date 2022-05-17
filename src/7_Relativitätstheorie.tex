@@ -57,7 +57,7 @@ Das heißt, dass ein Körper, der sich im Inertialsystem $\Sigma$ mit der Geschw
 Wir wissen, dass Licht eine elektromagnetische Welle ist. Es gilt daher für die Ausbreitung die in den vorigen Kapiteln hergeleitete Wellengleichung für das elektrische Feld (hier für $\rho=0$ und $\vec j=0$):
 \begin{align}
     \label{eq:wellengleichung_e}
-    \left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right) \vec E=0, \quad c^2=\frac{1}{\varepsilon_0\mu_0}
+    \left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right) \vec E=0, \quad c^2=\frac{1}{\varepsilon_0\mu_0}.
 \end{align}
 Diese wird zum Beispiel durch eine ebene Welle $\vec E=\vec E_0 e^{i(\vec k\cdot r-\omega t)}$ mit $\omega=ck$ gelöst. Wegen $\divg \vec E =0$ handelt es sich um eine Transversalwelle, $\vec E\perp \vec k$. Die Ausbreitungsgeschwindigkeit dieser elektromagnetischen Welle ist also $c$ und wird daher auch als Lichtgeschwindigkeit bezeichnet.
 
@@ -112,7 +112,7 @@ Das Interferometer wird so ausgerichtet, dass ein Arm entlang $\vec e_1$ und der
 Obwohl jetzt der Weg, den die beiden Teilstrahlen auf ihrem Weg zu und von den Spiegeln zurücklegen, der gleiche ist (sofern $l_1=l_2$), sollten die Laufzeiten $t_1$ und $t_2$ unterschiedlich sein, weil die Lichtgeschwindigkeit wie oben beschrieben verschiedene Werte für die beiden Achsen annimmt:
 \begin{align*}
     t_1 & = \frac{l_1}{c+v}+\frac{l_1}{c-v}=\frac{2l_1}{c\left(1-\frac{v^2}{c^2}\right)} \\
-    t_2 & = \frac{2l_2}{\sqrt{c^2-v^2}} = \frac{2l_2}{c\sqrt{1-\frac{v^2}{c^2}}}
+    t_2 & = \frac{2l_2}{\sqrt{c^2-v^2}} = \frac{2l_2}{c\sqrt{1-\frac{v^2}{c^2}}}.
 \end{align*}
 In der Praxis lassen sich natürlich $l_1$ und $l_2$ nicht exakt gleich wählen (zumindest eine Präzision in der Größenordnung der Wellenlänge wäre notwendig). Stattdessen wird das Interferometer um \SI{90}{\degree} gedreht und beobachtet, ob sich das Interferenzmuster ändert.
 Überraschenderweise wurde eine solche Änderung aber nicht festgestellt.
@@ -347,7 +347,7 @@ bzw.
     \label{eq:herleitung_lorentz_lin_trafo_ct}
     ct' & = a_{11} ct + a_{12}x \\
     \label{eq:herleitung_lorentz_lin_trafo_x}
-    x'  & = a_{21} ct + a_{22}x
+    x'  & = a_{21} ct + a_{22}x.
 \end{align}
 Der Ursprung des bewegten Systems $x'=0$ bewegt sich im ruhenden System gleichförmig,
 \begin{align}
@@ -366,7 +366,7 @@ Analog lässt sich die Bewegung des Ursprungs $x=0$ des ruhenden Systems im bewe
     ct'            & = a_{11}ct \nonumber                                                \\
     x'             & = a_{21}ct = \frac{a_{21}}{a_{11}}ct' \overset{!}{=} -vt' \nonumber \\
     \label{eq:herleitung_lorentz_v2}
-    \equivalence v & =-\frac{a_{21}}{a_{11}}c
+    \equivalence v & =-\frac{a_{21}}{a_{11}}c.
 \end{align}
 Durch Vergleich von \eqref{eq:herleitung_lorentz_v1} und \eqref{eq:herleitung_lorentz_v2} erhält man
 \begin{align*}
@@ -416,7 +416,7 @@ Um nun die Geschwindigkeit der Masse im System $\Sigma$ zu bestimmen, wird die (
     \label{eq:spezielle_inv_lorentz_trafo}
     \begin{split}
         x  & =\gamma(x'+\beta ct') \\
-        ct & =\gamma(ct'+\beta x')
+        ct & =\gamma(ct'+\beta x').
     \end{split}
 \end{align}
 \begin{figure}[htp]
@@ -669,7 +669,7 @@ Um von Koordinaten des ungestrichenen Systems $\Sigma$ in das gestrichene System
 \end{align*}
 Kontravariante Differenzvektoren $x^\alpha=x^\alpha_2-x^\alpha_1$ transformieren also folgendermaßen:
 \begin{align*}
-    \diff x^{\alpha'}=\tensor{L}{^{\alpha'}_\alpha}\diff x^\alpha
+    \diff x^{\alpha'}=\tensor{L}{^{\alpha'}_\alpha}\diff x^\alpha.
 \end{align*}
 Entsprechend transformieren kovariante Vierervektoren mit
 \begin{align*}
@@ -701,7 +701,7 @@ Ein weiteres Beispiel für einen Vierervektor ist der Vierergradient
 \end{align*}
 der ordnungsgemäß folgendermaßen transformiert:
 \begin{align*}
-    \frac{\partial}{\partial x^\alpha}=\frac{\partial x^{\alpha'}}{\partial x^{\alpha'}}\frac{\partial}{\partial x^\alpha}=\frac{\partial}{\partial x^{\alpha'}} \tensor{L}{^{\alpha'}_\alpha}=\tensor{(L^T)}{_\alpha^{\alpha'}}\frac{\partial}{\partial x^{\alpha'}}
+    \frac{\partial}{\partial x^\alpha}=\frac{\partial x^{\alpha'}}{\partial x^{\alpha'}}\frac{\partial}{\partial x^\alpha}=\frac{\partial}{\partial x^{\alpha'}} \tensor{L}{^{\alpha'}_\alpha}=\tensor{(L^T)}{_\alpha^{\alpha'}}\frac{\partial}{\partial x^{\alpha'}}.
 \end{align*}
 Der kovariante Vierergradient ist analog
 \begin{align*}
@@ -759,7 +759,7 @@ Aus diesem Grund können Körper und Teilchen, die eine Ruhemasse $m$ aufweisen,
 Nun wollen wir die Viererkraft $K^\alpha$ einführen. Wie in der Newtonschen Mechanik ergibt sich die Kraft durch Ableitung des Impulses nach der Zeit, nur dass hier der Viererimpuls und die Eigenzeit eingesetzt werden:
 \begin{align}
     \label{eq:impulssatz}
-    \boxed{K^\alpha = \frac{\diff p^\alpha}{\diff\tau},  \quad K=\begin{pmatrix} K^0\\ \vec K \end{pmatrix}}
+    \boxed{K^\alpha = \frac{\diff p^\alpha}{\diff\tau},  \quad K=\begin{pmatrix} K^0\\ \vec K \end{pmatrix}}.
 \end{align}
 Für die räumlichen Komponenten ($\alpha=1,2,3$) ergibt sich
 \begin{align*}
@@ -779,9 +779,9 @@ sodass klar wird, dass
 \begin{align*}
     u_\alpha K^\alpha = -u^0 K^0 + \gamma\vec v\cdot \vec K = 0 \equivalence \gamma c K^0=\gamma\vec v\cdot \vec K.
 \end{align*}
-Wir wissen bereits, dass $\vec K=\gamma \vec F$ und können daher $K^0$ bestimmen:
+Wir wissen bereits, dass $\vec K=\gamma \vec F$ und können daher $K^0$ bestimmen,
 \begin{align*}
-    K^0 = \frac{\gamma}{c}\vec v\cdot \vec F= \frac{\gamma}{c} \frac{\diff E}{\diff t}
+    K^0 = \frac{\gamma}{c}\vec v\cdot \vec F= \frac{\gamma}{c} \frac{\diff E}{\diff t},
 \end{align*}
 was gerade dem $\gamma/c$-fachen der übertragenen Leistung entspricht (pro Zeiteinheit verrichtete Arbeit). Wir sehen also:
 \begin{formal}
@@ -939,7 +939,7 @@ definieren, da dann (zur Erinnerung: $\partial_\alpha=(\partial_t/c,\nabla)$)
 \end{align*}
 ist. Mit der Ladungsdichte $\rho_\mathrm{R}$ im Ruhesystem kann man den Viererstrom auch durch die Vierergeschwindigkeit ausdrücken:
 \begin{align*}
-    j^\alpha=\rho_\mathrm{R} u^\alpha, \quad j=\rho_\mathrm{R} \begin{pmatrix} \gamma c\\\gamma\vec v\end{pmatrix}
+    j^\alpha=\rho_\mathrm{R} u^\alpha, \quad j=\rho_\mathrm{R} \begin{pmatrix} \gamma c\\\gamma\vec v\end{pmatrix}.
 \end{align*}
 Dass es sich dabei um einen Vierervektor im Sinne der Tensorrechnung handelt, ist offensichtlich, da $j$ einfach das Produkt eines Lorentzskalars und eines Vierervektors ist.
 
@@ -950,7 +950,7 @@ Dass es sich dabei um einen Vierervektor im Sinne der Tensorrechnung handelt, is
 Im nächsten Schritt werden das skalare Potential $\varphi$ und das Vektorpotential $\vec A$ aus Kapitel \ref{sec:elektromagnetische_potentiale} zusammengefasst in dem sogenannten Viererpotential.
 Zur Erinnerung, aus den Potentialen $\varphi$ und $\vec A$ lassen sich das elektrische und das magnetische Feld folgendermaßen berechnen:
 \begin{align*}
-    \vec B = \nabla\times \vec A, \quad \vec E=-\nabla\varphi-\frac{\partial\vec A}{\partial t}
+    \vec B = \nabla\times \vec A, \quad \vec E=-\nabla\varphi-\frac{\partial\vec A}{\partial t}.
 \end{align*}
 Wählt man die Potentiale so, dass sie der Lorenz-Eichung
 \begin{align*}
@@ -1003,7 +1003,7 @@ Außerdem kann man sich aus der Definition leicht überlegen, dass $F^{\alpha\be
 Die konkrete Form ergibt sich aus der Betrachtung der einzelnen Komponenten ($i,j=1,2,3$):
 \begin{align*}
     F^{0i} & = -\frac{1}{c} \frac{\partial}{\partial t}A_i-\frac{1}{c}\partial_i \varphi = \frac{1}{c}E_i                \\
-    F^{ij} & = \partial_i A_j-\partial_j A_i = \varepsilon_{ijk} B_k = \varepsilon_{ijk} \varepsilon_{klm}\partial_l A_m
+    F^{ij} & = \partial_i A_j-\partial_j A_i = \varepsilon_{ijk} B_k = \varepsilon_{ijk} \varepsilon_{klm}\partial_l A_m.
 \end{align*}
 Als Matrix geschrieben ist der Feldstärketensor
 \begin{align*}
@@ -1014,7 +1014,7 @@ Als Matrix geschrieben ist der Feldstärketensor
           -\frac{1}{c}E_3 & B_2            & -B_1           & 0
       \end{pmatrix}.
 \end{align*}
-Aus dem Transformationsverhalten in Gleichung \eqref{eq:trafo_feldstaerketensor} kann man herleiten, dass die elektrischen und magnetischen Felder bei der Lorentz-Transformation mischen:
+Aus dem Transformationsverhalten in Gleichung \eqref{eq:trafo_feldstaerketensor} kann man herleiten, dass die elektrischen und magnetischen Felder bei der Lorentz-Transformation mischen,
 \begin{align*}
     \vec E' & = \vec E_\parallel + \gamma(\vec E_\perp + \vec v\times \vec B)              \\
     \vec B' & = \vec B_\parallel + \gamma(\vec B_\perp - \frac{\vec v}{c^2}\times \vec E),
@@ -1134,12 +1134,12 @@ Wir führen zunächst die Lagrange-Dichte
 \end{align}
 ein und erweitern die Definition der Wirkung $S$ so, dass über ein vierdimensionales Volumenelement integriert wird\footnote{In der Mechanik wurde die Wirkung folgendermaßen definiert: $S=\int L\diff t$.}:
 \begin{align*}
-    S=\int L \diffa[4]{x}
+    S=\int L \diffa[4]{x}.
 \end{align*}
 Um die Wirkung zu minimieren, sodass $\delta S=0$ wird, führen wir nun eine Variation nach $A_\beta$ durch und erhalten
 die Euler-Lagrange-Gleichungen für die Elektrodynamik:
 \begin{align*}
-    \boxed{\partial_\alpha \frac{\partial L}{\partial(\partial_\alpha A_\beta)}-\frac{\partial L}{\partial A_\beta}=0}
+    \boxed{\partial_\alpha \frac{\partial L}{\partial(\partial_\alpha A_\beta)}-\frac{\partial L}{\partial A_\beta}=0}.
 \end{align*}
 Mit der Lagrange-Funktion \eqref{eq:lagrange_dichte} erhalten wir die Euler-Lagrange-Gleichungen in folgender Form:
 \begin{align*}

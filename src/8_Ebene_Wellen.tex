@@ -10,7 +10,7 @@ Außerdem soll die dynamische Theorie und Frequenzabhängigkeit der komplexen Di
 
 Als Ausgangspunkt dienen die Maxwell-Gleichungen in Materie, wobei wir freie Ladungen und Ströme vernachlässigen wollen\footnote{In diesem und dem folgenden Kapitel wird anstelle der kovarianten Vierer-Notation wieder die alte Vektorschreibweise verwendet.}:
 \begin{align}
-    \nabla\cdot\vec E=0,\quad \nabla\cdot\vec B=0, \quad \nabla\times \vec E=-\frac{\partial\vec B}{\partial t}, \quad \nabla\times \vec B=\mu\varepsilon \frac{\partial\vec E}{\partial t}
+    \nabla\cdot\vec E=0,\quad \nabla\cdot\vec B=0, \quad \nabla\times \vec E=-\frac{\partial\vec B}{\partial t}, \quad \nabla\times \vec B=\mu\varepsilon \frac{\partial\vec E}{\partial t}.
 \end{align}
 Zur Vereinfachung sollen die Materialgrößen ortsunabhängig sein, $\varepsilon\neq\varepsilon(\vec r),\mu\neq\mu(\vec r)$.
 
@@ -73,7 +73,7 @@ Einsetzen des Ansatzes \eqref{eq:ansatz_ebene_welle} in die Wellengleichungen \e
 woraus die bekannte Dispersionsrelation folgt:
 \begin{align}
     \label{eq:dispersionsrelation}
-    \omega^2 = c^2k^2
+    \omega^2 = c^2k^2.
 \end{align}
 Man erkennt, dass es sich bei der Ausbreitungsgeschwindigkeit $c$ auch um die Phasengeschwindigkeit von elektromagnetischen Wellen handelt, die ja als $\omega/k$ definiert ist.
 Dieser Zusammenhang lässt sich gut veranschaulichen, indem die Welle mithilfe von \eqref{eq:dispersionsrelation} zu (zur Vereinfachung eindimensional)
@@ -99,7 +99,7 @@ umgeschrieben wird. Orte gleicher Phase (also bei konstantem Argument $z\mp ct$)
 Das Verhältnis von Vakuumlichtgeschwindigkeit und Ausbreitungsgeschwindigkeit in einem Medium wird als Brechungsindex definiert:
 \begin{align}
     \label{eq:definition_brechungsindex}
-    n=\frac{c_0}{c} \implication n=\sqrt{\varepsilon_r\mu_r}
+    n=\frac{c_0}{c} \implication n=\sqrt{\varepsilon_r\mu_r}.
 \end{align}
 Meistens (vor allem in der Optik) kann man $\mu_r$ auf $1$ setzen und erhält.
 \begin{align*}
@@ -156,7 +156,7 @@ Die Polarisation einer elektromagnetischen Welle gibt die Schwingungsrichtung de
 
 Aus den Maxwellgleichungen folgt, dass das elektrische und das magnetische Feld senkrecht zur Ausbreitungsrichtung schwingen:
 \begin{align*}
-    \left. \begin{aligned} \nabla\cdot \vec E &=0 \\ \nabla\cdot \vec B &= 0\end{aligned} \right\} \implication \left. \begin{aligned} \vec k\cdot\vec E_0&=0\equivalence \vec E_0\perp\vec k \\ \vec k\cdot\vec B_0&=0\equivalence\vec B_0\perp\vec k\end{aligned}\right\}
+    \left. \begin{aligned} \nabla\cdot \vec E &=0 \\ \nabla\cdot \vec B &= 0\end{aligned} \right\} \implication \left. \begin{aligned} \vec k\cdot\vec E_0&=0\equivalence \vec E_0\perp\vec k \\ \vec k\cdot\vec B_0&=0\equivalence\vec B_0\perp\vec k\end{aligned}\right\}.
 \end{align*}
 Das gilt allerdings nur für isotrope Medien, allgemein gilt nur $\vec D_0 \perp\vec k$, aber $\vec E_0 \not\perp\vec k$ in anisotropen Medien, da $\vec D=\varepsilon\vec E \nparallel\vec E$, weil $\varepsilon$ ein Tensor ist.
 
@@ -254,7 +254,7 @@ für den Gesamtimpuls eines Lichtpulses.
 Ziel dieses Kapitels ist es, den Übergang einer ebenen elektromagnetischen Welle an einer Trennfläche von zwei Medien zu beschreiben.
 
 Betrachte eine ebene Welle, die an einer Grenzfläche reflektiert und gebrochen wird, wie in \Abbref{fig:reflection_refraction_plane_wave} abgebildet.
-Die Grenzfläche mit Normalenvektor $\vec n$ trennt zwei Medien mit unterschiedlichen Permittivitäten $\varepsilon,\varepsilon'$ und Permeabilitätem $\mu,\mu'$ und somit verschiedenen Brechungsindizes $n$ und $n'$.
+Die Grenzfläche mit Normalenvektor $\vec n$ trennt zwei Medien mit unterschiedlichen Permittivitäten $\varepsilon,\varepsilon'$ und Permeabilitäten $\mu,\mu'$ und somit verschiedenen Brechungsindizes $n$ und $n'$.
 Die vom ersten Medium aus unter dem Winkel $\varphi$ auf die Grenzfläche einfallende Welle (1) hat den Wellenvektor $\vec k$.
 
 Die Ebene, die den Wellenvektor $\vec k$ und den Normalenvektor $\vec n$ der Grenzfläche enthält, wird als Einfallsebene bezeichnet und der Tangentialvektor $\vec t$ der Grenzfläche wird so gewählt, dass er in der Einfallsebene liegt.
@@ -262,13 +262,13 @@ Wir haben bereits gesehen, dass beliebig polarisiertes Licht in zwei linear pola
 Zur Vereinfachung wird in diesem Kapitel ohne Beschränkung der Allgemeinheit die $xz$-Ebene als Einfallsebene gewählt.
 
 Ein Teil der Welle wird unter einem Winkel $\varphi'$ in das zweite Medium transmittiert. Der Wellenvektor der transmittierten Welle (2) soll $\vec k'$ genannt werden.
-Der Rest wird unter einem Winkel $\psi$ und mit einem neuen Wellenvektor $\vec k''$ in das erste Medium zurückreflektiert (3).
+Der Rest wird unter einem Winkel $\psi$ und mit einem neuen Wellenvektor $\vec k''$ in das erste Medium zurück reflektiert (3).
 
 \begin{figure}[htb]
     \centering
     \tfigReflectionRefractionPlaneWave
     \caption{Eine ebene Welle, die unter einem Winkel $\varphi$ auf eine Grenzfläche mit Normalenvektor $\vec n$ zwischen zwei Medien mit verschiedenen Brechungsindizes $n$ und $n'$ fällt,
-        wird zum Teil unter dem Winkel $\psi$ in das erste Medium zurückreflektiert und der Rest wird unter dem Winkel $\varphi'$ in das zweite Medium transmittiert. Mit $\vec t$ wird außerdem der Tangentialvektor auf der Grenzfläche bezeichnet, der in der Einfallsebene (jene Ebene, die den Wellenvektor $k$ der einfallende Welle und das Lot enthält) liegt. }
+        wird zum Teil unter dem Winkel $\psi$ in das erste Medium zurück reflektiert und der Rest wird unter dem Winkel $\varphi'$ in das zweite Medium transmittiert. Mit $\vec t$ wird außerdem der Tangentialvektor auf der Grenzfläche bezeichnet, der in der Einfallsebene (jene Ebene, die den Wellenvektor $k$ der einfallende Welle und das Lot enthält) liegt. }
     \label{fig:reflection_refraction_plane_wave}
 \end{figure}
 
@@ -286,7 +286,7 @@ schreiben und die reflektierte als (Achtung, gleicher Brechungsindex, wie für d
 \end{align*}
 Zur Lösung des Problems ist die Betrachtung der Randbedingungen bei $z=0$ nötig.
 Diese gehen aus den vier Maxwellgleichungen hervor.
-Zum einen müssen die Normalkomponeneten $\vec D$ und $\vec B$ stetig sein,
+Zum einen müssen die Normalkomponenten $\vec D$ und $\vec B$ stetig sein,
 \begin{align}
     \label{eq:ebene_welle_RB_stetige_normalkomponenten}
     \begin{aligned}
@@ -321,7 +321,7 @@ also
     \label{eq:snelliussches_brechungsgesetz}
     \boxed{\frac{\sin\varphi}{\sin\varphi'}=\frac{k'}{k}=\frac{n'}{n}.}
 \end{align}
-Beim Übergang zum optisch dichteren Medium ($n'>n$) erfolgt die Brechung zum Lot hin, $\varphi'<\varphi$, beim Übergang zum opisch dünneren Medium vom Lot weg.
+Beim Übergang zum optisch dichteren Medium ($n'>n$) erfolgt die Brechung zum Lot hin, $\varphi'<\varphi$, beim Übergang zum optisch dünneren Medium vom Lot weg.
 Ferner folgt wegen $k=k''$, dass Einfallswinkel und Ausfallswinkel (der reflektierten Welle) gleich sind:
 \begin{align*}
     \varphi=\psi.
@@ -337,7 +337,7 @@ Dazu werden die elektrischen Feldvektoren aufgespaltet in
     \item den s-polarisierten Teil, $\vec E_{0,\perp},\vec E_{0,\perp}',\vec E_{0,\perp}''$ (orthogonal zur Einfallsebene) mit
           \begin{align}
               \label{eq:fresnel_senkrecht}
-              t_\perp = \frac{E_{0,\perp}'}{E_{0,\perp}}=\frac{2n\cos\varphi}{n\cos\varphi+n'\frac{\mu}{\mu'}\cos\varphi'},\quad r_\perp = \frac{E_{0,\perp}''}{E_{0,\perp}}=\frac{n\cos\varphi-n'\frac{\mu}{\mu'}\cos\varphi}{n\cos\varphi+n'\frac{\mu}{\mu'}\cos\varphi'}
+              t_\perp = \frac{E_{0,\perp}'}{E_{0,\perp}}=\frac{2n\cos\varphi}{n\cos\varphi+n'\frac{\mu}{\mu'}\cos\varphi'},\quad r_\perp = \frac{E_{0,\perp}''}{E_{0,\perp}}=\frac{n\cos\varphi-n'\frac{\mu}{\mu'}\cos\varphi}{n\cos\varphi+n'\frac{\mu}{\mu'}\cos\varphi'}.
           \end{align}
           Im optischen Bereich ist i.d.R. $\mu\approx\mu'\approx 1$.
     \item und den p-polarisierten Teil $\vec E_{0,\parallel},\vec E_{0,\parallel}',\vec E_{0,\parallel}''$ (in der Einfallsebene). Es gilt
@@ -413,7 +413,7 @@ und
 \begin{align*}
     \cos\varphi'=\sqrt{1-\sin^2\varphi'}=i\sqrt{\left(\frac{n}{n'}\right)^2\sin^2\varphi-1}=i\sqrt{\frac{\sin^2\varphi}{\sin^2\varphi_\mathrm{T}}-1}.
 \end{align*}
-Einsetzen in den Ansatz der ebenen Welle liegert dann
+Einsetzen in den Ansatz der ebenen Welle liefert dann
 \begin{align*}
     e^{i\vec k'\cdot \vec r} = e^{ik' \sin\varphi' x+ik'\cos\varphi' z}  = e^{ik' \sin\varphi' x}e^{ik'\cos\varphi' z} = e^{ik' \sin\varphi' x}e^{-\frac{z}{\delta}}
 \end{align*}
@@ -421,7 +421,7 @@ mit Eindringtiefe
 \begin{align*}
     \delta=\frac{1}{k'} \frac{\sin\varphi_\mathrm{T}}{\sqrt{\sin^2\varphi-\sin^2\varphi_\mathrm{T}}}.
 \end{align*}
-Der total reflektierte Strahl dringt also exponentiel gedämpft in das optisch dünnere Medium ein. Man spricht von der evaneszenten Welle bzw. dem evaneszenten Feld.
+Der total reflektierte Strahl dringt also exponentiell gedämpft in das optisch dünnere Medium ein. Man spricht von der evaneszenten Welle bzw. dem evaneszenten Feld.
 
 Dieser Effekt findet Anwendung in Wellenleitern (z.B. Glasfaser), in der Röntgenoptik (Reflexion unter streifendem Einfall) und in der Mikroskopie,
 wo am zu vermessenden Objekt seitlich ein Strahl gestreut wird und aus der seitlichen Verschiebung des totalreflektierten Strahls der Abstand gemessen werden kann.
@@ -447,14 +447,14 @@ Die Frequenzabhängigkeit der Dielektrizitätskonstante hat einige wichtige Ausw
     \item Insgesamt ist $\varepsilon(\omega)$ komplex, $\varepsilon(\omega) = \varepsilon'(\omega) + i\varepsilon''(\omega)$ und es gibt einen formalen Zusammenhang zwischen $\varepsilon'(\omega)$ und $\varepsilon''(\omega)$. Dieser Zusammenhang ist als Kramers-Kronig-Relation bekannt und wird in dem Abschnitt \ref{sec:kramers_kronig_relation} behandelt.
 \end{itemize}
 
-Es gibt verschiedene Theoriemodelle, mithilfe derer die Dielektrizitätskonstante quanitativ beschrieben wird.
-In Abschnitt \ref{sec:lorentzmodell_gebundene_elektronen} wird das Lorentzmodell für gebundene Elektronen disktutiert und in Abschnitt \ref{sec:freie_elektronen} die Dielektrizitätskonstante bei freien Elektronen behandelt.
+Es gibt verschiedene Theoriemodelle, mithilfe derer die Dielektrizitätskonstante quantitativ beschrieben wird.
+In Abschnitt \ref{sec:lorentzmodell_gebundene_elektronen} wird das Lorentzmodell für gebundene Elektronen diskutiert und in Abschnitt \ref{sec:freie_elektronen} die Dielektrizitätskonstante bei freien Elektronen behandelt.
 
 
 Zunächst soll eine grobe Einordnung des Problems erfolgen.
 In Kapitel \ref{sec:Makroskopische_Gleichungen_der_Elektrostatik} haben wir die dielektrische Verschiebung $\vec D$ auf verschiedene Weisen beschrieben:
 \begin{align*}
-    \vec D= \varepsilon \vec E=\varepsilon_0 \vec E+\vec P=\varepsilon_0 \underbrace{(1+\chi)}_{\varepsilon _r }\vec E
+    \vec D= \varepsilon \vec E=\varepsilon_0 \vec E+\vec P=\varepsilon_0 \underbrace{(1+\chi)}_{\varepsilon _r }\vec E.
 \end{align*}
 Die Suszeptibilität $\chi$ hat ihren Ursprung im atomaren oder molekularen Dipolmoment $\vec p=\varepsilon_0 \alpha\vec E$ und bewirkt eine makroskopische Polarisation
 $\vec P=N\vec p = \varepsilon_0 N\alpha\vec E = \varepsilon\chi\vec E$. Hier beschreibt $N$ die Dipoldichte und $\alpha$ die Polarisierbarkeit.
@@ -494,7 +494,7 @@ Für viel größere Frequenzen als die höchste charakteristische Frequenz sinkt
 Das Lorentzmodell beschreibt die mit den auftreffenden elektrischen Feldern wechselwirkenden Elektronen als klassische harmonische Oszillatoren.
 Das Elektron erfährt eine lineare, rücktreibende Anziehungskraft durch den Atomkern $\vec F_\mathrm{A} = -m\omega_0^2 \vec r$ mit Eigenfrequenz $\omega_0$ (mit einer Feder vergleichbar),
 eine von der Geschwindigkeit abhängige Reibungskraft $\vec F_\mathrm{R}=-m\gamma\dot{\vec r}$ mit Dämpfungskonstante $\gamma$ und zuletzt die externe Kraft, die durch ein äußeres, mit Frequenz $\omega$ oszillierendes elektrisches Feld gegeben ist.
-Diese äußere Kraft schreiben wir als $-e\vec E_0(\omega)e^{-i\omega t}$
+Diese äußere Kraft schreiben wir als $-e\vec E_0(\omega)e^{-i\omega t}$.
 
 Insgesamt gilt also
 \begin{align*}
@@ -507,7 +507,7 @@ bzw.
 \end{align*}
 Diese inhomogene Differentialgleichung zweiten Grades wird mit einem Exponentialansatz $\vec r(t)=\vec r(\omega)e^{-i\omega t}$ gelöst:
 \begin{align*}
-    \vec r(t) = -\frac{e}{m} \frac{1}{\omega_0^2-\omega^2-i\gamma\omega} \vec E_0(\omega)e^{-i\omega t}
+    \vec r(t) = -\frac{e}{m} \frac{1}{\omega_0^2-\omega^2-i\gamma\omega} \vec E_0(\omega)e^{-i\omega t}.
 \end{align*}
 Für das Dipolmoment $\vec p(t)=\vec p(\omega)e^{-i\omega t} = -e\vec r(t)$ folgt
 \begin{align*}
@@ -527,20 +527,92 @@ und
     \varepsilon_r = 1+\chi = 1+ \frac{Ne^2}{\varepsilon_0 m} \sum_i \frac{f_i}{\omega_i^2-\omega^2-i\gamma_i\omega}.
 \end{align*}
 Eine Zerlegung in Real- und Imaginärteil liefert
-\begin{align*}
+\begin{align}
+    \label{eq:realteil_epsilon_r}
     \varepsilon_r'(\omega)  & = 1 + \frac{Ne^2}{\varepsilon_0 m} \sum_i f_i\frac{\omega_i^2-\omega^2}{\omega_i^2-\omega^2-i\gamma_i\omega} \\
+    \label{eq:imagnaerteil_epsilon_r}
     \varepsilon_r''(\omega) & = \frac{Ne^2}{\varepsilon_0 m} \sum_i f_i\frac{ \gamma_i\omega}{\omega_i^2-\omega^2-i\gamma_i\omega} .
-\end{align*}
-Für nur einen einzigen Oszillator beschreibt deren Verlauf eine typische Resonanzkurve, wie in \Abbref{fig:dielectric_constant_real_and_imaginary_one_resonance} dargestellt. 
-
+\end{align}
+Für nur einen einzigen Oszillator beschreibt deren Verlauf eine typische Resonanzkurve, wie in \Abbref{fig:dielectric_constant_real_and_imaginary_one_resonance} dargestellt.
+Typischerweise sind die $\gamma_i$ viel kleiner als die $\omega_i$ (unterdämpfter Fall).
+Für nur einen Oszillator beschreibt $\varepsilon_r''(\omega)$ eine Lorentzkurve.
 
 \begin{figure}[htb]
     \centering
     \tfigDielectricConstantRealPart
     \tfigDielectricConstantImaginaryPart
-    \caption{<caption>}
+    \caption{Real- und Imaginärteil der Dielektrizitätskonstante. }
     \label{fig:dielectric_constant_real_and_imaginary_one_resonance}
 \end{figure}
+
+Zu dem abgebildeten Beispiel sollen einige Bemerkungen gemacht werden:
+\begin{itemize}
+    \item Bei $\omega=\omega_0$ zeigt $\varepsilon'(\omega)$ Resonanz, während $\varepsilon''(\omega)$ Resonanzabsorption zeigt und sonst gegen $0$ geht. Diese Beziehung zwischen Realteil und Imaginärteil der Dielektrizitätskonstante wird durch die Kramers-Kronig-Relation genau beschrieben. Außerdem beschreibt der Imaginärteil die dissipierte Energie, wie in Kapitel \ref{sec:satz_von_poynting} erwähnt (vgl. harmonischer Oszillator).
+    \item Für Bereiche mit ansteigendem Realteil der Dielektrizitätskonstante, $\diffa{\varepsilon'(\omega)}/\diffa{\omega}>0$, spricht man von normaler Dispersion (außerhalb der Resonanz), für $\diffa{\varepsilon'(\omega)}/\diffa{\omega}<0$, also bei Resonanz spricht man von anomaler Dispersion.
+    \item Bei niedrigen Frequenzen (und solange $\omega_i\neq 0$) ist
+          \begin{align*}
+              \varepsilon_r'(\omega) = 1+ \frac{Ne^2}{\varepsilon_0 m} \sum_i \frac{f_i}{\omega_i^2} + \bigO(\omega^2).
+          \end{align*}
+    \item Für Frequenzen, die weit über der höchsten Resonanzfrequenz liegen, $\omega\gg\omega_i$ ist
+          \begin{align}
+              \label{eq:dielectric_constant_high_freqs}
+              \varepsilon(\omega)\approx 1 - \frac{\omega_\mathrm{p}^2}{\omega^2}, \quad \omega_\mathrm{p}^2=\frac{ZNe^2}{\varepsilon_0m},
+          \end{align}
+          mit sogenannter Plasmafrequenz $\omega_\mathrm{p}$.
+          Dieser Zusammenhang entspricht auch dem (idealisierten) Fall, dass es keine Resonanzen gibt.
+          Hieraus geht ferner die spezifische Dispersionsrelation für eine elektromagnetische Welle hervor, denn
+          ist $\overline{n}=\sqrt{\varepsilon_r}$, so folgt wegen $kc_0=\omega\overline{n}=\sqrt{\omega^2-\omega_\mathrm{p}^2}$
+          \begin{align*}
+              \omega=\pm\sqrt{\omega_\mathrm{p}^2+c_0^2k^2}.
+          \end{align*}
+          \begin{figure}[htb]
+              \centering
+              \tfigDispersionRelationLosslessMedium
+              \caption{Dispersionsrelation für Frequenzen, weit von den Resonanzen entfernt. }
+              \label{fig:dispersion_relation_lossless_medium}
+          \end{figure}
+          Die Anwendung der Formel \eqref{eq:dielectric_constant_high_freqs} ist zum einen für dielektrische Medien im Bereich $\omega\gg\omega_\mathrm{p}$ gültig, aber andererseits auch für Elektronengase oder -plasmen geringer Dichte und hier auch für $\omega<\omega_\mathrm{p}$:
+          \begin{align*}
+              k=\frac{\omega}{c}\overline{n} = \frac{\omega}{c}\sqrt{\varepsilon_r}=\frac{i}{\xi}
+          \end{align*}
+          (rein gedämpfte, elektromagnetische Welle).
+
+          Die Gleichung \eqref{eq:dielectric_constant_high_freqs} ist auch für Leitungselektronen in Metallen anwendbar, wobei die Plasmafrequenz
+          \begin{align*}
+              \omega_\mathrm{p}^2=\frac{Ne^2}{\varepsilon_0m^*}
+          \end{align*}
+          mit effektiver Elektronenmasse im Leitungsband $m^*$.
+          Daraus folgt, dass Metalle für $\omega<\omega_\mathrm{p}$ reflektieren (weil die elektromagnetische Welle wegen $k=i/\xi$ nicht eindringt) und für $\omega>\omega_\mathrm{p}$ durchlässig sind.
+\end{itemize}
+
+Da die Dielektrizitätskonstante komplex ist, sind auch die Wellenzahl
+\begin{align*}
+    k=\frac{\omega c}{\overline{n}}
+\end{align*}
+und der Brechungsindex
+\begin{align*}
+    \overline{n} = \sqrt{\varepsilon_r}=n(\omega)+i\kappa(\omega)
+\end{align*}
+komplex mit
+\begin{align*}
+    \left.
+    \begin{aligned}
+        \varepsilon_r'  & = n^2-\kappa^2 \\
+        \varepsilon_r'' & = 2\kappa n
+    \end{aligned}
+    \right\} \equivalence \left\{
+    \begin{aligned}
+        n^2      & = \frac{1}{2}\left(\varepsilon_r'+\sqrt{{\varepsilon_r'}^2+{\varepsilon_r''}^2}\right)  \\
+        \kappa^2 & = -\frac{1}{2}\left(\varepsilon_r'-\sqrt{{\varepsilon_r'}^2+{\varepsilon_r''}^2}\right)
+    \end{aligned}
+    \right..
+\end{align*}
+Insbesondere ist
+\begin{align*}
+    n(\omega) \approx \sqrt{\varepsilon_r'} \quad \text{für} \quad \varepsilon_r'' \approx=0,
+\end{align*}
+also außerhalb von Resonanzen.
+
 
 
 
@@ -549,4 +621,4 @@ Für nur einen einzigen Oszillator beschreibt deren Verlauf eine typische Resona
 
 
 \subsection{Beitrag freier Elektronen\label{sec:freie_elektronen}}
-\subsection{Kramers Kronig Relationen\label{sec:kramers_kronig_relation}}
+\subsection{Kramers-Kronig-Relationen\label{sec:kramers_kronig_relation}}

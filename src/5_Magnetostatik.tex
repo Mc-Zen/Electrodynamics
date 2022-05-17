@@ -35,13 +35,13 @@ Die Stromdichte lässt sich auch ausdrücken durch das Produkt aus Ladungsdichte
 \end{equation*}
 was eine mikroskopische Definition analog zu der Ladungsdichte erlaubt\footnote{Zur Erinnerung: $\rho =\sum _{i}q_{i}\delta \left(\vec {r}-\vec {r}_{i}\right)$.}:
 \begin{equation*}
-	\vec {j}=\sum _{i}q_{i}\vec {v}_{i}\delta \left(\vec {r}-\vec {r}_{i}\right)
+	\vec {j}=\sum _{i}q_{i}\vec {v}_{i}\delta \left(\vec {r}-\vec {r}_{i}\right).
 \end{equation*}
 Die Stromdichte zeigt damit in dieselbe Richtung wie der Geschwindigkeitsvektor einer positiven Ladung.
 
 Zur Herleitung der Kontinuitätsgleichung betrachten wir die zeitliche Änderung der Ladung in einem Volumen $V$:
 \begin{equation*}
-	\frac{\diff Q}{\diff t}=\frac{\diff }{\diff t}\int _{V}\diff^{3}\vec {r}\rho \left(\vec {r},t\right)=\int _{V}\diffa[3]{\vec{r}}\frac{\partial }{\partial t}\rho \left(\vec {r},t\right)
+	\frac{\diff Q}{\diff t}=\frac{\diff }{\diff t}\int _{V}\diff^{3}\vec {r}\rho \left(\vec {r},t\right)=\int _{V}\diffa[3]{\vec{r}}\frac{\partial }{\partial t}\rho \left(\vec {r},t\right).
 \end{equation*}
 Wegen der Ladungserhaltung entspricht dies gerade dem Fluss der Stromdichte aus der Volumenoberfläche $\partial V$ heraus:
 \begin{equation*}
@@ -49,7 +49,7 @@ Wegen der Ladungserhaltung entspricht dies gerade dem Fluss der Stromdichte aus 
 \end{equation*}
 woraus sich die Kontinuitätsgleichung ergibt:
 \begin{equation*}
-	\frac{\partial }{\partial t}\rho +\divg \vec {j}=0
+	\frac{\partial }{\partial t}\rho +\divg \vec {j}=0.
 \end{equation*}
 In der Magnetostatik ist $\partial _{t}\rho =0$ und damit
 \begin{equation*}
@@ -63,11 +63,11 @@ Auf Erde kommen im Wesentlichen zwei natürliche bekannte Magnetfelder vor: dasj
 
 Auf ein stromdurchflossenes Volumenelement $\diff V=\diff^3 \vec r$ in einem Magnetfeld $\vec B$ wirkt nach dem folgenden Gesetz eine Kraft\footnote{vergleichlich mit $\vec {F}=q\vec {E}$, also Produkt aus Quelle und Feld in der Elektrostatik. }:
 \begin{equation*}
-	\diff \vec {F}=(\vec j\times\vec B)\diff V
+	\diff \vec {F}=(\vec j\times\vec B)\diff V.
 \end{equation*}
 Die Gesamtkraft auf einen ausgedehnten Leiter $V$ ergibt sich durch Integration:
 \begin{equation*}
-	\vec {F}=\int _{V}\vec {j}\times \vec {B}\diff V
+	\vec {F}=\int _{V}\vec {j}\times \vec {B}\diff V.
 \end{equation*}
 Im Spezialfall für einen dünnen Leiter $C$ und ein Leiterelement $\diff\vec r$ ($\diff V = \diff A\diff\vec r$) gilt
 \begin{align}
@@ -85,7 +85,7 @@ Im Spezialfall für einen dünnen Leiter $C$ und ein Leiterelement $\diff\vec r$
 Wir untersuchen zunächst die magnetische Flussdichte einiger speziellen geometrischen Anordnungen. Es gilt für ein Leiterelement $\diff \vec {r}'$ (dargestellt in \Abbref{fig:magnetic_field_conductor_diff_view}):
 \begin{equation}
 	\label{eq:biot_savart_leiter_differentiell}
-	\diff \vec {B}=\frac{\mu _{0}}{4\pi }I\diff \vec {r}'\times \frac{\vec {r}-\vec {r}'}{\left| \vec {r}-\vec {r}'\right| ^{3}}
+	\diff \vec {B}=\frac{\mu _{0}}{4\pi }I\diff \vec {r}'\times \frac{\vec {r}-\vec {r}'}{\left| \vec {r}-\vec {r}'\right| ^{3}}.
 \end{equation}
 Dieser Zusammenhang ist als Biot-Savartsches Gesetz für Leiter bekannt und ergibt sich aus den Betrachtungen $\left| \diff \vec {B}\right| \propto I\left| \diff \vec {r}'\right| , \left| \vec {r}-\vec {r}'\right| ^{-2}$ und $\diff \vec {B}\perp \diff \vec {r}',\vec {r}-\vec {r}'$. Hier wird außerdem die magnetische Feldkonstante $\mu _{0}\approx 4\pi \cdot 10^{-7}\,\si{\newton\per\square\ampere}$ eingeführt\footnote{Über die Kraft zwischen zwei stromdurchflossene parallele Leiter wurde früher die Einheit Ampère definiert und dabei festgelegt, dass $\frac{\mu _{0}}{4\pi }=\SI{1e-7}{\newton\per\square\ampere}$, aber die magnetische Feldkonstante wurde 2019 umdefiniert auf Basis der Elementarladung und Sekunde, wobei aber die Abweichung extrem gering ist. Damit ist die magnetische Feldkonstante eine experimentell zu ermittelnde Größe geworden. }. Die Flussdichte ist zwar proportional zu $r^{-2}$ wie beim elektrischen Feld einer Punktladung, aber im Gegensatz können isolierte Stromelemente $I\diff \vec {r}$ nicht existieren.
 
@@ -149,7 +149,7 @@ Integration der differentiellen Form des Biot-Savartschen Gesetzes für Leiter \
 \end{equation}
 Wie für das elektrische Feld können wir ein Potential einführen \textendash{} allerdings ist $\vec {B}$ kein Potentialfeld und daher ist das magnetische Potential ein Vektorpotential:
 \begin{equation*}
-	\vec {B}\left(\vec {r}\right)=\nabla \times \vec {A}\left(\vec {r}\right), \quad\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}
+	\vec {B}\left(\vec {r}\right)=\nabla \times \vec {A}\left(\vec {r}\right), \quad\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\diffa[3]{\vec{r}'}.
 \end{equation*}
 Die Divergenz von $\vec {B}$ verschwindet, weil stets gilt, dass $\nabla\cdot(\nabla\times \vec A) = 0$.
 \begin{formal}
@@ -216,7 +216,7 @@ und es ist kreisförmig um die $z$-Achse gerichtet, $\vec {B}\left(r,\varphi \ri
 Genauso lässt sich das Feld einer unendlich langen Spule berechnen (\Abbref{fig:long_coil_scheme}):
 \begin{align*}
 	\oint \vec {B}\cdot \diff \vec {r} & =LB_{0}\overset{!}{=}\mu _{0}NI                   \\
-	\implication B_{0}                 & =\mu _{0}\frac{N}{L}I, \vec {B}=B_{0}\vec {e}_{z}
+	\implication B_{0}                 & =\mu _{0}\frac{N}{L}I, \vec {B}=B_{0}\vec {e}_{z}.
 \end{align*}
 Zwischen den Windungen hebt sich das magnetische Feld weg.
 
@@ -237,7 +237,7 @@ und im Potential $\vec {A}\left(\vec {r}\right)$ findet sich wieder eine Greensc
 Wir führen zunächst wieder eine Entwicklung des magnetischen Potentials nach Momenten der Stromverteilung durch:
 \begin{equation}
 	\label{eq:entwicklung_magn_potential}
-	\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \diffa[3]{\vec{r}'}\frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\approx \frac{\mu _{0}}{4\pi }\left(\frac{1}{r}\int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)+\frac{\vec {r}}{r^{3}}\cdot \int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)\vec {r}'+\ldots \right)
+	\vec {A}\left(\vec {r}\right)=\frac{\mu _{0}}{4\pi }\int \diffa[3]{\vec{r}'}\frac{\vec {j}\left(\vec {r}'\right)}{\left| \vec {r}-\vec {r}'\right| }\approx \frac{\mu _{0}}{4\pi }\left(\frac{1}{r}\int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)+\frac{\vec {r}}{r^{3}}\cdot \int \diffa[3]{\vec{r}'}\vec {j}\left(\vec {r}'\right)\vec {r}'+\ldots \right).
 \end{equation}
 Die Auswertung ist allerdings viel komplizierter als für das elektrische Potential und daher beschränken wir uns hier auf die Dipole und vernachlässigen höhere Multipolmomente. Außerdem verwenden wir als Hilfssatz folgende Gleichung, die für beliebige skalare Felder $g$ und $f$ sowie für ein quellenfreies Vektorfeld $\vec {j}$ gilt\footnote{Beweis: Betrachte $\int _{V}\nabla \left(gf\vec {j}\right)\diffa[3]{\vec{r}}$. Einerseits ist dieser Ausdruck mit dem Satz von Gauß gleich $\int _{\partial V}gf\vec {j}\cdot \diff \vec {f}$, was gleich $0$ ist, wenn man das Volumen groß genug wählt, dass auf dem Rand $\vec {j}\left(\vec {r}\right)=\vec {0}$ ist. Außerdem findet man mithilfe der Produktregel, dass $\int _{V}\nabla \left(gf\vec {j}\right)\diffa[3]{\vec{r}}=\int _{V}\vec {j}\cdot \nabla \left(gf\right)\diffa[3]{\vec{r}}+\int _{V}gf\nabla \cdot \vec {j}\diffa[3]{\vec{r}}$, wobei der letzte Term aufgrund der Bedingung $\divg \vec {j}=\vec {0}$ verschwindet, q.e.d.}:
 \begin{equation}
@@ -295,7 +295,7 @@ Für eine ebene Schleife mit Fläche $F$ und Normalenvektor $\vec {n}$ (\Abbref{
 
 Zuletzt betrachten wir einen starren geladenen Körper, der um eine Rotationsachse $\vec {\omega }$ rotiert (\Abbref{fig:magnetic_dipole_field_circle_conductor_ellipsoid}, rechts). Die lokale Geschwindigkeit für eine Ladung in diesem Körper ist $\vec {v}\left(\vec {r}\right)=\vec {\omega }\times \vec {r}$. Die rotierenden Ladungen resultieren in einer Stromdichte $\vec {j}=\rho \vec {v}$, sodass ein Dipolmoment induziert wird:
 \begin{equation*}
-	\vec {m}=\frac{1}{2}\int d^{3}\vec {r}\,\rho \left(\vec {r}\right)\vec {r}\times \vec {v}.
+	\vec {m}=\frac{1}{2}\int \diffa[3]{\vec {r}}\rho \left(\vec {r}\right)\vec {r}\times \vec {v}.
 \end{equation*}
 Gleichzeitig besitzt der Körper einen Drehimpuls
 \begin{equation*}
@@ -307,7 +307,7 @@ Trifft man jetzt die Annahme, dass die Verteilungen von Ladung und Masse im Kör
 \end{equation*}
 dann findet man eine Proportionalität von $\vec {m}$ und $\vec {L}$:
 \begin{equation*}
-	\vec {m}=\frac{q}{2M}\vec {L}
+	\vec {m}=\frac{q}{2M}\vec {L}.
 \end{equation*}
 Der Proportionalitätsfaktor $\left| \vec {m}\right| /\left| \vec {L}\right| $ wird als gyromagnetisches Verhältnis bezeichnet. Für den Spin gibt es allerdings eine Abweichung, die aus der Relativitätstheorie hervorgeht und es gilt eigentlich
 \begin{equation*}
@@ -325,7 +325,7 @@ Die bereits bekannte Kraft auf ein Volumen $V$ mit Stromverteilung $\vec {j}\lef
 \end{equation*}
 lässt sich nach $\vec {B}$ um $\vec {r}=\vec {0}$ Taylor-entwickeln:
 \begin{equation*}
-	\vec {F}\approx \int \vec {j}\left(\vec {r}\right)\times \left(\vec {B}\left(0\right)+\vec {r}\cdot \nabla \vec {B}\left(0\right)+\ldots \right)\diffa[3]{\vec{r}}=\left(\vec {m}\times \nabla \right)\times \vec {B}\left(0\right)=\nabla \left(\vec {m}\cdot \vec {B}\right)
+	\vec {F}\approx \int \vec {j}\left(\vec {r}\right)\times \left(\vec {B}\left(0\right)+\vec {r}\cdot \nabla \vec {B}\left(0\right)+\ldots \right)\diffa[3]{\vec{r}}=\left(\vec {m}\times \nabla \right)\times \vec {B}\left(0\right)=\nabla \left(\vec {m}\cdot \vec {B}\right).
 \end{equation*}
 Die potentielle Energie eines Dipols $\vec {m}$ im magnetischen Feld $\vec {B}$ ergibt sich daraus durch Integration
 \begin{equation*}
@@ -360,7 +360,7 @@ gehabt. Aber mit der vollständigen Kontinuitätsgleichung
 \end{equation*}
 brauchen wir eine Verallgemeinerung, wenn $\nabla \cdot \vec {j}\neq 0$:
 \begin{equation*}
-	\nabla \times \vec {B}=\mu _{0}\vec {j}+\frac{1}{c^{2}}\frac{\partial \vec {E}}{\partial t}=\mu _{0}\left(\vec {j}+\varepsilon _{0}\frac{\partial \vec {E}}{\partial t}\right)
+	\nabla \times \vec {B}=\mu _{0}\vec {j}+\frac{1}{c^{2}}\frac{\partial \vec {E}}{\partial t}=\mu _{0}\left(\vec {j}+\varepsilon _{0}\frac{\partial \vec {E}}{\partial t}\right).
 \end{equation*}
 Das ist das Ampèresche Gesetz mit der Maxwellschen Verallgemeinerung.
 
@@ -396,7 +396,7 @@ Eine Taylor-Entwicklung um $\vec {r}_{n}$ liefert
 \end{equation*}
 Betrachte zunächst die Terme mit $\sum _{i\left(n\right)}q_{i}\vec {v}_{ni}$, die die molekularen Dipolmomente liefern. Der erste Term kann durch ein elektrisches Dipolmoment beschrieben werden:
 \begin{equation*}
-	\sum _{i\left(n\right)}q_{i}\vec {v}_{ni}=\sum _{i\left(n\right)}q_{i}\frac{\diff \vec {r}_{ni}}{\diff t}=\frac{\diff }{\diff t}\vec {p}_{n}
+	\sum _{i\left(n\right)}q_{i}\vec {v}_{ni}=\sum _{i\left(n\right)}q_{i}\frac{\diff \vec {r}_{ni}}{\diff t}=\frac{\diff }{\diff t}\vec {p}_{n}.
 \end{equation*}
 Der zweite Term enthält ein magnetisches Moment (verwende wieder die Tensorzerlegung in einen symmetrischen und einen asymmetrischen Anteil):
 \begin{multline*}
@@ -416,7 +416,7 @@ Sammle nun alle bisher ausgewerteten Ausdrücke:
 	\left\langle \left(\vec {j}_{n}\left(\vec {r},t\right)\right)_{\alpha }\right\rangle & =\left(\left(\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}\right)_{\alpha }\right)+\frac{\diff }{\diff t}\left(\vec {p}_{n}\right)_{\alpha }\right)f\left(\vec {r}-\vec {r}_{n}\right)                                                                                                                                                                                                                 \\
 	                                                                                     & \qquad-\left(\left(\sum _{i\left(n\right)}q_{i}\left(\vec {v}_{n}\right)_{\alpha }\left(\vec {r}_{ni}\right)_{\beta }\right)-\varepsilon _{\alpha \beta \gamma }\left(\vec {m}_{n}\right)_{\gamma }\right)\nabla _{\beta }f\left(\vec {r}-\vec {r}_{n}\right)                                                                                                                                           \\
 	                                                                                     & =\left\langle q_{n}\left(\vec {v}_{n}\right)_{\alpha }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\frac{\partial }{\partial t}\left\langle \left(\vec {p}_{n}\right)_{\alpha }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle +\varepsilon _{\alpha \beta \gamma }\nabla _{\beta }\left\langle \left(\vec {m}_{n}\right)_{\gamma }\delta \left(\vec {r}-\vec {r}\right)\right\rangle \\
-	                                                                                     & \qquad -\nabla _{\beta }\left\langle \left(\vec {v}_{n}\right)_{\alpha }\left(\vec {p}_{n}\right)_{\beta }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle
+	                                                                                     & \qquad -\nabla _{\beta }\left\langle \left(\vec {v}_{n}\right)_{\alpha }\left(\vec {p}_{n}\right)_{\beta }\delta \left(\vec {r}-\vec {r}_{n}\right)\right\rangle.
 \end{align*}
 Den letzten Term vernachlässigen wir im Folgenden als Term höherer Ordnung (Details sind im Buch von Jackson, Kap. 6.6, zu finden).
 
@@ -444,7 +444,7 @@ und wir können die makroskopischen Feldgleichungen formulieren:
 \begin{align*}
 	\divg \vec {B} & =0                                                                                                                                                                                            \\
 	\rot \vec {B}  & =\mu _{0}\left(\vec {j}_{\mathrm{Ma}}\left(\vec {r},t\right)+\vec {j}_{\mathrm{Mi}}\left(\vec {r},t\right)+\varepsilon _{0}\frac{\partial }{\partial t}\vec {E}\left(\vec {r},t\right)\right) \\
-	               & =\mu _{0}\left(\vec {j}_{\mathrm{Ma}}\left(\vec {r},t\right)+\frac{\partial }{\partial t}\vec {D}\left(\vec {r},t\right)+\nabla \times \vec {M}\left(\vec {r},t\right)\right)
+	               & =\mu _{0}\left(\vec {j}_{\mathrm{Ma}}\left(\vec {r},t\right)+\frac{\partial }{\partial t}\vec {D}\left(\vec {r},t\right)+\nabla \times \vec {M}\left(\vec {r},t\right)\right).
 \end{align*}
 Nun führen wir noch das magnetische Feld $\vec {H}$ ein,
 \begin{equation*}
@@ -452,7 +452,7 @@ Nun führen wir noch das magnetische Feld $\vec {H}$ ein,
 \end{equation*}
 Die Magnetisierung $\vec {M}$ wird also wieder in ein Hilfsfeld integriert, was einen einfacheren Ausdruck für die zweite Feldgleichung erlaubt:
 \begin{equation*}
-	\boxed{\rot \vec {H}=\vec {j}_{\mathrm{Ma}}+\frac{\partial }{\partial t}\vec {D}}
+	\boxed{\rot \vec {H}=\vec {j}_{\mathrm{Ma}}+\frac{\partial }{\partial t}\vec {D}.}
 \end{equation*}
 
 \begin{formal}
@@ -684,7 +684,7 @@ Die Bedeutung des negativen Vorzeichens wird mit der Lenzschen Regel erklärt:
 \end{formal}
 Mit dem Satz von Stokes kann das Induktionsgesetz auch differentiell ausgedrückt werden:
 \begin{equation*}
-	\rot \vec {E}=-\frac{\partial \vec {B}}{\partial t}
+	\rot \vec {E}=-\frac{\partial \vec {B}}{\partial t}.
 \end{equation*}
 
 \begin{formal}
@@ -739,7 +739,7 @@ gelten muss. Einsetzen der Gleichungen \eqref{eq:ringspannung_ruhesystem_leiter}
 \end{equation*}
 Daraus kann man das elektrische Feld im Laborsystem ablesen:
 \begin{equation*}
-	\vec {E}=\vec {E}'-\vec {v}\times \vec {B}
+	\vec {E}=\vec {E}'-\vec {v}\times \vec {B}.
 \end{equation*}
 Dieses Ergebnis ist auch sinnvoll, weil $\rot \vec {E}=\partial _{t}\vec {B}$ erfüllt ist und außerdem die Lorentzkraft auf eine Ladung $q$ im Leiter
 \begin{equation*}
