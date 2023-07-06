@@ -368,6 +368,43 @@ und schließlich für einen Kugelkondensator mit Radien $r_{1}<r_{2}$
 
 \subsection{Maxwellscher Spannungstensor\label{sec:maxwellscher_spannungstensor}}
 
+Auf ein Volumen $V$ mit der Ladungsdichte $\rho(\vec{r})$ im elektrischen Feld $\vec{E}(\vec{r})$ ist die Kraftdichte
+\begin{equation*}
+	\vec{b}(\vec{r}) = \rho(\vec{r}) \vec{E}(\vec{r})
+\end{equation*}
+und es wirkt somit eine Gesamtkraft 
+\begin{equation*}
+	\vec{F} = \int_V \diffa[3]{\vec{r}} \rho(\vec{r}) \vec{E}(\vec{r}).
+\end{equation*}
+Zu unterscheiden sind zwei Fälle. Liegt kein äußeres Feld an, so wird $\vec{E}(\vec{r})$ allein von $\rho(\vec{r})$ erzeugt und es gilt
+\begin{equation*}
+	\frac{1}{4\pi\varepsilon_0}\int_V\diffa[3]{\vec{r}} \rho(\vec{r}) \int_V\rho(\vec{r}') \frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^3} \diffa[3]{\vec{r}'}
+\end{equation*}
+Aufgrund der Asymmetrie des Integranden  verschwindet $\vec{F}$. 
+
+Liegt ein äußeres Feld an, z.~B. durch benachbarte Körper, dann gilt
+\begin{align*}
+	b_i &= \rho E_i = \varepsilon_0 E_i \nabla_j E_j = \varepsilon_0[\nabla_j(E_iE_j)-E_j\nabla_j E_i] \\
+	&= \varepsilon_0[\nabla_j(E_iE_j)-E_j\nabla_iE_j]=\varepsilon_0\nabla_j(E_iE_j-\frac{1}{2}\delta_ij E_kE_k ).
+\end{align*}
+Dieser Ausdruck lässt sich schreiben als 
+\begin{align*}
+	b_i = \nabla_j T_{ij}(\vec{r})
+\end{align*}
+mit 
+\begin{align*}
+	T_{ij}(\vec{r}) = \varepsilon_0(E_i E_j-\frac{1}{2}\delta_{ij}E_kE_k),
+\end{align*}
+dem Maxwellschen Spannungstensor. Aus der Spur ergibt sich direkt die Energiedichte:
+\begin{align*}
+	\mathrm{Sp}\:T = T_{ii} = \varepsilon_0\left(\vec{E}^2-\frac{3}{2}\vec{E}^2\right) = -\frac{\varepsilon_0}{2}\vec{E}^2 = -u(\vec{r}). 
+\end{align*}
+Mithilfe des Spannungstensors lässt sich die Kraft nach 
+\begin{align*}
+	F_i = \int_V\diffa[3]{\vec{r}}\nabla_j T_{ij} = \int_{\partial V} T_{ij} \hat{n}_j \diff f
+\end{align*}
+berechnen. Der Spannungstensor ist also eine lineare Abbildung, die aus $\hat{\vec{n}}$ die Oberflächenkraftdichte generiert. Die Diagonalelemente bestimmen dabei die Beiträge durch Zugspannungen während die anderen Einträge Beiträge durch Scherspannungen darstellen. 
+
 \section{Randbedingungen des elektrischen Feldes auf Grenzflächen\label{sec:randbedingungen_auf_grenzflaechen}}
 
  {\ldots}
